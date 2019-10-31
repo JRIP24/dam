@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Discos>
+	<Disco format="CD">
+		<autor>Cold Play</autor>
+		<titul> X &amp; Y </titul>
+		<discografica></discografica>
+		<pistes>
+			<nompista durada=""></nompista>
+			<nompista durada=""></nompista>
+		</pistes>
+	</Disco>
+	
+	<Disco/>
+	<Disco/>
+</Discos>

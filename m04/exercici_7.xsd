@@ -1,0 +1,67 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:element name="arqueologia">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="jaciment" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="localitzacio">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nom_pais" type="limite"/>
+                                        <xs:element name="nom_ciutat" type="limite"/>
+                                        <xs:element name="coordenades">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="longitud" type="xs:decimal"/>
+                                                    <xs:element name="latitud" type="xs:decimal"/>
+                                                    <xs:element name="orientacio">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:pattern value="N|S|E|O|NE|SE|SO|NO"></xs:pattern>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="troballes">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="peça" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:choice>
+                                                        <xs:element name="descripcio">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:maxLength value="150"/>
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:element>
+                                                        <xs:element name="dibuix"></xs:element>
+                                                    </xs:choice>
+                                                    <xs:element name="data" type="xs:date"/>
+                                                </xs:sequence>
+                                                <xs:attribute name="id" use="optional" type="xs:ID"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="epoca" use="required" type="limite"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+</xs:element>
+<xs:simpleType name="limite">
+    <xs:restriction base="xs:string">
+        <xs:maxLength value="70"/>
+    </xs:restriction>
+</xs:simpleType>
+</xs:schema>

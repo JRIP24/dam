@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE TVSCHEDULE SYSTEM "exercici_8.dtd">
+<TVSCHEDULE NAME="Viking2">
+	<CHANNEL CHAN="patito feo">
+		<BANNER> el banner 2 </BANNER>
+		<DAY>
+			<DATE> la data 2 </DATE>
+			<HOLIDAY> les vacances 2 </HOLIDAY>
+		</DAY>
+		<DAY>
+			<DATE> la data 2 </DATE>
+			<PROGRAMSLOT VTR="no estoy">
+				<TIME> el temps 2 </TIME>
+				<TITLE> el titol 2</TITLE>
+				<DESCRIPTION> la descripcio 1</DESCRIPTION>
+			</PROGRAMSLOT>
+		</DAY>
+	</CHANNEL>
+	<canal> el canal 2 </canal>
+</TVSCHEDULE>

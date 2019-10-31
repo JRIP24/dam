@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+ 
+<arqueologia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="exercici_7.xsd">
+    <jaciment epoca="pre-romànic">
+        <localitzacio>
+            <nom_pais>Italia</nom_pais>
+            <nom_ciutat>Roma</nom_ciutat>
+            <coordenades>
+                <longitud>275.3</longitud>
+                <latitud>145.33</latitud>
+                <orientacio>SE</orientacio>
+            </coordenades>
+        </localitzacio>
+        
+        <troballes>
+            <peça id="I1">
+                <descripcio>Trident coure</descripcio>
+                <data>1990-08-25</data>
+            </peça>
+            <peça id="I2">
+                <dibuix></dibuix>
+                <data>1990-08-25</data>
+            </peça>
+        </troballes>
+    </jaciment>
+</arqueologia>

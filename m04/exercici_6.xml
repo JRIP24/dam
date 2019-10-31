@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+ 
+<societat N_societat="123E" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="exercici_6.xsd">
+    <nom>Mambo Kings</nom>
+    <any_fundació>2000</any_fundació>
+    <president n_soci="1" nif="32165498w">
+        <nom>Manolo</nom>
+        <cognoms>Cabezaegg</cognoms>
+    </president>
+    <socis quantitat="50">
+        <soci n_soci="1" nif="12345678e">
+            <nom>Mene</nom>
+            <cognoms>Tro</cognoms>
+        </soci>
+    </socis>
+</societat>

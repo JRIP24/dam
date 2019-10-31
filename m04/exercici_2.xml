@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<curs data_inici="" data_fi="" xmlns:coche="http://www.w3.org">
+	<lloc/>
+	<participants>
+		<participant dni="">
+			<nom></nom>
+			<cognoms></cognoms>
+			<matricula></matricula>
+			<email></email>
+			<data></data>
+			<vehicle num_chasis="">
+				<coche:data></coche:data>
+				<coche:matricula></coche:matricula>
+				<marca></marca>
+				<model></model>
+			</vehicle>
+		</participant>
+	</participants>
+</curs>

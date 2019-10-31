@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE temps SYSTEM "exercici_4_dtd.dtd">
+<temps>
+	<entitat id="AZ000000A">
+		<nom>Agencia Santbolana de meteorologia</nom>
+		
+		<ubicacio>
+			<ciutat>Sant Boi</ciutat>
+			<provincia>Barcelona</provincia>
+		</ubicacio>
+		
+		<prediccio data="2011-12-20">
+			<precipitacio>14</precipitacio>
+			<vent>
+				<direccio>NE</direccio>
+				<velocitat>77</velocitat>
+			</vent>
+		</prediccio>
+	</entitat>
+
+	<entitat id="AZ000000C">
+	<nom>Agencia Santbolana de meteorologia</nom>
+	
+	<ubicacio>
+		<ciutat>Sant Boi</ciutat>
+		<provincia>Barcelona</provincia>
+	</ubicacio>
+	
+	<prediccio data="2011-12-20">
+		<precipitacio>14</precipitacio>
+		<vent>
+			<direccio>NE</direccio>
+			<velocitat>77</velocitat>
+		</vent>
+	</prediccio>
+	<prediccio data="2011-12-20">
+	<precipitacio>14</precipitacio>
+	<vent>
+		<direccio>NE</direccio>
+		<velocitat>77</velocitat>
+	</vent>
+</prediccio>
+</entitat>
+
+</temps>

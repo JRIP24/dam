@@ -1,0 +1,86 @@
+﻿<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:element name="societat">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="nom" minOccurs="1" maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="15"/>
+                        <xs:pattern value="[a-zA-Z0-9 ]*"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+                
+            <xs:element name="any_fundació">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="1500"/>
+                        <xs:maxInclusive value="2050"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="president" type="name_lastname"/>
+            <xs:element name="socis">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="soci" type="name_lastname"/>
+                    </xs:sequence>
+                    <xs:attribute name="quantitat" use="required">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:integer">
+                                <xs:minInclusive value="0"/>
+                                <xs:maxInclusive value="150"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="N_societat" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[0-9]{3}[A-Z]"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+</xs:element>
+    <xs:complexType name="name_lastname">
+        <xs:sequence>
+            <xs:element name="nom">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="cognoms">
+                <xs:simpleType >
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="30"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+        
+        <xs:attribute name="n_soci" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:minInclusive value="0"/>
+                    <xs:maxInclusive value="150"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        
+        <xs:attribute name="nif" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[0-9]{8}[A-Za-z]"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        
+    </xs:complexType>
+</xs:schema>
