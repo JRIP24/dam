@@ -9,7 +9,6 @@ public class Program{
         if (n2 > 1){
             for (int i = 1; i < n2; i ++ ){
                 n1 = n1/10;
-                System.out.println("Valor de n1 " + n1);
             }
         }
 
@@ -23,15 +22,29 @@ public class Program{
         int num1;
         int num2;
 
-        System.out.println("Introduzca el primer número entero no negativo: ");
+        System.out.print("Introduzca el primer número entero no negativo: ");
         num1 = teclado.nextInt();
 
-        System.out.println("Introduzca el segundo número entero no negativo: ");
+        //Definimos la longitud del primer número
+        String longitud = Integer.toString(num1);
+
+        System.out.print("Introduzca el segundo número entero no negativo: ");
         num2 = teclado.nextInt();
 
-        int resultado = digitPosition(num1, num2);
+        if(num2 <= 0){
 
-        System.out.println(resultado);
+            System.out.println("ERROR: No se aceptan números negativos o 0");
+
+        } else if ( num2 > longitud.length()){
+
+            System.out.println("ERROR: El segundo número es mayor que la longitud del primer número");
+
+        } else {
+            
+            int resultado = digitPosition(num1, num2);
+
+            System.out.println("Resultado: " + resultado);
+        }
     }
 
 }
