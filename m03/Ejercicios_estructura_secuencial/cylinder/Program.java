@@ -34,6 +34,9 @@ public class Program{
         volumen = volume(radio, altura);
         area_cilindro = area(radio, altura);
 
+        System.out.println("");//Espacio en blanco
+        
+
         System.out.printf("Volumen del cilindro: %.2f \n", volumen);
         System.out.printf("Área del cilindro: %.2f \n", area_cilindro);
     }
