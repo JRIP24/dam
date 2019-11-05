@@ -2,17 +2,9 @@ import java.util.Scanner;
 
 public class Program{
 
-    static String isEven( double num){
+    static boolean isEven( double num){
 
-        String mensaje;
-
-        if (num%2 == 0){
-            mensaje = "El número introducido es par";
-        } else {
-            mensaje = "El número introducido es impar";
-        }
-
-        return mensaje;
+        return num%2 == 0;
     }
 
     public static void main(String[] args){
@@ -20,15 +12,20 @@ public class Program{
         Scanner teclado = new Scanner(System.in);
 
         double numero;
-        String resultado;
+        boolean resultado;
 
         System.out.print("Introduzca un número: ");
         numero = teclado.nextDouble();
 
         resultado = isEven(numero);
 
-        System.out.println(resultado);
+        if (resultado == true){
 
+            System.out.println("El número introducido es par");
+
+        } else{
+            System.out.println("El número introducido es impar");
+        }
 
 
     }

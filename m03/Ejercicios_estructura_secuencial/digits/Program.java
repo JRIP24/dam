@@ -4,6 +4,7 @@ public class Program{
 
     static int digitPosition(int n1, int n2){
 
+        /*
         int resultat = 0;
 
         if (n2 > 1){
@@ -14,7 +15,18 @@ public class Program{
 
         resultat = n1%10;
 
-        return resultat;
+        return resultat;*/
+
+        int a = n1;
+        int b = (int)Math.pow(10, n2);
+        
+        int c = (int)Math.pow(10, n2 - 1);
+
+        int resultat_1 = a / c;
+        int resultat_2 = (a/b)*10;
+
+        return resultat_1 - resultat_2;
+
     }
 
     public static void main(String[] args){

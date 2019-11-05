@@ -2,17 +2,9 @@ import java.util.Scanner;
 
 public class Program{
 
-    static String isPositive( double num){
+    static boolean isPositive( double num){
 
-        String mensaje;
-
-        if (num >= 0){
-            mensaje = "El número introducido es positivo";
-        } else {
-            mensaje = "El número introducido es negativo";
-        }
-
-        return mensaje;
+        return num >= 0;
     }
 
     public static void main(String[] args){
@@ -20,15 +12,18 @@ public class Program{
         Scanner teclado = new Scanner(System.in);
 
         double numero;
-        String resultado;
+        boolean resultado;
 
         System.out.print("Introduzca un número: ");
         numero = teclado.nextDouble();
 
         resultado = isPositive(numero);
 
-        System.out.println(resultado);
-
+        if (resultado == true){
+            System.out.println("El número introducido es positivo");
+        } else {
+            System.out.println("El número introducido es negativo");
+        }
 
 
     }

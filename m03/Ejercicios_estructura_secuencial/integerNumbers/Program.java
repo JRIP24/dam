@@ -2,14 +2,9 @@ import java.util.Scanner;
 
 public class Program {
 
+    static boolean isInteger( double num){
 
-    static int isInteger( double num){
-
-        if (num%1 == 0){
-            return 1; //El número es entero
-        } else {
-            return 0; //El número no es entero
-        }
+        return num%1 == 0;
     }
 
     public static void main(String[] args){
@@ -17,14 +12,14 @@ public class Program {
         Scanner teclado = new Scanner(System.in);
 
         double numero;
-        int resultado;
+        boolean resultado;
 
         System.out.print("Introduzca un número: ");
         numero = teclado.nextDouble();
 
         resultado = isInteger(numero);
 
-        if (resultado == 1){
+        if (resultado == true){
             System.out.println("El número introducido es entero");
         } else {
             System.out.println("El número no es entero");

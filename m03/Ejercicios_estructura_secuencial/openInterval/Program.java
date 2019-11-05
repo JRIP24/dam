@@ -2,20 +2,9 @@ import java.util.Scanner;
 
 public class Program{
 
-    static String isInOpenInterval( double num1, double num2, double num3){
+    static boolean isInOpenInterval( double num1, double num2, double num3){
 
-        String mensaje;
-
-        if ((num3 > num1 && num3 < num2) || (num3 > num2 && num3 < num1)){
-            
-            mensaje = "El número " + num3 + " se encuentra en el intervalo " + num1 + "-" + num2;
-
-        } else {
-
-            mensaje = "El número " + num3 + " no se encuentra en el intervalo de los números introducidos";
-        }
-
-        return mensaje;
+        return ((num3 > num1 && num3 < num2) || (num3 > num2 && num3 < num1));
     }
 
     public static void main(String[] args){
@@ -25,7 +14,7 @@ public class Program{
         double numero_1;
         double numero_2;
         double numero_3;
-        String resultado;
+        boolean resultado;
 
         System.out.print("Introduzca un número: ");
         numero_1 = teclado.nextDouble();
@@ -38,7 +27,11 @@ public class Program{
 
         resultado = isInOpenInterval( numero_1, numero_2, numero_3);
 
-        System.out.println(resultado);
+        if (resultado == true){
+            System.out.println("El número " + numero_3 + " se encuentra en el intervalo " + numero_1 + "-" + numero_2);
+        } else {
+            System.out.println("El número " + numero_3 + " no se encuentra en el intervalo de los números introducidos");
+        }
 
 
 

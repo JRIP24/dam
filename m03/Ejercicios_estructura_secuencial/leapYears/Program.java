@@ -1,17 +1,10 @@
 import java.util.Scanner;
 
 public class Program{
-    static String isLeapYear(int any){
-        
-        String mensaje;
 
-        if (any%400 == 0 || (any%4 == 0 && any%100 != 0)){
-            mensaje = "El año introducido es bisiesto";
-        } else {
-            mensaje = "El año introducido no es bisiesto";
-        }
+    static boolean isLeapYear(int any){
 
-        return mensaje;
+        return (any%400 == 0 || (any%4 == 0 && any%100 != 0));
 
     }
 
@@ -19,11 +12,18 @@ public class Program{
         
         Scanner teclado = new Scanner(System.in);
         int year;
+        boolean resultado;
 
         System.out.print("Indique el año (se determinará si es bisiesto): ");
         year = teclado.nextInt();
 
-        System.out.println(isLeapYear(year));
+        resultado = isLeapYear(year);
+
+        if (resultado == true){
+            System.out.println("El año introducido es bisiesto");
+        } else {
+            System.out.println("El año introducido no es bisiesto");
+        }
 
 
     }
