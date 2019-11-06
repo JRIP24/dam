@@ -20,11 +20,14 @@ public class Program{
         resultado = isLeapYear(year);
 
         if (resultado == true){
-            System.out.println("El año introducido es bisiesto");
-        } else {
-            System.out.println("El año introducido no es bisiesto");
-        }
 
+            System.out.println("El año introducido es bisiesto");
+
+        } else {
+            
+            System.out.println("El año introducido no es bisiesto");
+            
+        }
 
     }
 }
