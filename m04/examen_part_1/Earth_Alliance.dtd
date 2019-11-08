@@ -32,6 +32,7 @@
 <!ELEMENT potencia_militar (#PCDATA)>
 <!ELEMENT unitat_de_mesura_potencia (#PCDATA)>
 
+
 <!ELEMENT abast ((quantitat, unitat_de_mesura )| quantitat_2)>
 <!ELEMENT quantitat (#PCDATA)>
 <!ELEMENT unitat_de_mesura (#PCDATA)>
