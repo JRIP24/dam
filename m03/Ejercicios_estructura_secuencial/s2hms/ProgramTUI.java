@@ -22,7 +22,6 @@ public class ProgramTUI {
      */
     static String s2hms(int s) {
         
-        int dia //divide el valor de tiempo entre 86400
         int hor=s/3600;
         int min=(s-(3600*hor))/60;
         int seg=s-((hor*3600)+(min*60));

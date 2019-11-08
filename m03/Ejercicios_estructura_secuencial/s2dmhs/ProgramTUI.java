@@ -21,13 +21,14 @@ public class ProgramTUI {
      * @return a string with the format
      *         "s segons seran d dies, h hores, m minuts i rs segons."
      */
-    public String s2dhms(long s) {
+    static String s2dhms(long s) {
         
-        int hor=s/3600;
-        int min=(s-(3600*hor))/60;
-        int seg=s-((hor*3600)+(min*60));
+        long dia = s/86400; //divide el valor de tiempo entre 86400
+        long hor=(s -(86400*dia))/3600;
+        long min=(s-(86400*dia) + (3600*hor))/60;
+        long seg=s-((86400*dia) + (hor*3600)+(min*60));
 
-        return ( s + "segundos equivalen a " + hor + "h, " + min + "m, " + seg + "s");
+        return ( s + "segons equivalen a " + dia + "d, " + hor + "h, " + min + "m, " + seg + "s");
     }
 
     /**
@@ -38,10 +39,10 @@ public class ProgramTUI {
     public static void main(String[] args) {
 
         Scanner teclado = new Scanner(System.in);
-        int segundos;
+        long segundos;
         
         System.out.print("Introduce un número de segundos: ");
-        segundos = teclado.nextInt();
+        segundos = teclado.nextLong();
 
         System.out.println(s2dhms(segundos));
     }
