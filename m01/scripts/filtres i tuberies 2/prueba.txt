@@ -1,3 +1,0 @@
-32 	 Barcelona 	 Este 	 2 	 23434 	 2
-32	Barcelona	Oeste	4	3	4
-21	Barcelona	Este	34	34	34
