@@ -3,11 +3,11 @@
 clear
 
 salir="n"
+salir_calc="n"
 
 while [ $salir == "n" ]; do
 
     echo ' 
-
                         ________________________________ 
                        |                                |
                        |           CALCULADORA          |
@@ -31,49 +31,88 @@ while [ $salir == "n" ]; do
         '
 
     read operacion
+    salir_calc="n"
 
-    case $operacion in
+    if [ $operacion != "0" ];then
 
-        "+")
-           read -p "Introduzca el primer número" num1
-           read -p "Introduzca el segundo número" num2
+        case $operacion in
 
-        ;;
+            "+")
+            read -p "Introduzca el primer número: " num1
+            read -p "Introduzca el segundo número: " num2
+            let resultado=$num1+$num2
+            echo $resultado
 
-        "-")
-           read -p "Introduzca el primer número" num1
-           read -p "Introduzca el segundo número" num2
+            ;;
+
+            "-")
+            read -p "Introduzca el primer número: " num1
+            read -p "Introduzca el segundo número: " num2
+            let resultado=$num1-$num2
+            echo $resultado
+                
+            ;;
+
+            "*")
+            read -p "Introduzca el primer número: " num1
+            read -p "Introduzca el segundo número: " num2
+            let resultado=$num1*$num2
+            echo $resultado
+                
+            ;;
+
+            "/")
+            read -p "Introduzca el primer número: " num1
+            read -p "Introduzca el segundo número: " num2
             
-        ;;
+            if [ $num2 -eq 0 ]; then
 
-        "*")
-           read -p "Introduzca el primer número" num1
-           read -p "Introduzca el segundo número" num2
+                echo "Error: no se puede dividir por 0"
+
+                else
+                    let resultado=$num1/$num2
+                    echo $resultado
+
+            fi
+                
+            ;;
+
+            *)
+                echo "Error: opción no encontrada: "
+                exit 1
+            ;;
+        esac
+
+        read -p "Desea hacer otra operación?(s/n): " continuar
+
+        case $continuar in
+            "s")
+                clear
+            ;;
             
-        ;;
+            "n")
+                salir_calc="y"
+            ;;
 
-        "/")
-           read -p "Introduzca el primer número" num1
-           read -p "Introduzca el segundo número" num2
-            
-        ;;
+            *)
+                echo "Error: escriba s o n"
+                exit 1
+            ;;
+        esac
 
-        "0")
+
+        else #El usuario decide salir de la calculadora
+
             salir_calc="y"
-        ;;
-        *)
-            echo "Error: opción no encontrada"
-            exit 1
-        ;;
-    esac
 
+    fi
     
     
-    if [ salir_calc == "y" ]; then
+    if [ $salir_calc == "y" ]; then
 
         salir="s"
         echo "Saliendo..."
-        sleep 2
+        sleep 1
 
     fi
     
