@@ -63,13 +63,15 @@ public class Program{
                 }
             }
 
-        } else if (d == 30){//Cambio de mes en mese con 30 dias
+        } else if (d == 30){//Cambio de mes en meses con 30 dias
 
             d = 1;
             m = m + 1;
 
-        } else {
+        } else  if (d < 30){
             d = d + 1;
+        } else {
+            error = true;
         }
 
 

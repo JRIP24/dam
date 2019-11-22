@@ -6,33 +6,28 @@ public class Program{
     public static String calculateSolutions(float a, float b, float c){
 
         String mensaje = "";
-        float discriminante = Math.pow(b, 2) - (4 * a * c);
-        byte soluciones;
+        float discriminante = (float)(Math.pow(b, 2) - (4.0 * a * c));
+        float sol1;
+        float sol2;
 
         if (discriminante > 0){//Dos soluciones
 
-            soluciones = 2;
+            sol1 = (float)(-b+(Math.sqrt(discriminante)))/(2*a);
+            sol2 = (float)(-b-(Math.sqrt(discriminante)))/(2*a);
+
+            mensaje = "x1 = " + sol1 + ", " + " x2 = " + sol2;
 
         } else if ( discriminante == 0) {//Una solución
             
-            soluciones = 1;
+            sol1 = (float)(-b+(Math.sqrt(discriminante)))/(2*a);
+            mensaje = "x1 = " + sol1 ;
 
-        } else {//Ninguna solución?
+        } else {//Ninguna solución
             
-            soluciones = 0;
+            mensaje = "No té solució";
+            
         }
-
-
         
-        
-        
-        
-        
-        ///x = (float)(-b+Math.sqrt(Math.pow(b,2)-(4*a*c)))/(2*a);
-
-
-        mensaje = "El resultado es: " + x;
-
 
         return mensaje;
 
@@ -66,6 +61,8 @@ public class Program{
 
         System.out.print("Introduzca el valor de c: ");
         num3 = teclado.nextFloat();
+
+        System.out.println(calculateSolutions(num1, num2, num3));
 
 
     }
