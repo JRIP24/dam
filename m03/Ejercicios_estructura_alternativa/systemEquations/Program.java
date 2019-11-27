@@ -23,8 +23,6 @@ public class Program{
         return (det == 0);//Si es true, no hay solución
     }
 
-
-
     /**
      * Calculates the solution of a linear system.
      *
@@ -44,10 +42,23 @@ public class Program{
         boolean sol = hasSolution(a, b, c, d, e, f);
         String resultado;
 
-        if (sol == true){
-            resultado = "No hay solución";
-        } else {
-            resultado = "Hay solución";
+
+        if (sol == true){//No hay solución
+
+            resultado = "Sistema incompatible";
+
+        } else {//Hay solución
+            
+            float dx = (c*e) - (b*f);
+            float dy = (a*f) - (c*d);
+            float ds = (a*e) - (b*d);
+
+            float solx = dx / ds;
+            float soly = dy / ds;
+
+
+            resultado = "x = " + solx + ", " + "y = " + soly;
+            
         }
 
         
