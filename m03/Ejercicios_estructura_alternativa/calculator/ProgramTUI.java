@@ -19,7 +19,7 @@ public class ProgramTUI{
 
     public static float divide( float n1, float n2){
         
-        
+        return n1 / n2;
     }
 
     public static void main(String[] args){
@@ -52,47 +52,61 @@ public class ProgramTUI{
 
             case "+":
 
-                System.out.print("Ingrese el primer número");
+                System.out.print("Ingrese el primer número: ");
                 num1 = teclado.nextFloat();
 
-                System.out.print("Ingrese el segundo número");
+                System.out.print("Ingrese el segundo número: ");
                 num2 = teclado.nextFloat();
+
+                System.out.println("La suma de " + num1 + " + " + num2 + " es: " + add(num1, num2));
 
             break;
 
             case "-":
 
-                System.out.print("Ingrese el primer número");
+                System.out.print("Ingrese el primer número: ");
                 num1 = teclado.nextFloat();
 
-                System.out.print("Ingrese el segundo número");
+                System.out.print("Ingrese el segundo número: ");
                 num2 = teclado.nextFloat();
+
+                System.out.println("La resta de " + num1 + " - " + num2 + " es: " + subtract(num1, num2));
 
             break;
 
             case "*":
 
-                System.out.print("Ingrese el primer número");
+                System.out.print("Ingrese el primer número: ");
                 num1 = teclado.nextFloat();
 
-                System.out.print("Ingrese el segundo número");
+                System.out.print("Ingrese el segundo número: ");
                 num2 = teclado.nextFloat();
+
+                System.out.println("La multiplicación de " + num1 + " * " + num2 + " es: " + multiply(num1, num2));
 
             break;
 
             case "/":
 
-                System.out.print("Ingrese el primer número");
+                System.out.print("Ingrese el primer número: ");
                 num1 = teclado.nextFloat();
 
-                System.out.print("Ingrese el segundo número");
+                System.out.print("Ingrese el segundo número: ");
                 num2 = teclado.nextFloat();
+
+                if ( num2 == 0){
+
+                    System.out.println("Error: No se puede dividir por 0");
+
+                } else {
+                    System.out.println("La división de " + num1 + " / " + num2 + " es: " + divide(num1, num2));
+                }
 
             break;
 
             default:
 
-            System.out.print("Opción no encontrada :(");
+            System.out.println("Opción no encontrada :(");
 
             break;
         }
