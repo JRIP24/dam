@@ -6,6 +6,11 @@
 	<title>Practica 5</title>
 
 	<style>
+
+		*{
+			box-sizing:border-box;
+		}
+
 		header{
 			background-color:#000;
 		}
@@ -13,24 +18,66 @@
 			display:block;
 			margin:auto;
 		}
+		li{
+			list-style:none;
+		}
 		
 		nav{
 			with:100%;
-			border: 2px solid blue;
+			margin:0;
+			padding:1%;
+			background-color:#e0ff94;
 		}
 		
 		nav ul{
-			list-style:none;
 			text-align:center;
+			margin:0;
 		}
 		nav ul li{
 			margin: 0px 30px;
 			display:inline;
 		}
 
-		article{
-			border:2px solid red;
+		#main_div{
+			position: relative;
 		}
+
+		article{
+			width:75%;
+			height:100vh;
+			margin:0;
+
+		}
+		
+		aside{
+			float:right;
+			width:25%;
+			height:100vh;
+			background-color:#cad8b8;
+		}
+		aside > a{
+
+			display:block;
+			text-align:center;
+			margin: 20px 0px;
+		}
+
+		footer{
+			
+			position:relative;
+			background-color:#b8c5be;
+			padding:1%;
+		}
+	
+		.footer-div{			
+			display:inline-block;
+			width:25%;
+			height:100%;
+			text-align:center;
+			
+		}
+		
+		
 
 
 	</style>
@@ -43,15 +90,23 @@
 
 	<nav>
 		<ul>
-			<li>Precios y datos</li>
-			<li>Informaciones y pruebas</li>
-			<li>Imágenes</li>
-			<li>Marcas</li>
-			<li>Comparador de seguros</li>
+			<li><a href="#">Precios y datos</a></li>
+			<li><a href="#">Informaciones y pruebas</a></li>
+			<li><a href="#">Imágenes</a></li>
+			<li><a href="#">Marcas</a></li>
+			<li><a href="#">Comparador de seguros</a></li>
 		</ul>
 	</nav>
 
 	<div id="main_div">
+
+		<aside>
+			<a href="www.cuteaf.es">Cute AF</a>
+
+			<a href="www.escoladeltreball.org">Escola del treball</a>
+
+			<a href="www.tesla.com">Tesla</a>
+		</aside>
 
 		<article>
 			<p>Opel Corsa (2020)</p>
@@ -62,29 +117,28 @@
 		</article>
 
 
-		<aside>
-			<a href="www.cuteaf.es">Cute AF</a>
-
-			<a href="www.escoladeltreball.org">Escola del treball</a>
-
-			<a href="www.tesla.com">Tesla</a>
-		</aside>
-
 	</div>
 
 	<footer>
-		<p>Redacció</p>
-		<ul>
-			<li>91 724 05 70<li>
-			<li>redaccion@km77.com</li>
-		</ul>
+		<div class="footer-div" id="first-div">
+			<p>Redacció</p>
+			<ul>
+				<li>91 724 05 70</li>
+				<li>redaccion@km77.com</li>
+			</ul>
+		</div>
 
-		<p>Publicidad</p>
-		<ul>
-			<li>91 513 04 95<li>
-			<li>publi@km77.com</li>
-		</ul>
-		<p><a href="#">Condiciones Legales</a></p>
+		<div class="footer-div">
+			<p>Publicidad</p>
+			<ul>
+				<li>91 513 04 95</li>
+				<li>publi@km77.com</li>
+			</ul>
+		</div>
+		
+		<div class="footer-div">
+			<p><a href="#">Condiciones Legales</a></p>
+		</div>
 	</footer>
 </body>
 
