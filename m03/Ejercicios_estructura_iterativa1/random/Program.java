@@ -7,9 +7,9 @@ public class Program{
 
         if (n1 < n2){
 
-            for (int i = 0; i <= x; i++){
+            for (int i = 1; i <= x; i++){
 
-                Math.floor(Math.random()*(N-M+1)+M);
+                System.out.println(Math.floor(Math.random()*(n2-n1+1)+n1));
             }
 
         } else {
