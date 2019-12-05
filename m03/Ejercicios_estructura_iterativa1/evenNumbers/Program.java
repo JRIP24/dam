@@ -3,18 +3,17 @@ import java.util.Scanner;
 public class Program{
 
 
-    public static void writeDescNumbers(int n1, int n2){
+    public static void writeMultiples(int n1, int n2){
 
         if (n1 < n2){
-
-            String i_str;
-            int unicode;
+            
+            System.out.println("Lista de número pares entre " + n1 + " y " + n2);
 
             for (int i = n1; i <= n2; i++){
 
-                i_str = Integer.toString(i);
-                unicode = Integer.parseInt(i_str, 16);
-                System.out.println("Carácter unicode de " + i + " = " + (char)unicode);
+                if ( i%2 == 0){
+                    System.out.println(i);
+                }
             }
 
         } else {
@@ -38,7 +37,7 @@ public class Program{
             System.out.println("Los número son iguales o negativos");
 
         }else {
-            writeDescNumbers(num1, num2);
+            writeMultiples(num1, num2);
         }
 
     }

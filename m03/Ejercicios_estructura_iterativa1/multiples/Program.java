@@ -3,18 +3,15 @@ import java.util.Scanner;
 public class Program{
 
 
-    public static void writeDescNumbers(int n1, int n2){
+    public static void writeMultiples(int n1, int n2){
 
         if (n1 < n2){
 
-            String i_str;
-            int unicode;
+            for (int i = 1; i <= n2; i++){
 
-            for (int i = n1; i <= n2; i++){
-
-                i_str = Integer.toString(i);
-                unicode = Integer.parseInt(i_str, 16);
-                System.out.println("Carácter unicode de " + i + " = " + (char)unicode);
+                if ( i%n1 == 0){
+                    System.out.println("El número " + i + " es múltiplo de " + n1);
+                }
             }
 
         } else {
@@ -38,7 +35,7 @@ public class Program{
             System.out.println("Los número son iguales o negativos");
 
         }else {
-            writeDescNumbers(num1, num2);
+            writeMultiples(num1, num2);
         }
 
     }
