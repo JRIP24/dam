@@ -43,5 +43,5 @@ sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
 chrony:x:980:977::/var/lib/chrony:/sbin/nologin
 tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
 tcpdump:x:72:72::/:/sbin/nologin
-guest:x:1000:1000:guest:/home/guest:/bin/bash
+guest:x:1000:1000:usuari local:/home/guest:/bin/bash
 postgres:x:26:26:PostgreSQL Server:/var/lib/pgsql:/bin/bash
