@@ -1,0 +1,6 @@
+nom	cognom	ciutat		codi
+Adeo	Puig	Barcelona	1
+hola	Puig	Girona		2
+Zeus	Mas	Hospitalet	3
+hola	Mas	Barcelona	4
+hola	Puig	Barcelona	5

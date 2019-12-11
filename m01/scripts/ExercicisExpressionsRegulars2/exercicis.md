@@ -25,9 +25,21 @@ head -n 15 /etc/passwd | egrep '^[^:]*:[^:]:2:'
 
 Usant grep valideu si un dni té el format apropiat.
 
+```
+egrep "^[0-9]{8}[A-Z]$"
+```
+
 ### Exercici 4 
 
 Usant grep valideu si una data té un format vàlid. Els formats poden ser: dd-mm-aaaa o dd/mm/aaaa.
+
+```
+egrep "^[0-9]{2}[/|-][0-9]{2}[/-][0-9]{4}$"
+
+o
+
+egrep "(^[0-9]{2}/[0-9]{2}/[0-9]{4}$)|(^[0-9]{2}-[0-9]{2}-[0-9]{4}$)"
+```
 
 ### Exercici 5
 
@@ -35,13 +47,25 @@ Per als següents exercicis, cal utilitzar el fitxer [noms1.txt](noms1.txt)
 
 Busqueu totes les línies del fitxer noms1.txt que tenen la cadena *Anna* o la cadena *Jordi*
 
+```
+cat noms.txt | egrep "Anna|Jordi"
+```
+
 ### Exercici 6
 
 Substituïu del fitxer noms1.txt tots els noms Anna i Jordi per -nou-.
 
+```
+sed -i -E 's/Anna|Jordi/-nou-/g' noms.txt
+```
+
 ### Exercici 7
 
 Obtingueu les 10 primeres línies del fitxer `/etc/passwd` substituint `/sbin/nologin` per `-noshell`.
+
+```
+head /etc/passwd | sed 's/\/sbin\/nologin/-noshell/g'
+```
 
 ### Exercici 8
 
