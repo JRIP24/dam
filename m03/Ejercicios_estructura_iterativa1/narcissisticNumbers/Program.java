@@ -1,6 +1,3 @@
-import java.util.Scanner;
-
-
 public class Program{
 
 
@@ -29,18 +26,6 @@ public class Program{
     }
 
     public static void main(String[] args){
-        
-
-        Scanner teclado = new Scanner(System.in);
-        
-        /*System.out.print("Introduzca un número: ");
-        int num1 = teclado.nextInt();
-
-        System.out.print("Introduzca otro número: ");
-        int num2 = teclado.nextInt();
-
-        System.out.print("Introduzca otro número: ");
-        int num3 = teclado.nextInt();*/
 
         writeNarcissisticNumbers();
     }
