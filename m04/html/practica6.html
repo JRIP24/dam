@@ -9,16 +9,16 @@
 <body>
 <form action="patata.php" method="get">
 
-First name: <input type="text" name="first_name"> <br>
-Last name: <input type="text" name="last_name"> <br>
-Password: <input type="password" name="password"><br>
+First name: <input type="text" name="first_name" required> 
+Last name: <input type="text" name="last_name" pattern="^[A-Z]?[a-z]+" maxlength="20" autofocus required>
+Password: <input type="password" name="password" required><br>
 <br>
 
-Male <inpu type="radius" name="male" value="male">
-Female <inpu type="radius" name="female" value="female">
+Male <input type="radio" name="genero" value="male"><br>
+Female <input type="radio" name="genero" value="female"><br><br>
 
-<input type="checkbox" name="i_have_bike" value="i_have_bike">I have a bike
-<input type="checkbox" name="i_have_car" value="i_have_car" >I have a car <br>
+<input type="checkbox" name="i_have_bike" value="i_have_bike">I have a bike<br>
+<input type="checkbox" name="i_have_car" value="i_have_car" >I have a car <br><br>
 
 <fieldset>
 	<span>Llistes desplegables</span> 
@@ -43,7 +43,7 @@ Female <inpu type="radius" name="female" value="female">
 		<option value="opel">Opel</option>
 	</select>
 
-	<input type="Button" value="Click Me!">
+	<input type="Button" onclick="alert('Hola')" value="Click Me!">
 </fieldset>
 <textarea placeholder="The cat was playing in the garden">
 </textarea>
@@ -53,7 +53,8 @@ Female <inpu type="radius" name="female" value="female">
 
 <legend>Personalia</legend>
 
-Name: <input type="text" name="name" placeholder="Escriu el teu nom"> <br>
+Name: <input type="text" name="name" placeholder="Escriu el teu nom" minlength="1" required><br>
+Age: <input type="number" min="18" max="100"><br>
 Email: <input type="email" name="email"> <br>
 Date: <input type="date" name="date"> <br>
 
