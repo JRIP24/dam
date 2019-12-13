@@ -8,10 +8,9 @@ public class Program{
 
         if (n1 < n2){
 
-            while(n1 <= n2){
+            for (int i = n1; i <= n2; i++){
 
-                System.out.println(n1);
-                n1 = n1 + 1;
+                System.out.println(i);
             }
 
         } else {
