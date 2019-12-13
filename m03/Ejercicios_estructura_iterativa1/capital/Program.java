@@ -6,7 +6,6 @@ public class Program{
     public static void calculateFinalCapital(float n1, float n2, float n3){
 
         float capital_anyo = 0;
-        float interes = n2/100;
 
         for (int i = 1; i <= n3; i++){
             
