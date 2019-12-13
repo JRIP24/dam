@@ -8,10 +8,10 @@ public class Program{
         int capital_acumulado = 0;
 
         for (int i = 1; i <= n3; i++){
-              
+            capital_acumulado += n1 + (n1 * (n2 / 100));
         }
 
-        System.out.println();
+        System.out.println("Capital total: " + capital_acumulado);
     }
 
     public static void main(String[] args){
@@ -22,7 +22,7 @@ public class Program{
         System.out.println("*********************************");
         System.out.println("*       NVERSIÓN BANCARIA       *");
         System.out.println("*********************************");
-
+        System.out.println("");//Salto de línea
 
         System.out.print("Introduce el capital inicial: ");
         int num1 = teclado.nextInt();
