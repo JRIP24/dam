@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Program{
 
-
+    //Solución del profesor
     public static int maxDivisor(int n){
         int resultado = 1;
         int i = 2;
