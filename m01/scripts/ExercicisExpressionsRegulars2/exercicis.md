@@ -71,7 +71,14 @@ head /etc/passwd | sed 's/\/sbin\/nologin/-noshell/g'
 
 Ídem que l'exercici anterior però fent la substitució només de les línies 4 a la 8.
 
+```
+head /etc/passwd | sed '4,8s/\/sbin\/nologin/-noshell/g'
+```
+
 ### Exercici 9
 
 Ídem exercici anterior però fent les substitucions des de la línia que conté *adm* fins la línia que conté *halt*.
 
+```
+head /etc/passwd | sed '/adm/,/halt/s/\/sbin\/nologin/-noshell/g'
+```
