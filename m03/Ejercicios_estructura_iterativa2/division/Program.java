@@ -5,22 +5,19 @@ public class Program{
 
     public static void divide(int divid, int divis){
 
-        System.out.println("Usando /: " + divid/divis);
-        System.out.println("Usando %: " + divid%divis);
-        System.out.println("");
-
         int cosiente = 0;
         int resto = divid;
 
-        while(resto > 0){
+        while(resto - divis >= 0){
             
             resto = resto - divis;
+            
+            //Incremento
             cosiente++;
         }
 
-        for (int i = 0; )
 
-        System.out.println(cosiente + ":" + (-resto));
+        System.out.println(cosiente + ":" + (+resto));
         
     }
 
