@@ -8,6 +8,7 @@ public class ProgramTUI{
 
         float num;
         float suma = 0;
+        int contador = 0;
         boolean salir = false;
 
         while(salir == false){
@@ -21,13 +22,12 @@ public class ProgramTUI{
 
             } else {
 
-                if (num%2.0 == 0.0){
-                    suma = suma + num;
-                }
+                contador++;
+                suma = suma + num;
 
             }
         }
-        System.out.println("La suma de los número pares encontrados es: " + suma);
+        System.out.println("La media obtenida de los números introducidos es: " + suma/contador);
         
     }
 }

@@ -6,28 +6,31 @@ public class ProgramTUI{
 
         Scanner teclado = new Scanner(System.in);
 
-        float num;
-        float suma = 0;
+        int num;
+        int anterior = 0;
         boolean salir = false;
 
         while(salir == false){
 
             System.out.print("Introduzca un número positivo: ");
-            num = teclado.nextFloat();
+            num = teclado.nextInt();
 
-            if (num <= 0.0){ //Condicion de salida
+            if (num == 0){ //Condiciones de salida
 
                 salir = true;
 
             } else {
 
-                if (num%2.0 == 0.0){
-                    suma = suma + num;
+                if (num == anterior){
+                    salir = true;
+                    System.out.println("Se han encontrado dos números consecutivos iguales");
+                } else{
+                    anterior = num;
                 }
 
             }
         }
-        System.out.println("La suma de los número pares encontrados es: " + suma);
+
         
     }
 }
