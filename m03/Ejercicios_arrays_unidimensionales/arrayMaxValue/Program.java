@@ -1,17 +1,13 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class ProgramTUI{
+public class Program{
 
     public static void main(String[] args){
         
         Scanner teclado = new Scanner(System.in);
-        int num;
 
-        System.out.print("¿Cuántos números desea ingresar?: ");
-        num = teclado.nextInt();
-
-        float[] numeros = new float[num];
+        float[] numeros = new float[6];
         float n;
 
         for (int i = 0; i < numeros.length; i++){
@@ -20,10 +16,12 @@ public class ProgramTUI{
             n = teclado.nextFloat();
 
             numeros[i] = n;
-
-            System.out.println("El número introducido es: " + numeros[i]);
-
         }
+
+        Arrays.sort(numeros);
+
+        System.out.println("La suma de los números introducidos es: " + numeros[6-1]);//El número máximo menos 1, ya que se comienza a contar por 0
+
 
 
 
