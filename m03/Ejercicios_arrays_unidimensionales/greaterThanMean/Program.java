@@ -3,16 +3,27 @@ import java.util.Scanner;
 
 public class Program{
 
-    static float meanArray(float[] num){
+    static float percentageGreaterThanMean(float[] num){
 
         float suma = 0;
+        float media;
+        float contador = 0;
 
         for(int i = 0; i < num.length; i++){
 
             suma = suma + num[i];
         }
 
-        return suma/num.length;
+        media = suma/num.length;
+
+        for(int i = 0; i < num.length; i++){
+
+            if (num[i] > media){
+                contador++;
+            }
+        }
+
+        return (contador/num.length)*100;
 
     }
 
@@ -33,9 +44,9 @@ public class Program{
             numeros[i] = n;
         }
 
-        resultado = meanArray(numeros);
+        resultado = percentageGreaterThanMean(numeros);
 
-        System.out.printf("La media aritmética de los números introducidos es: %.2f\n", resultado);
+        System.out.println("El " + resultado + "%" + " de los números introducidos es mayor que la media de la tabla de números");
 
 
     }
