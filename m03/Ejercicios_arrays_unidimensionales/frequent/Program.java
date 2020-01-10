@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Program{
 
-    static void severalCopies(int[] num){
+    static void frequent(int[] num){
 
         int contador = 0;
 
@@ -18,13 +18,6 @@ public class Program{
 
             contador--;//Se resta uno porque obviamnte va a haber una coincidencia
 
-        }
-
-        if (contador > 1){
-
-            System.out.println("Se ha encontrado algún número repetido en la tabla numérica");
-        } else {
-            System.out.println("No se ha encontrado un número repetido");
         }
         
     }
@@ -47,7 +40,7 @@ public class Program{
 
         System.out.println("");//Salto de línea
 
-        severalCopies(numeros);
+        frequent(numeros);
 
     }
 }
