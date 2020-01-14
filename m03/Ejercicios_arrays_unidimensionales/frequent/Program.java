@@ -6,13 +6,29 @@ public class Program{
     static void frequent(int[] num){
 
         int contador = 0;
+        int contador_anterior = 0;
+        int repetido = 0;
+        int anterior = 0; //Se guarda el segundo más repetido
+        int[] arrays_aparecidos = new int[num.length];
+
 
         for(int i = 0; i < num.length; i++){
 
-            for (int x = 0; x < num.length; x++){
 
-                if (num[i] == num[x]){
-                    contador++;
+            if (){
+
+            } else {
+
+                arrays_aparecidos.add(num[i]);
+                
+                for (int x = 0; x < num.length; x++){
+
+                    if (num[i] == num[x]){
+                        contador++;
+                    }
+    
+                    contador = 0;
+                    contador_anterior = contador;
                 }
             }
 
@@ -27,7 +43,7 @@ public class Program{
         Scanner teclado = new Scanner(System.in);
         int resultado;
 
-        int[] numeros = new int[6];
+        int[] numeros = new int[8];
         int n;
 
         for (int i = 0; i < numeros.length; i++){
