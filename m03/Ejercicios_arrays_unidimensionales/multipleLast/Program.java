@@ -8,6 +8,7 @@ public class Program{
 
         int contador = 0;
         int ultimo = nums[nums.length -1];
+        int[] indices = new int[nums.length];
 
         System.out.println(ultimo);
 
@@ -15,16 +16,9 @@ public class Program{
             
             if (nums[i]%ultimo == 0){
                 contador++;
+                indices[i]
             }
         }
-
-        /**
-             int[] i = new int[10];
-        The above snippet mean that the array of integers has a length of 10. It's not possible add an eleventh integer, without re-assign the reference to a new array, like the following:
-
-            int[] i = new int[11];
-        
-         */
 
         if (contador == 0){
 
@@ -32,11 +26,13 @@ public class Program{
 
         } else {
 
-            int multiples = new int[contador];
+            int[] multiples = new int[contador];
 
             for (int i = 0; i < nums.length; i++){
                 
                 if (nums[i]%ultimo == 0){
+
+                    multiples[i] = nums[i];
                     
                 }
             }

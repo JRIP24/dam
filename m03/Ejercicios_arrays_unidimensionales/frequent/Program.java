@@ -46,18 +46,18 @@ public class Program{
                     }
                 }
 
-                /*System.out.println("El número " + num[i] + " esta " + contador + " veces");
+                System.out.println("El número " + num[i] + " esta " + contador + " veces");
                 System.out.println("---Contador " + contador);
                 System.out.println("---MAX " + max);
-                System.out.println("---MAX2 " + max2);*/
+                System.out.println("---MAX2 " + max2);
 
                 if (contador >= max ){
 
                     index = Arrays.binarySearch(num,num[repetido]);
                     index2 = Arrays.binarySearch(num,num[i]);
 
-                    /*System.out.println("Index: " + index);
-                    System.out.println("Index 2: " + index2);*/
+                    System.out.println("Index: " + index);
+                    System.out.println("Index 2: " + index2);
 
                     if (index >= index2){
 
