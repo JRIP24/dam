@@ -46,24 +46,24 @@ public class Program{
                     }
                 }
 
-                System.out.println("El número " + num[i] + " esta " + contador + " veces");
-                System.out.println("---Contador " + contador);
-                System.out.println("---MAX " + max);
-                System.out.println("---MAX2 " + max2);
 
                 if (contador >= max ){
 
-                    index = Arrays.binarySearch(num,num[repetido]);
-                    index2 = Arrays.binarySearch(num,num[i]);
+                    //Al estar ordenado el array, solo comoprobamos qué número es menor
+                    //no hace falta ver el indice
 
-                    System.out.println("Index: " + index);
-                    System.out.println("Index 2: " + index2);
+                    if (repetido != 0){//Para evitar problemas en la primera vuelta
 
-                    if (index >= index2){
+                        if (num[i] > repetido && contador != max){
+                            repetido = num[i];    
+                        }
 
+
+                    } else {
                         repetido = num[i];
-
                     }
+
+
                     
                     max = contador;
                     
@@ -84,8 +84,6 @@ public class Program{
 
 
         System.out.println("El número más repetido es: " + repetido);    
-        
-        //System.out.println(Arrays.toString(num));
         
     }
 
