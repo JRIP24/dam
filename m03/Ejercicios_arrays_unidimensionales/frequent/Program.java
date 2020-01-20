@@ -82,8 +82,13 @@ public class Program{
 
         }
 
+        if (max <= 1){
+            System.out.println("No hay números repetidos");
+        } else {
+            System.out.println("El número más repetido es: " + repetido);
+        }
+    
 
-        System.out.println("El número más repetido es: " + repetido);    
         
     }
 

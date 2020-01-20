@@ -20,15 +20,15 @@ SELECT * FROM pedido WHERE cliecod=2111 AND repcod=103 AND fabcod='aci';
 
 --6. Obtener una lista de todos los pedidos ordenados por cliente y, para cada cliente, ordenados por la fecha del pedido (ascendentemente)
 
-
+SELECT * FROM pedido ORDER BY cliecod, fecha ASC;
 
 --7. Obtener los datos de los representantes que pertenecen a la oficina de código 12 o 13 (cada representante solo pertenece a una oficina).
 
-
+SELECT * FROM repventa WHERE oficina IN (13,12);
 
 --8. Obtener los datos de productos de los que no hay existencias o bien éstas son desconocidas.
 
-
+SELECT * FROM producto WHERE exist = 0 OR exist IS NULL;
 
 --9. Mostrar los representantes que fueron contratados en el 2003
 
