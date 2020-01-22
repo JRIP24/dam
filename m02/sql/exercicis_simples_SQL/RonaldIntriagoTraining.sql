@@ -24,7 +24,7 @@ SELECT * FROM pedido ORDER BY cliecod, fecha ASC;
 
 --7. Obtener los datos de los representantes que pertenecen a la oficina de código 12 o 13 (cada representante solo pertenece a una oficina).
 
-SELECT * FROM repventa WHERE oficina IN (13,12);
+SELECT * FROM repventa WHERE ofinum IN (13,12);
 
 --8. Obtener los datos de productos de los que no hay existencias o bien éstas son desconocidas.
 
@@ -32,7 +32,7 @@ SELECT * FROM producto WHERE exist = 0 OR exist IS NULL;
 
 --9. Mostrar los representantes que fueron contratados en el 2003
 
-
+SELECT * FROM repventa WHERE YEAR(fcontrato)='1988';
 
 --10. Mostrar de los representantes el nombre y días que llevan contratados. Mostrad en una tercera columna los años que llevan contratados. Probad current_date.
 
@@ -40,27 +40,27 @@ SELECT * FROM producto WHERE exist = 0 OR exist IS NULL;
 
 --11.Mostrar el código de los representantes que son jefe (evitando repeticiones).
 
-
+SELECT DISTINCT repcod FROM repventa WHERE puesto IN('VP Ventas','Dir Ventas');
 
 --12. Mostrar los nombres de los representantes que tienen jefe.
 
-
+SELECT * FROM repventa WHERE jefe IS NOT NULL;
 
 --13. Mostrar el nombre del jefe de los representantes (sólo hay un jefe por encima de todos).
 
-
+SELECT nombre FROM repventa WHERE jefe IS NULL;
 
 --14. Mostrar la ciudad y región de las oficinas de la región OESTE.
 
-
+SELECT * FROM oficina WHERE region='Oeste';
 
 --15. Mostrar los representantes que han vendido más de lo que tenían estipulado (su cuota). Mostrad el nombre,  ventas y cuota. Ordenad descendentemente por ventas y por nombre alfabéticamente.
 
-
+SELECT nombre, ventas, cuota FROM repventa WHERE ventas > cuota ORDER BY ventas, nombre;
 
 --16. Mostrar para cada oficina su ciudad, region, ventas, objetivo, porcentaje de ventas sobre el objetivo. Ordena por porcentaje de ventas de mayor a menor.
 
-
+SELECT ciudad, region, ventas, objetivo, FORMAT((((objetivo - ventas) / objetivo)*100),2) as porcentaje   FROM oficina ORDER BY porcentaje DESC;
 
 --16 bis. Idem, pero si la cuota es desconocida, en el porcentaje ha de aparecer el siguiente texto: "Desconocido"
 
