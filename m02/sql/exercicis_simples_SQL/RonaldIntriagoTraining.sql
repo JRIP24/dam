@@ -32,11 +32,11 @@ SELECT * FROM producto WHERE exist = 0 OR exist IS NULL;
 
 --9. Mostrar los representantes que fueron contratados en el 2003
 
-SELECT * FROM repventa WHERE YEAR(fcontrato)='1988';
+SELECT * FROM repventa WHERE DATE_PART('year',fcontrato) = '2003';
 
 --10. Mostrar de los representantes el nombre y días que llevan contratados. Mostrad en una tercera columna los años que llevan contratados. Probad current_date.
 
-
+SELECT nombre, (CURRENT_DATE - fcontrato) AS "dias contratado", (CURRENT_DATE - fcontrato) / 365  AS "años contratado" FROM   repventa;
 
 --11.Mostrar el código de los representantes que son jefe (evitando repeticiones).
 
@@ -60,11 +60,12 @@ SELECT nombre, ventas, cuota FROM repventa WHERE ventas > cuota ORDER BY ventas,
 
 --16. Mostrar para cada oficina su ciudad, region, ventas, objetivo, porcentaje de ventas sobre el objetivo. Ordena por porcentaje de ventas de mayor a menor.
 
-SELECT ciudad, region, ventas, objetivo, FORMAT((((objetivo - ventas) / objetivo)*100),2) as porcentaje   FROM oficina ORDER BY porcentaje DESC;
+SELECT ciudad, region, ventas, objetivo, (round((((objetivo - ventas) / objetivo)*100),2) || '%') as porcentaje FROM oficina ORDER BY porcentaje DESC;
+
 
 --16 bis. Idem, pero si la cuota es desconocida, en el porcentaje ha de aparecer el siguiente texto: "Desconocido"
 
-
+SELECT nombre, ventas, COALESCE(cuota::text, 'Desconocido') as cuota FROM repventa;
 
 --17. Mostrad para cada representante su nombre, su puesto, sus ventas, su cuota y la diferencia de las ventas respecto su cuota (podrá ser positiva o negativa). Ordenad por este último campo.
 
