@@ -1,6 +1,6 @@
 --1. Obtener los códigos de los representantes que han tomado algún pedido (evitando su repetición).
 
-SELECT DISTINCT repcod FROM pedido
+SELECT DISTINCT repcod FROM pedido;
 
 --2. Obtener los datos de los pedidos realizados por el cliente cuyo código es el 2111.
 
@@ -69,31 +69,32 @@ SELECT nombre, ventas, COALESCE(cuota::text, 'Desconocido') as cuota FROM repven
 
 --17. Mostrad para cada representante su nombre, su puesto, sus ventas, su cuota y la diferencia de las ventas respecto su cuota (podrá ser positiva o negativa). Ordenad por este último campo.
 
-
+SELECT nombre, puesto, ventas, cuota, ventas - cuota as diferencia  FROM repventa order by diferencia;
 
 --18. Mostrad los representantes que han alcanzado el 50% de su cuota. Por pantalla además aparecerá el 50% de la cuota.
 
-
+SELECT nombre, puesto, ventas, cuota, (0.5 * cuota) as porcentaje  FROM repventa WHERE ventas >= (0.5*cuota);
 
 --19. Mostrar los clientes cuyo nombre empieza por A.
 
-
+SELECT * FROM cliente WHERE nombre LIKE 'A%';
 
 --20. Mostrar los productos cuya descripción incluya la palabra articulo.
 
-
+SELECT * FROM producto WHERE descrip LIKE '%articulo%'; --Podemos por ILIKE para que nos acepte mayúsculas
 
 --21. Mostrad la descripción de los productos cuyo código de fabricante acabe con la letra I.
 
+SELECT * FROM producto WHERE fabcod LIKE '%I'; --Podemos por ILIKE para que nos acepte minúsculas
 
+--22. Mostrar de los representantes su nombre y oficina donde trabajan. Si alguno de ellos no la tiene asignada, se ha de mostrar "Sin asignar".  
+--Utilizar cásting explícito de tipos de datos con cast (campo as text). Su uso es el siguiente: con la función coalesce, en lugar de poner el campo que contiene valores nulos, se ha de poner literalmente cast (campo as text), sustituyendo campo por el correspondiente.
 
---22. Mostrar de los representantes su nombre y oficina donde trabajan. Si alguno de ellos no la tiene asignada, se ha de mostrar "Sin asignar".  Utilizar cásting explícito de tipos de datos con cast (campo as text). Su uso es el siguiente: con la función coalesce, en lugar de poner el campo que contiene valores nulos, se ha de poner literalmente cast (campo as text), sustituyendo campo por el correspondiente.
-
-
+SELECT nombre, COALESCE(ofinum::text, 'Sin asignar') as oficina FROM repventa;
 
 --23. Mostrad los pedidos que tienen importe que oscilan entre 1000 y 2000 que han sido tomandos por los siguientes representantes: 105, 106 y 108. Ordena por codigo de representante ascendentemente y por importe descendentemente.
 
-
+SELECT * FROM pedido WHERE importe BETWEEN 1000 AND 2000 and repcod IN(105,106,108) ORDER BY repcod ASC, importe DESC;
 
 --24. Mostrad los clientes que fueron contactados por primera vez por los representantes 101, 102 y 106 (haced el ejercicio de las dos maneras posibles).
 
@@ -101,15 +102,16 @@ SELECT nombre, ventas, COALESCE(cuota::text, 'Desconocido') as cuota FROM repven
 
 --25. Mostrad el codigo de pedido, fecha, importe de los pedidos que fueron solicitados el año 1990 en los meses de enero, abril, julio y octubre (hacedlo de dos maneras posibles).
 
-
+SELECT pednum, fecha, importe FROM pedido WHERE (DATE_PART('year',fecha) = '1990') AND (DATE_PART('month',fecha) IN (01,04,07,10)) ;
 
 --26. Mostrar los directores de oficinas (evitando repeticiones).
 
-
+SELECT DISTINCT director FROM oficina;
 
 --27. Mostrad los pedidos de todos los clientes excepto el 2117, 2118 y cuyo importe es inferior a 1000, tomados en el mes de febrero. Mostrad numero pedido, importe, cliente y mes en que se ha hecho el pedido. Hacedlo de dos maneras posibles.
 
-
+SELECT pednum, importe, cliecod, DATE_PART('month',fecha) as fecha FROM pedido WHERE (cliecod NOT IN (2117,2118)) AND (importe < 1000) AND (DATE_PART('month',fecha) = 02);
 
 --28. Muestra un listado de pedidos que han solicitado una cantidad de producto superior al 75% de su stock.
 
+SELECT pednum, fecha, cliecod, repcod, pedido.fabcod, pedido.prodcod, cant, importe, exist FROM pedido JOIN producto ON pedido.prodcod = producto.prodcod WHERE cant > (0.75*exist);
