@@ -62,10 +62,10 @@ SELECT nombre, ventas, cuota FROM repventa WHERE ventas > cuota ORDER BY ventas,
 
 SELECT ciudad, region, ventas, objetivo, (round((((objetivo - ventas) / objetivo)*100),2) || '%') as porcentaje FROM oficina ORDER BY porcentaje DESC;
 
-
 --16 bis. Idem, pero si la cuota es desconocida, en el porcentaje ha de aparecer el siguiente texto: "Desconocido"
 
 SELECT nombre, ventas, COALESCE(cuota::text, 'Desconocido') as cuota FROM repventa;
+-- o SELECT nombre, ventas, COALESCE(cast(cuota as text), 'Desconocido') as cuota FROM repventa;
 
 --17. Mostrad para cada representante su nombre, su puesto, sus ventas, su cuota y la diferencia de las ventas respecto su cuota (podrá ser positiva o negativa). Ordenad por este último campo.
 
@@ -114,4 +114,4 @@ SELECT pednum, importe, cliecod, DATE_PART('month',fecha) as fecha FROM pedido W
 
 --28. Muestra un listado de pedidos que han solicitado una cantidad de producto superior al 75% de su stock.
 
-SELECT pednum, fecha, cliecod, repcod, pedido.fabcod, pedido.prodcod, cant, importe, exist FROM pedido JOIN producto ON pedido.prodcod = producto.prodcod WHERE cant > (0.75*exist);
+SELECT pedido.* FROM pedido JOIN producto ON pedido.prodcod = producto.prodcod WHERE cant > (0.75*exist);
