@@ -33,14 +33,33 @@
 	</item>
 	<item> 
 		<title>Mi página web otra vez 1</title> 
-		<link>file:///home/users/inf/inf/gmartinez/gmartinez/M04%20-%20LLenguatge%20de%20marques%20(XML)/M04%20-%20UF2%20(Ambits%20d'aplicaci%C3%B3%20de%20l'XML)/M04%20-%20UF2%20-%20NF1%20(Sindicaci%C3%B3%20RSS)/M04%20-%20UF2%20-%20NF1%20-%20practica%202/pag_web_amb_google_maps_i_rss.html</link> 
+		<link>file:///home/users/inf/wiam1/iam2671090/dam/m04/rss/M04%20-%20UF2%20-%20NF1%20-%20practica%202/noticia.html</link> 
 		<description>
 			<![CDATA[
 				<div>
-					Quina imatge més bonica! <img src="036fbd8d293f43844e7484601ba07839.png">
+					Quina imatge mes bonica! <img src="036fbd8d293f43844e7484601ba07839.png">
 				</div>
 			]]>
 		</description> 
-	</item>        
+	</item>
+	
+	<item>
+		<title>Ya tu saes</title>
+		<link>file:///home/users/inf/wiam1/iam2671090/dam/m04/rss/M04%20-%20UF2%20-%20NF1%20-%20practica%202/noticia.html</link>
+		<description>
+			<![CDATA[
+				<div>
+					<p>TITULO</p>
+					<!--<img src="file:///home/users/inf/wiam1/iam2671090/dam/m04/rss/M04%20-%20UF2%20-%20NF1%20-%20practica%202/museo.png" />-->
+					<video width="640" height="360" autoplay>
+						<source src="file:///home/users/inf/wiam1/iam2671090/dam/m04/rss/M04%20-%20UF2%20-%20NF1%20-%20practica%202/Extreme Low Flyover of Sukhoi SU-24 Fencer in Ukraine - YouTube [720p].mp4" type="video/mp4">
+					  Your browser does not support the video tag.
+				  	</video>
+				</div>
+			]]>
+		</description>
+
+
+	</item>
 </channel> 
 </rss> 
