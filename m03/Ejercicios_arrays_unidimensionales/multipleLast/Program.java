@@ -10,13 +10,10 @@ public class Program{
         int ultimo = nums[nums.length -1];
         int[] indices = new int[nums.length];
 
-        System.out.println(ultimo);
-
-        for (int i = 0; i < nums.length; i++){
+        for (int i = 0; i < nums.length - 1; i++){
             
             if (nums[i]%ultimo == 0){
                 contador++;
-                indices[i]
             }
         }
 
@@ -24,11 +21,11 @@ public class Program{
 
             System.out.println("No se han encontrado múltiples de " + ultimo);
 
-        } else {
+        }else {
 
             int[] multiples = new int[contador];
 
-            for (int i = 0; i < nums.length; i++){
+            for (int i = 0; i < nums.length-1; i++){
                 
                 if (nums[i]%ultimo == 0){
 
@@ -36,6 +33,9 @@ public class Program{
                     
                 }
             }
+
+            System.out.println("Lista de números múñtiples de "  + ultimo + ":");
+            System.out.println(Arrays.toString(multiples));
         }
 
 
