@@ -20,10 +20,12 @@ public class Program{
         for(int i = 0; i < nums.length; i++){
 
             if (nums[i]%2 == 0 && nums[i] > 50){
-                n[i] = nums[i];
+                n[contador] = nums[i];
                 contador++;
             }
         }
+
+        System.out.println(Arrays.toString(n));
 
 
     }
