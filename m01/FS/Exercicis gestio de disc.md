@@ -60,6 +60,7 @@ O si ho teniu en castellà (amb coma enlloc de punt):
 Mostreu ara un resum *humà*, o sigui el total ocupat al nostre directori. *104.2*
 
 ```
+# -s para obtener el espacio total del director
 [iam2671090@j05 ~]$ du -hs $HOME
 ```
 
@@ -72,11 +73,19 @@ sigui 1000), ja que hi ha alguns fabricants que ho fan d'aquesta manera,
 sistema internacional, i així ens poden *vendre* menys espai del que ens
 pensàvem ? *104.2*
 
+```
+df -H
+```
+
 ##### Exercici 9. 
 
 Si hi ha una caiguda de tensió i s'apaga/reinicia el S.O., hi ha alguna eina
 que ens ajudi a solucionar el possible problema d'inconsistència de dades? (Ens
 referim a que hi hagi dades que no s'hagi acabat d'escriure a disc)  *104.2*
+
+```
+fsck [disco]
+```
 
 ##### Exercici 10. 
 	
@@ -84,10 +93,22 @@ Suposem que volem que en arrencar el sistema es faci un xequeig automàtic
 d'una partició on tenim un sistema de fitxers *ext4* (per exemple a `/dev/sda6`).
 Com ho faràs? Recorda `man ordre/fitxer` *104.3*
 
+```
+# Forma manual (se puede poner en contrab)
+fsck /dev/sda6
+
+# Forma automática
+#Le ponemos una opción en el /etc/fstab, para que haga un checkeo al inicio
+/dev/sda6    /       ext4    defaults,[opción]        1 1
+
+```
+
 ##### Exercici 11. 
 
 De vegades intentem desmuntar un dispositiu i el sistema no en deixa perquè diu
 que el dispositiu està ocupat. Amb quina ordre podria saber quins són els
 fitxers oberts o quin procés té fitxers oberts? *104.3* 
 
-
+```
+lsof /dev/sdb
+```
