@@ -8,11 +8,18 @@ public class ProgramTUI{
 
         float aux = 0;
         boolean salir = false;
-        boolean arreglado = false;
+        int cont = 0;
 
         while(salir == false){
 
+            cont = 0;
+
             for(int i = 0; i < nums.length -1; i++){
+                /*
+                System.out.println(Arrays.toString(nums));
+                System.out.println("valor de i: " + nums[i]);
+                System.out.println("valor de i + 1: " + nums[i + 1]);
+                System.out.println("");*/
 
                 if (nums[i] > nums[i + 1]){
 
@@ -20,15 +27,17 @@ public class ProgramTUI{
                     nums[i] = nums[i + 1];
                     nums[i + 1] = aux;
 
-                    arreglado = false;
 
                 } else {
-                    arreglado = true;
+                    cont++;
                 }
+
+
+
             }
 
             //Condición de salida
-            if (arreglado == true){
+            if (cont >= nums.length - 1){
                 salir = true;
             }
         
@@ -52,7 +61,13 @@ public class ProgramTUI{
             numeros[i] = teclado.nextFloat();
         }
 
+        System.out.println("");//Salto de línea
+        System.out.println("Array introducido: ");
+
         System.out.println(Arrays.toString(numeros));
+
+        System.out.println("");//Salto de línea
+        System.out.println("Array ordenado: ");
         bubbleSort(numeros);
 
 
