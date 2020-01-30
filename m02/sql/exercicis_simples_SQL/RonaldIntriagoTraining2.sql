@@ -8,27 +8,27 @@ SELECT rep1.repcod, rep1.nombre as representante, rep2. repcod, rep2.nombre as d
 
 --3. Mostrar todos los representantes (incluyendo los que no tienen asignada una oficina). Nombre del representante, puesto, ventas, código de oficina y ciudad.
 
-
+SELECT repventa.nombre, repventa.puesto, repventa.ventas, repventa.ofinum, oficina.ciudad FROM repventa LEFT JOIN oficina ON (repventa.ofinum = oficina.ofinum);
 
 --4. Como la 2 pero mostrando todos los representantes.
 
-
+SELECT rep1.repcod, rep1.nombre as representante  FROM repventa as rep1 LEFT JOIN repventa as rep2 ON rep1.jefe = rep2.repcod;
 
 --5. Obtener una lista de los pedidos con importes superiores a 150 euros, mostrando el código del pedido, el importe, el nombre del cliente que lo solicitó, el nombre del representante que contactó con él por primera vez y la ciudad de la oficina donde el representante trabaja.
 
-
+SELECT pednum, importe, cliente.nombre as cliente, repventa.nombre as Representante, oficina.ciudad FROM pedido inner JOIN cliente on cliente.cliecod = pedido.cliecod inner JOIN repventa on repventa.repcod = pedido.repcod inner JOIN oficina on repventa.ofinum = oficina.ofinum where pedido.importe > 150 order by pednum;
 
 --6. Lista los pedidos tomados durante el mes de octubre del año 1989 (any modificat perquè surti algun resultat) , mostrando solamente el número del pedido, su importe, el nombre del cliente que lo realizó, la fecha y la descripción del producto solicitado.
 
+SELECT pednum, importe, cliente.nombre as cliente, fecha, producto.descrip FROM pedido inner JOIN cliente on cliente.cliecod = pedido.cliecod inner JOIN producto on producto.prodcod = pedido.prodcod where fecha between '1989-10-01' and '1989-10-31';
 
-
---7. Obtener una lista de todos los pedidos tomados por representantes de oficinas de la región Este, mostrando solamente el número del pedido, la descripción del producto, nombre del representante que lo tomó y la región de su oficina. (Afegeixo al select el camp region perquè es vegi be i ordeno per representant).
+--7. Obtener una lista de todos los pedidos tomados por representantes de oficinas de la región Este, mostrando solamente el número del pedido, la descripción del producto, nombre del representante que lo tomó y la región de su oficina. (Afegeixo al SELECT el camp region perquè es vegi be i ordeno per representant).
 
 SELECT pednum, descrip, nombre, region FROM pedido as pe JOIN producto as pr ON pr.prodcod = pe.prodcod JOIN repventa as re ON re.repcod = pe.repcod JOIN oficina as of ON of.ofinum = re.ofinum WHERE region = 'Este' ORDER BY nombre;
 
 --8. Obtener una lista con parejas de representantes y oficinas en donde la cuota del representante es mayor o igual que el objetivo de la oficina, sea o no la oficina en la que trabaja. Mostrar Nombre del representante, cuota del mismo, Ciudad de la oficina, objetivo de la misma.
 
-SELECT nombre, cuota, ciudad, objetivo FROM repventa as re JOIN oficina as of ON of.ofinum = re.ofinum WHERE cuota > objetivo;
+SELECT nombre, cuota, ciudad, objetivo FROM repventa as re JOIN oficina as of ON of.ofinum = re.ofinum WHERE cuota >= objetivo;
 
 --9. Muestra el nombre, las ventas y la ciudad de la oficina de cada representante de la empresa (cal tenir en compte que hi ha algun representant que no té oficina)
 
@@ -40,7 +40,7 @@ SELECT descrip FROM pedido as pe LEFT JOIN producto as pr ON pr.prodcod = pe.pro
 
 --11. Lista los nombres de los representantes que tienen una cuota superior a la de su director de oficina. (Mostrar nombre representante, cuota, nombre director y cuota del mismo)
 
-SELECT rep1.nombre as representante, rep1.cuota, rep2.nombre as director, rep2.cuota FROM repventa as rep1 JOIN repventa as rep2 ON rep1.jefe = rep2.repcod WHERE rep1.cuota > rep2.cuota;
+SELECT rep1.nombre as representante, rep1.cuota, rep2.nombre as director, rep2.cuota FROM repventa as rep1 JOIN oficina as of ON of.ofinum = rep1.ofinum JOIN repventa as rep2 ON rep2.repcod = of.director WHERE rep1.cuota > rep2.cuota;
 
 --12. Obtener una lista de los representantes que trabajan en una oficina distinta de la oficina en la que trabaja su JEFE (enunciat modificat perquè sigui algo diferent a l’anterior), mostrando también el nombre del director y el código de la oficina donde trabaja cada uno de ellos.
 
@@ -56,4 +56,4 @@ SELECT DISTINCT rep2.* FROM repventa as rep1 JOIN repventa as rep2 ON rep1.jefe 
 
 --15. Obtener los pedidos tomados en los mismos días en que un nuevo representante fue contratado. Mostrar número de pedido, importe, fecha pedido (y fecha de contrato)
 
-
+SELECT pednum, importe, fecha, fcontrato FROM pedido as pe JOIN repventa as re ON pe.repcod = re.repcod WHERE fecha IN (SELECT fcontrato FROM repventa);
