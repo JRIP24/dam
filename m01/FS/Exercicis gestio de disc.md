@@ -1,4 +1,17 @@
+# COMANDOS
+### `du`
+#### Que es? 
+Un comando para ver el uso del disco, nos muestra el peso y los archivos dentro del direcctorio
 
+#### Opciones
+`-h` Human readable, para que los humanos entiendan la salida
+`-s` Sumary, muestra el peso de la carpeta actual
+`-s` Sumary, muestra el peso de la carpeta actual
+
+Se puesde combinar con `| sort, grep`
+Si se pone `-h` al du, se tiene que poner `-h` al sort también, ya que puede haber fallos
+
+`-----------------------------------------------------------------------------------------------------------`
 ### Exercicis del LPI 104.2-104.3
 
 *Busqueu als enllaços corresponents que teniu al moodle les respostes a les següents preguntes:*
@@ -112,3 +125,4 @@ fitxers oberts o quin procés té fitxers oberts? *104.3*
 ```
 lsof /dev/sdb
 ```
+
