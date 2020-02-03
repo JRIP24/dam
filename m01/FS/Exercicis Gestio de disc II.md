@@ -26,7 +26,11 @@ Suposem que un *cracker* aconseguís entrar al nostre sistema amb un compte dife
 
 a) Té permís per fer `ls /home`?
 
+No
+
 b) Té permís per fer `cd /home/zoe` i un `ls` dintre?
+
+
 
 c) Té permís *lmessi* que és un altre usuari (membre de *users*) per fer `cd /home/zoe`, després `ls` i per últim `rm afile`?
 
