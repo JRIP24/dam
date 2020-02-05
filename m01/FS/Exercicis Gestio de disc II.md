@@ -30,11 +30,15 @@ No
 
 b) Té permís per fer `cd /home/zoe` i un `ls` dintre?
 
-
+Puede hacer `cd` pero no `ls`
 
 c) Té permís *lmessi* que és un altre usuari (membre de *users*) per fer `cd /home/zoe`, després `ls` i per últim `rm afile`?
 
+Puede hacer `cd, ls` pero no `rm`
+
 d) Té permís *lmessi* per fer `cd /home/zoe` i després `cd dir`?
+
+Puede hacer `cd /home/zoe` pero no `cd dir`
 
 ##### Exercici 2
 
@@ -43,6 +47,10 @@ Quina ordre aconseguirà que els permisos que tenim al directori `/tmp/pep` i a 
 ```
 rwxrw-r--
 ```
+
+
+`chmod -R 764 /tm/pep`
+
 ##### Exercici 3
 
 Suposem que un profe vol crear un directori a `/tmp/exercicis/` a on els
@@ -54,13 +62,16 @@ i aquest directori `/tmp/exercicis/` i feu proves.
 
 #### *Modes d’accés*
 
+`chmod o+t /tmp/exercicis`
+
+
 ##### Exercici 4
 
 Quina diferència hi ha entre aquestes dues línies:?
 
 ```
-drwxrwxrwt
-drwxrwxrwT
+drwxrwxrwt --> Tiene permisos de ejecución
+drwxrwxrwT --> No tiene permisos de ejecución
 ```
 
 ##### Exercici 5 
@@ -107,20 +118,27 @@ drwxr-xr-x
 
 Quina és la màscara (és a dir, el valor que ens mostraria l'ordre `umask`)?
 
+`022`
+
 #### *Canvi de propietari i de grup*
 
 ##### Exercici 8
 
 Hem creat un fitxer regular. Mirem el propietari i el grup. Volem que pertanyi a l'usuari *usuari1* i grup *usuaris*. Amb quina ordre ho aconseguiries? Comprova-ho.
 
+`chmown usuari1:usuaris regular`
+
 ##### Exercici 9
 
 I si volem canviar de nou només el propietari a *usuari2*?
+
+`chmown usuari2 regular`
 
 ##### Exercici 10
 
 Ara el volem canviar només de grup, al grup principal de l’*usuari2*.
 
+`chgrp usuari2 regular`
 
 #### *Enllaços durs i simbòlics (104.6)*
 
