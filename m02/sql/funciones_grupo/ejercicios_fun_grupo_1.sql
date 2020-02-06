@@ -56,9 +56,16 @@ SELECT COUNT(pednum) FROM pedido WHERE importe > 25000;
 
 -- 4.21- Quina és l'import promig de les comandes de cada venedor?
 
+SELECT repcod, ROUND(AVG(importe), 2) as importe from pedido GROUP BY repcod;
+
 -- 4.22- Quin és el rang (màxim i mínim) de quotes dels venedors per cada oficina?
 
+
+
 -- 4.23- Quants venedors estan asignats a cada oficina?
+
+
+
 
 
 -- 4.24- Per cada venedor calcular quants clients diferents ha atès (ha fet comandes)?
