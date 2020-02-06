@@ -10,6 +10,7 @@ public class Program{
         boolean salir = false;
         boolean encontrado = false;
         int medio = 0;
+        int vueltas = 0;
 
         while(salir == false){
 
@@ -32,11 +33,15 @@ public class Program{
                 encontrado = true;
             }
 
-            if (encontrado == true || medio <= 0 ){
+            vueltas++;
+
+            if (encontrado == true || vueltas >= nums.length){
                 salir = true;
             }    
 
+
         }
+
 
         if (encontrado == true){
             System.out.println("Se ha encontrado el número introducido");
