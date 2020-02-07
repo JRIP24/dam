@@ -1,0 +1,60 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    padding: 0;
+}
+
+h1{
+    background-color:rgb(199, 195, 195);
+    text-align: center;
+}
+
+a{
+    display: block;
+    text-align: center;
+}
+
+.autor{
+    color: blue;
+}
+
+
+table{
+    margin: auto;
+    border: 1px solid black;
+}
+
+.fecha{
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+
+.vel_baja{
+    color: green;
+    border-color: green;
+}
+
+
+.vel_alta{
+    color: red;
+    border-color: red;
+    font-weight: bold;
+}
+
+.preci_vent{
+    background-color: yellow;
+    font-weight: normal;
+}
+
+th{
+    text-align: center;
+    background-color:rgb(199, 195, 195);
+}
+
+th, td{
+    border: 1px solid black;
+}

@@ -20,7 +20,7 @@ public class Program{
 
         Arrays.sort(numeros);
 
-        System.out.println("La suma de los números introducidos es: " + numeros[6-1]);//El número máximo menos 1, ya que se comienza a contar por 0
+        System.out.println("El número mayor es: " + numeros[numeros.length - 1]);//El número máximo menos 1, ya que se comienza a contar por 0
 
 
 
