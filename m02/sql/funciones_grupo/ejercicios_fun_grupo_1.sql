@@ -94,7 +94,7 @@ HAVING COUNT(rep.ofinum) >= 2;
 
 SELECT of.ciudad, SUM(cuota) as cuota_total, SUM(rep.ventas) as ventas_totales
 FROM repventa as rep
-JOIN oficina as of ON rep.ofinum = of. ofinum
+JOIN oficina as of ON rep.ofinum = of.ofinum
 GROUP BY of.ciudad
 HAVING COUNT(rep.ofinum) >= 2;
 
