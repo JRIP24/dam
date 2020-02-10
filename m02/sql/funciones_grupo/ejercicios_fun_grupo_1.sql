@@ -60,11 +60,11 @@ SELECT repcod, ROUND(AVG(importe), 2) as importe from pedido GROUP BY repcod;
 
 -- 4.22- Quin és el rang (màxim i mínim) de quotes dels venedors per cada oficina?
 
-
+SELECT MIN(cuota) as cuota_minima, MAX(cuota) as cuota_maxima, ofinum from repventa GROUP BY ofinum;
 
 -- 4.23- Quants venedors estan asignats a cada oficina?
 
-
+SELECT COUNT(repcod) as vendedores, ofinum FROM repventa GROUP BY ofinum;
 
 
 
@@ -80,9 +80,27 @@ SELECT repcod, ROUND(AVG(importe), 2) as importe from pedido GROUP BY repcod;
 
 -- 4.28- Quin és l'import promig de les comandes per cada venedor que les seves comandes sumen més de 30000? Mostreu el codi del venedor i el promig de les comandes.
 
+SELECT repcod, ROUND(AVG(importe),2) FROM pedido GROUP BY repcod HAVING SUM(importe) > 30000;
+
 -- 4.29- Per cada oficina amb dos o més empleats, calcular la quota total i les vendes totals per a tots els venedors que treballen a la oficina (volem que mostrar la ciutat de l'oficina a la consulta)
 
+SELECT rep.ofinum, of.ciudad, SUM(cuota) as cuota_total, SUM(rep.ventas) as ventas_totales
+FROM repventa as rep
+JOIN oficina as of ON rep.ofinum = of. ofinum
+GROUP BY rep.ofinum, ciudad
+HAVING COUNT(rep.ofinum) >= 2;
+
+--También sirve
+
+SELECT of.ciudad, SUM(cuota) as cuota_total, SUM(rep.ventas) as ventas_totales
+FROM repventa as rep
+JOIN oficina as of ON rep.ofinum = of. ofinum
+GROUP BY of.ciudad
+HAVING COUNT(rep.ofinum) >= 2;
+
 -- 4.30- Mostra el preu, les existències i la quantitat total de les comandes de cada producte per als quals la quantitat total demanada està per sobre del 75% de les existències.
+
+
 
 -- 4.31- Es desitja un llistat d'identificadors de fabricants de productes. Només volem tenir en compte els productes de preu superior a 54. Només volem que apareguin els fabricants amb un nombre total d'unitats superior a 300.
 
