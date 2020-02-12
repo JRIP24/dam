@@ -99,6 +99,15 @@ HAVING COUNT(rep.ofinum) >= 2;
 
 -- 4.30- Mostra el preu, les existències i la quantitat total de les comandes de cada producte per als quals la quantitat total demanada està per sobre del 75% de les existències.
 
+SELECT prodcod, precio, exist FROM producto;
+
+
+
+
+
+
+
+
 
 
 -- 4.31- Es desitja un llistat d'identificadors de fabricants de productes. Només volem tenir en compte els productes de preu superior a 54. Només volem que apareguin els fabricants amb un nombre total d'unitats superior a 300.
