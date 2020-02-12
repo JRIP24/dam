@@ -39,7 +39,13 @@ WHERE ofinum IN (SELECT ofinum
 
 --5. Obtener una lista de los representantes que no trabajan en las oficinas dirigidas por Larry Fitch.
 
-
+SELECT * 
+FROM repventa 
+WHERE ofinum NOT IN (SELECT ofinum 
+                     FROM oficina 
+                     WHERE director = (SELECT repcod 
+                                       FROM repventa 
+                                       WHERE nombre = 'Larry Fitch'));
 
 --6. Obtener una lista de todos los clientes que han solicitado pedidos del fabricante ACI entre enero y junio de 2003.
 
