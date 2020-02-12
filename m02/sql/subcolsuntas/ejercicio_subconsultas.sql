@@ -35,7 +35,7 @@ SELECT *
 FROM repventa 
 WHERE ofinum IN (SELECT ofinum 
                  FROM oficina 
-                 WHERE objetivo > ventas);
+                 WHERE ventas > objetivo);
 
 --5. Obtener una lista de los representantes que no trabajan en las oficinas dirigidas por Larry Fitch.
 
@@ -49,14 +49,30 @@ WHERE ofinum NOT IN (SELECT ofinum
 
 --6. Obtener una lista de todos los clientes que han solicitado pedidos del fabricante ACI entre enero y junio de 2003.
 
-
+SELECT * 
+FROM cliente 
+WHERE cliecod IN (SELECT cliecod 
+                  FROM pedido 
+                  WHERE fabcod = 'aci' AND fecha BETWEEN '2003-01-01' AND '2003-06-30');
 
 --7. Obtener una lista de los productos de los que se ha tomado un pedido de 150 euros ó mas.
 
-
+SELECT * 
+FROM producto 
+WHERE prodcod IN (SELECT prodcod 
+                  FROM pedido 
+                  WHERE importe >= 150);
 
 --8. Obtener una lista de los clientes contactados por Sue Smith que no han solicitado pedidos con importes superiores a 18 euros.
 
+SELECT * 
+FROM cliente 
+WHERE repcod = (SELECT repcod 
+                FROM repventa 
+                WHERE nombre = 'Sue Smith') 
+      AND cliecod NOT IN (SELECT cliecod 
+                          FROM pedido 
+                          WHERE importe >= 18);
 
 
 --9. Obtener una lista de las oficinas en donde haya algún representante cuya cuota sea más del 55% del objetivo de la oficina.
