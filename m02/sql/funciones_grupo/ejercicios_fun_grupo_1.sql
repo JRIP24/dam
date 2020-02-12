@@ -67,7 +67,6 @@ SELECT MIN(cuota) as cuota_minima, MAX(cuota) as cuota_maxima, ofinum from repve
 SELECT COUNT(repcod) as vendedores, ofinum FROM repventa GROUP BY ofinum;
 
 
-
 -- 4.24- Per cada venedor calcular quants clients diferents ha atès (ha fet comandes)?
 
 -- 4.25- Calcula el total dels imports de les comandes fetes per cada client a cada vendedor.
