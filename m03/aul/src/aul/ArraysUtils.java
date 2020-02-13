@@ -85,20 +85,20 @@ public class ArraysUtils {
 		return resultado;
     }
 
-    static boolean sorted(double [] a){
+    static boolean sorted(double[] a){
         
         boolean ordenat = true;
         int index = 1;
         double valor = a[0];
         if(a.length > 1){
-            while(a[index] >= valor && index < a.length -1){
+            while((a[index] >= valor) && (index <= a.length -1)){
 
                 valor = a[index];
                 index++;
             }
         }
 
-        ordenar = (index == a.length);
+        ordenat = (index == a.length);
         return ordenat;
 
     }
@@ -132,7 +132,7 @@ public class ArraysUtils {
 
             }
 
-            return - 1;
+            return -1;
         } else {
             return -2;
         }

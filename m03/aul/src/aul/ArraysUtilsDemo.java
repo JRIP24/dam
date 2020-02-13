@@ -17,12 +17,12 @@ public class ArraysUtilsDemo {
      */
     public static void main (String[] args) {
 
-        double[] array = {5.0, 5.5, 6.6, 8.5, 9.0, 10.0};
+        double[] array = {5.0, 5.5, 6.0, 8.5, 9.0, 10.0};
         System.out.println("ARRAYS UTILS LIBRARY DEMO");
         System.out.println("================================");
         System.out.println("ArraysUtils.create() : " + ArraysUtils.toString(ArraysUtils.create(15)));
         System.out.println("ArraysUtils.binarySearch() : " + ArraysUtils.binarySearch(array, 9.0));
-
+        System.out.println("ArraysUtils.sort() : " + ArraysUtils.sorted(array));
 
     }
 
