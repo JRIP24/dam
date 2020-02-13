@@ -25,7 +25,7 @@ WHERE repcod = (SELECT repcod
 
 SELECT * 
 FROM producto 
-WHERE fabcod = 'aci' and exist > (SELECT exist 
+WHERE upper(fabcod) = 'ACI' and exist > (SELECT exist 
                                   FROM producto 
                                   WHERE fabcod = 'aci' and prodcod = '41004');
 
@@ -72,16 +72,33 @@ WHERE repcod = (SELECT repcod
                 WHERE nombre = 'Sue Smith') 
       AND cliecod NOT IN (SELECT cliecod 
                           FROM pedido 
-                          WHERE importe >= 18);
+                          WHERE importe > 18);
 
 
 --9. Obtener una lista de las oficinas en donde haya algún representante cuya cuota sea más del 55% del objetivo de la oficina.
 
+SELECT * 
+FROM oficina as of1 
+WHERE ofinum IN (SELECT ofinum 
+                 FROM repventa 
+                 WHERE cuota > ((of1.objetivo * 55) / 100));
 
 --10. Obtener una lista de los representantes que han tomado algún pedido cuyo importe sea más del 10% de de su cuota.
 
+ SELECT * 
+ FROM repventa as rep 
+ WHERE repcod IN (SELECT repcod 
+                  FROM pedido 
+                  WHERE importe > ((rep.cuota * 10)/100));
 
 --11. Obtener una lista de las oficinas en las cuales el total de ventas de sus representantes han alcanzado un importe de ventas que supera el 50% del objetivo de la oficina. Mostrar también el objetivo de cada oficina (suponed que el campo ventas de oficina no existe).
+
+SELECT * 
+FROM oficina as of
+WHERE ofinum IN (SELECT ofinum 
+                 FROM repventa 
+                 WHERE ((of.objetivo * 50) / 100) < (SELECT SUM(ventas) 
+                                                     FROM repventa ));
 
 
 --12. Mostrar el nombre y ventas del representante/s contratado más recientemente.
@@ -113,3 +130,8 @@ WHERE repcod = (SELECT repcod
 
 
 --18. Clientes que nunca han hecho un pedido
+
+SELECT * 
+FROM cliente 
+WHERE cliecod NOT IN (SELECT cliecod 
+                      FROM pedido);

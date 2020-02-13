@@ -21,6 +21,11 @@
             <p>Dades per a: <span class="autor"><xsl:value-of select="root/nombre"/> - <xsl:value-of select="root/provincia"/></span></p>
 
             <table>
+                    <tr class="imagen">
+                        <td colspan="3">
+                            <img src="aemet.jpg" />
+                        </td>
+                    </tr>
                     <xsl:for-each select="root/prediccion/dia">
                     <xsl:sort select="@fecha" />
                         <tr>
