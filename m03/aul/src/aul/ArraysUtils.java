@@ -7,8 +7,6 @@
 
 package aul;
 
-import org.omg.CORBA.portable.ValueOutputStream;
-
 /**
  * Library with utilities for working with arrays.
  */
@@ -88,17 +86,27 @@ public class ArraysUtils {
     static boolean sorted(double[] a){
         
         boolean ordenat = true;
-        int index = 1;
-        double valor = a[0];
+        int index = 0;
         if(a.length > 1){
-            while((a[index] >= valor) && (index <= a.length -1)){
 
-                valor = a[index];
+            boolean salir = false;
+            while(salir == false){
+
+                if(a[index] > a[index + 1]){
+                    ordenat = false;
+                }
+
+
+                //Incremento
                 index++;
+
+                //Condición de salida
+                if(ordenat == false || index >= a.length -1){
+                    salir = true;
+                }
             }
         }
 
-        ordenat = (index == a.length);
         return ordenat;
 
     }
@@ -107,35 +115,49 @@ public class ArraysUtils {
     static int binarySearch(double[] a, double key){
 
         if (sorted(a)){
-            int l = 0;
-            int r = a.length -1;
 
-            while(l <= r){
+            int mayor = a.length -1;
+            int menor = 0;
+            boolean salir = false;
+            boolean encontrado = false;
+            int medio = 0;
+            int vueltas = 0;
 
-                int m = l + (l-r) / 2;
+            while(salir == false){
 
-                //Valor exacte
-                if (a[m] == key){
-                    return m;
+                medio = (menor + mayor) / 2;
+
+                if (key > a[medio]){
+                    
+                    menor = medio + 1;
+
+                } else if (key < a[medio]) {
+                    mayor = medio - 1;
+
+                } else {
+                    encontrado = true;
                 }
 
-                //m < key
-                
-                if (a[m] < key){
-                    l = m +1 ;
-                }
+                vueltas++;
 
-                //m < key
-                if (a[m] < key){
-                    r = m - 1;
-                }
-
+                if (encontrado == true || vueltas >= a.length){
+                    salir = true;
+                }    
             }
 
-            return -1;
-        } else {
-            return -2;
+
+            if (encontrado == true){
+                return medio;
+            }
+            else {
+                return -1;
+            }
+
+
         }
+        return -2;
+
+
     }
 
 }

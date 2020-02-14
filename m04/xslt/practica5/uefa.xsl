@@ -6,7 +6,7 @@
 
 <html>
         <head>
-            <title>Uefa</title> 
+            <title>practica 5</title> 
             <style>
 
                 *{
