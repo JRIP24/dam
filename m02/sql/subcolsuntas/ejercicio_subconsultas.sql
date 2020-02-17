@@ -103,20 +103,45 @@ WHERE ofinum IN (SELECT ofinum
 
 --12. Mostrar el nombre y ventas del representante/s contratado más recientemente.
 
+SELECT nombre, ventas
+FROM repventa 
+WHERE fcontrato = (SELECT MAX(fcontrato) 
+                   FROM repventa);
 
 --13.1 Mostrar el director de la oficina que vende más.
 
+SELECT * 
+FROM repventa 
+WHERE repcod = (SELECT director 
+                FROM oficina 
+                WHERE ventas = (SELECT MAX(ventas) 
+                                FROM oficina));
 
 --13.2 Mostrar el director que vende más.
 
+SELECT * 
+FROM repventa 
+WHERE repcod = (SELECT repcod 
+                FROM repventa 
+                WHERE ventas = (SELECT MAX(ventas) 
+                                FROM repventa));
 
 --14. Lista de representantes que nunca han realizado un pedido (el campo ventas no lo tengais en cuenta).
 
+SELECT * 
+FROM repventa 
+WHERE repcod NOT IN (SELECT repcod 
+                      FROM pedido);
 
 --15 Lista de productos que nunca han sido solicitados.
 
+SELECT * 
+FROM producto 
+WHERE prodcod NOT IN (SELECT prodcod 
+                      FROM pedido);
 
 --16.1. Mostrar por cliente, su gasto en la empresa (funcion de grupo). Mostar nombre y el montante de la facturacion, ordenado de mejor a peor cliente (no subconsulta).
+
 
 
 --16.2 Mostrar los 10 mejores clientes (no subconsulta).
@@ -128,6 +153,9 @@ WHERE ofinum IN (SELECT ofinum
 --17. Mostrar por cada oficina cuál és su representante estrella (el que vende más). Mostrar código de oficina, ciudad, Nombre del representan
 
 
+--Agrupar primero por oficinas
+--SELECT of.ofinum, ciudad, (SELECT nombre FROM repventa WHERE ventas = (SELECT MAX(ventas) FROM repventa) AND ofinum = of.ofinum)
+--FROM oficina as of;
 
 --18. Clientes que nunca han hecho un pedido
 
