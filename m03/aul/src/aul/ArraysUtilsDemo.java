@@ -18,12 +18,18 @@ public class ArraysUtilsDemo {
     public static void main (String[] args) {
 
         double[] array = {5.0, 5.5, 6.0, 8.5, 10.0};
+        double[] array2 = {5.0, 5.2, 95.3,60.4};
+
 
         System.out.println("ARRAYS UTILS LIBRARY DEMO");
         System.out.println("================================");
         System.out.println("ArraysUtils.create() : " + ArraysUtils.toString(ArraysUtils.create(15)));
         System.out.println("ArraysUtils.sort() : " + ArraysUtils.sorted(array));
         System.out.println("ArraysUtils.binarySearch() : " + ArraysUtils.binarySearch(array, 6.0));
+        //System.out.println("ArraysUtils.union() : " + ArraysUtils.toString(ArraysUtils.union(array,array2)));
+        System.out.println("ArraysUtils.union() : " + ArraysUtils.toString(array));
+        System.out.println("ArraysUtils.insery() : " + ArraysUtils.toString(ArraysUtils.insert(array,2,3.3)));
+
 
     }
 

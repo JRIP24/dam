@@ -160,4 +160,42 @@ public class ArraysUtils {
 
     }
 
+    //Returns an array with all elements of a and, after them, all elements of b.
+    static double[] union(double[] a, double[] b){
+        
+        double[] c = new double[a.length + b.length];
+
+        //Rellenamos la primera parte del array
+        for (int i = 0; i < a.length; i++) {
+            
+            c[i] = a[i];
+        }
+
+        int contador = a.length;
+        for (int i = 0; i < b.length; i++) {
+            
+            c[contador] = b[i];
+            contador++;
+
+        }
+
+        return c;
+    }
+
+
+    static double[] insert(double[] a, int index, double value){
+
+        double[] c = a;
+        c[index] = value;
+
+        return c;
+    }
+
+
+	
+
+
+
+
+
 }
