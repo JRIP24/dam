@@ -23,13 +23,16 @@ public class ArraysUtilsDemo {
 
         System.out.println("ARRAYS UTILS LIBRARY DEMO");
         System.out.println("================================");
-        System.out.println("ArraysUtils.create() : " + ArraysUtils.toString(ArraysUtils.create(15)));
-        System.out.println("ArraysUtils.sort() : " + ArraysUtils.sorted(array));
-        System.out.println("ArraysUtils.binarySearch() : " + ArraysUtils.binarySearch(array, 6.0));
-        //System.out.println("ArraysUtils.union() : " + ArraysUtils.toString(ArraysUtils.union(array,array2)));
-        System.out.println("ArraysUtils.union() : " + ArraysUtils.toString(array));
-        System.out.println("ArraysUtils.insery() : " + ArraysUtils.toString(ArraysUtils.insert(array,2,3.3)));
 
+        /*System.out.println("ArraysUtils.create() : " + ArraysUtils.toString(ArraysUtils.create(15)));
+        System.out.println("ArraysUtils.sort() : " + ArraysUtils.sorted(array));
+        System.out.println("ArraysUtils.binarySearch() : " + ArraysUtils.binarySearch(array, 10.0));
+        System.out.println("ArraysUtils.union() : " + ArraysUtils.toString(ArraysUtils.union(array,array2)));
+        System.out.println("ArraysUtils.insert() : " + ArraysUtils.toString(ArraysUtils.insert(array,2,3.3)));*/
+
+        //System.out.println("ArraysUtils.insert() : " + ArraysUtils.toString(ArraysUtils.insert(array,2,3.3)));
+
+        
 
     }
 

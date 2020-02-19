@@ -28,7 +28,9 @@ public class ArraysUtils {
 
         for (int i = 0; i < a.length; i++) {
             
-            result += "";
+            if (i != 0){
+                result += ", ";
+            }
             result += String.valueOf(a[i]);
         }
 
@@ -187,7 +189,6 @@ public class ArraysUtils {
 
         double[] c = a;
         c[index] = value;
-
         return c;
     }
 
