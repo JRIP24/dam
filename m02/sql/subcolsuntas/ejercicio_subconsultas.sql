@@ -147,6 +147,7 @@ WHERE prodcod NOT IN (SELECT prodcod
 --16.2 Mostrar los 10 mejores clientes (no subconsulta).
 
 
+
 --16.3 Clientes que gastan más de la media.
 
 
