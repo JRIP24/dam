@@ -124,7 +124,9 @@ FROM repventa
 WHERE repcod = (SELECT repcod 
                 FROM repventa 
                 WHERE ventas = (SELECT MAX(ventas) 
-                                FROM repventa));
+                                FROM repventa 
+                                WHERE repcod IN (SELECT director 
+                                                 FROM oficina)));
 
 --14. Lista de representantes que nunca han realizado un pedido (el campo ventas no lo tengais en cuenta).
 
@@ -142,21 +144,45 @@ WHERE prodcod NOT IN (SELECT prodcod
 
 --16.1. Mostrar por cliente, su gasto en la empresa (funcion de grupo). Mostar nombre y el montante de la facturacion, ordenado de mejor a peor cliente (no subconsulta).
 
-
+SELECT cli.cliecod, nombre, SUM(ped.importe) as "montante_facturación"
+FROM cliente as cli
+JOIN pedido as ped ON (cli.cliecod = ped.cliecod)
+GROUP BY cli.cliecod 
+ORDER BY montante_facturación DESC;
 
 --16.2 Mostrar los 10 mejores clientes (no subconsulta).
 
-
+--Se considera mejor cliente, aquel que más ha gastado en la empresa
+SELECT cli.cliecod, nombre, SUM(ped.importe) as "gasto"
+FROM cliente as cli
+JOIN pedido as ped ON (cli.cliecod = ped.cliecod)
+GROUP BY cli.cliecod 
+ORDER BY gasto DESC
+LIMIT 10;
 
 --16.3 Clientes que gastan más de la media.
 
+SELECT cli.cliecod, nombre, SUM(ped.importe) as "gasto"
+FROM cliente as cli
+JOIN pedido as ped ON (cli.cliecod = ped.cliecod)
+WHERE (SELECT SUM(importe) 
+       FROM pedido 
+       WHERE cliecod = cli.cliecod ) > (SELECT AVG(importe) 
+                                        FROM pedido)
+GROUP BY cli.cliecod 
+ORDER BY gasto DESC;
 
 --17. Mostrar por cada oficina cuál és su representante estrella (el que vende más). Mostrar código de oficina, ciudad, Nombre del representan
 
 
---Agrupar primero por oficinas
---SELECT of.ofinum, ciudad, (SELECT nombre FROM repventa WHERE ventas = (SELECT MAX(ventas) FROM repventa) AND ofinum = of.ofinum)
---FROM oficina as of;
+SELECT of.ofinum, ciudad, nombre
+FROM oficina as of 
+JOIN repventa as rep ON (rep.ofinum = of.ofinum)
+WHERE rep.repcod IN (SELECT repcod
+                    FROM repventa 
+                    WHERE ventas = (SELECT MAX(ventas) 
+                                    FROM repventa 
+                                    WHERE ofinum = of.ofinum));
 
 --18. Clientes que nunca han hecho un pedido
 
