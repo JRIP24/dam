@@ -193,6 +193,17 @@ public class ArraysUtils {
     }
 
 
+    //Returns an array with the same elements of a but without value in index.
+    static double[] remove(double[] a, int index){
+        
+        double[] c = a;
+        c[index] = 0;
+        return c;
+
+    }
+	
+
+
 	
 
 
