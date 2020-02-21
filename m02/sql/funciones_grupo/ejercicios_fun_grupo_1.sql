@@ -99,20 +99,24 @@ HAVING COUNT(rep.ofinum) >= 2;
 
 -- 4.30- Mostra el preu, les existències i la quantitat total de les comandes de cada producte per als quals la quantitat total demanada està per sobre del 75% de les existències.
 
-SELECT prodcod, precio, exist FROM producto;
-
-
-
-
-
-
-
-
+SELECT pro.prodcod, precio, exist, SUM(pe.cant)
+FROM producto as pro 
+JOIN pedido as pe ON (pe.prodcod = pro.prodcod) 
+GROUP BY pro.prodcod, precio, exist 
+HAVING(SUM(pe.cant) > (75*exist)/100);
 
 
 -- 4.31- Es desitja un llistat d'identificadors de fabricants de productes. Només volem tenir en compte els productes de preu superior a 54. Només volem que apareguin els fabricants amb un nombre total d'unitats superior a 300.
 
+SELECT fabcod 
+FROM producto 
+WHERE precio > 54 
+GROUP BY fabcod 
+HAVING(SUM(exist) > 300);
+
 -- 4.32- Es desitja un llistat dels productes amb les seves descripcions, ordenat per la suma total d'imports facturats (pedidos) de cada producte de l'any 1989.
+
+--SELECT pro.prodcod, descrip FROM producto as pro  JOIN pedido as pe ON (pe.prodcod = pro.prodcod) GROUP BY pro.prodcod, descrip,fecha HAVING(DATE_PART('year',fecha) = '1989');
 
 -- 4.33- Per a cada director (de personal, no d'oficina) excepte per al gerent (el venedor que no té director), vull saber el total de vendes dels seus subordinats. Mostreu codi i nom dels directors.
 
