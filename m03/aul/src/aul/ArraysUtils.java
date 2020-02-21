@@ -187,23 +187,85 @@ public class ArraysUtils {
 
     static double[] insert(double[] a, int index, double value){
 
-        double[] c = a;
-        c[index] = value;
-        return c;
+        if (index > a.length - 1){
+
+            double[] c = new double[1];
+            c[0] = -1.0;
+            return c;
+
+        } else {
+            a[index] = value;
+        }
+
+        return a;
     }
 
 
     //Returns an array with the same elements of a but without value in index.
     static double[] remove(double[] a, int index){
         
-        double[] c = a;
-        c[index] = 0;
-        return c;
+        if (index > a.length - 1){
+
+            double[] c = new double[1];
+            c[0] = -1.0;
+            return c;
+
+        } else {
+            a[index] = 0;
+        }
+
+        return a;
+
+    }
+
+
+    //Assigns the specified double value to each element of the specified array of doubles.
+    static void fill(double[] a, double val){
+    
+
+        for (int i = 0; i < a.length; i++) {
+            a[i] = val;
+        }
+
+        System.out.println(toString(a));
+
+    }
+
+    
+	//Assigns the specified double value to each element of the specified range of the specified array of doubles.
+    static void fill(double[] a, int fromIndex, int toIndex, double val){
+        
+        String result = "";
+
+        if (fromIndex > toIndex){
+            
+            result = "ERROR: El rango de inicio es mayor que el final";
+
+        } else if(fromIndex >= a.length - 1 && toIndex != a.length - 1){
+            result = "ERROR: El rango de inicio está al final del array";
+        }
+
+        else if(toIndex == a[0] && fromIndex != a[0]){
+            result = "ERROR: El rango final está al principio del array";
+        }
+
+        else if(toIndex > a.length - 1){
+            result = "ERROR: El índice final es mayor que la longitud del array";
+        }
+
+        else {
+
+            for (int i = fromIndex; i <= toIndex; i++){
+                a[i] = val;
+            }
+
+            result = toString(a);
+        }
+
+        System.out.println(result);
 
     }
 	
-
-
 	
 
 

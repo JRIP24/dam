@@ -30,8 +30,10 @@ public class ArraysUtilsDemo {
         System.out.println("ArraysUtils.binarySearch() : " + ArraysUtils.binarySearch(array, 10.0));
         System.out.println("ArraysUtils.union() : " + ArraysUtils.toString(ArraysUtils.union(array,array2)));
         System.out.println("ArraysUtils.insert() : " + ArraysUtils.toString(ArraysUtils.insert(array,2,3.3)));
-        System.out.println("ArraysUtils.remove() : " + ArraysUtils.toString(ArraysUtils.remove(array, 3)));*/
-
+        System.out.println("ArraysUtils.remove() : " + ArraysUtils.toString(ArraysUtils.remove(array, 3)));
+        System.out.println("ArraysUtils.fill(): ");
+        ArraysUtils.fill(array, 9.9);
+        ArraysUtils.fill(array, 9, 10, 2.0);*/
         
         
 
