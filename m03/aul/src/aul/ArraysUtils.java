@@ -52,7 +52,7 @@ public class ArraysUtils {
     }
 
 
-    static boolean equals(int[] n1, int[] n2){
+    static boolean equals(double[] n1, double[] n2){
 		
 		boolean salir = false;
 		boolean resultado = true;
@@ -162,6 +162,55 @@ public class ArraysUtils {
 
     }
 
+
+    //Searches a range of the specified array of doubles for the specified value using the binary search algorithm.
+    static int binarySearch(double[] a, int fromIndex, int toIndex, double key){
+
+
+        if (sorted(a)){
+
+            int mayor = toIndex;
+            int menor = fromIndex;
+            boolean salir = false;
+            boolean encontrado = false;
+            int medio = 0;
+            int vueltas = 0;
+
+            while(salir == false){
+
+                medio = (menor + mayor) / 2;
+
+                if (key > a[medio]){
+                    
+                    menor = medio + 1;
+
+                } else if (key < a[medio]) {
+                    mayor = medio - 1;
+
+                } else {
+                    encontrado = true;
+                }
+
+                vueltas++;
+
+                if (encontrado == true || vueltas >= a.length){
+                    salir = true;
+                }    
+            }
+
+
+            if (encontrado == true){
+                return medio;
+            }
+            else {
+                return -1;
+            }
+
+
+        }
+        return -2;
+    }
+
     //Returns an array with all elements of a and, after them, all elements of b.
     static double[] union(double[] a, double[] b){
         
@@ -265,6 +314,202 @@ public class ArraysUtils {
         System.out.println(result);
 
     }
+
+    //Copies the specified array, truncating or padding with zeros (if necessary) so the copy has the specified length.
+    static double[]	copyOf(double[] original, int newLength){
+
+        double[] copy = new double[1];
+
+        if (newLength > original.length){
+
+            copy = new double[newLength];
+
+            //Rellenamos con el array original
+            for (int i = 0; i < original.length; i++) {
+                copy[i] = original[i];
+            }
+
+            for (int i = original.length; i < copy.length; i++) {
+                copy[i] = 0;
+            }
+
+        } else if(newLength < original.length){
+
+        copy = new double[newLength];
+
+        for (int i = 0; i < copy.length; i++) {
+            
+            copy[i] = original[i];
+        }
+
+
+        } else { //Tienen la misma longitud;
+            copy = original;
+        }
+
+        return copy;
+
+
+
+    }
+
+    //Copies the specified range of the specified array into a new array.
+    static double[]	copyOfRange(double[] original, int from, int to){
+
+        double[] copy = new double[1];
+
+        if (from > to){
+            
+            //El rango de inicio es mayor que el final
+            copy[0] = -1;
+
+        } else if(from >= original.length - 1 && to != original.length - 1){
+
+            //El rango de inicio está al final del array
+            copy[0] = -2;
+        }
+
+        else if(to == original[0] && from != original[0]){
+            //El rango final está al principio del array
+            copy[0] = -3;
+        }
+
+        else if(to > original.length - 1){
+            
+            //El índice final es mayor que la longitud del array
+            copy[0] = -4;
+        }
+
+        else {
+
+            copy = new double[(to - from) + 1];
+            int counter = 0;
+
+            for (int i = from; i <= to; i++){
+
+                copy[counter] = original[i];
+                counter++;
+            }
+
+        }
+
+        return copy;
+
+
+    }
+
+    
+    //Returns an array with the same elements of a but with value added to the beginning of the array.
+    static double[] prepend(double[] a, double value){
+
+        double[] newArray = ArraysUtils.create(a.length + 1);
+
+        newArray[0] = value;
+
+        for (int i = 0; i < a.length; i++) {
+            newArray[i + 1] = a[i];
+        }
+
+        return newArray;
+
+    }
+
+    //Sorts the specified array into ascending numerical order.
+    static void sort(double[] a){
+        
+        double aux = 0.0;
+        boolean salir = false;
+        int cont = 0;
+
+        while(salir == false){
+
+            cont = 0;
+
+            for(int i = 0; i < a.length -1; i++){
+
+                if (a[i] > a[i + 1]){
+
+                    aux = a[i];
+                    a[i] = a[i + 1];
+                    a[i + 1] = aux;
+
+                } else {
+                    cont++;
+                }
+
+            }
+
+            //Condición de salida
+            if (cont >= a.length - 1){
+                salir = true;
+            }
+        }
+
+        System.out.println(toString(a));
+    }
+
+    //Sorts the specified range of the array into ascending order.
+    static void sort(double[] a, int fromIndex, int toIndex){
+
+        String result = "";
+
+        if (fromIndex > toIndex){
+            
+            result = "ERROR: El rango de inicio es mayor que el final";
+
+        } else if(fromIndex >= a.length - 1 && toIndex != a.length - 1){
+            result = "ERROR: El rango de inicio está al final del array";
+        }
+
+        else if(toIndex == a[0] && fromIndex != a[0]){
+            result = "ERROR: El rango final está al principio del array";
+        }
+
+        else if(toIndex > a.length - 1){
+            result = "ERROR: El índice final es mayor que la longitud del array";
+        }
+
+        else {
+
+            double aux = 0.0;
+            boolean salir = false;
+            int cont = 0;
+
+            while(salir == false){
+
+                for(int i = fromIndex; i < toIndex; i++){
+                    
+                    /*System.out.println(i);
+                    System.out.println(a[i]);
+                    System.out.println("contador = " + cont);*/
+
+                    if (a[i] > a[i + 1]){
+
+                        aux = a[i];
+                        a[i] = a[i + 1];
+                        a[i + 1] = aux;
+
+                    } else {
+                        cont++;
+                    }
+
+                }
+
+                //Condición de salida
+                if (cont >= toIndex){
+                    salir = true;
+                }
+            }
+
+            result = toString(a);
+        }
+
+        System.out.println(result);
+
+    }
+	
+	
+	
 	
 	
 
