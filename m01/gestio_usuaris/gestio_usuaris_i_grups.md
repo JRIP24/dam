@@ -100,17 +100,33 @@ Si
 
 Quin és(són) el(s) seu(s) grup(s) per defecte?
 
+El mismo usuario crea un grupo propio con su nombre
+
 Si un usuari té més d'un grup, hi ha alguna manera de diferenciar-los
 jeràrquicament? (És a dir, en importància)
+
+Se diferencian en:
+- Grupo principal
+- Resto de grupos
 
 ##### Exercici 6 
 
 Afegeix *usuari1* i *usuari2* al grup *usuaris*.
 
+```
+[root@j05 gestio_usuaris]# usermod -a -G usuaris usuari1
+[root@j05 gestio_usuaris]# usermod -a -G usuaris usuari2
+[root@j05 gestio_usuaris]# 
+```
 ##### Exercici 7
 
 Quina ordre hauries utilitzat si abans de crear *usuari1* i *usuari2* hagués
 existit *usuaris* ?
+
+```
+[root@j05 gestio_usuaris]# useradd -G usuaris usuari1
+[root@j05 gestio_usuaris]# useradd -G usuaris usuari2
+```
 
 ##### Exercici 8
 
@@ -120,7 +136,32 @@ automàticament tinguin les següents característiques (sense haver d'especific
 * Estructura de directori de l'usuari amb els subdirectoris: projecte (amb
   permisos rwxr-x---), privat (amb permisos rwx------)
 
+```
+[root@j05 gestio_usuaris]# mkdir /etc/skel/projecte
+[root@j05 gestio_usuaris]# mkdir /etc/skel/privat
+[root@j05 gestio_usuaris]# chmod 750 /etc/skel/projecte
+[root@j05 gestio_usuaris]# chmod 700 /etc/skel/privat
+```
+
 * Els directoris que creï l'usuari tinguin els permisos 750 (rwxr-x---)
+
+En el archivo `/etc/bashrc`
+Cambiar en la siguiente sección:
+```
+if [ $UID -gt 199 ] && [ "`id -gn`" = "`id -un`" ]; then
+    umask 002
+else
+    umask 022
+fi
+```
+El `umask 002` por
+```
+if [ $UID -gt 199 ] && [ "`id -gn`" = "`id -un`" ]; then
+       umask 027
+    else
+       umask 022
+    fi
+```
 
 ##### Exercici 9
 
@@ -128,6 +169,12 @@ Un treballador d'una empresa intercanvia fitxers entre l'usuari d'un sistema GNU
 treball i el seu usuari personal GNU/Linux que té al seu ordinador domèstic,
 amb logins diferents. Gairebé sempre té problemes amb els permisos. No és el
 *root* del treball però sí el de casa seva. Quina solució li proposaries?
+
+```
+chmod 777 archivo
+Que, en casa, se cree un usuario con el mismo nombre que el del trabajo.
+VPN
+```
 
 ##### Exercici 10
 
