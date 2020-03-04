@@ -37,7 +37,6 @@ SELECT COUNT(pednum) FROM pedido WHERE importe > 25000;
 
 
 
-
 -- 4.12- Trobar l'import mitjà de les comandes, l'import total de les comandes, l'import mitjà de les comandes com a percentatge del límit de crèdit del client i l'import mitjà de comandes com a percentatge de la quota del venedor.
 
 -- 4.13- Compta les files que hi ha a repventas, les files del camp vendes i les del camp quota.
@@ -116,7 +115,13 @@ HAVING(SUM(exist) > 300);
 
 -- 4.32- Es desitja un llistat dels productes amb les seves descripcions, ordenat per la suma total d'imports facturats (pedidos) de cada producte de l'any 1989.
 
---SELECT pro.prodcod, descrip FROM producto as pro  JOIN pedido as pe ON (pe.prodcod = pro.prodcod) GROUP BY pro.prodcod, descrip,fecha HAVING(DATE_PART('year',fecha) = '1989');
+--Esta bien?
+SELECT pro.prodcod, descrip, SUM(importe)
+FROM producto as pro  
+JOIN pedido as pe ON (pe.prodcod = pro.prodcod) 
+GROUP BY pro.prodcod, descrip, fecha 
+HAVING(DATE_PART('year',fecha) = '1989')
+ORDER BY SUM(pe.importe) DESC;
 
 -- 4.33- Per a cada director (de personal, no d'oficina) excepte per al gerent (el venedor que no té director), vull saber el total de vendes dels seus subordinats. Mostreu codi i nom dels directors.
 
