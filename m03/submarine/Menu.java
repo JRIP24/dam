@@ -15,6 +15,9 @@ public class Menu{
     public static void main(String[] args){
 
         //Se muestra menu
+        Submarine s = new Submarine();
+
+        s.pos(x, y);
         
 
 
