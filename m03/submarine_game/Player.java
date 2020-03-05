@@ -8,6 +8,9 @@ public class Player{
     int cordX = 0;
     String name = "player";
 
+
+
+
     public Player(String n){
 
         name = n;
