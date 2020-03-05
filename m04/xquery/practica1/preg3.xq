@@ -1,0 +1,1 @@
+/tenda/vehicles/vehicle[any < 2010]/marca_model
