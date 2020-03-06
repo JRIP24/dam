@@ -21,6 +21,9 @@ public class Menu{
         Submarine s = new Submarine();
         // s.cordX = random
         // s.cordY = random
+
+        //Valor random entre n1 y n2 (n1 < n2), ambos incluidos
+        //Math.floor(Math.random()*(n2-n1+1)+n1));
         
         Player p = new Player("Ronald");
         

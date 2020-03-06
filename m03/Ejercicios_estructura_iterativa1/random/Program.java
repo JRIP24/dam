@@ -9,7 +9,7 @@ public class Program{
 
             for (int i = 1; i <= x; i++){
 
-                System.out.println(Math.floor(Math.random()*(n2-n1+1)+n1));
+                System.out.println(Math.floor(Math.random()*(n2-n1+1)+n1));//Valor random entre n1 y n2 (n1 < n2), ambos incluidos
             }
 
         } else {
