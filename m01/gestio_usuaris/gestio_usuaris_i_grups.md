@@ -171,9 +171,8 @@ amb logins diferents. Gairebé sempre té problemes amb els permisos. No és el
 *root* del treball però sí el de casa seva. Quina solució li proposaries?
 
 ```
-chmod 777 archivo
-Que, en casa, se cree un usuario con el mismo nombre que el del trabajo.
-VPN
+# En casa hacer
+usermod -u [UID de feina] [usuari de casa]
 ```
 
 ##### Exercici 10
@@ -182,3 +181,8 @@ Com a administradors d'un sistema, ens comuniquen que un cert usuari faltarà a
 la feina durant un temps indeterminat i no volem que ningú pugui accedir al seu
 compte. Quina solució proposaries?
 
+```
+usermod -L [usuari]
+```
+
+º
