@@ -27,6 +27,9 @@ public class Game{
 
         System.out.println("Tienes " + p.cargas + " cargas");
 
+        //Inicia juego
+
+
 
     }
 }
