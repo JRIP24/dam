@@ -1,4 +1,4 @@
-import java.utils.Scanner;
+import java.util.Scanner;
 
 package submarine_game;
 
@@ -8,29 +8,30 @@ public class Game{
 
         Scanner teclado = new Scanner(System.in);
 
-        Sea mar = new Sea(5,5);
+        Sea mar = new Sea(5);
         System.out.println("Dimenssión de mar: " + mar.sizeX + "x" + mar.sizeY);
 
         //Creación de submarino
         Submarine s = new Submarine();
-        // s.cordX = random
-        // s.cordY = random
 
         //Valor random entre n1 y n2 (n1 < n2), ambos incluidos
         //Math.floor(Math.random()*(n2-n1+1)+n1));
+
+        s.cordX = (int)Math.floor(Math.random()*(mar.sizeX-0+1)+0);
+        s.cordY = (int)Math.floor(Math.random()*(mar.sizeY-0+1)+0);
         
         Player p = new Player("Ronald");
         
         System.out.println("Hola " + p.name);
         
         int misiles = 6;
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        
         p.cargas = misiles;
 
         System.out.println("Tienes " + p.cargas + " cargas");
 
         //Inicia juego
-
+/*
         boolean salir = false;
         boolean tocado = false;
         boolean ganado = false;
@@ -58,7 +59,7 @@ public class Game{
                 salir = true;
             }
 
-        }
+        }*/
 
 
 
