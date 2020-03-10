@@ -6,6 +6,8 @@ public class Game{
 
     public static void main(String[] args){
 
+        Scanner teclado = new Scanner(System.in);
+
         Sea mar = new Sea(5,5);
         System.out.println("Dimenssión de mar: " + mar.sizeX + "x" + mar.sizeY);
 
@@ -28,6 +30,38 @@ public class Game{
         System.out.println("Tienes " + p.cargas + " cargas");
 
         //Inicia juego
+
+        boolean salir = false;
+        boolean tocado = false;
+        boolean ganado = false;
+        boolean alrededor = false;
+        boolean hay_cargas = true;
+
+        while(salir == false){
+
+            System.out.println("Ingrese las coordernadas en las que desea lanzar el misil");
+            System.out.println("Coordenada X: ");
+            p.cordX = teclado.nextInt();
+
+            System.out.println("Coordenada Y: ");
+            p.cordY = teclado.nextInt();
+
+            System.out.println("Se lanzará el misil en las coordenadas " + "( " + p.cordX + ", " + p.cordY + " )");
+
+
+
+
+
+
+            //Condición de salida del bucle
+            if(){
+                salir = true;
+            }
+
+        }
+
+
+
 
 
 
