@@ -29,6 +29,17 @@ INFO
 A very important file has been deleted, could you *undelete* it from this ext4 partition?
 
 Hint: getting that will help you with some exercises answers
-
-[root@j05 iso]# 
+11
+[root@j05 iso]# mount -o remount,ro /dev/loop0 
+[root@j05 iso]# extundelete /dev/loop0 --restore-all
+[root@j05 iso]# cd /root/RECOVERED_FILES/
+[root@j05 RECOVERED_FILES]# ls
+exercicis_gestio_disc_II_solucions.md  xag  xan  xau  xbb  xbi  xbp  xbw  xcd  xck  xcr  xcy  xdf
+file.12                                xah  xao  xav  xbc  xbj  xbq  xbx  xce  xcl  xcs  xcz  xdg
+xab                                    xai  xap  xaw  xbd  xbk  xbr  xby  xcf  xcm  xct  xda  xdh
+xac                                    xaj  xaq  xax  xbe  xbl  xbs  xbz  xcg  xcn  xcu  xdb  xdi
+xad                                    xak  xar  xay  xbf  xbm  xbt  xca  xch  xco  xcv  xdc  xdj
+xae                                    xal  xas  xaz  xbg  xbn  xbu  xcb  xci  xcp  xcw  xdd  xdk
+xaf                                    xam  xat  xba  xbh  xbo  xbv  xcc  xcj  xcq  xcx  xde
+[root@j05 RECOVERED_FILES]# 
 ```
