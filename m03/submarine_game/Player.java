@@ -1,19 +1,27 @@
-
 package submarine_game;
 
+import java.util.Scanner;
+
+
 public class Player{
+
+    Scanner teclado = new Scanner(System.in);
     
     int cargas = 0;
-    int cordY = 0;
-    int cordX = 0;
-    String name = "player";
+    int bombY = 0;
+    int bombX = 0;
 
+    //Disparo del jugador
+    public void shot(){
 
+        System.out.println("Ingrese las coordernadas en las que desea lanzar el misil");
+        System.out.print("Coordenada X: ");
+        this.bombX = teclado.nextInt();
 
+        System.out.print("Coordenada Y: ");
+        this.bombY = teclado.nextInt();
 
-    public Player(String n){
-
-        name = n;
+        System.out.println("Se lanzará el misil en las coordenadas (" + this.bombX + ", " + this.bombY + ")");
 
     }
 
