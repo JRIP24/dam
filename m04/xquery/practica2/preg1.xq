@@ -1,0 +1,1 @@
+/playstore/jocs/joc/plataforma
