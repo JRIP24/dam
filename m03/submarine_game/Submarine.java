@@ -7,8 +7,8 @@ public class Submarine{
     private int cordY = 0;
     
 
-    int[] aroundX = {getCordX() - 1, getCordX(), getCordX() + 1, getCordX() - 1, getCordX() - 1, getCordX(), getCordX() + 1, getCordX() + 1};
-    int[] aroundY = {getCordY() + 1, getCordY() + 1, getCordY() + 1, getCordY(), getCordY() - 1, getCordY() - 1, getCordY() - 1, getCordY()};
+    int[] aroundX = {this.getCordX() - 1, this.getCordX(), this.getCordX() + 1, this.getCordX() - 1, this.getCordX() - 1, this.getCordX(), this.getCordX() + 1, this.getCordX() + 1};
+    int[] aroundY = {this.getCordY() + 1, this.getCordY() + 1, this.getCordY() + 1, this.getCordY(), this.getCordY() - 1, this.getCordY() - 1, this.getCordY() - 1, this.getCordY()};
 
 
     public int getCordX (){
