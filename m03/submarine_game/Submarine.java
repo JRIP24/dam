@@ -3,8 +3,31 @@ package submarine_game;
 
 public class Submarine{
 
-    int cordY = 0;
-    int cordX = 0;
+    private int cordX = 0;
+    private int cordY = 0;
+    
+
+    int[] aroundX = {getCordX() - 1, getCordX(), getCordX() + 1, getCordX() - 1, getCordX() - 1, getCordX(), getCordX() + 1, getCordX() + 1};
+    int[] aroundY = {getCordY() + 1, getCordY() + 1, getCordY() + 1, getCordY(), getCordY() - 1, getCordY() - 1, getCordY() - 1, getCordY()};
+
+
+    public int getCordX (){
+        return this.cordX;
+    }
+
+    public int getCordY (){
+        return this.cordY;
+    }
+
+    public void setCordX (int x){
+        this.cordX = x;
+    }
+
+    public void setCordY (int y){
+        this.cordY = y;
+    }
+
+
 
     public void move(int size){
 
