@@ -49,4 +49,23 @@ public class Person1{
 
     //Setters
     
+    public void setName(String n){
+        this.name = n;
+    }
+
+    public void setAge(int ag){
+        this.age = ag;
+    }
+
+    public void setHeight(double hg){
+        this.height = hg;
+    }
+
+    public void setSex(char sx){
+        this.sex = sx;
+    }
+
+    public void setMarried(boolean marr){
+        this.married = marr;
+    }
 }
