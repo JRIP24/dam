@@ -47,14 +47,21 @@ public class Ring{
 
     }
 
+    public String getModel(){
+        return this.model;
+    }
+
 
     public static void main(String[] args){
 
-        Ring anillo = new Ring("MD3", 8, 3);
+        System.out.println("------------------------------");
 
-        System.out.printf("%.2f%n",anillo.peso());
-        System.out.println(anillo.preuOr());
-        System.out.println(anillo.precio());
+        Ring anillo = new Ring("MD3", 8, 3);
+        System.out.print("Modelo del anillo: " + anillo.getModel() + "\n");
+
+        System.out.printf("Peso: %.2f gr.%n",anillo.peso());
+        System.out.printf("Precio del oro: %.2f€%n", anillo.preuOr());
+        System.out.printf("Precio del anillo: %.2f€%n", anillo.precio());
     }
 
 

@@ -25,11 +25,13 @@ public class Counter2Digit{
 
     public static void main(String[] args){
 
+        System.out.println("------------------------------");
+
         Counter1Digit c = new Counter1Digit();
-        c.contar(9);
+        c.contar(9);//Cuenta hasta 9
 
         Counter2Digit c2 = new Counter2Digit();
-        c2.contar(20);
+        c2.contar(20);//Hasta 20 (2 dígitos)
 
 
         

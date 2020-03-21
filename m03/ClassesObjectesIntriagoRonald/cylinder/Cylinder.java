@@ -38,17 +38,19 @@ public class Cylinder{
 
     public static void main(String[] args){
 
+        System.out.println("------------------------------");
+
         Cylinder c = new Cylinder(8, 13);
 
-        System.out.println(c.area());
-        System.out.println(c.volumen());
+        System.out.println("Área: " + c.area());
+        System.out.println("Volumen: " + c.volumen());
         System.out.println("-------------");
 
         Cylinder c2 = new Cylinder(2, 8);
-        System.out.println(c2.area());
-        System.out.println(c2.volumen());
+        System.out.println("Área del segundo cilindro: "  + c2.area());
+        System.out.println("Volumen del segundo cilindro: " + c2.volumen());
 
-        System.out.println(c2.grater(c.volumen()));
+        System.out.println("El segundo cilindro es mas grande que el primero?: " + c2.grater(c.volumen()));
     }
     
 }

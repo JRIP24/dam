@@ -34,16 +34,18 @@ public class Player{
 
     public static void main(String[] args){
 
+        System.out.println("------------------------------");
+
         Player p1 = new Player(8,9);
 
-        System.out.println(p1.getPosition());
+        System.out.println("Posición: " + p1.getPosition());
         p1.fall();
         p1.moveRight();
-        System.out.println(p1.getPosition());
+        System.out.println("Posición (después de caer u moverse a la derecha): " + p1.getPosition());
 
         p1.moveLeft();
-        p1.jump();
-        System.out.println(p1.getPosition());
+        p1.jump();//No es exactamente saltar, ya que al final sel salto volvería a la misma posición
+        System.out.println("Posición (después de moverse a la izquierda y saltar): " + p1.getPosition());
 
     }
 }

@@ -28,14 +28,15 @@ public class Circle{
 
     public static void main(String[] args){
 
+        System.out.println("------------------------------");
         Circle c = new Circle(6);
-        System.out.println(c.getRadi());
-        System.out.println(c.perimetre());
-        System.out.println(c.area());
+        System.out.println("Radio del círculo: " + c.getRadi());
+        System.out.println("Perímetro: " + c.perimetre());
+        System.out.println("Área: " + c.area());
 
         Circle c2 = new Circle(2);
 
-        System.out.println(c.grater(c2.getRadi()));
+        System.out.println("Es más grande que un círculo de " + c2.getRadi() + " de radio?: " + c.grater(c2.getRadi()));
 
 
     }

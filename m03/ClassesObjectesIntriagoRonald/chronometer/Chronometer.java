@@ -55,6 +55,11 @@ public class Chronometer {
     public static void main(String[] args){
 
         Chronometer c = new Chronometer();
+
+        /*
+        Se hará un bucle infinito, ya que no se me ocurre 
+        una manera de paralo sin interfaz gráfica
+        */
         c.start();
 
 

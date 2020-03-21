@@ -29,7 +29,6 @@ public class Triangle1{
     public double area(){
 
         double s = (side1 + side2 + side3)/2.0;
-        System.out.println(s);
         
         return Math.sqrt((s * (s - side1) * (s - side2) * (s -side3)));
     }

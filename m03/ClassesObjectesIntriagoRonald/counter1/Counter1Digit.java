@@ -26,8 +26,9 @@ public class Counter1Digit{
 
     public static void main(String[] args){
 
+        System.out.println("------------------------------");
         Counter1Digit c = new Counter1Digit();
-        c.contar(9);
+        c.contar(9);//Contará hasta 9
         
     }
 
