@@ -1,5 +1,5 @@
-#### Script para crear usuarios
-###### Se debe ejecutar con permisos administrativos
+### Script para crear usuarios
+#### Se debe ejecutar con permisos administrativos
 
 ```
 ronald@VBox:~/practica$ cat crear_usuarios.sh 
@@ -31,8 +31,8 @@ done < $lista
 ronald@VBox:~/practica
 ```
 
-#### Lista de usuarios
-###### Se ha usado el comando `sed` para poner las comas
+### Lista de usuarios
+#### Se ha usado el comando `sed` para poner las comas
 ```
 ronald@VBox:~/practica$ cat usuarios2.txt 
 Ian,Molina
@@ -58,8 +58,8 @@ Isaac,Cabrera
 ronald@VBox:~/practica$ 
 ```
 
-#### Script para crear grupos
-###### Se debe ejecutar con permisos administrativos
+### Script para crear grupos
+#### Se debe ejecutar con permisos administrativos
 
 ```
 ronald@VBox:~/practica$ cat crear_grupos.sh 
@@ -78,8 +78,8 @@ done < $lista
 ronald@VBox:~/practica
 ```
 
-#### Lista de grupos
-###### Se ha usado el comando `sed` para dar el formato (también se ha quitado el ' en Regidoria d’Urbanisme i Medi Ambient para evitar problemas)
+### Lista de grupos
+#### Se ha usado el comando `sed` para dar el formato (también se ha quitado el ' en Regidoria d’Urbanisme i Medi Ambient para evitar problemas)
 
 ```
 ronald@VBox:~/practica$ cat grupos.txt 
@@ -94,7 +94,7 @@ ronald@VBox:~/practica$
 ```
 
 
-#### Script para asignación de grupos
+### Script para asignación de grupos
 
 ```
 ronald@VBox:~/practica$ cat asignar.sh
@@ -132,7 +132,7 @@ if [ -n "$1" ]; then #Hay un parámetro
                 
                 then #Existe el usuario
                     
-                    #usermod -a -G $1 $user
+                    usermod -a -G $1 $user
                     echo "Se ha añadido el usuario $user al grupo $1 correctamente"
                     sleep 1.7
 
@@ -159,4 +159,3 @@ fi
 ronald@VBox:~/practica$ 
 
 ```
-
