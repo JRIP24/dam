@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Ejercicio 2</title>
 </head>
 <body>
-    
+
+    <h1 id="dni"></h1>
+
+    <script>
+        var letra = new Array("T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E");
+        var nums = prompt("Introduzca los números de su DNI y le calcularemos la letra");
+
+        if(nums.length != 8 || isNaN(nums)){
+            document.getElementById("dni").innerHTML = "Error: tiene que introducir 8 dígitos ";    
+        } else {
+
+            var modul = nums%23;
+            var dni = nums + letra[modul];
+            document.getElementById("dni").innerHTML = "El DNI completo es: " + dni;
+
+        }
+        
+    </script>
 </body>
 </html>
