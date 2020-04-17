@@ -184,5 +184,3 @@ compte. Quina solució proposaries?
 ```
 usermod -L [usuari]
 ```
-
-º
