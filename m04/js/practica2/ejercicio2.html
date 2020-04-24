@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+
+    <p id="result"></p>
+
+    <script>
+
+        var costado = prompt("Introduzca la longitud de un costado del cuadrado (cm): ");
+
+        if (isNaN(costado)){
+            document.getElementById("result").innerHTML = "Error: no se ha introducido un número";
+        } else {
+            var p = costado * 4;
+            document.getElementById("result").innerHTML = "El perímetro del cuadrado es de " + p + "cm";
+        }
+
+
+
+    </script>
+    
+</body>
+</html>

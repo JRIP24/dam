@@ -19,10 +19,16 @@
 
         var email = prompt("Introduzca su email");
 
-        if ((email.indexOf("@") > -1) && (email.indexOf(".") > -1)){
+        if ((email.indexOf("@") > -1) && (email.indexOf(".") > -1)){//Comprobamos que el email tiene @ y .
             
+            document.getElementById("email").innerHTML = "Email: " + email;
 
+        } else {
+            
+            document.getElementById("error").innerHTML = "El email introducido es incorrecto";
         }
+
+
 
     </script>
     

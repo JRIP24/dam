@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+
+
+
+
+
+    <script>
+
+        var num1 = prompt("Introduzca un número");
+        var num2 = prompt("Introduzca un segundo número");
+        var num3 = prompt("Introduzca un tercer número");
+        var num4 = prompt("Introduzca un cuarto número");
+
+        if(isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) ){
+            document.write("Error: debe introducir 4 números");
+        } else {
+            var suma = parseInt(num1) + parseInt(num2);
+            var mult = num3 * num4;
+            document.write("La suma de " + num1 + " y " + num2 + " es: " + suma + "<br>");
+            document.write("El producto de " + num3 + " y " + num4 + " es: " + mult);
+        }
+
+    </script>
+    
+</body>
+</html>
