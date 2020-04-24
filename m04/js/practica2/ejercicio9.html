@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+
+    <script>
+
+        function ventana(m) {
+
+            ventana = window.open('', 'Número mayor', 'width=500, height=150, top=200, left=200');
+
+            with(ventana.document) {
+
+                writeln('<html>\n<head>\n<title>Número mayor</title>\n</head>');
+                writeln('<body>\n');
+                writeln('<h4>El número mayor es: ' + m + '</h4>');
+                writeln('</body>\n</html>');
+            }
+            
+            return false;
+        }
+
+        var num1 = prompt("Introduzca un número: ");
+        var num2 = prompt("Introduzca otro número: ");
+        var num3 = prompt("Introduzca otro número: ");
+
+
+        //Pasamos a números enteros
+
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
+        num3 = parseInt(num3);
+
+
+        var mayor;
+
+        if(isNaN(num1) || isNaN(num2) || isNaN(num3)){
+
+            document.write("Error: Debe introducir 3 números");
+        } else {
+
+            if (num1 > num2) {
+
+                if (num1 > num3) {
+
+                    mayor = num1;
+
+                } else {
+                    
+                    mayor = num3;
+                }
+
+            } else {
+
+                if (num2 > num3) {
+                    
+                    mayor = num2;
+
+                } else	{
+                    
+                    mayor = num3
+                }
+            }
+
+            ventana(mayor);
+            
+        }
+
+        
+
+    </script>
+    
+</body>
+</html>

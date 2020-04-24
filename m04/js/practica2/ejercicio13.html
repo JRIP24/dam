@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+<body>
+
+    <script>
+
+        var edats_mati = [];
+        var edats_tarda = [];
+        var edats_nit = [];
+        var edad, media_mati, media_tarda, media_nit;
+        var suma = 0;
+
+
+        //Bucles para rellenar los arrays
+
+        for (var i = 0; i < 5; i++){
+
+            edad = prompt("TURNO MAÑANA \n Introduzca una edad: ");
+            edad = parseInt(edad);
+
+            edats_mati.push(edad);
+        }
+
+
+        for (var i = 0; i < 6; i++){
+
+            edad = prompt("TURNO TARDE \n Introduzca una edad: ");
+            edad = parseInt(edad);
+
+            edats_tarda.push(edad);
+        }
+
+
+        for (var i = 0; i < 11; i++){
+
+            edad = prompt("TURNO NOCHE \n Introduzca una edad: ");
+            edad = parseInt(edad);
+
+            edats_nit.push(edad);
+        }
+
+        //Bucles para calcular la media
+
+        for (var i = 0; i < edats_mati.length; i++){
+
+            suma = suma + edats_mati[i];
+        }
+
+        media_mati = suma / 5;
+        suma = 0; //Restablecemos suma, ya que se usará otra vez
+
+
+        for (var i = 0; i < edats_tarda.length; i++){
+
+            suma = suma + edats_tarda[i];
+        }
+
+        media_tarda = suma / 6;
+        suma = 0; //Restablecemos suma, ya que se usará otra vez
+
+
+        for (var i = 0; i < edats_nit.length; i++){
+
+            suma = suma + edats_nit[i];
+        }
+
+        media_nit = suma / 11;
+
+
+        var medias = [media_mati, media_tarda, media_nit];
+        console.log(medias);
+
+        medias.sort(function(a, b){return b - a});
+        console.log(medias);
+
+        var noms = ["", "", ""];
+
+        var index_mati = medias.indexOf(media_mati);
+        var index_tarda = medias.indexOf(media_tarda);
+        var index_nit = medias.indexOf(media_nit);
+
+        noms[index_mati] = "Mañana";
+        noms[index_tarda]  = "Tarde";
+        noms[index_nit] = "Noche";
+
+
+        document.write("Media de las edades del turno de " + noms[0] + ": " + medias[0] + "<br>");
+        document.write("Media de las edades del turno de " + noms[1] + ": " + medias[1] + "<br>");
+        document.write("Media de las edades del turno de " + noms[2] + ": " + medias[2]);
+
+        
+
+    </script>
+    
+</body>
+</html>

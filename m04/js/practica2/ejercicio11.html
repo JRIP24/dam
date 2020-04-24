@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+</head>
+<body>
+    
+
+    <script>
+
+        var sueldo = prompt("Introduzca el sueldo: ");
+        var any = prompt("Introduzca los años de antigüedad: ");
+        var aumento, porcentaje;
+
+        if(isNaN(sueldo) || isNaN(any)){
+
+            document.write("Error: Debe introducir valores numéricos");
+
+        } else {
+
+            any = parseInt(any);
+            sueldo = parseInt(sueldo);
+
+            if (sueldo < 0 || any < 0){
+
+                document.write("Error: No se aceptan valores negativos");
+
+            } else {
+
+                if(any == 0){
+                    
+                    document.write("No hay aumento de sueldo");
+
+                } else {
+
+                    switch (any) {
+                        
+                        case 1: //10%
+
+                            porcentaje = 10;
+
+                        break;
+
+                        case 2: //20%
+
+                            porcentaje = 20;
+
+                        break;
+                        
+                        case 3: //30%
+
+                            porcentaje = 30;
+                            
+                        break;
+
+                        case 4: //40%
+
+                            porcentaje = 40;
+                            
+                        break;
+
+                        case 5: //50%
+
+                            porcentaje = 50;
+
+                        break;
+
+
+                        default: //5%
+
+                            porcentaje = 5;
+
+                    
+                    }
+
+
+                    aumento = (sueldo * porcentaje) / 100;
+
+                    var new_sueldo = sueldo + aumento;
+
+                    document.write("Sueldo introducido: " + sueldo + "€<br>");
+                    document.write("Años de antigüedad: " + any + "<br>");
+
+                    document.write("Se le ha hecho un aumento del " + porcentaje + "% " + ",su sueldo nuevo es: "  + new_sueldo + "€");
+
+                }
+
+            }
+
+
+        }
+
+    </script>
+</body>
+</html>
