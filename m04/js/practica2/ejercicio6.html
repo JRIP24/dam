@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+
+    <script>
+
+        var n1 = prompt("Introduzca la primera nota: ");
+        var n2 = prompt("Introduzca la segunda nota: ");
+        var n3 = prompt("Introduzca la tercera nota: ");
+
+        if(isNaN(n1) || isNaN(n2) || isNaN(n3)){
+            document.write("Error: ha introducido alguna letra");
+        } else {
+
+            var suma = parseInt(n1) + parseInt(n2) + parseInt(n3);
+            var promedio = suma / 3;
+
+            document.write("El promedio es: " + promedio + "<br>");
+
+            if(promedio >= 7){
+                document.write("Detectado otro empollón");
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

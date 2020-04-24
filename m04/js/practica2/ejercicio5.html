@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+
+    <script>
+
+        var precio = prompt("Introduzca el precio del artículo: ");
+        var cant = prompt("Indique la cantidad a llevar: ");
+
+        if(isNaN(precio) || isNaN(cant)){
+            document.write("Error: ha introducido alguna letra");
+        } else {
+
+            var total = precio * cant;
+
+            document.write("Total a pagar: " + total + "€");
+        }
+
+    </script>
+    
+</body>
+</html>

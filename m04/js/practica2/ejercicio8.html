@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+
+    <script>
+
+        var n1 = prompt("Introduzca un número: ");
+        var n2 = prompt("Introduzca otro número: ");
+
+        if(isNaN(n1) || isNaN(n2)){
+
+            document.write("Error: debe introducir 2 números");
+
+        } else {
+
+            document.write("Números introducidos: " + n1 + ", " + n2 + "<br>");
+
+            if ( n1 > n2){
+
+                var suma = parseInt(n1) + parseInt(n2);
+                var resta = parseInt(n1) - parseInt(n2);
+
+                document.write("Suma: " + suma + "<br>");
+                document.write("Resta: " + resta);
+
+            } else{
+
+                var mult = n1 * n2;
+                var div = n1 / n2;
+
+                document.write("Multiplicación: " + mult + "<br>");
+                document.write("División: " + div);
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>
