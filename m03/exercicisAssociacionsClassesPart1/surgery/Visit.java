@@ -26,6 +26,7 @@ public class Visit {
 		result = prime * result + ((visitDateTime == null) ? 0 : visitDateTime.hashCode());
 		return result;
 	}
+	
 
 	@Override
 	public boolean equals(Object obj) {

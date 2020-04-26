@@ -58,11 +58,7 @@ public class Surgery{
 
 	//Comprobamos si se solapan visitas
 	public static boolean solapan(Date d, Date dInicio, Date dFinal){
-/*
-		System.out.println("Valor d: " + d);
-		System.out.println("Valor dinicio: " + dInicio);
-		System.out.println("Valor dfinal: " + dFinal);
-		System.out.println("---------------------------------------------------");*/
+
 		return d.after(dInicio) && d.before(dFinal);
 	}
 
@@ -196,17 +192,6 @@ public class Surgery{
 
 	public String getDoctorName() {
 		return this.doctorName;
-	}
-
-	public void getAll(){
-
-		for (Visit visitasProgramadas : this.visits){//Bucle for each
-
-			System.out.println("Fecha visita: " + visitasProgramadas.getVisitDateTime());
-			System.out.println("Nombre paciente: " + visitasProgramadas.getPatientName());
-			System.out.println("--------------------------------------------------------------------");
-
-		}
 	}
 	
 	
