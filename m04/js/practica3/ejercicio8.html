@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+
+    <script>
+
+
+        function parellSenar(num){
+
+            if(num%2 == 0){
+
+                window.alert("Parell");
+                
+            } else {
+                window.alert("Senar");
+            }
+        }
+
+
+        function demanarDades(){
+
+            var n = prompt("Introduzca un número");
+
+            if(isNaN(n)){
+                
+                window.alert("Error: Debe introducir un número");
+
+            } else {
+                parellSenar(n);
+            }
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+    <button onclick="demanarDades()">Haz Click</button>
+    
+</body>
+</html>

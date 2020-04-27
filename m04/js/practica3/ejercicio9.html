@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Ejercicio 9</title>
+
+     <script>
+
+        function majMin(texto) {
+            
+				var mensaje = "";
+
+				if(texto == texto.toUpperCase()) {
+
+					mensaje = "La cadena de texto introducida está compuesta por mayúsculas";
+
+				} else if(texto == texto.toLowerCase()) {
+                    
+                    mensaje = "La cadena de texto introducida está compuesta por minúsculas";
+
+				} else {
+
+                    mensaje = "La cadena de texto introducida está compuesta por mayúsculas y minúsculas";
+
+				}
+				
+				return mensaje;
+		}
+
+     </script>
+
+ </head>
+ <body>
+
+    <button onclick="alert(majMin(prompt('Introduzca una cadena de texto', '')))">Haz click</button>
+     
+ </body>
+ </html>

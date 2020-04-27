@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+
+
+    <style>
+
+        a{
+            text-decoration: none;
+            font-size: 20px;;
+        }
+
+        #rojo{
+            color: #ff0000;
+        }
+
+        #verde{
+            color: #00ff00;
+        }
+
+        #azul{
+            color: #0000ff;
+        }
+
+    </style>
+
+
+    <script>
+
+        function cambioColor(color) {
+
+            document.bgColor = color;
+        }
+
+        function restablecer(){
+            document.bgColor = "white";
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <a href="#" id="rojo" onmouseover="cambioColor('#ff0000')") onmouseout="restablecer()"> Background rojo </a><br><br>
+    
+    <a href="#" id="verde" onmouseover="cambioColor('#00ff00')") onmouseout="restablecer()"> Background verde </a><br><br>
+    
+    <a href="#" id="azul" onmouseover="cambioColor('#0000ff')") onmouseout="restablecer()"> Background azul</a>
+    
+    
+</body>
+</html>
