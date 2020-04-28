@@ -17,7 +17,7 @@ public class Program {
         c1.add(c5);
 
 
-        //Prueba de eliminar un conracto
+        //Prueba de eliminar un contacto
         System.out.println("Eliminación de un contacto \n");
         System.out.println("Lista de contactos de " + c1.getName() + "\n");
         c1.listContacts();
