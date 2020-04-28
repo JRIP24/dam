@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+
+    <script>
+
+        function concatenar(text1, text2){
+
+            var resultado = text1 + text2;
+
+            var elememto = document.getElementById("result").value = resultado;
+            //He probado a crear un elemento pero no me funciona, lo he probado en otros entornos y no hay problema
+            //Puede ser problema de mi navegador
+            //Esta solución tapoco me funciona, pero en otros entornos si.  
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <form>
+
+        <input type="text" placeholder="Nombre" id="nombre">
+        <input type="text" placeholder="Apellido" id="apellido">
+        <button onclick="concatenar(nombre.value, apellido.value)">Concatenar</button><br>
+        <input type="text" id="result">
+
+    </form>
+    
+</body>
+</html>

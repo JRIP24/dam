@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+
+    <script>
+
+        function cubo(num){
+
+            
+            if (isNaN(num)){
+
+                window.alert("Error: Debe introducir un número");
+
+            } else {
+
+                window.alert(Math.pow(num, 3));
+            }
+            
+
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <form>
+
+        <input type="text" placeholder="Introduzca un número" id="numero">
+        <button onclick="cubo(numero.value)">Enviar</button>
+
+    </for>
+    
+</body>
+</html>
