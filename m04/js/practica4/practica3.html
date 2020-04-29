@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejerciocio 3</title>
+
+    <script>
+        function comprobarEdad(){
+
+            if (document.getElementById("mayor").checked){
+
+                window.alert("Puede entrar");
+                
+            } else if (document.getElementById("menor").checked){
+
+                window.alert("No puede entrar");
+                
+            } else {
+
+                window.alert("Error: Indique si es mayor de edad o no");
+
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+    <form>
+        
+        <input type="radio" name="edad" id="mayor">Mayor de 18 años<br>
+        
+        <input type="radio" name="edad" id="menor">Menor de 18 años<br><br>
+        
+        <button onclick="comprobarEdad()">Comprobar</button>
+
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+
+    <script>
+
+        function enviar(){
+
+            var form = document.getElementById("formulario");
+            var mensaje = "DADA NO APORTADA";
+
+            if(form.nombre.value == ""){
+
+                form.nombre.value = mensaje;
+            }
+
+            if (form.telefono.value == ""){
+
+                form.telefono.value = mensaje;
+            }
+
+            if (form.ciudad.value == ""){
+
+                form.ciudad.value = mensaje;
+            }
+
+            form.submit();
+        }
+
+    </script>
+</head>
+<body>
+
+    <form id="formulario" method="POST" target="_blank">
+
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre"><br><br>
+
+        <label for="telefono">Teléfono: </label>
+        <input type="text" name="telefono"><br><br>
+
+        <label for="ciudad">Ciudad: </label>
+        <input type="text" name="ciudad"><br><br>
+
+        <input type="button" value="Enviar" onclick="enviar()">
+
+
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+
+    <script>
+
+        function comprobar(n1, n2){
+
+            if(isNaN(n1) || isNaN(n2) || n1 == "" || n2 == ""){
+
+                window.alert("Error: Debe introducir 2 números");
+                
+            }else {
+
+                n1 = parseInt(n1)
+                n2 = parseInt(n2)
+
+                if (n1 > n2){
+
+                    window.alert("El número mayor es: " + n1);
+
+                } else if (n1 < n2){
+
+                    window.alert("El número mayor es: " + n2);
+
+                } else {
+
+                    window.alert("Los números son iguales");
+                    
+                }
+            }
+
+        }
+    
+    </script>
+</head>
+<body>
+
+    <form name="fomulario">
+
+        <label for="num1">Primer número: </label>
+        <input type="text" name="num1"><br><br>
+
+        <label for="num1">Segundo número: </label>
+        <input type="text" name="num2"><br><br>
+
+        <button onclick="comprobar(num1.value, num2.value)">Comprobar</button>
+    </form>
+    
+</body>
+</html>

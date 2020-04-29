@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+
+    <script>
+
+        function borrar(){
+            
+            document.getElementById("opinion").value = "";
+        }
+
+        function comprobar(){
+
+            var texto = document.getElementById("opinion");
+
+            if (texto.value.length > 300){
+                window.alert("Error: El texto escrito sobrepasa los 300 caracteres");
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    
+
+    <form method="POST">
+
+        <h3>Escriba su opinión</h3>
+        <textarea  id="opinion" onfocus="borrar()" rows="4" cols="50">ESCRIU AQUI ELS TEUS COMENTARIS</textarea><br><br>
+
+        <button onclick="comprobar()">Enviar</button>
+
+    </form>
+</body>
+</html>
