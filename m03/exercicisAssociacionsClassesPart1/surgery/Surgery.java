@@ -14,7 +14,7 @@ public class Surgery{
     private HashSet<Visit> visits;
 
     public Surgery(){
-
+		this.visits = new HashSet<Visit>();
     }
 
 

@@ -10,11 +10,12 @@ public class Contact{
 
     //Constructores
     public Contact(){
-
+        this.contactos = new HashSet<Contact>();
     }
 
     public Contact(int d){
         this.dni = d;
+        this.contactos = new HashSet<Contact>();
     }
 
     public Contact(int d, String n, String phone){
