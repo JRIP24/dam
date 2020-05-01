@@ -2,7 +2,6 @@ public class Program{
 
     public static void main(String[] args){
 
-        
         Contract c1 = new Contract(12, "30/04/2020", "19/06/2020");
         Company compa1 = new Company(01, "Microsoft", "Informática");
         c1.setCompany(compa1);
@@ -35,7 +34,6 @@ public class Program{
         System.out.println(c3.duration());
         System.out.println(c4.duration());
         System.out.println(c5.duration());
-
 
         System.out.println("Días trabajados de "  + p.getName() + ": " + p.workedTime());
         System.out.println("Número de empresas en las que ha trabajado: " + p.nCompanies());
