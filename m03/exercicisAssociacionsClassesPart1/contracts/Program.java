@@ -30,6 +30,13 @@ public class Program{
         p.signContract(c4);
         p.signContract(c5);
 
+        System.out.println(c1.duration());
+        System.out.println(c2.duration());
+        System.out.println(c3.duration());
+        System.out.println(c4.duration());
+        System.out.println(c5.duration());
+
+
         System.out.println("Días trabajados de "  + p.getName() + ": " + p.workedTime());
         System.out.println("Número de empresas en las que ha trabajado: " + p.nCompanies());
 
