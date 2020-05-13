@@ -1,3 +1,5 @@
+import java.util.StringTokenizer;
+
 public class BookTxt{
 
     private String filePath;
@@ -6,6 +8,23 @@ public class BookTxt{
 
     public BookTxt(String fp){
         this.filePath = fp;
+    }
+
+    public void showFile(){
+
+        Reader fr = new Reader(this.filePath);
+        String lf = fr.readLine();
+
+        while (lf != null) {
+
+                System.out.println(lf);
+            
+            
+            lf = fr.readLine();
+
+        }
+
+        fr.close();
     }
 
     public int countLines(){
@@ -26,20 +45,53 @@ public class BookTxt{
 
     }
 
-    public void showFile(){
+
+    public int countWords(){
 
         Reader fr = new Reader(this.filePath);
 
         String lf = fr.readLine();
-        // While there are lines left, print the line and read another line
-        while (lf != null) {
-            // Print the read line
-            System.out.printf("%s\n", lf);
-            // Read a line
+        int suma = 0;
+
+        while (lf != null){
+
+            StringTokenizer st = new StringTokenizer(lf);
+
+            suma = suma + st.countTokens();
+            
             lf = fr.readLine();
         }
-        // Close the file reader
+
         fr.close();
+
+        return suma;
+
+    }
+
+    public int countChars(){
+
+        Reader fr = new Reader(this.filePath);
+
+        String lf = fr.readLine();
+        int suma = 0;
+
+        while (lf != null){
+
+            if (!lf.isEmpty()){//No se tienen en cuenta las líneas vacías
+
+                lf = lf.replace(" ", "");//Para no tener en cuenta los espacios como caracteres
+
+                suma = suma + lf.split("").length;
+            }
+
+            
+            lf = fr.readLine();
+        }
+
+        fr.close();
+
+        return suma;
+
     }
 
 
@@ -52,7 +104,9 @@ public class BookTxt{
         int contador = 1;
 
         while (lf != null){
+
             lf = fr.readLine();
+            
             contador++;
 
             if (contador == 9){
@@ -95,5 +149,37 @@ public class BookTxt{
 
         return autor;
 
+    }
+
+    public int countLinesBook(){
+
+        //Usaremos estas variables para saber dónde comienza el contenido del libro
+        String titulo = this.getTitle();
+        String inicio_contenido = "*** START OF THIS PROJECT GUTENBERG EBOOK "  + titulo +  " ***";
+        boolean empezado = false; //determinamos si ya ha empezado el contenido del libro
+
+        Reader fr = new Reader(this.filePath);
+        String lf = fr.readLine();
+
+        int suma = 0;
+
+        while (lf != null) {
+
+            if (lf.equals(inicio_contenido)){
+                empezado = true;
+            }
+
+            if (empezado && !(lf.equals(inicio_contenido))){
+                suma++;
+            }
+            
+            lf = fr.readLine();
+
+            
+        }
+
+        fr.close();
+
+        return suma;
     }
 }
