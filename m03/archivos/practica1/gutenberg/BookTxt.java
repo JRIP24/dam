@@ -1,4 +1,9 @@
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.StringTokenizer;
 
 public class BookTxt{
@@ -98,8 +103,34 @@ public class BookTxt{
 
     public void copy(String outPut){
 
-        File f = new File(outPut);
-        System.out.println(f.getAbsolutePath());
+        File origen = new File(this.filePath);
+        File destino = new File(outPut);
+
+        try {
+            // A partir del objeto File creamos el fichero físicamente
+            if (destino.createNewFile()){
+
+                InputStream in = new FileInputStream(origen);
+                OutputStream out = new FileOutputStream(destino);
+
+                byte[] buf = new byte[1024];
+                int len;
+
+                while ((len = in.read(buf)) > 0) {
+                    
+                    out.write(buf, 0, len);
+                }
+
+
+                in.close();
+                out.close();
+
+            } else{
+              System.out.println("No ha podido hacer la copia del archivo");
+            }
+          } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
 
     }
 
