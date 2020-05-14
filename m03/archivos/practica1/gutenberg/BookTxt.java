@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.StringTokenizer;
 
 public class BookTxt{
@@ -92,6 +93,71 @@ public class BookTxt{
 
         return suma;
 
+    }
+
+
+    public void copy(String outPut){
+
+        File f = new File(outPut);
+        System.out.println(f.getAbsolutePath());
+
+    }
+
+
+    public int countAWord(String sTextoBuscado){
+
+        Reader fr = new Reader(this.filePath);
+        String lf = fr.readLine();
+        int contador = 0;
+
+        while (lf != null) {
+
+            //Se dintinguen entre mayúsculas y minúsculas
+            while (lf.indexOf(sTextoBuscado) > -1) {
+
+                lf = lf.substring(lf.indexOf(sTextoBuscado)+sTextoBuscado.length(),lf.length());
+                contador++; 
+            }
+            
+            
+            lf = fr.readLine();
+
+        }
+
+        fr.close();
+
+
+        return contador;
+    
+    }
+
+
+    public int countAChar(char c){
+
+
+        Reader fr = new Reader(this.filePath);
+        String lf = fr.readLine();
+        int posicion, contador = 0;
+
+        while (lf != null) {
+
+            //se busca la primera vez que aparece
+            posicion = lf.indexOf(c);
+
+            while (posicion != -1) { //mientras se encuentre el caracter
+                contador++;           //se cuenta
+                //se sigue buscando a partir de la posición siguiente a la encontrada
+                posicion = lf.indexOf(c, posicion + 1);
+            }
+            
+            
+            lf = fr.readLine();
+
+        }
+
+        fr.close();
+
+        return contador;
     }
 
 

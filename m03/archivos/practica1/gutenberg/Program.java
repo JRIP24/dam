@@ -13,5 +13,8 @@ public class Program {
         System.out.println("Líneas del libro: " + libro.countLinesBook());
         System.out.println("Palabras: " + libro.countWords());
         System.err.println("Caracteres: " + libro.countChars());
+        System.err.println("Veces que aparece una palabra: " + libro.countAWord("EBOOK"));
+        System.err.println("Veces que aparece un caracter: " + libro.countAChar('z'));
+        
     }
 }
