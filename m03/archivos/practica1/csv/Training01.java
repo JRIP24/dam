@@ -1,8 +1,14 @@
-public class Training01{
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashSet;
+
+public class Training01 {
 
     public Training01(){
 
     }
+
 
     //1. Oficines, ciutats on estan ubicades i vendes actuals. 
     public void m1(){
@@ -174,12 +180,129 @@ public class Training01{
 
     //7. Import total de les comandes enviades a cada client.
     public void m7(){
-        
+
+        //Primero guardaremos la lista de clientes
+        HashSet<Integer> clientes = new HashSet<Integer>();
+
+        Reader lector = new Reader("pedidos.dat");
+        int client;
+
+        //Leemos la primera línea
+        String linea = lector.readLine();
+        //Pasamos a la segunda línea
+        linea = lector.readLine();
+
+        while (linea != null) {
+            
+            String campos[] = linea.split("\\s+");
+
+            client = Integer.parseInt(campos[2]);
+            
+            clientes.add(client);
+               
+            linea = lector.readLine();
+
+        }
+
+        //Recorremos el hashset
+        Writer escritor = new Writer("output7.dat");
+
+        for (int i : clientes){
+
+            Reader l = new Reader("pedidos.dat");
+
+            int suma = 0;
+            int importe = 0;
+
+            String line = l.readLine();
+            //Pasamos a la segunda línea
+            line = l.readLine();
+
+            while (line != null) {
+                
+                String campos[] = line.split("\\s+");
+
+                client = Integer.parseInt(campos[2]);
+                importe = Integer.parseInt(campos[7]);
+                
+                if (client == i){
+                    suma = suma + importe;
+                }
+                
+                line = l.readLine();
+
+            }
+
+            
+
+            escritor.println("Importe total del cliente " + i + ": " + suma + "€");
+        }
+
+
+        escritor.close();
+
     }
 
     //8. Nom dels venedors i data contracte per contractes posteriors a una data donada (per exemple el 14 de juny de 1989).
+
+    //Conversor de String a Date 
+
+	public static Date stringToDate(String string){
+
+        Date result = new Date();
+
+        try{
+
+            DateFormat newFormato = new SimpleDateFormat("yyyy-MM-dd");
+            result = newFormato.parse(string);
+        } catch (java.text.ParseException e){
+            e.printStackTrace();
+        }
+
+        return result;
+	}
+	
+	//Conversor de Date a String
+    public static String dateToString(Date date){
+
+        String pattern = "yyyy-MM-dd";
+
+        DateFormat df = new SimpleDateFormat(pattern);
+
+        String result = df.format(date);
+
+        return result;
+    }
+    
     public void m8(){
         
+        String strf = "1989-06-14";
+        Date fecha = stringToDate(strf);
+
+        Reader lector = new Reader("repventas.dat");
+        Writer escritor = new Writer("output8.dat");
+
+        //Leemos la primera línea
+        String linea = lector.readLine();//Es el encabezado;
+        //Leemos la siguiente líena
+        linea = lector.readLine();
+
+        while (linea != null) {
+            
+            String campos[] = linea.split("\\s+");
+
+            Date f = stringToDate(campos[6]);
+
+            if (f.after(fecha)){
+                escritor.println(campos[1] + "\t" + campos[6]);
+            }
+
+            linea = lector.readLine();
+
+        }
+
+        escritor.close();
+
     }
 
     //9. Ciutats on hi ha oficines on l’objectiu supera un cert valor (per exemple 10000€) la quota de vendes incrementada en un cert valor (per exemple un 10 %).
