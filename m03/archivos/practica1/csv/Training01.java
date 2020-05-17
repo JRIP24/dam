@@ -362,7 +362,7 @@ public class Training01 {
             objetivo = Integer.parseInt(campos[4]);
             ventas = Integer.parseInt(campos[5]);
 
-            porcentaje = ((objetivo - ventas) / objetivo) * 100;
+            porcentaje = 100 * (ventas - objetivo) / ventas;
 
             escritor.println(campos[1] + "\t" + objetivo + "\t" + ventas + "\t" + porcentaje + "%");
 
