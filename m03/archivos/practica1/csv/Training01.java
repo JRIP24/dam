@@ -308,11 +308,72 @@ public class Training01 {
     //9. Ciutats on hi ha oficines on l’objectiu supera un cert valor (per exemple 10000€) la quota de vendes incrementada en un cert valor (per exemple un 10 %).
     public void m9(){
         
+        Reader lector = new Reader("oficinas.dat");
+        Writer escritor = new Writer("output9.dat");
+
+        String linea = lector.readLine();
+        linea = lector.readLine();
+        int objetivo;
+        int ventas;
+
+        escritor.println("OFICINA" + "\t" + "OBJETIVO" + "\t" + "VENTAS" + "\t" + "VENTAS +10%");
+
+        while(linea != null){
+
+            String campos[] = linea.split("\\s+");
+
+            objetivo = Integer.parseInt(campos[4]);
+            ventas = Integer.parseInt(campos[5]);
+
+            if (objetivo > 10000){
+                ventas = ventas + ((ventas * 10) / 100);
+                escritor.println(campos[1] + "\t" + campos[4] + "\t" + campos[5] + "\t" + ventas);
+
+            }
+
+            linea = lector.readLine();
+
+
+        }
+
+        escritor.close();
+
+
     }
 
     //10. Ciutats, objectius, vendes actuals i vendes actuals en % respecte dels objectius. 
     public void m10(){
         
+        Reader lector = new Reader("oficinas.dat");
+        Writer escritor = new Writer("output10.dat");
+
+        String linea = lector.readLine();
+        linea = lector.readLine();
+        int objetivo;
+        int ventas;
+        int porcentaje;
+
+        escritor.println("CIUDAD" + "\t" + "OBJETIVO" + "\t" + "VENTAS" + "\t" + "% DE VENTAS");
+
+        while(linea != null){
+
+            String campos[] = linea.split("\\s+");
+
+            objetivo = Integer.parseInt(campos[4]);
+            ventas = Integer.parseInt(campos[5]);
+
+            porcentaje = ((objetivo - ventas) / objetivo) * 100;
+
+            escritor.println(campos[1] + "\t" + objetivo + "\t" + ventas + "\t" + porcentaje + "%");
+
+        
+
+            linea = lector.readLine();
+
+
+        }
+
+        escritor.close();
     }
 
 
