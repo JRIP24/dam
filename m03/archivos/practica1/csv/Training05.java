@@ -1,4 +1,3 @@
-
 public class Training05{
 
     //41. Total de quotes i vendes actuals.
@@ -259,21 +258,137 @@ public class Training05{
     //46. Millor rendiment de vendes de tots els venedors.
     public void m46(){
 
+        //Se va a suponer que se refiere al importe de los pedidos de cada vendedor
+        Reader lector = new Reader("repventas.dat");
+        Writer escritor = new Writer("output46.dat");
+        int suma = 0;
+        int importe = 0;
+        int ventas;
+        int idVendedor;
+        int id = 0;
+
+        //Leemos la primera línea
+        String linea = lector.readLine();
+        //Pasamos a la siguiente
+        linea = lector.readLine();
+
+        //Extraemos el id del vendedor
+        while(linea != null){
+
+            String campos[] = linea.split("\\s+");
+
+            suma = 0;
+            id = Integer.parseInt(campos[0]);
+
+            //Recorremos pedidos.dat
+            Reader lectorPedidos = new Reader("pedidos.dat");
+
+            //Primera línea y  pasamos a la siguiente;
+            String lineaPedidos = lectorPedidos.readLine();
+            lineaPedidos = lectorPedidos.readLine();
+
+            while(lineaPedidos != null){
+
+                String c[] = lineaPedidos.split("\\s+");
+                
+                idVendedor = Integer.parseInt(c[3]);
+                importe = Integer.parseInt(c[7]);
+
+                if (idVendedor == id){
+                    suma = suma + importe;
+                }
+
+                lineaPedidos = lectorPedidos.readLine();
+            }
+
+
+            escritor.println(id + "\t" + suma + "€");
+
+
+            linea = lector.readLine();
+        }
+
+
+        escritor.close();
+
     }
     
     //47. Quants clients té l’empresa de recanvis.
     public void m47(){
 
+        //??
     }
     
     //48. Quants venedors tenen vendes actuals que superen la seva quota?
     public void m48(){
+        
+        Reader lector = new Reader("repventas.dat");
+        Writer escritor = new Writer("output48.dat");
+        int contador = 0;
+        int ventas;
+        int cuota;
 
+        //Leemos la primera línea
+        String linea = lector.readLine();
+        //Pasamos a la siguiente
+        linea = lector.readLine();
+
+        escritor.println("CANTIDAD DE VENDEDORES CON VENTAS MAYORES A SU CUOTA: ");
+
+        //Extraemos el id del vendedor
+        while(linea != null){
+
+            String campos[] = linea.split("\\s+");
+
+            if (!campos[8].equals("\\N")){
+
+                cuota = Integer.parseInt(campos[8]);
+                ventas = Integer.parseInt(campos[9]);
+
+                if (ventas > cuota){
+                    contador++;
+                }
+
+            }            
+            
+            linea = lector.readLine();
+        }
+
+        escritor.println(contador);
+
+        escritor.close();
     }
     
     //49. Quantes comandes superen un cert valor (per exemple 25.000 €).
     public void m49(){
 
+        Reader lector = new Reader("repventas.dat");
+        Writer escritor = new Writer("output48.dat");
+        int contador = 0;
+        int importe;
+        int valor = 25000;
+
+        //Leemos la primera línea
+        String linea = lector.readLine();
+        //Pasamos a la siguiente
+        linea = lector.readLine();
+
+        escritor.println("CANTIDAD DE PEDIDOS QUE SUPERAN LOS " + valor + "€");
+
+        //Extraemos el id del vendedor
+        while(linea != null){
+
+            String campos[] = linea.split("\\s+");
+
+            
+            
+
+            linea = lector.readLine();
+        }
+
+        escritor.println(contador);
+
+        escritor.close();
     }
     
     //50. Quantes categories tenen els empleats de l’empresa? 
