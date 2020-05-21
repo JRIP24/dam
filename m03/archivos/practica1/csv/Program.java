@@ -2,8 +2,8 @@ public class Program {
     
     public static void main(String[] args){
 
-        Training05 t = new Training05();
-        t.m48();
+        Training06 t = new Training06();
+        t.m52();
 
 
 

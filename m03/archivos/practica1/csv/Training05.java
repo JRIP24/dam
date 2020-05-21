@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 public class Training05{
 
     //41. Total de quotes i vendes actuals.
@@ -362,8 +364,8 @@ public class Training05{
     //49. Quantes comandes superen un cert valor (per exemple 25.000 €).
     public void m49(){
 
-        Reader lector = new Reader("repventas.dat");
-        Writer escritor = new Writer("output48.dat");
+        Reader lector = new Reader("pedidos.dat");
+        Writer escritor = new Writer("output49.dat");
         int contador = 0;
         int importe;
         int valor = 25000;
@@ -380,8 +382,11 @@ public class Training05{
 
             String campos[] = linea.split("\\s+");
 
-            
-            
+            importe = Integer.parseInt(campos[7]);
+
+            if (importe > valor){
+                contador++;
+            }            
 
             linea = lector.readLine();
         }
@@ -394,6 +399,32 @@ public class Training05{
     //50. Quantes categories tenen els empleats de l’empresa? 
     public void m50(){
 
+        Reader lector = new Reader("repventas.dat");
+        Writer escritor = new Writer("output50.dat");
+        int contador = 0;
+        String categoria;
+        HashSet <String> categorias = new HashSet<String>();
+
+        //Leemos la primera línea
+        String linea = lector.readLine();
+        //Pasamos a la siguiente
+        linea = lector.readLine();
+
+        //Extraemos el id del vendedor
+        while(linea != null){
+
+            String campos[] = linea.split("\\s+");
+
+            categoria = campos[5];
+
+            categorias.add(categoria);
+            
+            linea = lector.readLine();
+        }
+
+        escritor.println(categorias.size());
+
+        escritor.close();
     }
     
 }
