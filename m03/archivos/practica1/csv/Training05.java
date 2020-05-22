@@ -317,8 +317,30 @@ public class Training05{
     
     //47. Quants clients té l’empresa de recanvis.
     public void m47(){
+        //Se hace la suposición de que la empresa de recambios es la propietaria de los archivos .dat
+        //Por lo tanto, hacemos un conteo de clientes.dat
+        Reader lector = new Reader("clientes.dat");
+        Writer escritor = new Writer("output47.dat");
+        int contador = 0;
 
-        //??
+        //Leemos la primera línea
+        String linea = lector.readLine();
+        //Pasamos a la siguiente
+        linea = lector.readLine();
+
+        escritor.println("CANTIDAD DE CLIENTES: ");
+
+        //Extraemos el id del vendedor
+        while(linea != null){
+            
+            contador++;
+            
+            linea = lector.readLine();
+        }
+
+        escritor.println(contador);
+
+        escritor.close();
     }
     
     //48. Quants venedors tenen vendes actuals que superen la seva quota?
