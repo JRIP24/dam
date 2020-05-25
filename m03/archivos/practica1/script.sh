@@ -1,2 +1,2 @@
 #/bin/bash
-#echo metod{1..10}
+echo t6.m{51..60}"();"
