@@ -1,2 +1,2 @@
 #/bin/bash
-echo metod{1..10}
+#echo metod{1..10}
