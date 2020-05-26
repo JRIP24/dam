@@ -8,6 +8,8 @@ public class Student extends Person {
         this.cycle = cy;
         this.course = co;
 
+        System.out.println("Soy el constructor de la clase Student");
+
     }
 
     public String getCycle(){

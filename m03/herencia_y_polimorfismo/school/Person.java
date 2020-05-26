@@ -7,6 +7,7 @@ public class Person{
 
         this.name = n;
         this.address = a;
+        System.out.println("Soy el constructor de la clase Persona");
     }
 
     public String getName(){
