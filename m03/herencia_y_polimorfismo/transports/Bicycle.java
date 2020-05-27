@@ -11,9 +11,10 @@ public class Bicycle extends Transport {
         this.nGears = nG;
     }
 
+    //Se cobrará por horas
     public double cost(double distancia){
 
-        return distancia / this.nGears;
+        return distancia;
     }
 
     public int getNGears(){

@@ -11,6 +11,7 @@ public class Underground extends Transport{
         this.ticketPrice = tP;
     }
 
+    //El coste es el precio del ticket, válido para cualquier distáncia
     public double cost(double distancia){
         return this.ticketPrice;
     }
