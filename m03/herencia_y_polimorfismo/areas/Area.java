@@ -19,7 +19,7 @@ public abstract class Area{
     }
 
     public double consuptionM2(){
-
+        return this.consuption / this.surfaceArea;
     }
 
     public String getCode(){

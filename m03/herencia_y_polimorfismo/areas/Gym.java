@@ -8,7 +8,8 @@ public class Gym extends Classroom{
     }
 
     public double surfaceAreaStudent(){
-
+        int area = this.getCapacity() + this.nStands;
+        return this.getCapacity() / area;
     }
 
     public boolean isShower(){
