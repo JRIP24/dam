@@ -26,6 +26,11 @@ public class Classroom extends Area{
         return this.networkConn;
     }
 
+    //Este método no estaba en el diagrama, es añadido por mi
+    public void setNetworkConn(boolean nC){
+        this.networkConn = nC;
+    }
+
     public int getCapacity(){
         return this.capacity;
     }
