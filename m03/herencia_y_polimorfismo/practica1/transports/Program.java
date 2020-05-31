@@ -2,8 +2,8 @@ public class Program {
     
     public static void main(String[] args) {
         
-        Car coche = new Car("321BOOM", 80, "Gasolina", 1.17, 0.05);
-        double cocheDist = 9.6;
+        Car coche = new Car("321BOOM", 120, "Gasolina", 1.17, 0.5);
+        double cocheDist = 19;
         System.out.println("Coche");
         System.out.println("Id: " + coche.getId());
         System.out.println("Tipo de combustible: " + coche.getFuelType());

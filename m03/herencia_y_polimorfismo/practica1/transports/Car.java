@@ -17,7 +17,7 @@ public class Car extends Transport{
 
     public double cost(double distancia){
 
-        return distancia * this.literPrice;
+        return (distancia * this.litersKm) * this.literPrice;
     }
 
     public double getLiterPrice(){
