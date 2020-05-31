@@ -1,3 +1,5 @@
+package parking;
+
 public abstract class Vehicle{
 
     private String regPlate;

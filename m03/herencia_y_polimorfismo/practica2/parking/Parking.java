@@ -1,3 +1,5 @@
+package parking;
+
 public class Parking {
     
     private int nSpaces;

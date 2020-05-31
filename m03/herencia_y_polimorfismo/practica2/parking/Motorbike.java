@@ -1,3 +1,5 @@
+package parking;
+
 public class Motorbike extends Vehicle{
     
     public Motorbike(String reg, int p){
