@@ -27,6 +27,7 @@ public class HardDisk extends Product{
     public float getCapacity(){
         return this.capacity;
     }
+    
 
 
 }
