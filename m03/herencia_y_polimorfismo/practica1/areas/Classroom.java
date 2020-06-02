@@ -11,7 +11,7 @@ public class Classroom extends Area{
     }
 
     public double surfaceAreaStudent(){
-        return this.capacity / this.getSurfaceArea();
+        return this.getSurfaceArea() / this.capacity;
     }
 
     public boolean isTableChair(){

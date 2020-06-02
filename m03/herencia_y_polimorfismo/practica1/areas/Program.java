@@ -26,6 +26,7 @@ public class Program {
         System.out.println("Consumo eléctrico: " + clase.getConsuption() + "Kwh");
         System.out.println("Consumo eléctrico por m²: " + clase.consuptionM2());
         System.out.println("Capacidad máxima: " + clase.getCapacity());
+        System.out.println("m² por estudiante: " + clase.surfaceAreaStudent());
         System.out.println("Tiene mesas y sillas?: " + clase.isTableChair());
         System.out.println("Nº de Ordenadores: " + clase.getNComputers());
         System.out.println("Tiene conexión de red?: " + clase.isNetworkConn());
@@ -43,6 +44,7 @@ public class Program {
         System.out.println("Consumo eléctrico: " + lab.getConsuption() + "Kwh");
         System.out.println("Consumo eléctrico por m²: " + lab.consuptionM2());
         System.out.println("Capacidad máxima: " + lab.getCapacity());
+        System.out.println("m² por estudiante: " + lab.surfaceAreaStudent());
         System.out.println("Tiene mesas y sillas?: " + lab.isTableChair());
         System.out.println("Nº de Ordenadores: " + lab.getNComputers());
         System.out.println("Tiene conexión de red?: " + lab.isNetworkConn());
@@ -61,6 +63,7 @@ public class Program {
         System.out.println("Consumo eléctrico: " + info.getConsuption() + "Kwh");
         System.out.println("Consumo eléctrico por m²: " + info.consuptionM2());
         System.out.println("Capacidad máxima: " + info.getCapacity());
+        System.out.println("m² por estudiante: " + info.surfaceAreaStudent());
         System.out.println("Tiene mesas y sillas?: " + info.isTableChair());
         System.out.println("Nº de Ordenadores: " + info.getNComputers());
         System.out.println("Tiene conexión de red?: " + info.isNetworkConn());
@@ -79,6 +82,7 @@ public class Program {
         System.out.println("Consumo eléctrico: " + gim.getConsuption() + "Kwh");
         System.out.println("Consumo eléctrico por m²: " + gim.consuptionM2());
         System.out.println("Capacidad máxima: " + gim.getCapacity());
+        System.out.println("m² por estudiante: " + gim.surfaceAreaStudent());
         System.out.println("Tiene mesas y sillas?: " + gim.isTableChair());
         System.out.println("Nº de Ordenadores: " + gim.getNComputers());
         System.out.println("Tiene conexión de red?: " + gim.isNetworkConn());

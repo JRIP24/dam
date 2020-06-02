@@ -14,7 +14,7 @@ public class Program {
         System.out.println("Costo: " + coche.cost(cocheDist) + "€");
         System.out.println("-------------------------");
 
-        Bicycle bike = new Bicycle("BMX21", 8, 3);
+        Bicycle bike = new Bicycle("BMX21", 20, 3);
         double bikeDist = 6.5;
         System.out.println("Bicicleta");
         System.out.println("Id: " + bike.getId());
@@ -25,7 +25,7 @@ public class Program {
         System.out.println("-------------------------");
 
 
-        Underground metro = new Underground("M19", 26.30, 10.00);
+        Underground metro = new Underground("M19", 26.30, 2.40);
         double metroDist = 6.5;
         System.out.println("Metro");
         System.out.println("Id: " + metro.getId());
