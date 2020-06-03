@@ -36,6 +36,7 @@ public class Program {
         System.out.println("Descuento aplicado a residuales: " + familia2.sewerageDiscount);
         System.out.println("Residuales: " + familia2.sewerageAmount());
         System.out.println("TOTAL: " + familia2.totalAmount());
+        familia2.details();
 
 
 
