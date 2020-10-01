@@ -21,5 +21,19 @@ public class Oficial extends Tripulant{
 		return this.serveiEnElPont;
 	}
 	
+	public String getDescripcioFeina() {
+		return this.descripcioFeina;
+	}
+	
+	protected void ImprimirDadesTripulant() {
+		System.out.println("ID: " + this.ID);
+		System.out.println("Nom: " + this.nom);
+		System.out.println("Actiu: " + this.actiu);
+		System.out.println("DataAlta: " + this.dataAlta);
+		System.out.println("Departament: " + this.departament);
+		System.out.println("Serveix en el pont?: " + this.serveixEnElPont());
+		System.out.println("Descripción de la feina: " + this.descripcioFeina);
+	}
+	
 	
 }
