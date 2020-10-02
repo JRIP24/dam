@@ -35,7 +35,9 @@ public class IKSRotarran {
 		System.out.println(oficialDeTipusOficial.equals(capita));//Pendiente
 		
 		System.out.println(IKSRotarranConstants.LLOCS_DE_SERVEI[capita.getLlocDeServei()]);
-		capita.ImprimirDadesTripulant();
+		//capita.ImprimirDadesTripulant();
+		
+		System.out.println(capita);
 		
 		
 			

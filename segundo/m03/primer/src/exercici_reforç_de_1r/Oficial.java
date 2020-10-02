@@ -30,6 +30,13 @@ public class Oficial extends Tripulant{
 		System.out.println("Hola des de la subclasse Oficial");
 	}
 	
+	@Override
+	public String toString() {
+		return ("ID: " + this.ID + "\nNom: " + this.nom + "\nActiu: " + this.actiu + "\nDataAlta: " + this.dataAlta + "\nDpt: " + this.departament + "\nLloc de servei: " + IKSRotarranConstants.LLOCS_DE_SERVEI[this.getLlocDeServei()] + "\nServeix en el pont? " + this.serveiEnElPont + "\nDescripció de la feina: " + this.descripcioFeina);
+		
+		
+	}
+	
 	protected void ImprimirDadesTripulant() {
 		System.out.println("ID: " + this.ID);
 		System.out.println("Nom: " + this.nom);
