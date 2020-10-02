@@ -32,7 +32,7 @@ public class Oficial extends Tripulant{
 	
 	@Override
 	public String toString() {
-		return ("ID: " + this.ID + "\nNom: " + this.nom + "\nActiu: " + this.actiu + "\nDataAlta: " + this.dataAlta + "\nDpt: " + this.departament + "\nLloc de servei: " + IKSRotarranConstants.LLOCS_DE_SERVEI[this.getLlocDeServei()] + "\nServeix en el pont? " + this.serveiEnElPont + "\nDescripció de la feina: " + this.descripcioFeina);
+		return ("ID: " + this.ID + "\nNom: " + this.nom + "\nActiu: " + this.actiu + "\nDataAlta: " + this.dataAlta + "\nDpt: " + this.departament + "\nLloc de servei: " + IKSRotarranConstants.LLOCS_DE_SERVEI[this.getLlocDeServei()] + "\nServeix en el pont? " + this.serveiEnElPont + "\nDescripció de la feina: " + this.descripcioFeina + "\n");
 		
 		
 	}

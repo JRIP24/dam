@@ -37,7 +37,11 @@ public class IKSRotarran {
 		System.out.println(IKSRotarranConstants.LLOCS_DE_SERVEI[capita.getLlocDeServei()]);
 		//capita.ImprimirDadesTripulant();
 		
-		System.out.println(capita);
+		System.out.println(capita);//Muestra lo que se implementó con el método toString()
+		System.out.println("------------------");
+		System.out.println(mariner_02_03);//Mustra su "hash"
+		
+		mariner_02_03.ImprimirDadesTripulant();
 		
 		
 			
