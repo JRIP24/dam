@@ -9,4 +9,9 @@
 			<item value="/home/users/inf/wiam2/iam2671090/Downloads/harbour"/>
 		</list>
 	</section>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+		</list>
+	</section>
 </section>
