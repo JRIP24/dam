@@ -1,4 +1,24 @@
-!SESSION 2020-10-02 17:50:10.978 -----------------------------------------------
+
+!ENTRY org.eclipse.ui.ide 4 4 2020-10-02 17:57:42.294
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2020-10-02 17:57:42.294
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2020-10-02 17:57:42.294
+!MESSAGE Could not write workspace metadata '/home/users/inf/wiam2/iam2671090/dam/segundo/m03/.metadata/.plugins/org.eclipse.core.resources/.root/3.tree'.
+!STACK 0
+java.io.FileNotFoundException: /home/users/inf/wiam2/iam2671090/dam/segundo/m03/.metadata/.plugins/org.eclipse.core.resources/.root/3.tree (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:187)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:55)
+	at org.eclipse.core.internal.resources.SaveManager.saveTree(SaveManager.java:1381)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1168)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2333)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.lambda$1(IDEWorkbenchAdvisor.java:509)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+!SESSION 2020-10-02 17:57:54.262 -----------------------------------------------
 eclipse.buildId=4.17.0.I20200902-1800
 java.version=11.0.8
 java.vendor=Red Hat, Inc.
@@ -6,88 +26,88 @@ BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
 Framework arguments:  -product org.eclipse.epp.package.jee.product
 Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
 
-!ENTRY org.eclipse.ui 2 0 2020-10-02 17:50:25.942
+!ENTRY org.eclipse.ui 2 0 2020-10-02 17:58:03.827
 !MESSAGE Warnings while parsing the key bindings from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.bindings' extension point
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.942
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.827
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.942
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.827
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.942
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.827
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.next'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.942
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.827
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.next'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.942
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.827
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.previous'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.942
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.827
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.previous'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.942
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.827
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.942
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.827
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.942
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.827
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.source.quickMenu'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.827
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.source.quickMenu'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.add.import'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.organize.imports'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.refactor.quickMenu'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.refactor.quickMenu'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.rename.element'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.rename.element'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.move.element'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.move.element'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.modify.method.parameters'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.modify.method.parameters'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.inline'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.inline'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.extract.method'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.extract.method'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.extract.local.variable'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.extract.local.variable'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.open.hierarchy'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.TypeHierarchy'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.TypeHierarchy'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.PackageExplorer'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.PackageExplorer'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.SourceView'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.828
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.SourceView'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.829
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.JavadocView'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:25.943
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:58:03.829
 !MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.JavadocView'
 
-!ENTRY org.eclipse.jface 2 0 2020-10-02 17:50:27.234
+!ENTRY org.eclipse.jface 2 0 2020-10-02 17:58:05.071
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2020-10-02 17:50:27.234
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-10-02 17:58:05.071
 !MESSAGE A conflict occurred for CTRL+SHIFT+T:
 Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
 		Open a type in a Java editor,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@213bd66a,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@22349ad3,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
@@ -95,209 +115,7 @@ Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
 		,
 		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5692863,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-!SESSION 2020-10-02 17:50:57.528 -----------------------------------------------
-eclipse.buildId=4.17.0.I20200902-1800
-java.version=11.0.8
-java.vendor=Red Hat, Inc.
-BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.jee.product
-Command-line arguments:  -data file:/home/users/inf/wiam2/iam2671090/dam/segundo/m03/ -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
-
-!ENTRY org.eclipse.ui 2 0 2020-10-02 17:50:59.209
-!MESSAGE Warnings while parsing the key bindings from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.bindings' extension point
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.209
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.209
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.next'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.next'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.previous'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.previous'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.source.quickMenu'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.source.quickMenu'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.add.import'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.organize.imports'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.refactor.quickMenu'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.refactor.quickMenu'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.rename.element'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.rename.element'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.move.element'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.move.element'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.modify.method.parameters'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.modify.method.parameters'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.inline'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.inline'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.extract.method'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.extract.method'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.extract.local.variable'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.extract.local.variable'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.open.hierarchy'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.TypeHierarchy'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.TypeHierarchy'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.PackageExplorer'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.PackageExplorer'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.SourceView'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.SourceView'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.JavadocView'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:50:59.210
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.JavadocView'
-
-!ENTRY org.eclipse.jface 2 0 2020-10-02 17:51:00.423
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2020-10-02 17:51:00.423
-!MESSAGE A conflict occurred for CTRL+SHIFT+T:
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
-		Open a type in a Java editor,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7833407,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
-		,
-		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@66acaa54,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-!SESSION 2020-10-02 17:51:20.609 -----------------------------------------------
-eclipse.buildId=4.17.0.I20200902-1800
-java.version=11.0.8
-java.vendor=Red Hat, Inc.
-BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.jee.product
-Command-line arguments:  -data file:/home/users/inf/wiam2/iam2671090/dam/segundo/m03/ -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
-
-!ENTRY org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Warnings while parsing the key bindings from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.bindings' extension point
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.enclosing'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.next'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.next'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.previous'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.previous'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.select.last'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.source.quickMenu'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.source.quickMenu'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.add.import'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.organize.imports'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.refactor.quickMenu'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.refactor.quickMenu'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.rename.element'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.rename.element'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.366
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.move.element'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.move.element'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.modify.method.parameters'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.modify.method.parameters'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.inline'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.inline'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.extract.method'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.extract.method'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.extract.local.variable'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.extract.local.variable'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.edit.text.java.open.hierarchy'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.TypeHierarchy'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.TypeHierarchy'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.PackageExplorer'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.PackageExplorer'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.SourceView'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.SourceView'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.JavadocView'
-!SUBENTRY 1 org.eclipse.ui 2 0 2020-10-02 17:51:22.367
-!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.wst.jsdt.ui', id='org.eclipse.wst.jsdt.ui.JavadocView'
-
-!ENTRY org.eclipse.jface 2 0 2020-10-02 17:51:23.623
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2020-10-02 17:51:23.623
-!MESSAGE A conflict occurred for CTRL+SHIFT+T:
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
-		Open a type in a Java editor,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3e563293,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
-		,
-		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5b53c3c5,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@42fdf45e,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
