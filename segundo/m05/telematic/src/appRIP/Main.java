@@ -33,6 +33,7 @@ public class Main {
 	 * @param args Not used.
 	 */
 	public static void main(String[] args) {
+		
 		Company comp = new Company();
 		Connection a = new Connection("18/05/2012-10:00", "18/05/2012-10:05");
 		Connection b = new Connection("18/05/2012-10:06", "18/05/2012-10:15");

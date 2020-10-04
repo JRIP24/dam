@@ -6,6 +6,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/home/ronald/dam/segundo/m05/telematic"/>
 			<item value="/home/ronald/dam/segundo/m05/home"/>
 			<item value="/home/users/inf/wiam2/iam2671090/Downloads/harbour"/>
 		</list>
