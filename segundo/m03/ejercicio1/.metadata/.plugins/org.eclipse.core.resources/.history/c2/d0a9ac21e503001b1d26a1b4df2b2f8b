@@ -1,0 +1,5 @@
+package exercici_reforç_de_1r;
+
+public class Mariner extends Tripulant{
+
+}

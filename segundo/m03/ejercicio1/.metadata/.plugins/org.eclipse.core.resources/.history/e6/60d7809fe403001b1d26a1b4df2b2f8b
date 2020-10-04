@@ -1,0 +1,16 @@
+package exercici_reforç_de_1r;
+
+import java.time.LocalDateTime;
+
+public class Oficial extends Tripulant{
+	
+	boolean serveiEnElPont // Si el tripulant serveix en el pont a llavors true.
+	String descripcioFeina
+	
+	public Oficial(String id, String nombre, boolean activo, LocalDateTime fechaAlta, int departamento, boolean sirvePuente, String descripcion) {
+		
+		super(id, nombre, activo, fechaAlta, departamento);
+		this.
+		
+	}
+}

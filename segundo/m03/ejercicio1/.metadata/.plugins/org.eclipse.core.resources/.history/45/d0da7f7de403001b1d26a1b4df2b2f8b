@@ -1,0 +1,8 @@
+package exercici_reforç_de_1r;
+
+import java.time.LocalDateTime;
+
+public class Oficial extends Tripulant{
+	
+	public Oficial(String id, String nombre, boolean activo, LocalDateTime fechaAlta, int departamento, boolean sirvePuente, String descripcion)
+}
