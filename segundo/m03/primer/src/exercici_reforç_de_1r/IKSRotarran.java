@@ -39,7 +39,7 @@ public class IKSRotarran {
 		
 		System.out.println(capita);//Muestra lo que se implementó con el método toString()
 		System.out.println("------------------");
-		System.out.println(mariner_02_03);//Mustra su "hash"
+		System.out.println(mariner_02_03);//Muestra su "hash"
 		
 		mariner_02_03.ImprimirDadesTripulant();
 		
