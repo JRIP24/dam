@@ -27,12 +27,12 @@ public class IKSRotarran {
 		capita.departament = 10;*/
 		
 		Tripulant oficialDeTipusTripulant = new Oficial("006-A", "OficialTipulante", true, altaCap, 1, 1, true, "Capitanear la nave también");
-		Oficial oficialDeTipusOficial = new Oficial("025-A", "OficialOficial", true, altaCap, 1, 2, true, "Capitanear la nave también");
+		Oficial oficialDeTipusOficial = new Oficial("024-A", "OficialOficial", true, altaCap, 1, 2, true, "Capitanear la nave también");
 		
 		oficialDeTipusOficial.saludar();
 		oficialDeTipusTripulant.saludar();
 		
-		System.out.println(oficialDeTipusOficial.equals(capita));//Pendiente
+		System.out.println(oficialDeTipusOficial.equals(capita));
 		
 		System.out.println(IKSRotarranConstants.LLOCS_DE_SERVEI[capita.getLlocDeServei()]);
 		//capita.ImprimirDadesTripulant();
