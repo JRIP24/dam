@@ -10,6 +10,50 @@ public class Programa {
 		return dir.exists() && dir.isDirectory();
 	}
 	
+	static String checkDates(File f1, File f2) {
+		
+		long datef1 =  f1.lastModified();
+		long datef2 =  f2.lastModified();
+		String mensaje = "";
+		
+		if (datef1 > datef2) {//f1 es más reciente
+			
+			mensaje = "El fitxer al directori A és més nou que a B";
+					
+		} else if (datef2 > datef1) {
+			
+			mensaje = "El fitxer al directori B és més nou que a A";
+			
+		} else {
+			mensaje = "Tenen la mateixa mida";
+		}
+		
+		return mensaje;
+		
+	}
+	
+	static String checkSizes(File f1, File f2) {
+		
+		String mensaje = "";
+		long sizef1 = f1.length();
+		long sizef2 = f2.length();
+		
+		if (sizef1 > sizef2) {//f1 es más reciente
+			
+			mensaje = "El fitxer al directori A és més gran que a B";
+					
+		} else if (sizef2 > sizef1) {
+			
+			mensaje = "El fitxer al directori B és més gran que a A";
+			
+		} else {
+			mensaje = "Tenen la mateixa mida";
+		}
+		
+		
+		return mensaje;
+	}
+	
 	static void compareDirs(File d1, File d2) {
 		
 		int d1Length = d1.list().length;
@@ -21,7 +65,34 @@ public class Programa {
 		} else {
 	
 			for(int i = 0; i < d1Length; i++) {
-				System.out.println(d1.list()[i]);
+				String archivo = d1.list()[i];
+				File archivoPath = new File (d1 + "/" +  archivo);
+				
+				
+				if(!validDir(archivoPath)) {//Comprobamos que sea un archivo
+					
+					for (int x = 0; x < d2.list().length; x++) {
+						String file = d2.list()[x];
+						File filePath = new File(d2 + "/" + file);
+						
+						if (!validDir(filePath)) {
+							if (file.equals(archivo)) {
+								
+								System.out.println("El fitxer '" +  archivo + "' existeix a ambdós directoris");
+								
+								System.out.println("--------" + checkDates(archivoPath, filePath));
+								System.out.println("--------" + checkSizes(archivoPath, filePath));
+								
+
+							} else {
+								System.out.println("El fitxer '" +  archivo + "' existeix al directori A, però no existeix al directori B");
+							}
+						}
+						
+						
+					}
+					
+				}
 			}
 		}
 		
@@ -57,7 +128,6 @@ public class Programa {
 				System.out.println("ERROR: El directorio " + ruta2 + " no es válido");
 				
 			} else {//Podemos continuar
-				System.out.println("Se puede");
 				compareDirs(dir1, dir2);
 				
 			}
