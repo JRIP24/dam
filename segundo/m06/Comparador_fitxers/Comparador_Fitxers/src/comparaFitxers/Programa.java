@@ -25,7 +25,7 @@ public class Programa {
 			mensaje = "El fitxer al directori B és més nou que a A";
 			
 		} else {
-			mensaje = "Tenen la mateixa mida";
+			mensaje = "Tenen la mateixa data";
 		}
 		
 		return mensaje;
@@ -40,14 +40,14 @@ public class Programa {
 		
 		if (sizef1 > sizef2) {//f1 es más reciente
 			
-			mensaje = "El fitxer al directori A és més gran que a B";
+			mensaje = "El fitxer al directori A és més gran que a B \n";
 					
 		} else if (sizef2 > sizef1) {
 			
-			mensaje = "El fitxer al directori B és més gran que a A";
+			mensaje = "El fitxer al directori B és més gran que a A \n";
 			
 		} else {
-			mensaje = "Tenen la mateixa mida";
+			mensaje = "Tenen la mateixa mida \n";
 		}
 		
 		
@@ -63,10 +63,18 @@ public class Programa {
 			System.out.println("El directorio " + d1 + " está vacío");
 			
 		} else {
+			
+			System.out.println("- S’està comparant els següents dos directoris: \n");
+
+			System.out.println("---- Directori A: " + d1);
+
+			System.out.println("---- Directori B: " + d2 + "\n");
 	
 			for(int i = 0; i < d1Length; i++) {
 				String archivo = d1.list()[i];
 				File archivoPath = new File (d1 + "/" +  archivo);
+				File archivo2Path = archivoPath;//Se le pone como valor por defecto
+				boolean encontrado = false;
 				
 				
 				if(!validDir(archivoPath)) {//Comprobamos que sea un archivo
@@ -78,21 +86,31 @@ public class Programa {
 						if (!validDir(filePath)) {
 							if (file.equals(archivo)) {
 								
-								System.out.println("El fitxer '" +  archivo + "' existeix a ambdós directoris");
-								
-								System.out.println("--------" + checkDates(archivoPath, filePath));
-								System.out.println("--------" + checkSizes(archivoPath, filePath));
-								
+								encontrado = true;
+								archivo2Path = filePath;						
 
-							} else {
-								System.out.println("El fitxer '" +  archivo + "' existeix al directori A, però no existeix al directori B");
 							}
+								
+							
 						}
 						
 						
 					}
 					
+					if (encontrado) {
+						
+						System.out.println("-El fitxer '" +  archivo + "' existeix a ambdós directoris"  + "\n");
+						
+						System.out.println("--------" + checkDates(archivoPath, archivo2Path));
+						System.out.println("--------" + checkSizes(archivoPath, archivo2Path));
+						
+					} else {
+						System.out.println("-El fitxer '" +  archivo + "' existeix al directori A, però no existeix al directori B" + "\n");
+					}
+					
 				}
+				
+				
 			}
 		}
 		
