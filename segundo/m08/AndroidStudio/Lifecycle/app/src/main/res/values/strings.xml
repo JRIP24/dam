@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Lifecycle</string>
+    <string name="create">onCreate method called</string>
+    <string name="start">onStart method called</string>
+    <string name="restart">onRestart method called</string>
+    <string name="resume">onResume method called</string>
+    <string name="pause">onPause method called</string>
+    <string name="stop">onStop method called</string>
+    <string name="destroy">onDestroy method called</string>
+</resources>

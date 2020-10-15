@@ -6,10 +6,14 @@
     <string name="btDiv">/</string>
     <string name="btPow">x^y</string>
     <string name="btCle">CE</string>
+    <string name="btAb">About Us</string>
 
     <string name="num1">Enter a number</string>
     <string name="num2">Enter a second number</string>
 
     <string name="textResult">0</string>
+
+
+    <string name="aboutUs">Here you can read more info</string>
 
 </resources>

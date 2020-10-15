@@ -2,7 +2,10 @@ package com.example.calculadora;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static int WAIT_SCREEN = 1000;
+    private static final String HOME_TAG = MainActivity.class.getSimpleName();
 
     private EditText num1;
     private EditText num2;
@@ -24,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     void errorMsg(String mensaje){
         Toast.makeText(MainActivity.this, mensaje, Toast.LENGTH_SHORT).show();
+        Log.w(HOME_TAG, "Mensaje warning");
     }
 
     @Override
@@ -132,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
                     if (n2 == 0.0){
 
                         errorMsg("Divide by zero impossible");
+                        Log.e(HOME_TAG, "Impossible divide by " +  num2.getText().toString());
 
                     } else{
 
@@ -175,8 +183,21 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
 
 
+    public void aboutUs(View view){
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                Intent intent = new Intent(MainActivity.this, AboutUsActivity.class);
+                startActivity(intent);
+                finish();//Para cerrar la pantalla anterior, si era la principal, al darle a volver irá a la pantala de inicio del móvil.
+
+            }
+        }, WAIT_SCREEN);
 
     }
 }
