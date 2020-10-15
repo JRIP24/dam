@@ -1,4 +1,5 @@
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -10,7 +11,7 @@ import java.util.Scanner;
 
 public class Program {
 
-	public static void main(String[] args) throws ClassNotFoundException {
+	public static void main(String[] args) throws ClassNotFoundException, FileNotFoundException, IOException {
 		// TODO Auto-generated method stub
 		
 		Scanner teclado = new Scanner(System.in);
@@ -67,25 +68,26 @@ public class Program {
 					
 				}				
 				
+				ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream("enteros.txt"));
 				
 				try {
-					
-					ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream("enteros.txt"));
-					
-					salida.writeInt(cantidad);
-					
-					for (int i = 0; i < numeros.length; i++) {
-						salida.writeInt(numeros[i]);
-					}
-					
-					System.out.println("Se han escrito los enteros exitosamente");
-					
-					salida.close();
+						
+						salida.writeInt(cantidad);
+						
+						for (int i = 0; i < numeros.length; i++) {
+							salida.writeInt(numeros[i]);
+						}
+						
+						System.out.println("Se han escrito los enteros exitosamente");
+						
+						
 					
 					} catch (IOException e) {
 						
 						System.out.println("Error al escribir: " + e);
 						
+					} finally {
+						salida.close();
 					}
 				 
 			}
