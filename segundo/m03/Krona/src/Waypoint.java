@@ -1,6 +1,8 @@
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
@@ -155,6 +157,44 @@ public class Waypoint {
 		System.out.println("Tiempo para insertar 1 waypoint al final de LinkedList: " + LlTimeEnd + "ns");
 		
 		
+		
+		
+	}
+	
+	
+	
+	//Método 4
+	//originalmente devuelve ComprovacioRendiment
+	public static void modificarWaypoints(ComprovacioRendiment comprovacioRendimentTmp) {
+		
+		int AlSize = comprovacioRendimentTmp.llistaArrayList.size();
+		System.out.println("------ APARTAT 1------\n");
+		List<Integer> idsPerArrayList = new ArrayList<Integer>();
+		
+		for (int i = 0; i < AlSize; i++) {
+			idsPerArrayList.add(i, i);
+		}
+		
+		System.out.println("Se ha inicializado la lista idsPerArrayList con " + AlSize + " elementos");	
+		System.out.println("El primero tiene el valor: " + idsPerArrayList.get(0));
+		System.out.println("El último tiene el valor: " + idsPerArrayList.get(AlSize - 1));
+		
+		
+		System.out.println("\n------ APARTAT 2------");
+		
+		for (int i = 0; i < AlSize; i++) {
+			
+			int valorId = comprovacioRendimentTmp.llistaArrayList.get(i).getId();
+			
+			System.out.println("ANTES DEL CAMBIO: comprovacioRendimentTmp.llistaArrayList.get(" + i + ").getId(): " + valorId);
+			
+			comprovacioRendimentTmp.llistaArrayList.get(i).setId(idsPerArrayList.get(i));
+			
+			valorId = comprovacioRendimentTmp.llistaArrayList.get(i).getId();
+			
+			System.out.println("DESPUÉS DEL CAMBIO: comprovacioRendimentTmp.llistaArrayList.get(" + i + ").getId(): " + valorId + "\n");
+			
+		}
 		
 		
 	}

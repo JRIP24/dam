@@ -25,7 +25,14 @@ public class Waypoint_Dades {
 		this.dataModificacio = dataModificacio;
 	}
 	
-	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
 		return "Waypoint_Dades [id=" + id + ", nom=" + nom + ", coordenades=" + Arrays.toString(coordenades)

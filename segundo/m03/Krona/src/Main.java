@@ -8,7 +8,8 @@ public class Main {
 		
 		Waypoint.comprovarRendimentInicialitzacio(10, comp);
 		
-		Waypoint.comprovarRendimentInsercio(comp);
+		//Waypoint.comprovarRendimentInsercio(comp);
+		Waypoint.modificarWaypoints(comp);
 
 	}
 
