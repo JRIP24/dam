@@ -6,7 +6,7 @@ public class Main {
 		
 		ComprovacioRendiment comp = Waypoint.inicialitzarComprovacioRendiment();
 		
-		Waypoint.comprovarRendimentInicialitzacio(50000, comp);
+		Waypoint.comprovarRendimentInicialitzacio(10, comp);
 		
 		Waypoint.comprovarRendimentInsercio(comp);
 

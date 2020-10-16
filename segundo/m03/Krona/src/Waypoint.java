@@ -96,9 +96,12 @@ public class Waypoint {
 		
 		start = System.nanoTime();
 		
-		
+		comprovacioRendimentTmp.llistaArrayList.add(mitadAl, new Waypoint_Dades(0, "Òrbita de la Terra", new int[] {0,0,0}, true, LocalDateTime.parse("15/08/1954 00:01", formatter), null, null));
+				
 		
 		end = System.nanoTime();
+		
+		long AlTimeMiddle = end - start;
 		
 		
 		
@@ -106,10 +109,50 @@ public class Waypoint {
 		
 		//---------LinkedList
 		int mitadLl = LlSize / 2;
+		start = System.nanoTime();
+		
+		comprovacioRendimentTmp.llistaLinkedList.add(mitadLl, new Waypoint_Dades(0, "Òrbita de la Terra", new int[] {0,0,0}, true, LocalDateTime.parse("15/08/1954 00:01", formatter), null, null));
+		
+		end = System.nanoTime();
+		long LlTimeMiddle = end - start;
+		
+		
+		
+		//Final
+		//---------ArrayList
+		
+		start = System.nanoTime();
+		
+		comprovacioRendimentTmp.llistaArrayList.add(comprovacioRendimentTmp.llistaArrayList.size() - 1, new Waypoint_Dades(0, "Òrbita de la Terra", new int[] {0,0,0}, true, LocalDateTime.parse("15/08/1954 00:01", formatter), null, null));
+		
+		end = System.nanoTime();
+		
+		long AlTimeEnd = end - start;
+		
+		
+		
+		
+		//---------LinkedList
+		start = System.nanoTime();
+		
+		comprovacioRendimentTmp.llistaLinkedList.addLast(new Waypoint_Dades(0, "Òrbita de la Terra", new int[] {0,0,0}, true, LocalDateTime.parse("15/08/1954 00:01", formatter), null, null));
+		
+		end = System.nanoTime();
+		
+		long LlTimeEnd = end - start;
+		
 		
 		System.out.println("ArrayList size: " + AlSize);
 		System.out.println("Tiempo para insertar 1 waypoint al principio de ArrayList: " + AlTime + "ns");
 		System.out.println("Tiempo para insertar 1 waypoint al principio de LinkedList: " + LlTime + "ns");
+		System.out.println("----------");
+		
+		System.out.println("Tiempo para insertar 1 waypoint en el medio ( " + AlSize/2 + " ) de ArrayList: " + AlTimeMiddle + "ns");
+		System.out.println("Tiempo para insertar 1 waypoint en el medio ( " + LlSize/2 + " ) LinkedList: " + LlTimeMiddle + "ns");
+		System.out.println("----------");
+		
+		System.out.println("Tiempo para insertar 1 waypoint al final de ArrayList: " + AlTimeEnd + "ns");
+		System.out.println("Tiempo para insertar 1 waypoint al final de LinkedList: " + LlTimeEnd + "ns");
 		
 		
 		
