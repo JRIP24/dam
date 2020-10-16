@@ -5,8 +5,8 @@ import java.util.List;
 public class ComprovacioRendiment {
 	
 	int[] coordenadesTmp = null;
-	List<Waypoint_Dades> llistaArrayList;
-	List<Waypoint_Dades> llistaLinkedList;
+	ArrayList<Waypoint_Dades> llistaArrayList;
+	LinkedList<Waypoint_Dades> llistaLinkedList;
 	
 	
 	public ComprovacioRendiment() {
