@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Waypoint {
 	
+	
 	public static ComprovacioRendiment inicialitzarComprovacioRendiment() {
 		
 		ComprovacioRendiment comprovacioRendimentTmp = new ComprovacioRendiment();
@@ -12,6 +13,7 @@ public class Waypoint {
 		return comprovacioRendimentTmp;
 		
 	}
+	
 	
 	public static void comprovarRendimentInicialitzacio(int numObjACrear, ComprovacioRendiment comprovacioRendimentTmp) {
 		
@@ -52,5 +54,12 @@ public class Waypoint {
 		//return comprovacioRendimentTmp;
 		
 	}
+	
+	
+	public static ComprovacioRendiment comprovarRendimentInsercio(ComprovacioRendiment comprovacioRendimentTmp) {
+		
+	}
+	
+	
 
 }
