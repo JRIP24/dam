@@ -25,8 +25,7 @@ public class Waypoint {
 			
 		}
 		
-		long endTimeAr = System.currentTimeMillis();
-		
+		long endTimeAr = System.currentTimeMillis(); //comentario pa gitHub
 		long execTimeAr = endTimeAr - startTimeAr;
 		
 		
