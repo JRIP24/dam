@@ -7,4 +7,10 @@
     <string name="pause">onPause method called</string>
     <string name="stop">onStop method called</string>
     <string name="destroy">onDestroy method called</string>
+
+
+    <string name="mActivityT">Main activity</string>
+    <string name="sActivityT">Second activity</string>
+
+    <string name="btnIrSencondA">Second activity</string>
 </resources>
