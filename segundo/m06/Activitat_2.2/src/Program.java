@@ -1,3 +1,5 @@
+import java.io.BufferedOutputStream;
+import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -15,6 +17,8 @@ public class Program {
 		// TODO Auto-generated method stub
 		
 		Scanner teclado = new Scanner(System.in);
+		
+		String archivo = "/home/ronald/dam/segundo/m06/Activitat_2.2/enteros.txt";
 		
 		System.out.println("****************************");
 		System.out.println("*     Que desea hacer?     *");
@@ -68,7 +72,10 @@ public class Program {
 					
 				}				
 				
-				ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream("enteros.txt"));
+				
+				
+				DataOutputStream salida = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(archivo)));
+
 				
 				try {
 						
@@ -97,23 +104,21 @@ public class Program {
 				
 				Reader lector = new Reader();
 				
-				lector.leer("enteros.txt");
+				lector.leer(archivo);
 				
 				/*
 				try {
-					ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("enteros.txt"));
 					
-					int[] array = (int[]) entrada.readObject();
+					int[] salida = lector.leer(archivo);
 					
-					entrada.close();
+					for (int i = 0; i < salida.length; i++) {
+						
+						System.out.println(salida[i]);
+					}
 					
-				} /*catch (ClassNotFoundException e) {
-					
-					System.out.println("Error al leer: " + e);
-					
-				} catch (IOException e) {
-					
-					System.out.println("Error al leer: " + e);
+				} catch (Exception e) {
+					// 
+					System.out.println("Error: " + e);
 				}*/
 				
 				
