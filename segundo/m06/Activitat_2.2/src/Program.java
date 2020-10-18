@@ -1,4 +1,6 @@
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -100,28 +102,30 @@ public class Program {
 			}
 			
 			if (opcion == 2) {//Leer
-				//System.out.print("Introduzca el archivo con los enteros a leer");
 				
-				Reader lector = new Reader();
+				DataInputStream entrada = new DataInputStream(new BufferedInputStream(new FileInputStream(archivo)));
+				int[] array = null;
 				
-				lector.leer(archivo);
-				
-				/*
 				try {
 					
-					int[] salida = lector.leer(archivo);
+					int cantidad = entrada.readInt();
+							
+					array = new int[cantidad];
 					
-					for (int i = 0; i < salida.length; i++) {
+					for (int i = 0; i < cantidad; i++) {
 						
-						System.out.println(salida[i]);
+						array[i] = entrada.readInt();
+						System.out.println(array[i]);
 					}
 					
-				} catch (Exception e) {
-					// 
-					System.out.println("Error: " + e);
-				}*/
-				
-				
+				} catch (IOException ex) {
+					
+					System.out.println("Error al leer: " + ex);
+					
+				} finally {
+					
+					entrada.close();
+				}
 				
 				
 				
