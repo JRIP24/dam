@@ -2,6 +2,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -21,7 +22,7 @@ public class Waypoint {
 	}
 	
 	
-	public static void comprovarRendimentInicialitzacio(int numObjACrear, ComprovacioRendiment comprovacioRendimentTmp) {
+	public static ComprovacioRendiment comprovarRendimentInicialitzacio(int numObjACrear, ComprovacioRendiment comprovacioRendimentTmp) {
 		
 		
 		long startTimeAr = System.currentTimeMillis();
@@ -56,12 +57,12 @@ public class Waypoint {
 		System.out.println("Tiempo para insertar " + numObjACrear + " waypoints en el LinkedList: "+ execTimeLi + "ms");
 		
 		
-		//return comprovacioRendimentTmp;
+		return comprovacioRendimentTmp;
 		
 	}
 	
-	// originalmente devuelve ComprovacioRendiment
-	public static void comprovarRendimentInsercio(ComprovacioRendiment comprovacioRendimentTmp) {
+	
+	public static ComprovacioRendiment comprovarRendimentInsercio(ComprovacioRendiment comprovacioRendimentTmp) {
 		
 		long start;
 		long end;
@@ -158,14 +159,17 @@ public class Waypoint {
 		
 		
 		
+		return comprovacioRendimentTmp;
+		
+		
+		
 		
 	}
 	
 	
 	
 	//Método 4
-	//originalmente devuelve ComprovacioRendiment
-	public static void modificarWaypoints(ComprovacioRendiment comprovacioRendimentTmp) {
+	public static ComprovacioRendiment modificarWaypoints(ComprovacioRendiment comprovacioRendimentTmp) {
 		
 		int AlSize = comprovacioRendimentTmp.llistaArrayList.size();
 		System.out.println("------ APARTAT 1------\n");
@@ -197,7 +201,89 @@ public class Waypoint {
 		}
 		
 		
+		
+		
+		//Apartado 3
+		System.out.println("---APARTADO 3.1 (bucle for)-----");
+		for (Waypoint_Dades waypoint : comprovacioRendimentTmp.llistaArrayList) {
+			System.out.println("ID = " + waypoint.getId() + ", nom = " + waypoint.getName());
+			
+		}
+		
+		
+		System.out.println("\n---APARTADO 3.2 (Iterator)-----");
+		Iterator<Waypoint_Dades> iter = comprovacioRendimentTmp.llistaArrayList.iterator();
+		
+		while (iter.hasNext()) {
+			
+			Waypoint_Dades waypoint = iter.next();
+			
+            System.out.println("ID = " + waypoint.getId() + ", nom = " + waypoint.getName());
+        }
+		
+		
+		//Apartado 4
+		System.out.println("\n----APARTADO 4 -----");
+		System.out.println("Preparado para borrar el contenido de la llistaLinkedList que tiene " + comprovacioRendimentTmp.llistaLinkedList.size() + " elementos");
+		comprovacioRendimentTmp.llistaLinkedList.clear();
+		System.out.println("Borrada. Ahora la llistaLinkedList tiene " + comprovacioRendimentTmp.llistaLinkedList.size() + " elementos");
+		
+		for (Waypoint_Dades waypoint : comprovacioRendimentTmp.llistaArrayList) {
+			
+			comprovacioRendimentTmp.llistaLinkedList.add(waypoint);
+			
+		}
+		
+		System.out.println("Copiados los elementos de llistaArrayList en llistaLinkedList que ahora tiene " + comprovacioRendimentTmp.llistaLinkedList.size() + " elementos");
+		
+		
+		
+		
+		
+		//Apartado 5
+		System.out.println("\n----APARTADO 5.1 (bucle for) -----");
+		for (Waypoint_Dades waypoint : comprovacioRendimentTmp.llistaArrayList) {
+			
+			if (waypoint.getId() > 5) {
+				waypoint.setName("Òrbita de Mart");
+				System.out.println("Modificat el waypoint amb id: " + waypoint.getId());
+			}
+		}
+		
+		System.out.println("\n----APARTADO 5.2 (Comprobación) -----");
+		for (int i = 0; i < AlSize; i++) {
+			System.out.println("El waypoint amb id = " + comprovacioRendimentTmp.llistaArrayList.get(i).getId()  + " té el nom " + comprovacioRendimentTmp.llistaArrayList.get(i).getName());
+		}	
+		
+		return comprovacioRendimentTmp;
+		
 	}
+	
+	
+	
+	//Método 5
+	public static ComprovacioRendiment esborrarWaypoints(ComprovacioRendiment comprovacioRendimentTmp) {
+		
+		
+		
+		
+		
+		
+		
+		
+		return comprovacioRendimentTmp;
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 
