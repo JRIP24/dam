@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Material</string>
+    <string name="emailIn">Mail</string>
+    <string name="passwordIn">Password</string>
+    <string name="btn">Botón</string>
+    <string name="btn2">Botón 2</string>
+    <string name="btn3">Botón 3</string>
+
+</resources>
