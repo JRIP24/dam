@@ -1,9 +1,10 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Program {
 	
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		Scanner teclado = new Scanner(System.in);
 		int opcion;
@@ -35,7 +36,11 @@ public class Program {
 					int sueldo = teclado.nextInt();
 					 
 					if (sueldo > 0) {//Todo correcto, continuamos
+						/*
+						System.out.print("edad: ");
+						int edad = teclado.nextInt();*/
 						
+						//Treballador trabajador = new Treballador(nif, nombre, sueldo, edad);
 						Treballador trabajador = new Treballador(nif, nombre, sueldo);
 						
 						trabajador.saveData();
@@ -44,7 +49,6 @@ public class Program {
 						
 						System.out.println("Error: valor para sueldo incorrecto");
 					}
-					
 					
 					
 				} else {
@@ -57,7 +61,8 @@ public class Program {
 				
 			case 2:
 				
-				System.out.println("Ha escogido la opción 2");
+				Treballador trabajador = new Treballador();
+				trabajador.readData();				
 				
 				break;
 
