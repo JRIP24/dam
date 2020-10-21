@@ -23,3 +23,6 @@
 2020-10-16 17:44:19,525 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2020-10-16 17:46:31,134 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2020-10-16 17:47:41,939 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-10-20 22:18:54,283 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-10-20 22:56:02,905 [ModalContext] INFO  o.e.jgit.transport.TransportHttp - URI 'https://gitlab.com/JRIP/eclipse': following HTTP redirect #0  https://gitlab.com/JRIP/eclipse/ -> https://gitlab.com/JRIP/eclipse.git/
+2020-10-20 22:58:45,022 [Worker-13: Cloning from https://gitlab.com/JRIP/eclipse] INFO  o.e.jgit.transport.TransportHttp - URI 'https://gitlab.com/JRIP/eclipse': following HTTP redirect #0  https://gitlab.com/JRIP/eclipse/ -> https://gitlab.com/JRIP/eclipse.git/
