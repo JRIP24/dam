@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Prueba</string>
+    <string name="title">Languages</string>
+    <string name="subtitle">Learn now</string>
+    <string name="chinaFlag">Chinese</string>
+    <string name="britishFlag">English</string>
+    <string name="spanishFlag">Spanish</string>
+    <string name="germanyFlag">German</string>
+    <string name="frenchFlag">French</string>
+    <string name="russiaFlag">Russian</string>
 </resources>
