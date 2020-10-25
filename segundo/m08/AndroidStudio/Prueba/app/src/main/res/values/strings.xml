@@ -8,4 +8,18 @@
     <string name="germanyFlag">German</string>
     <string name="frenchFlag">French</string>
     <string name="russiaFlag">Russian</string>
+
+
+    <string name="choose">Choose your lesson</string>
+    <string name="lesson1">Lesson 1</string>
+    <string name="lesson2">Lesson 2</string>
+    <string name="lesson3">Lesson 3</string>
+    <string name="lesson4">Lesson 4</string>
+
+    <string name="hour">1h</string>
+    <string name="halfHour">1h 30m</string>
+    <string name="fifteen">15m</string>
+    <string name="twoHours">2h</string>
+
+
 </resources>
