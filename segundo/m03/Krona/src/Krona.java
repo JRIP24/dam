@@ -111,7 +111,7 @@ public class Krona {
                     bloquejarPantalla();
                     break;
                 case "5":
-                	//comprovacioRendimentTmp = Waypoint.esborrarWaypoints(comprovacioRendimentTmp);
+                	comprovacioRendimentTmp = Waypoint.esborrarWaypoints(comprovacioRendimentTmp);
                     bloquejarPantalla();
                     break;
                 case "6":

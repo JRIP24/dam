@@ -4,6 +4,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.concurrent.TimeUnit;
 
 
@@ -250,10 +251,43 @@ public class Waypoint {
 			}
 		}
 		
-		System.out.println("\n----APARTADO 5.2 (Comprobación) -----");
+		System.out.println("\n----APARTADO 5.1 (Comprobación) -----");
 		for (int i = 0; i < AlSize; i++) {
 			System.out.println("El waypoint amb id = " + comprovacioRendimentTmp.llistaArrayList.get(i).getId()  + " té el nom " + comprovacioRendimentTmp.llistaArrayList.get(i).getName());
-		}	
+		}
+		
+		
+		
+		System.out.println(" ---- APARTAT 5.2 (Iterator) -----");
+		
+		Iterator<Waypoint_Dades> iterator = comprovacioRendimentTmp.llistaLinkedList.iterator();
+		
+		while (iterator.hasNext()) {
+			
+			Waypoint_Dades waypoint = iterator.next();
+			
+			int num = waypoint.getId();
+						
+			if ( num < 5) {
+				
+				waypoint.setName("Punt Lagrange entre la Terra i la LLuna");
+				
+				System.out.println("Modificat el waypoint amb id = " + num);
+			}
+            
+        }
+		
+		System.out.println("\n ---- APARTAT 5.2 (comprovació) -----");
+		
+		for (int i = 0; i < comprovacioRendimentTmp.llistaLinkedList.size(); i++) {
+			
+			System.out.println("El waypoint amb id = " + comprovacioRendimentTmp.llistaArrayList.get(i).getId()  + " té el nom " + comprovacioRendimentTmp.llistaArrayList.get(i).getName());
+			
+		}
+		
+		
+		
+		
 		
 		return comprovacioRendimentTmp;
 		
@@ -263,6 +297,88 @@ public class Waypoint {
 	
 	//Método 5
 	public static ComprovacioRendiment esborrarWaypoints(ComprovacioRendiment comprovacioRendimentTmp) {
+		
+		//Apartat 1
+		
+		//No funciona, nos lanza una excepción de tipo java.util.ConcurrentModificationException, porque intentamos modificar la lista
+		//mediante el iterador que usamos para recorrerla
+		
+		/*
+		System.out.println("----- APARTAT 1 -------");
+		
+		for(Waypoint_Dades waypoint: comprovacioRendimentTmp.llistaArrayList) {
+			
+			if(waypoint.getId() < 6) {
+				comprovacioRendimentTmp.llistaArrayList.remove(waypoint.getId());
+			}
+			
+			
+		}*/
+		
+		
+		//Apartat 2
+		
+		
+		System.out.println(" ---- APARTAT 2 (Iterator) -----");
+		
+		Iterator<Waypoint_Dades> iter = comprovacioRendimentTmp.llistaLinkedList.iterator();
+		
+		while (iter.hasNext()) {
+			
+			Waypoint_Dades waypoint = iter.next();
+			
+			int num = waypoint.getId();
+			
+			if ( num > 4) {
+				
+				iter.remove();
+				
+				System.out.println("Esborrat el waypoint amb id = " + num);
+			}
+            
+        }
+		
+		System.out.println("\n ---- APARTAT 2 (comprovació) -----");
+		
+		for (int i = 0; i < comprovacioRendimentTmp.llistaLinkedList.size(); i++) {
+			
+			System.out.println("El waypoint amb id = " + comprovacioRendimentTmp.llistaLinkedList.get(i).getId()  + " té el nom " + comprovacioRendimentTmp.llistaLinkedList.get(i).getName());
+			
+		}
+		
+		
+		
+		System.out.println(" \n---- APARTAT 3 (ListIterator) -----");
+		
+		ListIterator<Waypoint_Dades> iterador = comprovacioRendimentTmp.llistaLinkedList.listIterator();
+		
+		while (iterador.hasNext()) {
+			
+			Waypoint_Dades waypoint = iterador.next();
+			
+			int num = waypoint.getId();
+			
+			if ( num == 2) {
+				
+				iterador.remove();
+				
+				System.out.println("Esborrat el waypoint amb id = " + num);
+			}
+            
+        }
+		
+		System.out.println("\n---- APARTAT 3 (Comprobacion) -----");
+		
+		while (iterador.hasPrevious()) {
+			
+			Waypoint_Dades waypoint = iterador.previous();
+			
+			
+			System.out.println("El waypoint amb id = " + waypoint.getId()  + " té el nom " + waypoint.getName());
+			
+            
+        }
+		
 		
 		
 		
