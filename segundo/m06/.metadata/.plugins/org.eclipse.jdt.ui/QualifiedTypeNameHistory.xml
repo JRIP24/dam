@@ -29,9 +29,9 @@
     <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
     <fullyQualifiedTypeName name="Habitacio"/>
     <fullyQualifiedTypeName name="sun.net.www.protocol.http.spnego.NegotiateCallbackHandler"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="org.graalvm.compiler.core.sparc.SPARCArithmeticLIRGenerator"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="Moble"/>
     <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>
