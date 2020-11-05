@@ -44,9 +44,17 @@ public class Waypoint_Dades {
 
 	@Override
 	public String toString() {
-		return "Waypoint_Dades [id=" + id + ", nom=" + nom + ", coordenades=" + Arrays.toString(coordenades)
-				+ ", actiu=" + actiu + ", dataCreacio=" + dataCreacio + ", dataAnulacio=" + dataAnulacio
-				+ ", dataModificacio=" + dataModificacio + "]";
+		
+		return "WAYPOINT " + this.id + ": \n" + 
+				"nom = " + this.nom + "\n" +
+				"coordenades(x, y, z) = (" + this.coordenades[0] + "," + this.coordenades[1] + "," + this.coordenades[2] + ") \n" +
+				"actiu = " + this.actiu + " \n" +
+				"dataCreació = " + this.dataCreacio + " \n" +
+				"dataAnulació = " + this.dataAnulacio + " \n" +
+				"dataModificació = " + this.dataModificacio + " \n"
+				
+				;
+		
 	}
 
 
