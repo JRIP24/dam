@@ -45,15 +45,36 @@ public class Waypoint_Dades {
 	@Override
 	public String toString() {
 		
+		String dataC = "NULL";
+		String dataA = "NULL";
+		String dataM = "NULL";
+		
+		
+		if (this.dataCreacio != null) {
+			
+			dataC = this.dataCreacio + "";
+			
+		}
+		
+		if (this.dataAnulacio != null) {
+			dataA = this.dataAnulacio + "";
+		}
+		
+		if(this.dataModificacio != null) {
+			dataM = this.dataModificacio + "";
+		}
+		
+		
+		
+		
+		
 		return "WAYPOINT " + this.id + ": \n" + 
 				"nom = " + this.nom + "\n" +
 				"coordenades(x, y, z) = (" + this.coordenades[0] + "," + this.coordenades[1] + "," + this.coordenades[2] + ") \n" +
 				"actiu = " + this.actiu + " \n" +
-				"dataCreació = " + this.dataCreacio + " \n" +
-				"dataAnulació = " + this.dataAnulacio + " \n" +
-				"dataModificació = " + this.dataModificacio + " \n"
-				
-				;
+				"dataCreació = " + dataC + " \n" +
+				"dataAnulació = " + dataA + " \n" +
+				"dataModificació = " + dataM + " \n";
 		
 	}
 
