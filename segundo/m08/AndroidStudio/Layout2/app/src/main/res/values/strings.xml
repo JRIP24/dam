@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Layout2</string>
+    <string name="title">Languages courses</string>
+    <string name="subTitle">Learn now</string>
+    <string name="rusoTxt">Rusian</string>
+    <string name="germanyTxt">Germany</string>
+    <string name="englishTxt">English</string>
+    <string name="spanishTxt">Spanish</string>
+    <string name="frenchTxt">French</string>
+    <string name="chineseTxt">Chinese</string>
+    <!---<string name="rusoTxt">Rusian</string>
+    <string name="rusoTxt">Rusian</string>
+    <string name="rusoTxt">Rusian</string>
+    <string name="rusoTxt">Rusian</string>
+    <string name="rusoTxt">Rusian</string>
+    <string name="rusoTxt">Rusian</string>-->
+</resources>
