@@ -8,10 +8,13 @@
     <string name="spanishTxt">Spanish</string>
     <string name="frenchTxt">French</string>
     <string name="chineseTxt">Chinese</string>
-    <!---<string name="rusoTxt">Rusian</string>
-    <string name="rusoTxt">Rusian</string>
-    <string name="rusoTxt">Rusian</string>
-    <string name="rusoTxt">Rusian</string>
-    <string name="rusoTxt">Rusian</string>
-    <string name="rusoTxt">Rusian</string>-->
+    <string name="italianTxt">Italian</string>
+    <string name="portugueseTxt">Portuguese</string>
+    <string name="japaneseTxt">Japanese</string>
+    <string name="swedishTxt">Swedish</string>
+    <string name="ukraniTxt">Ukrainian</string>
+    <string name="turkishTxt">Turkish</string>
+    <string name="buy">Buy</string>
+    <string name="dificulty">Dificulty: </string>
+    <string name="duration">Duration: </string>
 </resources>
