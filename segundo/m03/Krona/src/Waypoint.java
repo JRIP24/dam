@@ -2,11 +2,14 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+import Varies.Cadena;
 
 public class Waypoint {
 	
@@ -379,19 +382,134 @@ public class Waypoint {
             
         }
 		
-		
-		
-		
-		
-		
-		
-		
-		
 		return comprovacioRendimentTmp;
 		
+	}
+	
+	
+	public static ComprovacioRendiment modificarCoordenadesINomDeWaypoints(ComprovacioRendiment comprovacioRendimentTmp) {
+		
+		Scanner teclado = new Scanner(System.in);
+		
+		
+		for (Waypoint_Dades waypoint : comprovacioRendimentTmp.llistaArrayList) {
+			
+			if( waypoint.getId() % 2 == 0) { //Comprobamos si es par
+				
+				System.out.println("\n -------Modificar el waypoint amb id = " + waypoint.getId());
+				System.out.println("Nom actual: " + waypoint.getName());
+				System.out.print("Nom nou: ");
+				String newName = teclado.nextLine();
+				waypoint.setName(newName);
+				
+				boolean salir = false;
+				
+				while (!salir) {
+					
+					System.out.println("Coordenades actuals: " + waypoint.getCoordenades()[0] + " " + waypoint.getCoordenades()[1] +  " " + waypoint.getCoordenades()[2]);
+					System.out.print("Coordenades noves (format: 1 13 4): ");
+					String coordStr = teclado.nextLine();
+					
+					if(coordStr.split(" ").length != 3) {
+						
+						System.out.println("ERROR: introduir 3 parámetres separats per 1 espai en blanc. Has introduit " + coordStr.split(" ").length + " parámetres");
+						
+					} else { //Se han introducido 3 "cosas"
+						
+						int[] coordenadas = new int[3];
+						int contador = 0;
+						
+						for (String parte : coordStr.split(" ")) {
+							
+							if (Cadena.stringIsInt(parte)) {
+								
+								coordenadas[contador] = Integer.parseInt(parte);
+								contador++;
+								
+							} else {
+								
+								System.out.println("Error la coordenada " + parte + " no es válida");
+								break;
+							}
+							
+						}
+						
+						if (contador == 3) {//Si contador vale 3, es porque se han introducido 3 enteros en el array
+							
+							waypoint.setCoordenades(coordenadas);
+							salir = true;
+						}
+						
+						
+					}
+					
+					
+					
+				}
+				
+			}	
+			
+		}
+		
+		return comprovacioRendimentTmp;
+	}
+	
+	
+	
+	
+	public static void visualitzarWaypointsOrdenats(ComprovacioRendiment comprovacioRendimentTmp) {
+		
+		ArrayList<Waypoint_Dades> waypointsOrdenados = new ArrayList<Waypoint_Dades>();
+		waypointsOrdenados.addAll(comprovacioRendimentTmp.llistaArrayList);
+		
+		Collections.sort(waypointsOrdenados);
+		
+		for (Waypoint_Dades waypoint : waypointsOrdenados) {
+			
+			System.out.println(waypoint.toString());
+		}
 		
 		
 	}
+	
+	
+	
+	
+	public static void waypointsACertaDistanciaMaxDeLaTerra(ComprovacioRendiment comprovacioRendimentTmp) {
+		
+		
+		Scanner sc = new Scanner(System.in);
+		String distanciaALaTerraString;
+		int distanciaALaTerraInt;
+		ArrayList<Waypoint_Dades> llistaWaypointsOrdenats = new ArrayList<Waypoint_Dades>();
+		int distancia = 0;
+		
+		
+		System.out.print("Distància màxima de la Terra: ");
+		distanciaALaTerraString = sc.nextLine();
+		while (Cadena.stringIsInt(distanciaALaTerraString) == false) {
+			System.out.println("ERROR: la distància màxima de la Terra " + distanciaALaTerraString + " no és correcta.");
+			
+			System.out.print("Distància màxima de la Terra: ");
+			distanciaALaTerraString = sc.nextLine();
+		}
+		
+		distanciaALaTerraInt = Integer.parseInt(distanciaALaTerraString);
+
+		llistaWaypointsOrdenats.addAll(comprovacioRendimentTmp.llistaArrayList);
+		
+		Collections.sort(llistaWaypointsOrdenats);
+		
+		for (Waypoint_Dades waypointTmp : llistaWaypointsOrdenats) {
+			distancia = (int)Math.pow(waypointTmp.getCoordenades()[0], 2) + (int)Math.pow(waypointTmp.getCoordenades()[1], 2) + (int)Math.pow(waypointTmp.getCoordenades()[2], 2);
+
+			if (distancia <= distanciaALaTerraInt) {
+				System.out.println(waypointTmp);				
+			}
+		}	
+		
+	}
+	
 	
 	
 	

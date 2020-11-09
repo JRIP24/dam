@@ -117,13 +117,21 @@ public class Krona {
                     bloquejarPantalla();
                     break;
                 case "6":
-                    
+                	
+                	comprovacioRendimentTmp = Waypoint.modificarCoordenadesINomDeWaypoints(comprovacioRendimentTmp);
                     bloquejarPantalla();
                     break;
+                    
                 case "7":
-                    
+                	Waypoint.waypointsACertaDistanciaMaxDeLaTerra(comprovacioRendimentTmp);
                     bloquejarPantalla();
                     break;
+                    
+                case "8":
+                	Waypoint.visualitzarWaypointsOrdenats(comprovacioRendimentTmp);
+                    bloquejarPantalla();
+                    break;
+                    
                 case "10":
                     
                     bloquejarPantalla();
