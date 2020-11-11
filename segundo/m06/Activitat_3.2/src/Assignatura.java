@@ -1,12 +1,15 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 public class Assignatura {
 	
 	private int numero;
 	private String nom;
 	private int durada;
-	private ArrayList<Alumne> listaAlumnes;
+	private ArrayList<Alumne> listaAlumnes = new ArrayList<Alumne>();
 	
 	
 	
@@ -28,6 +31,62 @@ public class Assignatura {
 	}
 	
 	
+	
+	
+	
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public ArrayList<Alumne> getListaAlumnes() {
+		return listaAlumnes;
+	}
+
+	public void setListaAlumnes(ArrayList<Alumne> listaAlumnes) {
+		this.listaAlumnes = listaAlumnes;
+	}
+	
+	
+	
+	public void saveData(Element nodoAsignatura, Document doc){
+		
+		Element nodoNumero = doc.createElement("numero");
+		nodoNumero.setTextContent(this.numero + "");
+		
+		nodoAsignatura.appendChild(nodoNumero);
+		
+		
+		Element nodoNombre = doc.createElement("nombre");
+		nodoNombre.setTextContent(this.nom);
+		
+		nodoAsignatura.appendChild(nodoNombre);
+		
+		
+		
+		Element nodoDuarada = doc.createElement("durada");
+		nodoDuarada.setTextContent(this.durada + "");
+		
+		nodoAsignatura.appendChild(nodoDuarada);
+		
+		
+		Element nodoAlumnos = doc.createElement("alumnos");
+		nodoAsignatura.appendChild(nodoAlumnos);
+		
+		for (Alumne alumno : this.listaAlumnes) {
+			alumno.saveData(nodoAlumnos, doc);
+		}
+		
+		
+	}
+	
+	
+	
+	
+
 	public void addAlumnes() {
 		
 		Scanner sc = new Scanner(System.in);
@@ -38,9 +97,11 @@ public class Assignatura {
 			
 			System.out.print("Introduce el nombre del alumno (introduzca 0 para salir): ");
 			
-			if(sc.hasNextInt()) {
+			String input = sc.nextLine();
+			
+			
 				
-				if (sc.nextInt() == 0) {
+				if (input.equals("0")) {
 					
 					if (contador > 0) { //Comprobamos que al menos se haya introducido un alumno
 						
@@ -53,7 +114,7 @@ public class Assignatura {
 				} else {
 					System.out.println("Valor no válido");
 				}
-			}
+			
 			
 			if (sc.hasNextLine()) {
 				
@@ -77,6 +138,7 @@ public class Assignatura {
 							repetidor = true;
 							
 						}
+						
 						
 						this.listaAlumnes.add(new Alumne(nombre, dni, repetidor));
 						

@@ -1,3 +1,5 @@
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 public class Alumne {
 	
@@ -48,6 +50,36 @@ public class Alumne {
 
 	public void setRepetidor(boolean repetidor) {
 		this.repetidor = repetidor;
+	}
+	
+	
+	
+public void saveData(Element nodoAlumno, Document doc){
+		
+		
+		Element nodoNombre = doc.createElement("nombre");
+		nodoNombre.setTextContent(this.nom);
+		
+		nodoAlumno.appendChild(nodoNombre);
+		
+		
+		Element nodoDNI = doc.createElement("dni");
+		nodoDNI.setTextContent(this.dni);
+		
+		nodoAlumno.appendChild(nodoDNI);
+		
+		
+		Element nodoRepetidor = doc.createElement("repetidor");
+		nodoRepetidor.setTextContent(String.valueOf(this.repetidor));
+		
+		nodoAlumno.appendChild(nodoRepetidor);
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 	

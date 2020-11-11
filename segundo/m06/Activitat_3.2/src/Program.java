@@ -5,15 +5,25 @@ import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.TransformerFactoryConfigurationError;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
 
 public class Program {
 	
@@ -246,18 +256,41 @@ public class Program {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException, XPathExpressionException {
+	static int findAsignatura(int num, ArrayList<Assignatura> asignaturas) {
+		
+		for (int i = 0; i < asignaturas.size(); i++) {
+			
+			if(asignaturas.get(i).getNumero() == num) {
+				
+				return i;
+				
+			}
+			
+		}
+			
 		
 		
-		ArrayList<Assignatura> asignaturas = null;
+		
+		return -1;
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException, XPathExpressionException, TransformerFactoryConfigurationError, TransformerException {
+		
+		
+		ArrayList<Assignatura> asignaturas = new ArrayList<Assignatura>();
 		boolean salir = false;
 		String archivo = "";
+		String saveFile = "/home/ronald/Documents/asignaturas.xml";
+		
 		
 		
 		while (!salir) {
@@ -320,10 +353,18 @@ public class Program {
 					
 					System.out.println("Opcion 3");
 					
-					for (Assignatura assignatura : asignaturas) {
+					if (asignaturas.size() > 0) {
 						
-						assignatura.imprimir();
+						for (Assignatura assignatura : asignaturas) {
+							
+							assignatura.imprimir();
+						}
+						
+					} else {
+						System.out.println("No hay asignaturas");
 					}
+					
+					
 					
 					pausar();
 					
@@ -341,26 +382,28 @@ public class Program {
 						int numero = teclado.nextInt();
 						
 						System.out.print("Introduzca el nombre de la asignatura: ");
-						
 						String nombre = teclado.nextLine();
+						teclado.nextLine();
+						
+						
 						
 						System.out.print("Introduzca la duración de la asignatura: ");
-						
 						if (teclado.hasNextInt()) {
+							
 							
 							int durada = teclado.nextInt();
 							
-							Assignatura assignatura = new Assignatura(numero, nombre, durada);
-							
-							assignatura.addAlumnes();
-							
-							asignaturas.add(assignatura);
+							asignaturas.add(new Assignatura(numero, nombre, durada));
 							
 							
 						} else {
 							
 							System.out.println("Error: No se ha introducido un número");
 						}
+							
+						
+						
+						
 						
 						
 					} else {
@@ -376,6 +419,29 @@ public class Program {
 				case 5:
 					
 					System.out.println("Opcion 5");
+					
+					
+					System.out.print("Introduzca el número de la asignatura: ");
+					
+					if(teclado.hasNextInt()) {
+						
+						int num = teclado.nextInt();
+						int indice =findAsignatura(num, asignaturas); 
+						
+						if( indice != -1) {
+							
+							asignaturas.get(indice).addAlumnes();
+							
+						} else {
+							
+							System.out.println("No se ha encontrado la asignatura " + num);
+						}
+						
+					} else {
+						
+						System.out.println("No se ha introducido un número");
+					}
+					
 					pausar();
 					
 					break;
@@ -385,6 +451,23 @@ public class Program {
 				case 6:
 					
 					System.out.println("Opcion 6");
+					
+					Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+					
+					Element nodoAsignaturas = doc.createElement("asignaturas");//Raíz
+					doc.appendChild(nodoAsignaturas);
+					
+					Element nodoAsignatura = doc.createElement("asignatura");
+					nodoAsignaturas.appendChild(nodoAsignatura);
+					
+					for (Assignatura asignatura : asignaturas) {
+						asignatura.saveData(nodoAsignatura, doc);
+					}
+					
+					Transformer trans = TransformerFactory.newInstance().newTransformer();
+					
+					trans.transform(new DOMSource(doc), new StreamResult(new File(saveFile)));
+					
 					pausar();
 					
 					break;
