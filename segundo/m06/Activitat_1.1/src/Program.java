@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -12,10 +13,10 @@ import java.util.Scanner;
 public class Program {
 	
 	
-	static Politic createPolitic() {
+	static Politic createPolitic(){
 		
 		Scanner teclado = new Scanner(System.in);
-		
+		/*
 		boolean salir = false;
 		
 		System.out.print("Introduzca el NIF: ");
@@ -24,22 +25,25 @@ public class Program {
 		System.out.print("Introduzca el nombre: ");
 		String nombre = teclado.next();
 		
-		System.out.print("Introduzca la fecha de nacimiento: ");
-		String date = teclado.next();
+		*/
 
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
-		Date data=null;
+		DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+		System.out.print("Introduzca la fecha de nacimiento: ");
+		String date = teclado.nextLine();
+		Date fechita= null;
+		
 		try {
 		    //Parsing the String
-		    data = dateFormat.parse(date);
+		    Date fecha = formatter.parse(date);
+		    
+		    System.out.println(fecha);
 		    
 		} catch (ParseException e) {
 		    // TODO Auto-generated catch block
 		    System.out.println("Error: " + e);
 		}
-		System.out.println(data);
 		
-		Politic politic = new Politic("ferf", "nom", data, 8000, true);
+		Politic politic = new Politic("ferf", "nom", fechita, 8000, true);
 		
 		return  politic;
 		
