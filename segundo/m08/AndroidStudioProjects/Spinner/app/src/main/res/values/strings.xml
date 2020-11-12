@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Spinner</string>
+    <string-array name="cursos">
+        <item>"DAM1"</item>
+        <item>"DAM2"</item>
+        <item>"DAW1"</item>
+        <item>"DAW2"</item>
+    </string-array>
+</resources>
