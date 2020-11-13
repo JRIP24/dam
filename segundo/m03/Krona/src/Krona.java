@@ -58,15 +58,15 @@ public class Krona {
             menu.append(System.getProperty("line.separator"));
             menu.append(System.getProperty("line.separator"));
             
-            menu.append("10. Carregar en la BD les rutes");
+            menu.append("10. Inicialitzar una ruta");
             menu.append(System.getProperty("line.separator"));
-            menu.append("11. Carregar en la BD les rutes carregades en memòria");
+            menu.append("11. Visualitzar una ruta");
             menu.append(System.getProperty("line.separator"));
-            menu.append("12. Llistar les rutes (només amb els ID dels waypoints)");
+            menu.append("12. Invertir una ruta)");
             menu.append(System.getProperty("line.separator"));
-            menu.append("13. Llistar les rutes (amb tota la informació dels waypoints)");
+            menu.append("13. Existeix el waypoint 'Òrbita de Júpiter REPETIDA' en la ruta?");
             menu.append(System.getProperty("line.separator"));
-            menu.append("14. Llistar els waypoints d'una ruta");
+            /*menu.append("14. Llistar els waypoints d'una ruta");
             menu.append(System.getProperty("line.separator"));
             menu.append("15. Crear una ruta");
             menu.append(System.getProperty("line.separator"));
@@ -78,7 +78,7 @@ public class Krona {
             menu.append(System.getProperty("line.separator"));
             menu.append("19. Esborrar de la BD una ruta");
             menu.append(System.getProperty("line.separator"));
-            menu.append(System.getProperty("line.separator"));
+            menu.append(System.getProperty("line.separator"));*/
             
             menu.append("20. Fer una copia de seguretat de la BD");
             menu.append(System.getProperty("line.separator"));
