@@ -132,12 +132,18 @@ public class Krona {
                     bloquejarPantalla();
                     break;
                     
-                case "10":
-                    
+                case "10"://Se tiene que haber ejecutado la opción 1 antes
+                	comprovacioRendimentTmp = Ruta.inicialitzarRuta(comprovacioRendimentTmp);                    
                     bloquejarPantalla();
-                    break;    
-                case "12":
+                    break;
                     
+                case "11"://Se tiene que haber ejecutado la opción 10 antes
+                	Ruta.visualitzarRuta(comprovacioRendimentTmp);                    
+                    bloquejarPantalla();
+                    break;
+                    
+                case "12"://Se tiene que haber ejecutado la opción 10 previamente
+                    Ruta.invertirRuta(comprovacioRendimentTmp);
                     bloquejarPantalla();
                     break;
                 case "13":
