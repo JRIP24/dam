@@ -48,13 +48,17 @@ public class Program {
 	public static void leerSeq(ArrayList<Assignatura> asignaturas, String ruta) throws SAXException, IOException, ParserConfigurationException {
 		
         Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(ruta);
+        doc.normalizeDocument();
         
         Node raiz = doc.getDocumentElement();
         NodeList nodos = raiz.getChildNodes();
         
-        System.out.println("Asignaturas: " + nodos.getLength());
         
         for (int i=0; i<nodos.getLength(); i++) {
+        	
+        	Node node = nodos.item(1);
+        	
+        	System.out.println("node name: " + node.getNodeName());
         	
         	if (nodos.item(i).getNodeName().equals("asignatura")) {//Recogemos datos de cada asignatura
         		

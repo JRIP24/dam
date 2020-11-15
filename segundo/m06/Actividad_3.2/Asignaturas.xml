@@ -2,7 +2,7 @@
 <asignaturas>
     <asignatura>
         <numero>3</numero>
-        <nom>M03</nom>
+        <nom />
         <durada>30030</durada>
         <alumnos>
             <alumno>
@@ -14,7 +14,8 @@
     </asignatura>
     <asignatura>
         <numero>4</numero>
-        <nom>M04</nom>
+        <nom />
         <durada>4000</durada>
+        <alumnos />
     </asignatura>
 </asignaturas>
