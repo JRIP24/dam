@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<asignaturas>
+    <asignatura>
+        <numero>3</numero>
+        <nom>M03</nom>
+        <durada>30030</durada>
+        <alumnos>
+            <alumno>
+                <nom>Ronald</nom>
+                <dni>Ty435</dni>
+                <repetidor>false</repetidor>
+            </alumno>
+        </alumnos>
+    </asignatura>
+    <asignatura>
+        <numero>4</numero>
+        <nom>M04</nom>
+        <durada>4000</durada>
+    </asignatura>
+</asignaturas>

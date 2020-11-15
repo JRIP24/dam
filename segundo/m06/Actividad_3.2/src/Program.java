@@ -5,12 +5,18 @@ import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -46,15 +52,19 @@ public class Program {
         Node raiz = doc.getDocumentElement();
         NodeList nodos = raiz.getChildNodes();
         
+        System.out.println("Asignaturas: " + nodos.getLength());
+        
         for (int i=0; i<nodos.getLength(); i++) {
         	
         	if (nodos.item(i).getNodeName().equals("asignatura")) {//Recogemos datos de cada asignatura
         		
         		NodeList listaAsignaturas = nodos.item(i).getChildNodes();
-        		String nom = null;
+        		String nom = "";
         		int numero = 0;
         		int durada = 0;
-        		ArrayList<Alumne> alumnos = null;
+        		ArrayList<Alumne> alumnos = new ArrayList<Alumne>();
+        		
+        		
         		
         		for (int j=0; j<listaAsignaturas.getLength(); j++) {
         			
@@ -138,36 +148,41 @@ public class Program {
 		
         Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(ruta);
         
-        XPathExpression expr = XPathFactory.newInstance().newXPath().compile("/asignatura/asignaturas");
+        XPathExpression expr = XPathFactory.newInstance().newXPath().compile("/asignaturas/asignatura");
 	    NodeList listaAsignaturas = (NodeList) expr.evaluate(doc, XPathConstants.NODESET);
 	    
 	    
-	    String nom = null;
+	    String nom = "";
 		int numero = 0;
 		int durada = 0;
-		ArrayList<Alumne> alumnos = null;
+		ArrayList<Alumne> alumnos = new ArrayList<Alumne>();
 		
 		for (int j=0; j<listaAsignaturas.getLength(); j++) {
+			
+			Assignatura assignatura = new Assignatura();
+			assignatura.leer(listaAsignaturas.item(j));
+			asignaturas.add(assignatura);
+			
+			
+			/*
+			System.out.println( "Nombre nodo" +  listaAsignaturas.item(j).getNodeName());
 			
 			if(listaAsignaturas.item(j).getNodeName().equals("numero")) {
 				
 				numero = Integer.parseInt(listaAsignaturas.item(j).getTextContent());
+				System.out.println("Numero: " + numero);
 				
-			}
-        
-			if(listaAsignaturas.item(j).getNodeName().equals("nom")) {
+			}else if(listaAsignaturas.item(j).getNodeName().equals("nom")) {
 				
 				nom = listaAsignaturas.item(j).getTextContent();
+				System.out.println("Nombre: " + nom);
 				
-			}
-			
-			if(listaAsignaturas.item(j).getNodeName().equals("durada")) {
+			}else if(listaAsignaturas.item(j).getNodeName().equals("durada")) {
 				
 				durada = Integer.parseInt(listaAsignaturas.item(j).getTextContent());
+				System.out.println("Durada: " + durada);
 				
-			}
-			
-			if (listaAsignaturas.item(j).getNodeName().equals("alumnos")) { //Recogemos la lista de alumnos
+			} else if (listaAsignaturas.item(j).getNodeName().equals("alumnos")) { //Recogemos la lista de alumnos
 				
 				
 				NodeList listaAlumnos = listaAsignaturas.item(j).getChildNodes();
@@ -208,12 +223,35 @@ public class Program {
 			
 			
 			asignaturas.add(new Assignatura(numero, nom, durada, alumnos));
-			
+			*/
 			
         }
 	    
 	    
 	    
+	}
+	
+	static void guardarXML(String ruta, ArrayList<Assignatura> asignaturas) throws ParserConfigurationException, TransformerException {
+		
+		Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+		Element nodoAsignaturas = doc.createElement("asignaturas");//Raíz
+        doc.appendChild(nodoAsignaturas);
+        
+        for (Assignatura assignatura : asignaturas) {
+			
+        	assignatura.guardarXML(nodoAsignaturas, doc);
+		}
+        
+        Transformer trans = TransformerFactory.newInstance().newTransformer();
+        StreamResult result = new StreamResult(new File (ruta));
+        DOMSource source = new DOMSource(doc);
+        trans.transform(source, result);
+
+        
+        
+
+
+		
 	}
 	
 	
@@ -245,6 +283,24 @@ public class Program {
 		return file;
 	}
 	
+	static int findIndex(int numero, ArrayList<Assignatura> assignaturas) {
+		
+		int indice = -1;
+		
+		for (int i = 0; i < assignaturas.size(); i++) {
+			
+			if (assignaturas.get(i).getNumero() == numero) {
+				
+				indice = i;
+				break;
+				
+			} 
+			
+		}
+		
+		return indice;
+		
+	}
 	
 	
 	
@@ -252,12 +308,14 @@ public class Program {
 	
 	
 	
-	public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException, XPathExpressionException {
+	
+	public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException, XPathExpressionException, TransformerException {
 		
 		
-		ArrayList<Assignatura> asignaturas = null;
+		ArrayList<Assignatura> asignaturas = new ArrayList<Assignatura>();
 		boolean salir = false;
 		String archivo = "";
+		String archivoXML = "Asignaturas.xml";
 		
 		
 		while (!salir) {
@@ -343,6 +401,7 @@ public class Program {
 						System.out.print("Introduzca el nombre de la asignatura: ");
 						
 						String nombre = teclado.nextLine();
+						teclado.next();
 						
 						System.out.print("Introduzca la duración de la asignatura: ");
 						
@@ -352,7 +411,7 @@ public class Program {
 							
 							Assignatura assignatura = new Assignatura(numero, nombre, durada);
 							
-							assignatura.addAlumnes();
+							//assignatura.addAlumnes();
 							
 							asignaturas.add(assignatura);
 							
@@ -376,6 +435,29 @@ public class Program {
 				case 5:
 					
 					System.out.println("Opcion 5");
+					
+					System.out.print("Introduzca el número de la asignatura: ");
+					
+					if(teclado.hasNextInt()) {
+						
+						int numero = teclado.nextInt();
+						
+						int indice = findIndex(numero, asignaturas);
+						
+						if (indice == -1) {
+							
+							System.out.println("No se ha encontrado la asignatura nº " + numero);
+							
+						} else {
+							asignaturas.get(indice).addAlumnes();
+						}
+						
+						
+						
+					} else {
+						
+						System.out.println("Error: No se ha introducido un número");
+					}
 					pausar();
 					
 					break;
@@ -385,6 +467,8 @@ public class Program {
 				case 6:
 					
 					System.out.println("Opcion 6");
+					guardarXML(archivoXML, asignaturas);
+					
 					pausar();
 					
 					break;
