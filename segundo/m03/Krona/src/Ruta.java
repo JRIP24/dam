@@ -74,6 +74,28 @@ public class Ruta {
 	}
 	
 	
+	public static void existeixWaypointEnRuta(ComprovacioRendiment comprovacioRendimentTmp) {
+		
+		if (comprovacioRendimentTmp.pilaWaypoints.contains(comprovacioRendimentTmp.wtmp)) {
+			System.out.println("SI hem trobat el waypoint " + comprovacioRendimentTmp.wtmp.getName() + " emmagatzemat en comprovacioRendimentTmp.wtmp, en la llista.");
+		} else {
+			System.out.println("NO hem trobat el waypoint " + comprovacioRendimentTmp.wtmp.getName() + " emmagatzemat en comprovacioRendimentTmp.wtmp, en la llista.");
+		}
+		
+		Waypoint_Dades waypoint = new Waypoint_Dades(4, "Òrbita de Júpiter REPETIDA", new int[] {4,4,4}, true,
+				LocalDateTime.parse("21-10-2020 00:30", Data.formatter), null,
+				LocalDateTime.parse("22-10-2020 23:55", Data.formatter));
+		
+		if (comprovacioRendimentTmp.pilaWaypoints.contains(waypoint)) {
+			System.out.println("SI hem trobat el waypoint " + waypoint.getName() + " creat ara mateix, en la llista.");
+		} else {
+			System.out.println("NO hem trobat el waypoint " + waypoint.getName() + " creat ara mateix, en la llista.");
+		}
+		
+		
+	}
+	
+	
 	
 	
 	

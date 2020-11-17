@@ -147,7 +147,7 @@ public class Krona {
                     bloquejarPantalla();
                     break;
                 case "13":
-                    
+                	Ruta.existeixWaypointEnRuta(comprovacioRendimentTmp);
                     bloquejarPantalla();
                     break;
                 case "15":

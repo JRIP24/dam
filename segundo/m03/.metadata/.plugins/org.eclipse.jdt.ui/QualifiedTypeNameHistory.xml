@@ -27,8 +27,8 @@
     <fullyQualifiedTypeName name="Varies.Data"/>
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="Ruta"/>
-    <fullyQualifiedTypeName name="Waypoint_Dades"/>
     <fullyQualifiedTypeName name="java.util.ArrayDeque"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="Ruta"/>
+    <fullyQualifiedTypeName name="Waypoint_Dades"/>
 </qualifiedTypeNameHistroy>
