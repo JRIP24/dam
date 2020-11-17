@@ -11,6 +11,7 @@ public class ComprovacioRendiment {
 	LinkedList<Waypoint_Dades> llistaLinkedList;
 	Waypoint_Dades wtmp;
 	public Deque<Waypoint_Dades> pilaWaypoints;
+	public ArrayList<Ruta_Dades> llistaRutes;
 	
 	
 	public ComprovacioRendiment() {
@@ -20,6 +21,7 @@ public class ComprovacioRendiment {
 		this.llistaLinkedList = new LinkedList<Waypoint_Dades>();
 		this.wtmp = null;
 		this.pilaWaypoints = new ArrayDeque<Waypoint_Dades>();
+		this.llistaRutes = new ArrayList<Ruta_Dades>();
 	}
 	
 	

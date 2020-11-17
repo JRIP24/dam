@@ -80,10 +80,17 @@ public class Krona {
             menu.append(System.getProperty("line.separator"));
             menu.append(System.getProperty("line.separator"));*/
             
-            menu.append("20. Fer una copia de seguretat de la BD");
+            menu.append("20. Inicialitzar llista de rutes");
             menu.append(System.getProperty("line.separator"));
-            menu.append("21. Esborrar tota la BD");
+            menu.append("21. Ficar tots els waypoints en un set");
             menu.append(System.getProperty("line.separator"));
+            menu.append("22. Waypoints que estan en totes les rutes");
+            menu.append(System.getProperty("line.separator"));
+            menu.append("23. Waypoints que estan en la ruta A i no en la ruta B");
+            menu.append(System.getProperty("line.separator"));
+            menu.append("24. Ordenar les rutes per waypoints i ID (el ID de més gran a més petit)");
+            menu.append(System.getProperty("line.separator"));
+            menu.append("25.");
             menu.append(System.getProperty("line.separator"));
             
             menu.append("50. Tornar al menú pare (PNS-24 Puma)");
@@ -157,7 +164,32 @@ public class Krona {
                 case "19":
                     
                     bloquejarPantalla();
-                    break;                    
+                    break;
+                    
+                case "20":
+                    
+                    bloquejarPantalla();
+                    break;
+                    
+				case "21":
+				    
+				    bloquejarPantalla();
+				    break;
+				    
+				case "22":
+				    
+				    bloquejarPantalla();
+				    break;
+				    
+				case "23":
+				    
+				    bloquejarPantalla();
+				    break;
+				    
+				case "24":
+				    
+				    bloquejarPantalla();
+				    break;
                 case "50":
                     break; 
                 default:
