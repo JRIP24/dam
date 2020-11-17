@@ -14,6 +14,6 @@
         </shape>
     </item>
     <item>
-        <bitmap android:src="@drawable/ic_baseline_arrow_drop_down_circle_24" android:gravity="center|end" android:tint="@android:color/white"/>
+        <bitmap android:src="@drawable/ic_down1" android:gravity="center|end" android:tint="@android:color/white"/>
     </item>
 </layer-list>

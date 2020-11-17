@@ -621,6 +621,7 @@
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
         <tags>active</tags>
+        <tags>noFocus</tags>
         <children xsi:type="advanced:Placeholder" xmi:id="_v3qxFyOKEeuff_-KzuAtKw" elementId="org.eclipse.ui.console.ConsoleView" ref="_v3qxUyOKEeuff_-KzuAtKw" closeable="true">
           <tags>View</tags>
           <tags>categoryTag:General</tags>
@@ -961,7 +962,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_v3qxiyOKEeuff_-KzuAtKw" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_WP354Cc9EeuEO9cDJRbk6Q" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_v3tOFyOKEeuff_-KzuAtKw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_AethgCgrEeuQRvPI_gupyQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_v3tOFyOKEeuff_-KzuAtKw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_v3qxmSOKEeuff_-KzuAtKw" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1001,7 +1002,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_v3qx8SOKEeuff_-KzuAtKw" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_WP6WICc9EeuEO9cDJRbk6Q" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_v3tNviOKEeuff_-KzuAtKw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_AevWsCgrEeuQRvPI_gupyQ" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_v3tNviOKEeuff_-KzuAtKw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_v3qx_SOKEeuff_-KzuAtKw" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
