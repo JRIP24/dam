@@ -27,7 +27,7 @@ public class Politic {
 		this.dataNaixement = dataNaixement;
 		this.sou = sou;
 		this.esCorrupte = esCorrupte;
-	}	
+	}
 	
 	
 	public String getNif() {
@@ -61,6 +61,19 @@ public class Politic {
 	public void setEsCorrupte(boolean esCorrupte) {
 		this.esCorrupte = esCorrupte;
 	}
+
+
+	@Override
+	public String toString() {
+		return "\nPolitico: \n" +
+				"-nif: " + nif + " \n" + 
+				"-nom: " + nom + " \n" +
+				"-dataNaixement: " + dataNaixement + " \n" +
+				"-sou: " + sou + "€ \n" +
+				"-esCorrupte: " + esCorrupte;
+	}
+	
+	
 	
 	
 	
