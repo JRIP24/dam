@@ -57,36 +57,39 @@ public class Program {
         for (int i=0; i<nodos.getLength(); i++) {
         	
         	Node node = nodos.item(1);
+        	String nom = "";
+    		int numero = 0;
+    		int durada = 0;
+    		ArrayList<Alumne> alumnos = new ArrayList<Alumne>();
         	
         	System.out.println("node name: " + node.getNodeName());
         	
         	if (nodos.item(i).getNodeName().equals("asignatura")) {//Recogemos datos de cada asignatura
         		
         		NodeList listaAsignaturas = nodos.item(i).getChildNodes();
-        		String nom = "";
-        		int numero = 0;
-        		int durada = 0;
-        		ArrayList<Alumne> alumnos = new ArrayList<Alumne>();
-        		
         		
         		
         		for (int j=0; j<listaAsignaturas.getLength(); j++) {
         			
+        			
+        			
         			if(listaAsignaturas.item(j).getNodeName().equals("numero")) {
         				
-        				numero = Integer.parseInt(listaAsignaturas.item(j).getTextContent());
+        				numero = Integer.parseInt(listaAsignaturas.item(j).getTextContent().trim());
         				
         			}
+        			
+        			System.out.println("Nombre asignatura: " + listaAsignaturas.item(j).getTextContent());
                 
         			if(listaAsignaturas.item(j).getNodeName().equals("nom")) {
         				
-        				nom = listaAsignaturas.item(j).getTextContent();
+        				nom = listaAsignaturas.item(j).getTextContent().trim();
         				
         			}
         			
         			if(listaAsignaturas.item(j).getNodeName().equals("durada")) {
         				
-        				durada = Integer.parseInt(listaAsignaturas.item(j).getTextContent());
+        				durada = Integer.parseInt(listaAsignaturas.item(j).getTextContent().trim());
         				
         			}
         			
@@ -99,44 +102,44 @@ public class Program {
                         	
                         	Alumne alumno = new Alumne();
                         	
-                        	if (listaAlumnos.item(x).getNodeName().equals("nom")) {
-                        		
-								alumno.setNom(listaAlumnos.item(x).getTextContent());
-							}
+                        	//System.out.println("Nodos de alumno: " + listaAlumnos.item(x).getChildNodes().getLength());
                         	
-                        	if (listaAlumnos.item(x).getNodeName().equals("dni")) {
-								
-                        		alumno.setDni(listaAlumnos.item(x).getTextContent());
+                        	NodeList alumnoNodos = listaAlumnos.item(x).getChildNodes();
+                        	
+                        	for (int k = 0; k < alumnoNodos.getLength(); k++) {
                         		
-							}
+                        		if (alumnoNodos.item(k).getNodeName().equals("nom")) {
+                            		
+    								alumno.setNom(alumnoNodos.item(k).getTextContent());
+    							}
+                            	
+                            	if (alumnoNodos.item(k).getNodeName().equals("dni")) {
+    								
+                            		alumno.setDni(alumnoNodos.item(k).getTextContent());
+                            		
+    							}
 
 
-							if (listaAlumnos.item(x).getNodeName().equals("repetidor")) {
-								
-								alumno.setRepetidor(Boolean.valueOf(listaAlumnos.item(x).getTextContent()));
-								
+    							if (alumnoNodos.item(k).getNodeName().equals("repetidor")) {
+    								
+    								alumno.setRepetidor(Boolean.valueOf(alumnoNodos.item(k).getTextContent()));
+    								
+    							}
 							}
-                        	
-                        	
                         	
                         	
                         	alumnos.add(alumno);
                             
-                        }  
-
-        				
-        				
-        				
+                        }
 					}
-        			
-        			
-        			asignaturas.add(new Assignatura(numero, nom, durada, alumnos));
         			
         			
                 }
 
         		
         	}
+        	
+        	asignaturas.add(new Assignatura(numero, nom, durada, alumnos));
         	
         }
 
@@ -161,73 +164,50 @@ public class Program {
 		int durada = 0;
 		ArrayList<Alumne> alumnos = new ArrayList<Alumne>();
 		
-		for (int j=0; j<listaAsignaturas.getLength(); j++) {
+		for (int i=1; i<=listaAsignaturas.getLength(); i++) {
 			
 			Assignatura assignatura = new Assignatura();
-			assignatura.leer(listaAsignaturas.item(j));
+			
+			expr = XPathFactory.newInstance().newXPath().compile("/asignaturas/asignatura["+ i +"]/numero");
+			Node node = (Node) expr.evaluate(doc, XPathConstants.NODE);
+			assignatura.setNumero(Integer.parseInt(node.getTextContent()));
+
+			
+			expr = XPathFactory.newInstance().newXPath().compile("/asignaturas/asignatura["+ i +"]/nom");
+			node = (Node) expr.evaluate(doc, XPathConstants.NODE);
+			assignatura.setNom(node.getTextContent());
+			
+			
+			expr = XPathFactory.newInstance().newXPath().compile("/asignaturas/asignatura["+ i +"]/durada");
+			node = (Node) expr.evaluate(doc, XPathConstants.NODE);
+			assignatura.setDurada(Integer.parseInt(node.getTextContent()));
+			
+			expr = XPathFactory.newInstance().newXPath().compile("/asignaturas/asignatura["+ i +"]/alumnos/alumno");
+			NodeList listaAlumnos = (NodeList) expr.evaluate(doc, XPathConstants.NODE);
+			
+			System.out.println(listaAlumnos.getLength());
+			
+			for (int j = 1; j <= listaAlumnos.getLength(); j++) {
+				
+				Alumne alumno = new Alumne();
+				
+				expr = XPathFactory.newInstance().newXPath().compile("/asignaturas/asignatura/alumnos/alumno["+ j +"]/nom");
+	            node = (Node) expr.evaluate(doc, XPathConstants.NODE);
+	            alumno.setNom(node.getTextContent());
+	            
+	            expr = XPathFactory.newInstance().newXPath().compile("/asignaturas/asignatura/alumnos/alumno["+ j +"]/dni");
+	            node = (Node) expr.evaluate(doc, XPathConstants.NODE);
+	            alumno.setDni(node.getTextContent());
+	            
+	            expr = XPathFactory.newInstance().newXPath().compile("/asignaturas/asignatura/alumnos/alumno["+ j +"]/repetidor");
+	            node = (Node) expr.evaluate(doc, XPathConstants.NODE);
+	            alumno.setRepetidor(Boolean.valueOf(node.getTextContent()));
+	            
+	            alumnos.add(alumno);
+			}
+				
 			asignaturas.add(assignatura);
 			
-			
-			/*
-			System.out.println( "Nombre nodo" +  listaAsignaturas.item(j).getNodeName());
-			
-			if(listaAsignaturas.item(j).getNodeName().equals("numero")) {
-				
-				numero = Integer.parseInt(listaAsignaturas.item(j).getTextContent());
-				System.out.println("Numero: " + numero);
-				
-			}else if(listaAsignaturas.item(j).getNodeName().equals("nom")) {
-				
-				nom = listaAsignaturas.item(j).getTextContent();
-				System.out.println("Nombre: " + nom);
-				
-			}else if(listaAsignaturas.item(j).getNodeName().equals("durada")) {
-				
-				durada = Integer.parseInt(listaAsignaturas.item(j).getTextContent());
-				System.out.println("Durada: " + durada);
-				
-			} else if (listaAsignaturas.item(j).getNodeName().equals("alumnos")) { //Recogemos la lista de alumnos
-				
-				
-				NodeList listaAlumnos = listaAsignaturas.item(j).getChildNodes();
-				
-                for (int x = 0; x < listaAlumnos.getLength(); x++) {
-                	
-                	Alumne alumno = new Alumne();
-                	
-                	if (listaAlumnos.item(x).getNodeName().equals("nom")) {
-                		
-						alumno.setNom(listaAlumnos.item(x).getTextContent());
-					}
-                	
-                	if (listaAlumnos.item(x).getNodeName().equals("dni")) {
-						
-                		alumno.setDni(listaAlumnos.item(x).getTextContent());
-                		
-					}
-
-
-					if (listaAlumnos.item(x).getNodeName().equals("repetidor")) {
-						
-						alumno.setRepetidor(Boolean.valueOf(listaAlumnos.item(x).getTextContent()));
-						
-					}
-                	
-                	
-                	
-                	
-                	alumnos.add(alumno);
-                    
-                }  
-
-				
-				
-				
-			}
-			
-			
-			asignaturas.add(new Assignatura(numero, nom, durada, alumnos));
-			*/
 			
         }
 	    

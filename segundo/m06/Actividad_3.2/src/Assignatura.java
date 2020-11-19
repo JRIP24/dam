@@ -54,6 +54,16 @@ public class Assignatura {
 		this.nom = nom;
 	}
 
+	public int getDurada() {
+		return durada;
+	}
+
+
+	public void setDurada(int durada) {
+		this.durada = durada;
+	}
+
+
 	public ArrayList<Alumne> getListaAlumnes() {
 		return listaAlumnes;
 	}
