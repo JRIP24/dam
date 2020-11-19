@@ -6,7 +6,6 @@
     <fullyQualifiedTypeName name="java.time.LocalTime"/>
     <fullyQualifiedTypeName name="java.lang.StrictMath"/>
     <fullyQualifiedTypeName name="java.lang.OutOfMemoryError"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="sun.security.x509.CertificatePolicyMap"/>
     <fullyQualifiedTypeName name="java.lang.Number"/>
@@ -22,13 +21,20 @@
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="java.util.Deque"/>
-    <fullyQualifiedTypeName name="Varies.Data"/>
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayDeque"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="Ruta"/>
-    <fullyQualifiedTypeName name="Waypoint_Dades"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="java.util.LinkedHashSet"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="javax.sound.midi.SysexMessage"/>
+    <fullyQualifiedTypeName name="Varies.Data"/>
+    <fullyQualifiedTypeName name="Ruta"/>
+    <fullyQualifiedTypeName name="com.sun.tools.classfile.Opcode.Set"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="Waypoint_Dades"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="Ruta_Dades"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

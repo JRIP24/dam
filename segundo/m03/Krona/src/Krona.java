@@ -167,17 +167,19 @@ public class Krona {
                     break;
                     
                 case "20":
-                    
+                	comprovacioRendimentTmp = Ruta.inicialitzaLListaRutes(comprovacioRendimentTmp);
                     bloquejarPantalla();
                     break;
                     
 				case "21":
-				    
+					
+					Ruta.setUnio(comprovacioRendimentTmp);
 				    bloquejarPantalla();
 				    break;
 				    
 				case "22":
-				    
+					
+					Ruta.setInterseccio(comprovacioRendimentTmp);				    
 				    bloquejarPantalla();
 				    break;
 				    

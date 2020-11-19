@@ -1,8 +1,12 @@
 import java.time.LocalDateTime;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Deque;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import Varies.Data;
 
@@ -93,6 +97,62 @@ public class Ruta {
 		}
 		
 		
+	}
+	
+	
+	public static ComprovacioRendiment inicialitzaLListaRutes(ComprovacioRendiment comprovacioRendimentTmp) {
+		
+		Ruta_Dades ruta_0 = new Ruta_Dades(0, "ruta 0: Terra --> Punt Lagrange Júpiter-Europa", new ArrayList<Integer>(Arrays.asList(0, 1, 2, 3, 4, 5)), true, LocalDateTime.parse("28-10-2020 16:30", Data.formatter), null, LocalDateTime.parse("28-10-2020 16:30", Data.formatter));
+		Ruta_Dades ruta_1 = new Ruta_Dades(1, "ruta 1: Terra --> Òrbita de Mart (directe)", new ArrayList<Integer>(Arrays.asList(0, 3)), true, LocalDateTime.parse("28-10-2020 16:31", Data.formatter), null, LocalDateTime.parse("28-10-2020 16:31", Data.formatter));
+		Ruta_Dades ruta_2 = new Ruta_Dades(2, "ruta 2.1: Terra --> Òrbita de Venus", new ArrayList<Integer>(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7)), true, LocalDateTime.parse("28-10-2020 16:32", Data.formatter), null, LocalDateTime.parse("28-10-2020 16:32", Data.formatter));
+		Ruta_Dades ruta_3 = new Ruta_Dades(3, "ruta 3: Terra --> Mart (directe) --> Òrbita de Júpiter ", new ArrayList<Integer>(Arrays.asList(0, 3, 4)), true, LocalDateTime.parse("28-10-2020 16:33", Data.formatter), null, LocalDateTime.parse("28-10-2020 16:33", Data.formatter));
+		Ruta_Dades ruta_4 = new Ruta_Dades(4, "ruta 2.2: Terra --> Òrbita de Venus (REPETIDA)", new ArrayList<Integer>(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7)), true, LocalDateTime.parse("28-10-2020 16:32", Data.formatter), null, LocalDateTime.parse("30-10-2020 19:49", Data.formatter));
+		
+		
+		comprovacioRendimentTmp.llistaRutes.add(ruta_0);
+		comprovacioRendimentTmp.llistaRutes.add(ruta_1);
+		comprovacioRendimentTmp.llistaRutes.add(ruta_2);
+		comprovacioRendimentTmp.llistaRutes.add(ruta_3);
+		comprovacioRendimentTmp.llistaRutes.add(ruta_4);
+		
+		
+		for (Ruta_Dades ruta : comprovacioRendimentTmp.llistaRutes) {
+			
+			System.out.println(ruta.toString());
+			
+		}
+		
+		return comprovacioRendimentTmp;
+	}
+	
+	
+	public static void setUnio(ComprovacioRendiment comprovacioRendimentTmp) {
+		
+		Set<Integer> hs = new HashSet<Integer>();
+	
+		for (Ruta_Dades ruta : comprovacioRendimentTmp.llistaRutes) {
+			hs.addAll(ruta.getWaypoints());
+		}
+		
+		System.out.println("ID dels waypoints ficats en el set: " + hs);	
+		
+		
+	}
+	
+	
+	public static void setInterseccio(ComprovacioRendiment comprovacioRendimentTmp){
+		
+		Set<Integer> hs = new HashSet<Integer>();
+		
+		for(Ruta_Dades ruta : comprovacioRendimentTmp.llistaRutes) {
+			hs.addAll(ruta.getWaypoints());
+		}
+		
+		for(Ruta_Dades ruta : comprovacioRendimentTmp.llistaRutes) {
+			hs.retainAll(ruta.getWaypoints());
+		}
+		
+		System.out.println("ID dels waypoints en totes les rutes: " + hs);
 	}
 	
 	
