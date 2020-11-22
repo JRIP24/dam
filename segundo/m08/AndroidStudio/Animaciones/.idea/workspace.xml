@@ -7,93 +7,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e17d6516-445b-40a6-b1e1-b76c1ad8d37c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/animaciones/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/animaciones/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/example/animaciones/ExampleUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/androidTest/java/com/example/layouts/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/java/com/example/layouts/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/drawable/foto1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/drawable/foto2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/drawable/foto22.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/drawable/foto23.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/drawable/foto4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/drawable/foto42.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/drawable/foto422.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/drawable/foto6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/drawable/foto62.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/drawable/foto63.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/drawable/foto7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/drawable/foto71.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/drawable/foto8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/drawable/foto81.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/app/src/test/java/com/example/layouts/ExampleUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Layouts/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/icon-playstore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/java/com/example/splash_screen/Bike.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/java/com/example/splash_screen/BikeAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/java/com/example/splash_screen/ForgotpasswordActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/java/com/example/splash_screen/SignupActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-anydpi/lock.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-hdpi/ic_down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-hdpi/lock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-mdpi/ic_down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-mdpi/lock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-xhdpi/ic_down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-xhdpi/lock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-xxhdpi/ic_down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-xxhdpi/lock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable/icon_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable/style_spinner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/font/amita.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/layout/activity_forgotpassword.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/layout/activity_signup.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/layout/spinner_row.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-anydpi-v26/icon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-anydpi-v26/icon_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-hdpi/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-hdpi/icon_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-mdpi/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-mdpi/icon_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-xhdpi/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-xhdpi/icon_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-xxhdpi/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-xxhdpi/icon_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-xxxhdpi/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-xxxhdpi/icon_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/values/font_certs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/values/icon_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/values/preloaded_fonts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Splash_Screen/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Splash_Screen/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Splash_Screen/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Splash_Screen/app/src/main/java/com/example/splash_screen/DashboardActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/java/com/example/splash_screen/DashboardActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Splash_Screen/app/src/main/java/com/example/splash_screen/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/java/com/example/splash_screen/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/layout/activity_dashboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/layout/activity_dashboard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_XL_API_30" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="21b5f64f2d047ece" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -119,6 +85,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Animations" />
     <property name="memory.settings.postsync.last.time.stamp" value="1603984080468" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
@@ -194,5 +161,11 @@
       <updated>1603984078173</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="743" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1606078300621">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="743" y="311" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606078300621" />
   </component>
 </project>

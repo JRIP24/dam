@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DashboardActivity">
+    tools:context=".SignupActivity">
 
     <RelativeLayout
         android:id="@+id/relativeLayout2"
@@ -59,7 +59,7 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/titleDash"
+            android:text="@string/titleSign"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -68,21 +68,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:text="@string/subTitleDash"
+            android:text="@string/subTitleSign"
             android:textSize="15sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp">
+            android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailInput"
+                android:id="@+id/nameInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/emailText"
+                android:hint="@string/nameText"
                 android:textSize="18sp" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/emailText"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -100,24 +114,35 @@
             </com.google.android.material.textfield.TextInputLayout>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/forgotPassText"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/textDate"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="10dp"
             android:clickable="true"
-            android:focusable="true"
-            android:text="@string/forgotPasswordText"
-            android:textSize="16dp" />
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="date" />
+
+        <Spinner
+            android:id="@+id/spinnerClass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/style_spinner" />
+
+        <Switch
+            android:id="@+id/switchNewsletter"
+            style="@style/SwitchCompatTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/newsLetter" />
 
         <Button
-            android:id="@+id/logInBtn"
+            android:id="@+id/signUPBtn"
             style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/logInText"
+            android:text="@string/signText"
             android:textColor="@color/secondaryColor"
             android:textSize="18sp" />
 
@@ -126,7 +151,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/singUpText" />
+            android:text="@string/haveAccountText" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

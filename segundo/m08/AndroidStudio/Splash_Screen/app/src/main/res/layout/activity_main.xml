@@ -22,22 +22,28 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="600dp"
-            app:srcCompat="@drawable/b1"
+            android:layout_height="400dp"
             android:transitionName="imageapp"
-            />
+            app:srcCompat="@drawable/b1" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
+            android:fontFamily="@font/amita"
             android:gravity="center"
             android:text="@string/title"
             android:textColor="@color/secondaryDarkColor"
             android:textSize="50sp"
-            android:transitionName="textapp"
-            />
+            android:transitionName="textapp" />
+
+        <TextView
+            android:id="@+id/subTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/subTitleHome"
+            android:textSize="22sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

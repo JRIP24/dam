@@ -1,6 +1,25 @@
 <resources>
     <string name="app_name">Splash_Screen</string>
     <string name="title">Pedals</string>
-    <string name="titleDash">Hello there, welcome back</string>
+    <string name="subTitleHome">Your Way of Traveling</string>
+
+    <string name="titleDash">Hello there! Welcome Back!</string>
     <string name="subTitleDash">Sign in to continue</string>
+
+    <string name="titleSign">Hello there!</string>
+    <string name="subTitleSign">Sign in to start</string>
+
+    <string name="nameText">Name</string>
+    <string name="emailText">Email</string>
+    <string name="passwordText">Password</string>
+    <string name="forgotPasswordText">Forgot password?</string>
+    <string name="forgotPasswordSubtitle">We just need your registered email address to send your password reset</string>
+    <string name="resetPasswordText">Reset password</string>
+    <string name="dateText">Birth date</string>
+    <string name="newsLetter">Recive Newsletter?</string>
+
+    <string name="logInText">LOG IN</string>
+    <string name="signText">SIGN UP</string>
+    <string name="singUpText">NEW USER SING UP</string>
+    <string name="haveAccountText">ALREADY HAVE AN ACCOUNT</string>
 </resources>
