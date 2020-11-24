@@ -68,16 +68,26 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isChecked){
 
+                    /* Manera larga
                     option7.setEnabled(true);
                     option8.setEnabled(true);
-                    option9.setEnabled(true);
+                    option9.setEnabled(true);*/
+
+                    for(int i = 0; i < radioGroup3.getChildCount(); i++){
+                        ((RadioButton)radioGroup3.getChildAt(i)).setEnabled(true);
+                    }
 
                 } else {
 
                     radioGroup3.clearCheck();
+                    /*
                     option7.setEnabled(false);
                     option8.setEnabled(false);
-                    option9.setEnabled(false);
+                    option9.setEnabled(false);*/
+
+                    for(int i = 0; i < radioGroup3.getChildCount(); i++){
+                        ((RadioButton)radioGroup3.getChildAt(i)).setEnabled(false);
+                    }
 
 
                 }
@@ -154,21 +164,18 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
         buttonCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 int selected1 = radioGroup1.getCheckedRadioButtonId();
                 int selected2 = radioGroup2.getCheckedRadioButtonId();
-                int selected3 = radioGroup3.getCheckedRadioButtonId();
 
                 //Hook
                 RadioButton radio1 = (RadioButton) findViewById(selected1);
                 RadioButton radio2 = (RadioButton) findViewById(selected2);
-                RadioButton radio3 = (RadioButton) findViewById(selected3);
 
-                String mensaje = radio1.getText() + ", " + radio2.getText() + ", " + radio3.getText() + " selected";
+                String mensaje = radio1.getText() + ", " + radio2.getText() + " selected";
 
                 Toast.makeText(MainActivity.this,  mensaje, Toast.LENGTH_SHORT).show();
 

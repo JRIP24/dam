@@ -76,14 +76,16 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="30dp"
                 android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="20dp">
 
                 <Switch
                     android:id="@+id/switch1"
@@ -95,25 +97,26 @@
                     android:id="@+id/radioGroup3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/option7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text="@string/op7" />
 
                     <RadioButton
                         android:id="@+id/option8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text="@string/op8" />
 
                     <RadioButton
                         android:id="@+id/option9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text="@string/op9" />
                 </RadioGroup>
             </LinearLayout>
 
