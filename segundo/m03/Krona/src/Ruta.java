@@ -149,7 +149,7 @@ public class Ruta {
 		}
 		
 		for(Ruta_Dades ruta : comprovacioRendimentTmp.llistaRutes) {
-			hs.retainAll(ruta.getWaypoints());
+			hs.retainAll(ruta.getWaypoints());			
 		}
 		
 		System.out.println("ID dels waypoints en totes les rutes: " + hs);

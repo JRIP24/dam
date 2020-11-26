@@ -90,9 +90,46 @@ public class Krona {
             menu.append(System.getProperty("line.separator"));
             menu.append("24. Ordenar les rutes per waypoints i ID (el ID de més gran a més petit)");
             menu.append(System.getProperty("line.separator"));
-            menu.append("25.");
             menu.append(System.getProperty("line.separator"));
             
+            menu.append("30. Crear un MAP de rutes i visualitzar-lo");
+            menu.append(System.getProperty("line.separator"));
+            
+            menu.append("31. Visualitza totes les rutes del MAP que tinguin un waypoint concret");
+            menu.append(System.getProperty("line.separator"));
+            
+            menu.append("32. Esborrar totes les rutes del MAP que tinguin un waypoint concret");
+            menu.append(System.getProperty("line.separator"));
+            
+            menu.append("33. Visualitzar les dades d'una ruta");
+            menu.append(System.getProperty("line.separator"));
+            
+            menu.append("34. Ordenar les rutes del MAP per ID");
+            menu.append(System.getProperty("line.separator"));
+            
+            menu.append("35. Ordenar les rutes del MAP per waypoints i ID (el ID de més gran a més petit)");
+            menu.append(System.getProperty("line.separator"));
+            menu.append(System.getProperty("line.separator"));
+            
+            menu.append("40. Inicialitzar waypoints");
+            menu.append(System.getProperty("line.separator"));
+            
+            menu.append("41. Insertar un nou waypoint");
+            menu.append(System.getProperty("line.separator"));
+            
+            menu.append("42. Visualitzar el waypoints versus un tipus");
+            menu.append(System.getProperty("line.separator"));
+            
+            menu.append("43. Visualitzar el nº de waypoints versus el seu tipus");
+            menu.append(System.getProperty("line.separator"));
+            
+            menu.append("44. Trobar waypoints versus el seu nom");
+            menu.append(System.getProperty("line.separator"));
+            
+            menu.append("45. Ordenar els waypoints per data");
+            menu.append(System.getProperty("line.separator"));
+            menu.append(System.getProperty("line.separator"));
+          
             menu.append("50. Tornar al menú pare (PNS-24 Puma)");
             menu.append(System.getProperty("line.separator"));
             
@@ -190,6 +227,43 @@ public class Krona {
 				    
 				case "24":
 				    
+				    bloquejarPantalla();
+				    break;
+				    
+				case "40":
+					
+					Waypoint.m40(comprovacioRendimentTmp);
+				    
+				    bloquejarPantalla();
+				    break;
+				    
+			    
+				case "41":
+					
+					Waypoint.m41(comprovacioRendimentTmp);
+				    bloquejarPantalla();
+				    break;
+				    
+				case "42":
+					
+					Waypoint.m42(comprovacioRendimentTmp);
+				    bloquejarPantalla();
+				    break;
+				    
+				    
+				case "43":
+					Waypoint.m43(comprovacioRendimentTmp);
+				    bloquejarPantalla();
+				    break;
+				    
+				    
+				case "44":
+				    Waypoint.m44(comprovacioRendimentTmp);
+				    bloquejarPantalla();
+				    break;
+				    
+				case "45":
+				    //Mirar Clase Llibreries/ComparaFechas
 				    bloquejarPantalla();
 				    break;
                 case "50":

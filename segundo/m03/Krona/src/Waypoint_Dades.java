@@ -14,8 +14,11 @@ public class Waypoint_Dades implements Comparable<Waypoint_Dades>{
 	private LocalDateTime dataCreacio;
 	private LocalDateTime dataAnulacio; //Quan actiu passi a valdre FALSE.
 	private LocalDateTime dataModificacio;
+	private int tipus;
 	
 	
+
+
 	public Waypoint_Dades(int id, String nom, int[] coordenades, boolean actiu, LocalDateTime dataCreacio, LocalDateTime dataAnulacio, LocalDateTime dataModificacio) {
 		
 		this.id = id;
@@ -26,6 +29,54 @@ public class Waypoint_Dades implements Comparable<Waypoint_Dades>{
 		this.dataAnulacio = dataAnulacio;
 		this.dataModificacio = dataModificacio;
 	}
+	
+public Waypoint_Dades(int id, String nom, int[] coordenades, boolean actiu, LocalDateTime dataCreacio, LocalDateTime dataAnulacio, LocalDateTime dataModificacio, int tipus) {
+		
+		this.id = id;
+		this.nom = nom;
+		this.coordenades = coordenades;
+		this.actiu = actiu;
+		this.dataCreacio = dataCreacio;
+		this.dataAnulacio = dataAnulacio;
+		this.dataModificacio = dataModificacio;
+		this.tipus = tipus;
+	}
+
+
+
+
+
+public LocalDateTime getDataCreacio() {
+	return dataCreacio;
+}
+
+public void setDataCreacio(LocalDateTime dataCreacio) {
+	this.dataCreacio = dataCreacio;
+}
+
+public LocalDateTime getDataAnulacio() {
+	return dataAnulacio;
+}
+
+public void setDataAnulacio(LocalDateTime dataAnulacio) {
+	this.dataAnulacio = dataAnulacio;
+}
+
+public LocalDateTime getDataModificacio() {
+	return dataModificacio;
+}
+
+public void setDataModificacio(LocalDateTime dataModificacio) {
+	this.dataModificacio = dataModificacio;
+}
+
+public int getTipus() {
+	return tipus;
+}
+
+public void setTipus(int tipus) {
+	this.tipus = tipus;
+}
 	
 	public int getId() {
 		return this.id;
@@ -91,6 +142,9 @@ public class Waypoint_Dades implements Comparable<Waypoint_Dades>{
 		
 		return result;
 	}
+	
+	
+	
 	
 	
 

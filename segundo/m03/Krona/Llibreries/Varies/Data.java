@@ -22,6 +22,40 @@ public abstract class Data {
 		return formattedDateTime;
 	}
 	
+	
+	public static boolean esData(String dataTmp) {
+		
+		boolean resultado = false;
+		
+		if (dataTmp.split("-").length == 3) {
+			
+			int contador = 0;
+			
+			for (String parte : dataTmp.split("-")) {
+				
+				if (Cadena.stringIsInt(parte)) {
+					
+					contador++;
+					
+				}
+				
+			}
+			
+			
+			if (contador == 3) {
+				resultado = true;				
+				
+			} else {
+				resultado = false;
+			}
+			
+		}
+		
+		return resultado;
+		
+	}
+	
+	
 	       
 
 }

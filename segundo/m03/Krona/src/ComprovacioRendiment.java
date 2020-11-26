@@ -1,6 +1,7 @@
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,6 +13,8 @@ public class ComprovacioRendiment {
 	Waypoint_Dades wtmp;
 	public Deque<Waypoint_Dades> pilaWaypoints;
 	public ArrayList<Ruta_Dades> llistaRutes;
+	LinkedList<Waypoint_Dades> llistaWaypoints = new LinkedList<Waypoint_Dades>();
+	LinkedHashMap<Integer, Waypoint_Dades> mapaWaypoints;
 	
 	
 	public ComprovacioRendiment() {
