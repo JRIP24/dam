@@ -1,4 +1,6 @@
 import java.awt.Menu;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 
 
@@ -25,6 +27,56 @@ public class Program {
 	}
 	
 	
+	public static void addClient() {
+		
+		boolean salir = false;
+		boolean premium = false;
+		Scanner teclado = new Scanner(System.in);
+		
+		
+		while (!salir) {
+			
+			System.out.print("Introduzca el DNI (sin letra): ");
+			if (teclado.hasNextInt()) {
+				
+				int dni = teclado.nextInt();
+				System.out.print("Introduzca el nombre: ");
+				String nombre = teclado.nextLine();
+				
+				System.out.print("Es cliente premium? (1 para si y 0 para no):");
+		    	
+		    	if (teclado.hasNextInt() ) {
+					
+		    		int opcion = teclado.nextInt();
+		    		
+		    		if (opcion == 0 || opcion == 1) {
+		    			
+						if (opcion == 1) {
+							premium = true;
+						}
+						
+						salir = true;
+						Client cliente = new Client(nombre, dni, premium);
+					
+		    		} else {
+						System.out.println("Error: No se ha introducido 0 o 1");
+					}
+		    					    		
+				} else {
+					System.out.println("Error, no se ha introducido un número");
+				}
+				
+				
+				
+			} else {
+				System.out.println("Error: el DNI introducido no es correcto");
+			}
+			
+		}
+		
+	}
+	
+	
 	static int menu() {
 		
 		System.out.println("Opciones: \n" +
@@ -41,7 +93,7 @@ public class Program {
 		
 	}
 	
-	public static void main(String[] ags) {
+	public static void main(String[] ags) throws SQLException {
 		
 		Scanner teclado = new Scanner(System.in);
 		boolean salir = false;
@@ -73,6 +125,36 @@ public class Program {
 					case 1:
 						
 						System.out.println("Opcion 1");
+						MyBBDD driver = new MyBBDD();
+						
+						try {
+							
+							String sentenciaSQL = "CREATE TABLE client ("
+							+ "dni INT(8) PRIMARY KEY,"
+							+ "nom VARCHAR(20),"
+							+ "premium BOOLEAN"
+							+ "); ";
+						
+						Statement statement = driver.con.createStatement();
+						statement.execute(sentenciaSQL);
+						
+						sentenciaSQL = "CREATE TABLE comanda ("
+								+ "num_comanda INT PRIMARY KEY,"
+								+ "preu_total DOUBLE(40, 2),"
+								+ "data DATE,"
+								+ "dni_client INT(8),"
+								+ "FOREIGN KEY (dni_client) REFERENCES client(dni)"
+								+ ");";
+						
+							
+						} catch (Exception e) {
+							
+							System.out.println("Error: " + e);
+							
+							
+						} finally {
+							driver.close();							
+						}
 						
 						pausar();
 						break;
@@ -92,6 +174,8 @@ public class Program {
 					case 4:
 						
 						System.out.println("Opcion 4");
+						
+						
 						
 						pausar();
 						break;

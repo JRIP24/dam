@@ -7,7 +7,7 @@ public class MyBBDD {
 	private String url;
 	private String usuario;
 	private String password;
-	private Connection con;
+	Connection con;
 	
 	
 	public MyBBDD() throws SQLException {
@@ -16,7 +16,6 @@ public class MyBBDD {
 		this.password = "contrasenya";
 		
 		this.con = DriverManager.getConnection(this.url, this.usuario, this.password);
-		System.out.println("Se ha establecido la conexión con la BBDD correctamente");
 		
 	}
 	
