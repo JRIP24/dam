@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Parcs Nacionals</string>
+    <string name="refugis">Refugis</string>
+    <string name="outdoo">Outdoor living</string>
+    <string name="cardText1">Refugi Josep Maria Blanc</string>
+    <string name="cardText2">Refugi Cap de Llauset</string>
+    <string name="cardText3">Refugi Ventosa i Clavell</string>
+    <string name="cardText4">Refugi Amitges</string>
+    <string name="cardText5">Refugi Josep Maria Montfort</string>
+
+
+    <string name="nom">Nom</string>
+    <string name="cognom">Cognom</string>
+    <string name="email">Email</string>
+    <string name="numPersones">Número persones</string>
+    <string name="vegetarian">Vegetariana</string>
+    <string name="gluten">Sense Gluten</string>
+    <string name="celiac">Celiac</string>
+    <string name="cap">Cap</string>
+
+    <string name="reservar">Reservar</string>
+
+
+
+</resources>
