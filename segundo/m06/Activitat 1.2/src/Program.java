@@ -146,6 +146,9 @@ public class Program {
 								+ "FOREIGN KEY (dni_client) REFERENCES client(dni)"
 								+ ");";
 						
+						
+						statement.execute(sentenciaSQL);
+						
 							
 						} catch (Exception e) {
 							
