@@ -18,6 +18,7 @@ public class MyBBDD {
 		this.con = DriverManager.getConnection(this.url, this.usuario, this.password);
 		
 	}
+		
 	
 	public void close() {
         try {

@@ -86,6 +86,9 @@
 		<item key="LimitValue" value="10"/>
 		<item key="SkipNull" value="false"/>
 		<item key="ToStringTemplateSelected" value="0"/>
+		<item key="InstanceOf" value="false"/>
+		<item key="Blocks" value="false"/>
+		<item key="Objects.equals &amp; Objects.hash" value="false"/>
 	</section>
 	<section name="AddGetterSetterDialog">
 		<item key="SortOrdering" value="false"/>
@@ -101,9 +104,9 @@
 	<section name="DialogBounds_GenerateToStringDialog">
 		<item key="DIALOG_X_ORIGIN" value="435"/>
 		<item key="DIALOG_Y_ORIGIN" value="0"/>
-		<item key="DIALOG_WIDTH" value="571"/>
-		<item key="DIALOG_HEIGHT" value="784"/>
-		<item key="DIALOG_FONT_NAME" value="1|Cantarell|11.0|0|GTK|1|"/>
+		<item key="DIALOG_WIDTH" value="584"/>
+		<item key="DIALOG_HEIGHT" value="751"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
 	</section>
 	<section name="BuildPathsPropertyPage">
 		<item key="pageIndex" value="2"/>
@@ -119,5 +122,12 @@
 		<item key="updateSimilarElements" value="false"/>
 		<item key="updateSimilarElementsMatchStrategy" value="1"/>
 		<item key="updateTextualMatches" value="false"/>
+	</section>
+	<section name="DialogBounds_GenerateHashCodeEqualsDialog">
+		<item key="DIALOG_X_ORIGIN" value="677"/>
+		<item key="DIALOG_Y_ORIGIN" value="108"/>
+		<item key="DIALOG_WIDTH" value="572"/>
+		<item key="DIALOG_HEIGHT" value="622"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
 	</section>
 </section>

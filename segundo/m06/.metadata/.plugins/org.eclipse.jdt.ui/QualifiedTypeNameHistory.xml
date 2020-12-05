@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.sun.tools.classfile.CompilationID_attribute"/>
-    <fullyQualifiedTypeName name="javax.sound.midi.SysexMessage"/>
-    <fullyQualifiedTypeName name="Treballador"/>
-    <fullyQualifiedTypeName name="sun.tools.tree.ThisExpression"/>
     <fullyQualifiedTypeName name="sun.jvm.hotspot.oops.java_lang_Class"/>
     <fullyQualifiedTypeName name="java.io.DataInputStream"/>
     <fullyQualifiedTypeName name="java.io.BufferedInputStream"/>
@@ -12,14 +8,8 @@
     <fullyQualifiedTypeName name="sun.net.www.protocol.http.spnego.NegotiateCallbackHandler"/>
     <fullyQualifiedTypeName name="org.graalvm.compiler.core.sparc.SPARCArithmeticLIRGenerator"/>
     <fullyQualifiedTypeName name="Moble"/>
-    <fullyQualifiedTypeName name="java.lang.Double"/>
     <fullyQualifiedTypeName name="sun.util.resources.cldr.ext.CurrencyNames_en_RW"/>
-    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
-    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
-    <fullyQualifiedTypeName name="java.text.ParseException"/>
-    <fullyQualifiedTypeName name="java.text.DateFormat"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.IfInstruction"/>
     <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilderFactory"/>
     <fullyQualifiedTypeName name="org.w3c.dom.Document"/>
@@ -34,9 +24,7 @@
     <fullyQualifiedTypeName name="Politic"/>
     <fullyQualifiedTypeName name="Alumne"/>
     <fullyQualifiedTypeName name="java.lang.Boolean"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
-    <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="com.sun.tools.classfile.Opcode"/>
     <fullyQualifiedTypeName name="sun.jvm.hotspot.ui.tree.BooleanTreeNodeAdapter"/>
     <fullyQualifiedTypeName name="java.awt.Menu"/>
@@ -48,7 +36,6 @@
     <fullyQualifiedTypeName name="Ordinador"/>
     <fullyQualifiedTypeName name="java.io.BufferedOutputStream"/>
     <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="Ressenya"/>
     <fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
@@ -56,8 +43,21 @@
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="MyBBDD"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.sql.SQLSyntaxErrorException"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.sun.tools.classfile.Annotation.element_value"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.text.DateFormat"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="java.text.ParseException"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="Comanda"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="Client"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>
