@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_shop"
+        android:icon="@drawable/ic_shop"
+        android:title="@string/menuitile"
+    app:showAsAction="always" >
+
+    <menu>
+        <item
+            android:id="@+id/sub1"
+            android:icon="@drawable/ic_settings"
+            android:title="Item_settings"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/sub2"
+            android:icon="@drawable/ic_user"
+            android:title="m_profile"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/sub3"
+            android:icon="@drawable/ic_rent"
+            android:title="Item_rent"
+            app:showAsAction="always" />
+    </menu>
+
+
+    </item>
+    <item
+        android:id="@+id/Item_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Item_settings"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/m_profile"
+        android:icon="@drawable/ic_user"
+        android:title="m_profile"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/Item_rent"
+        android:icon="@drawable/ic_rent"
+        android:title="Item_rent"
+        app:showAsAction="always" />
+</menu>
