@@ -11,7 +11,7 @@ CREATE TABLE resum_facturacio(
 
 --Exercici 1
 
-DROP PROCEDURE IF EXISTS crea_resum_facturacio();
+DROP PROCEDURE IF EXISTS crea_resum_facturacio;
 
 DELIMITER //
 CREATE PROCEDURE crea_resum_facturacio(p_mes INT, p_any INT)
@@ -31,6 +31,10 @@ read_loop: LOOP
     
     FETCH c_comanda INTO v_total_facturacion, v_dni;
 
+    IF acaba THEN
+        LEAVE read_loop;
+    END IF;
+
     INSERT INTO resum_facturacio (mes, any, dni_client, quantitat ) 
     VALUES (p_mes, p_any, v_dni, v_total_facturacion);
 
@@ -41,4 +45,4 @@ END;
 
 //
 
-CALL crea_resum_facturacio();
+CALL crea_resum_facturacio(12, 2020);
