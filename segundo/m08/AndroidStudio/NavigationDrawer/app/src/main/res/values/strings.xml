@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Navigation Drawer</string>
+    <string name="home">Home</string>
+    <string name="settings">Settigs</string>
+    <string name="account">Account</string>
+    <string name="bike">Bike</string>
+    <string name="car">Car</string>
+    <string name="plane">Plane</string>
+    <string name="logout">LogOut</string>
+    <string name="run">Run</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="fly">Fly away</string>
+    <string name="way">Your way of traveling</string>
+
+</resources>
