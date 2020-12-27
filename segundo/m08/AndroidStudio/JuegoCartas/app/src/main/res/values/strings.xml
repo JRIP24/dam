@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">JuegoCartas</string>
+    <string name="players_1">1 PLAYER</string>
+    <string name="players_2">2 PLAYERS</string>
+    <string name="you">You</string>
+    <string name="play">PLAY</string>
+    <string name="Bank">Bank</string>
+</resources>
