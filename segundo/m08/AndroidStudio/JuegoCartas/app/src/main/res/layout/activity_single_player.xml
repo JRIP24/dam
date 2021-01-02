@@ -79,16 +79,17 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/pileCards"
-                android:layout_width="match_parent"
+                android:id="@+id/deck"
+                android:layout_width="70dp"
                 android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
                 app:srcCompat="@drawable/pile" />
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/pileCards"
+                android:layout_below="@id/deck"
                 android:layout_centerInParent="false"
                 android:layout_centerHorizontal="false"
                 android:layout_centerVertical="false"
@@ -103,18 +104,120 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="wrap_content"
+                android:id="@+id/playerCard1"
+                android:layout_width="70dp"
                 android:layout_height="100dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/clubs03" />
+                android:layout_weight="0"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/back" />
 
             <ImageView
-                android:id="@+id/imageView8"
+                android:id="@+id/playerCard2"
+                android:layout_width="70dp"
+                android:layout_height="100dp"
+                android:layout_weight="0"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/back" />
+
+            <ImageView
+                android:id="@+id/playerCard3"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/clubs01" />
+                android:visibility="invisible"
+                app:srcCompat="@drawable/back" />
+            <ImageView
+                android:id="@+id/playerCard4"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/back" />
+            <ImageView
+                android:id="@+id/playerCard5"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/back" />
+            <ImageView
+                android:id="@+id/playerCard6"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/back" />
+            <ImageView
+                android:id="@+id/playerCard7"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/back" />
+            <ImageView
+                android:id="@+id/playerCard8"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/back" />
+            <ImageView
+                android:id="@+id/playerCard9"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/back" />
+            <ImageView
+                android:id="@+id/playerCard10"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/back" />
+            <ImageView
+                android:id="@+id/playerCard11"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/back" />
+            <ImageView
+                android:id="@+id/playerCard12"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/back" />
+            <ImageView
+                android:id="@+id/playerCard13"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/back" />
+            <ImageView
+                android:id="@+id/playerCard14"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/back" />
+            <ImageView
+                android:id="@+id/playerCard15"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/back" />
+            <ImageView
+                android:id="@+id/playerCard16"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/back" />
+
         </LinearLayout>
 
         <TextView
