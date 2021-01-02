@@ -352,6 +352,71 @@ public class Program {
 	}
 	
 	
+	static void resumFact() throws SQLException {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Introduzca el año: ");
+		if (sc.hasNextInt()) {
+			
+			int anyo = sc.nextInt();
+			
+			if (anyo > 0) {
+				
+				System.out.print("Introduzca el mes (número): ");
+				
+				if (sc.hasNextInt()) {
+					
+					int mes = sc.nextInt();
+								
+					if (mes >= 1 && mes <= 12) {
+						
+						//HACER EÑ PROCEDIMIENTO
+						MyBBDD driver = new MyBBDD();
+						
+						try {
+							
+							String sentenciaSQL = "CALL crea_resum_facturacio(" + mes + "," +  anyo + " );";
+						
+							Statement statement = driver.con.createStatement();
+							statement.execute(sentenciaSQL);
+							
+							System.out.println("Se ha creado el resumen de facturación");
+							driver.con.commit();
+							
+						} catch (Exception e) {
+							
+							System.out.println("Error: " + e);
+							
+							
+						} finally {
+							driver.close();							
+						}
+						
+						
+					} else {
+						System.out.println("Error: El mes introducido no es válido");
+					}
+					
+				} else {
+					System.out.println("Error: No se ha introducido un número");
+				}
+				
+			} else {
+				System.out.println("Error: El mes introducido no es válido");
+			}
+			
+		} else {
+			System.out.println("Error: No se ha introducido un número");
+		}
+		
+		
+		
+		
+		
+	}
+	
+	
 	
 	
 	
@@ -372,7 +437,8 @@ public class Program {
 					"3.- Emmagatzemat de dades a la BBDD \n" +
 					"4.- Alta d'un nou client \n" +
 					"5.- Alta d'una nova comanda \n" +
-					"6.- Mostrar per pantalla les comandes d'un client \n\n\n");
+					"6.- Mostrar per pantalla les comandes d'un client \n" + 
+					"7.- Generació de resum de facturació \n\n\n");
 				System.out.print("Introduzca una opción: ");
 				
 				if (teclado.hasNextInt()) {
@@ -567,6 +633,16 @@ public class Program {
 							}
 							
 						}
+						
+						pausar();
+						break;
+						
+					case 7:
+						
+						System.out.println("Opcion 7");
+						
+						resumFact();
+						
 						
 						pausar();
 						break;

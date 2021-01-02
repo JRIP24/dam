@@ -1,5 +1,6 @@
 --Creación de tabla resum_facturació (no es parte del ejercicio)
 
+use lamevabbdd;
 CREATE TABLE resum_facturacio(
     mes INT,
     any INT,
@@ -46,3 +47,5 @@ END;
 //
 
 CALL crea_resum_facturacio(12, 2020);
+
+SELECT * FROM resum_facturacio;

@@ -16,6 +16,7 @@ public class MyBBDD {
 		this.password = "contrasenya";
 		
 		this.con = DriverManager.getConnection(this.url, this.usuario, this.password);
+		this.con.setAutoCommit(false);
 		
 	}
 		
