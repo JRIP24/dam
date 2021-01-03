@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         objectAnimator1 = ObjectAnimator.ofFloat(button1, "translationX", 0f, -1000f);
         objectAnimator2 = ObjectAnimator.ofFloat(button2, "translationX", 0f, 1000f);
 
-        objectAnimator1.setDuration(2000);
-        objectAnimator2.setDuration(2000);
+        objectAnimator1.setDuration(1000);
+        objectAnimator2.setDuration(1000);
 
         animatorSet1 = new AnimatorSet();
         animatorSet1.playTogether(objectAnimator1, objectAnimator2);
@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
         objectAnimator1 = ObjectAnimator.ofFloat(button1, "translationX", -1000f, 0f);
         objectAnimator2 = ObjectAnimator.ofFloat(button2, "translationX", 1000f, 0f);
 
-        objectAnimator1.setDuration(2000);
-        objectAnimator2.setDuration(2000);
+        objectAnimator1.setDuration(1000);
+        objectAnimator2.setDuration(1000);
 
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(objectAnimator1, objectAnimator2);

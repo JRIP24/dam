@@ -7,59 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e17d6516-445b-40a6-b1e1-b76c1ad8d37c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/icon-playstore.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/java/com/example/splash_screen/Bike.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/java/com/example/splash_screen/BikeAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/java/com/example/splash_screen/ForgotpasswordActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/java/com/example/splash_screen/SignupActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-anydpi/lock.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-hdpi/ic_down.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-hdpi/lock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-mdpi/ic_down.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-mdpi/lock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-xhdpi/ic_down.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-xhdpi/lock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-xxhdpi/ic_down.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable-xxhdpi/lock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable/icon_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/drawable/style_spinner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/font/amita.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/layout/activity_forgotpassword.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/layout/activity_signup.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/layout/spinner_row.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-anydpi-v26/icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-anydpi-v26/icon_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-hdpi/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-hdpi/icon_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-mdpi/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-mdpi/icon_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-xhdpi/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-xhdpi/icon_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-xxhdpi/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-xxhdpi/icon_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-xxxhdpi/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/mipmap-xxxhdpi/icon_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/values/font_certs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/values/icon_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/values/preloaded_fonts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Animations/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Splash_Screen/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Splash_Screen/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Splash_Screen/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Splash_Screen/app/src/main/java/com/example/splash_screen/DashboardActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/java/com/example/splash_screen/DashboardActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Splash_Screen/app/src/main/java/com/example/splash_screen/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/java/com/example/splash_screen/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/layout/activity_dashboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/layout/activity_dashboard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Splash_Screen/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Animations/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Animations/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Animations/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Animations/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JuegoCartas/app/src/main/java/com/example/juegocartas/SinglePlayerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JuegoCartas/app/src/main/java/com/example/juegocartas/SinglePlayerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../app/.idea/caches/build_file_checksums.ser" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="21b5f64f2d047ece" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[21b5f64f2d047ece]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -79,13 +39,13 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Animations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="memory.settings.postsync.last.time.stamp" value="1603984080468" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
@@ -104,6 +64,7 @@
       <option name="DEPLOY_AS_INSTANT" value="false" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -139,11 +100,16 @@
       </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
