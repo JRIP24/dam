@@ -6,15 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:gravity="center"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,16 +20,35 @@
 
         <Button
             android:id="@+id/button1"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_centerInParent="true"
             android:text="@string/players_1" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:layout_below="@id/button1"
+            android:layout_centerInParent="true"
             android:layout_gravity="center"
             android:text="@string/players_2" />
-    </LinearLayout>
+
+        <Button
+            android:id="@+id/resumeBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:text="@string/resume" />
+
+        <Button
+            android:id="@+id/newBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/resumeBtn"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:text="@string/newGame" />
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

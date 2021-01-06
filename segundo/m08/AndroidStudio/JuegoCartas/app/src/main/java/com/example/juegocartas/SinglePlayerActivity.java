@@ -6,6 +6,9 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +20,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class SinglePlayerActivity extends AppCompatActivity {
+
+    static final String FILE_SHARED_NAME = "Socores_singlePlayer";
 
     ImageView deck;
     ImageView backCard;
@@ -172,6 +177,29 @@ public class SinglePlayerActivity extends AppCompatActivity {
         cartasBanco.add(bankCard14);
         cartasBanco.add(bankCard15);
         cartasBanco.add(bankCard16);
+
+
+        //Recogemos los puntos de la última partida guardada si la hay
+        Intent intent = getIntent();
+        boolean gameResumed = intent.getBooleanExtra(MainActivity.GAME_RESUMED, false);
+        if (gameResumed){
+
+            SharedPreferences sharedPreferences = getSharedPreferences(FILE_SHARED_NAME, Context.MODE_PRIVATE);
+            globalPlayerScoreInt = sharedPreferences.getInt("scorePlayer" , 0);
+            globalBankScoreInt = sharedPreferences.getInt("scoreBank" , 0);
+
+            globalPlayerScore.setText(globalPlayerScoreInt + "");
+            globalBankScore.setText(globalBankScoreInt + "");
+
+        } else { //Se dejará guardado un 0-0 (no contará como juego guardado)
+            SharedPreferences sharedPreferences = getSharedPreferences(FILE_SHARED_NAME, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt("scoreBank", 0);
+            editor.putInt("scorePlayer", 0);
+
+            editor.commit();
+
+        }
 
 
 
@@ -515,6 +543,15 @@ public class SinglePlayerActivity extends AppCompatActivity {
         ObjectAnimator animatorPlayAgainBtn = ObjectAnimator.ofFloat(playAgain, "alpha", 0f, 1f);
         animatorPlayAgainBtn.setDuration(0);
         animatorPlayAgainBtn.start();*/
+
+
+        //Guardamos datos en el teléfono
+        SharedPreferences sharedPreferences = getSharedPreferences(FILE_SHARED_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("scoreBank", globalBankScoreInt);
+        editor.putInt("scorePlayer", globalPlayerScoreInt);
+
+        editor.commit();
 
     }
 

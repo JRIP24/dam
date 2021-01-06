@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">JuegoCartas</string>
     <string name="players_1">1 PLAYER</string>
+    <string name="resume">RESUME GAME</string>
+    <string name="newGame">NEW GAME</string>
     <string name="players_2">2 PLAYERS</string>
     <string name="loseMsg">You have lost!</string>
     <string name="wonMsg">You have WON!</string>
