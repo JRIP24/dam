@@ -2,6 +2,8 @@ package com.example.juegocartas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
@@ -19,6 +21,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
     ImageView deck;
     ImageView backCard;
     Button playBtn;
+    Button playAgain;
     Button oneMoreBtn;
     Button stopBtn;
 
@@ -39,7 +42,30 @@ public class SinglePlayerActivity extends AppCompatActivity {
     ImageView playerCard15;
     ImageView playerCard16;
 
+    ImageView bankCard1;
+    ImageView bankCard2;
+    ImageView bankCard3;
+    ImageView bankCard4;
+    ImageView bankCard5;
+    ImageView bankCard6;
+    ImageView bankCard7;
+    ImageView bankCard8;
+    ImageView bankCard9;
+    ImageView bankCard10;
+    ImageView bankCard11;
+    ImageView bankCard12;
+    ImageView bankCard13;
+    ImageView bankCard14;
+    ImageView bankCard15;
+    ImageView bankCard16;
+
+    TextView globalPlayerScore;
+    TextView globalBankScore;
+    int globalPlayerScoreInt = 0;
+    int globalBankScoreInt = 0;
+
     TextView playerScore;
+    TextView bankScore;
     TextView gameMessage;
     double playerPoints = 0.0;
     double bankPoints = 0.0;
@@ -54,7 +80,9 @@ public class SinglePlayerActivity extends AppCompatActivity {
     boolean terminarTurnoForced = false;
     ArrayList<String> baraja = new ArrayList<String>();
     ArrayList<ImageView> cartasJugador = new ArrayList<ImageView>();
+    ArrayList<ImageView> cartasBanco = new ArrayList<ImageView>();
     int numCartasJugador = 0;//Número de cartas que el jugador ha sacado
+    int numCartasBanco = 0;//Número de cartas que el banco ha sacado
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +93,13 @@ public class SinglePlayerActivity extends AppCompatActivity {
         deck = findViewById(R.id.deck);
         backCard = findViewById(R.id.backCard);
         playBtn = findViewById(R.id.playBtn);
+        playAgain = findViewById(R.id.playAgain);
+
         playerScore = findViewById(R.id.playerScore);
+        globalPlayerScore = findViewById(R.id.globalPlayerScore);
+        bankScore = findViewById(R.id.bankScore);
+        globalBankScore = findViewById(R.id.globalBankScore);
+
         oneMoreBtn = findViewById(R.id.oneMoreBtn);
         stopBtn = findViewById(R.id.stopBtn);
         gameMessage = findViewById(R.id.gameMessage);
@@ -87,6 +121,24 @@ public class SinglePlayerActivity extends AppCompatActivity {
         playerCard15 = findViewById(R.id.playerCard15);
         playerCard16 = findViewById(R.id.playerCard16);
 
+
+        bankCard1 = findViewById(R.id.bankCard1);
+        bankCard2 = findViewById(R.id.bankCard2);
+        bankCard3 = findViewById(R.id.bankCard3);
+        bankCard4 = findViewById(R.id.bankCard4);
+        bankCard5 = findViewById(R.id.bankCard5);
+        bankCard6 = findViewById(R.id.bankCard6);
+        bankCard7 = findViewById(R.id.bankCard7);
+        bankCard8 = findViewById(R.id.bankCard8);
+        bankCard9 = findViewById(R.id.bankCard9);
+        bankCard10 = findViewById(R.id.bankCard10);
+        bankCard11 = findViewById(R.id.bankCard11);
+        bankCard12 = findViewById(R.id.bankCard12);
+        bankCard13 = findViewById(R.id.bankCard13);
+        bankCard14 = findViewById(R.id.bankCard14);
+        bankCard15 = findViewById(R.id.bankCard15);
+        bankCard16 = findViewById(R.id.bankCard16);
+
         cartasJugador.add(playerCard1);
         cartasJugador.add(playerCard2);
         cartasJugador.add(playerCard3);
@@ -104,7 +156,175 @@ public class SinglePlayerActivity extends AppCompatActivity {
         cartasJugador.add(playerCard15);
         cartasJugador.add(playerCard16);
 
+        cartasBanco.add(bankCard1);
+        cartasBanco.add(bankCard2);
+        cartasBanco.add(bankCard3);
+        cartasBanco.add(bankCard4);
+        cartasBanco.add(bankCard5);
+        cartasBanco.add(bankCard6);
+        cartasBanco.add(bankCard7);
+        cartasBanco.add(bankCard8);
+        cartasBanco.add(bankCard9);
+        cartasBanco.add(bankCard10);
+        cartasBanco.add(bankCard11);
+        cartasBanco.add(bankCard12);
+        cartasBanco.add(bankCard13);
+        cartasBanco.add(bankCard14);
+        cartasBanco.add(bankCard15);
+        cartasBanco.add(bankCard16);
 
+
+
+        playBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                baraja = crearNuevaBaraja(baraja);
+
+                cardForPlayer();
+                stopBtn.setVisibility(View.VISIBLE);
+                oneMoreBtn.setVisibility(View.VISIBLE);
+                animStop_OneMoreButtons(false);
+                playBtn.setVisibility(View.INVISIBLE);
+
+
+            }
+        });
+
+        playAgain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                baraja = crearNuevaBaraja(baraja);
+
+                playAgain.setVisibility(View.INVISIBLE);
+                gameMessage.setVisibility(View.INVISIBLE);
+                playBtn.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+
+        oneMoreBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                animStop_OneMoreButtons(true);
+                cardForPlayer();
+
+
+            }
+        });
+
+        stopBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                animStop_OneMoreButtons(true);
+                bankTurn();
+            }
+        });
+
+    }
+
+    private void bankTurn() {
+
+        cardForBank();
+
+    }
+
+    private void cardForBank() {
+
+        ImageView carta = cartasBanco.get(numCartasBanco);
+        numCartasBanco++;
+
+        //Nueva carta
+        //extraeremos siempre el indice 0, ya que al eliminar la carta del array el indice 0 pasa a ser otro
+        asingnarImagenes(baraja.get(0), carta);
+
+        backCard.setAlpha(1f);
+        cardAnimator1 = ObjectAnimator.ofFloat(backCard, "x", deck.getX(), carta.getX());
+        cardAnimator2 = ObjectAnimator.ofFloat(backCard, "y", deck.getY(), carta.getY());
+        cardAnimator3 = ObjectAnimator.ofFloat(backCard, "rotationY", 0f, 180f);
+        cardAnimator4 = ObjectAnimator.ofFloat(backCard, "alpha", 1f, 0f);
+
+        cardAnimator1.setDuration(500);
+        cardAnimator2.setDuration(500);
+        cardAnimator3.setDuration(500);
+        cardAnimator3.setStartDelay(500);
+        cardAnimator4.setDuration(100);
+        cardAnimator4.setStartDelay(750);
+
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(cardAnimator1, cardAnimator2, cardAnimator3, cardAnimator4);
+        animatorSet.start();
+
+
+
+        ObjectAnimator card1Animation = ObjectAnimator.ofFloat(carta, "alpha", 0f, 1f);
+        ObjectAnimator card2Animation = ObjectAnimator.ofFloat(carta, "rotationY", -180f, 0f);
+
+        card1Animation.setDuration(0);
+        card1Animation.setStartDelay(750);
+        card2Animation.setDuration(500);
+        card2Animation.setStartDelay(500);
+
+        AnimatorSet animatorSetCard = new AnimatorSet();
+        animatorSetCard.playTogether(card1Animation, card2Animation);
+        animatorSetCard.start();
+
+        animatorSet.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+
+                String cartaStr = deleteLast(baraja.get(0));
+                double valor = Double.parseDouble(cartaStr);
+                baraja.remove(0);
+
+                //Suma de valores
+                if(valor > 7.5){
+                    bankPoints = bankPoints + 0.5;
+                } else {
+                    bankPoints = bankPoints + valor;
+                }
+
+                bankScore.setText(bankPoints + "");
+
+                //Condicionales para acabar turno
+                if (bankPoints > 7.5){//Se acaba el turno perdiendo
+                    terminarTurnoForced = true;
+                    gameMessage.setText(R.string.wonMsg);//Jugador gana
+                    gameMessage.setVisibility(View.VISIBLE);
+
+                    globalPlayerScoreInt++;
+
+                    endRound();
+
+                } else if (bankPoints >= playerPoints && bankPoints <= 7.5) { //Acaba turno ganando
+
+                    terminarTurnoForced = true;
+                    gameMessage.setText(R.string.bankWonMsg);
+                    gameMessage.setVisibility(View.VISIBLE);
+
+                    globalBankScoreInt++;
+                    endRound();
+
+                } else { //Continua sacando cartas
+                    cardForBank();
+                }
+
+
+            }
+        });
+
+
+
+
+    }
+
+    private ArrayList<String> crearNuevaBaraja(ArrayList<String> baraja) {
+
+        baraja.clear();
 
         //Bastos
         baraja.add("1.0b");
@@ -162,45 +382,30 @@ public class SinglePlayerActivity extends AppCompatActivity {
         baraja.add("11.0e");
         baraja.add("12.0e");
 
+        //Se desordena la baraja
+        Collections.shuffle(baraja);
+
+        playerPoints = 0.0;
+        bankPoints = 0.0;
+        numCartasJugador = 0;
+        numCartasBanco = 0;
+
+        //Quitamos las cartas de la pantalla;
+        for (int i = 0; i < cartasJugador.size(); i++){
+            cartasJugador.get(i).setImageResource(R.drawable.back);
+            cartasJugador.get(i).setAlpha(0f);
+        }
+
+        for (int i = 0; i < cartasBanco.size(); i++){
+            cartasBanco.get(i).setImageResource(R.drawable.back);
+            cartasBanco.get(i).setAlpha(0f);
+        }
 
 
-        playBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        playerScore.setText(R.string.initialScore);
+        bankScore.setText(R.string.initialScore);
 
-                //Se desordena la baraja
-                Collections.shuffle(baraja);
-
-                cardForPlayer();
-                stopBtn.setVisibility(View.VISIBLE);
-                oneMoreBtn.setVisibility(View.VISIBLE);
-                animStop_OneMoreButtons(false);
-                playBtn.setVisibility(View.INVISIBLE);
-
-
-            }
-        });
-
-        oneMoreBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                animStop_OneMoreButtons(true);
-                cardForPlayer();
-
-
-            }
-        });
-
-        stopBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                terminarTurnoForced = true;
-                animStop_OneMoreButtons(true);
-            }
-        });
-
-
-
+        return baraja;
 
     }
 
@@ -288,10 +493,28 @@ public class SinglePlayerActivity extends AppCompatActivity {
             gameMessage.setText(R.string.loseMsg);
             gameMessage.setVisibility(View.VISIBLE);
 
+            globalBankScoreInt++;
+            endRound();
+
         } else {
             animStop_OneMoreButtons(false);
         }
 
+
+    }
+
+    private void endRound() {
+
+        globalBankScore.setText(globalBankScoreInt + "");
+
+        globalPlayerScore.setText(globalPlayerScoreInt + "");
+
+        //Al poner el marcador primero se cambia el número y despues de hace la animación
+        playAgain.setVisibility(View.VISIBLE);
+        /*
+        ObjectAnimator animatorPlayAgainBtn = ObjectAnimator.ofFloat(playAgain, "alpha", 0f, 1f);
+        animatorPlayAgainBtn.setDuration(0);
+        animatorPlayAgainBtn.start();*/
 
     }
 

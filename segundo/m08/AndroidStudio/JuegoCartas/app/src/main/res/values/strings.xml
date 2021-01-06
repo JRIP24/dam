@@ -3,12 +3,15 @@
     <string name="players_1">1 PLAYER</string>
     <string name="players_2">2 PLAYERS</string>
     <string name="loseMsg">You have lost!</string>
+    <string name="wonMsg">You have WON!</string>
+    <string name="bankWonMsg">Bank has won!</string>
     <string name="you">You: </string>
     <string name="score">Score: </string>
     <string name="Bank">Bank: </string>
     <string name="play">PLAY</string>
+    <string name="play_again">PLAY AGAIN</string>
     <string name="oneMore">ONE MORE</string>
     <string name="stop">STOP</string>
-    <string name="playerInitialScore">0</string>
+    <string name="initialScore">0</string>
 
 </resources>
