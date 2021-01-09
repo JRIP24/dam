@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 public class MultiplayerActivity extends AppCompatActivity {
 
@@ -217,12 +218,27 @@ public class MultiplayerActivity extends AppCompatActivity {
 
                 baraja = crearNuevaBaraja(baraja);
 
-                cardForPlayer(cartasJugador, player1, playerScore, player2, oneMoreBtn, stopBtn);
-                stopBtn.setVisibility(View.VISIBLE);
-                oneMoreBtn.setVisibility(View.VISIBLE);
-                stop2Btn.setVisibility(View.VISIBLE);
-                oneMore2Btn.setVisibility(View.VISIBLE);
-                animStop_OneMoreButtons(false, oneMoreBtn, stopBtn);
+                //Asignamos rol de banco
+                player1.isBank = false;
+                player2.isBank = false;
+
+                if(Math.random() < 0.5) {
+                    player1.isBank = true;
+                    cardForPlayer(cartasJugador, player2, playerScore, player1, oneMoreBtn, stopBtn);
+                    stop2Btn.setVisibility(View.VISIBLE);
+                    oneMore2Btn.setVisibility(View.VISIBLE);
+                    animStop_OneMoreButtons(false, oneMore2Btn, stop2Btn);
+                } else {
+                    player2.isBank = true;
+                    cardForPlayer(cartasJugador, player1, playerScore, player2, oneMoreBtn, stopBtn);
+                    stopBtn.setVisibility(View.VISIBLE);
+                    oneMoreBtn.setVisibility(View.VISIBLE);
+
+                }
+
+
+                Toast.makeText(MultiplayerActivity.this, "PLAYER 1: " + player1.isBank + "\n PLAYER 2: " + player2.isBank, Toast.LENGTH_SHORT).show();
+
                 playBtn.setVisibility(View.INVISIBLE);
 
 
@@ -266,18 +282,61 @@ public class MultiplayerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 animStop_OneMoreButtons(true, oneMoreBtn, stopBtn);
-                animStop_OneMoreButtons(false, oneMore2Btn, stop2Btn);
-                //bankTurn();
+
+                if (player1.isBank){
+                    whoWins();
+                } else {
+                    animStop_OneMoreButtons(false, oneMore2Btn, stop2Btn);
+                }
+
+
             }
         });
 
         stop2Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                animStop_OneMoreButtons(false, oneMoreBtn, stopBtn);
+
                 animStop_OneMoreButtons(true, oneMore2Btn, stop2Btn);
+
+                //El banco es el último en jugar,
+                //por lo que se comprobará quien gana y se acabará la ronda
+                if (player2.isBank){
+                    whoWins();
+                } else {
+                    animStop_OneMoreButtons(false, oneMoreBtn, stopBtn);
+                }
+
+
             }
         });
+
+    }
+
+    private void whoWins() {
+
+        User winner = new User();
+
+        if (player1.points > player2.points){
+            winner = player1;
+        } else if(player2.points > player1.points){
+            winner = player2;
+
+        } else { //Empate, gana el que tiene el rol de banco
+            if (player1.isBank){
+                winner = player1;
+            } else {
+                winner = player2;
+            }
+        }
+
+
+        gameMessage.setText(R.string.loseMsg);
+        gameMessage.setVisibility(View.VISIBLE);
+
+        //oponentGlobalScore++;
+        winner.globalScore++;
+        endRound();
 
     }
 
@@ -378,7 +437,7 @@ public class MultiplayerActivity extends AppCompatActivity {
 
         globalBankScore.setText(player2.globalScore + "");
 
-        globalPlayerScore.setText(player2.globalScore + "");
+        globalPlayerScore.setText(player1.globalScore + "");
 
         //Al poner el marcador primero se cambia el número y despues de hace la animación
         playAgain.setVisibility(View.VISIBLE);
@@ -392,7 +451,7 @@ public class MultiplayerActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(FILE_SHARED_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt("scoreBank", player2.globalScore);
-        editor.putInt("scorePlayer", player2.globalScore);
+        editor.putInt("scorePlayer", player1.globalScore);
 
         editor.commit();
 
