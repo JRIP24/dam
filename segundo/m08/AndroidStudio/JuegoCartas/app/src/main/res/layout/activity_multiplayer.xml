@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_secondary"
+    tools:context=".MultiplayerActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingTop="10dp"
+        android:paddingRight="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/scoreLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/score"
+            android:textColor="@color/primaryTextColor" />
+
+        <TextView
+            android:id="@+id/bankLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scoreLabel"
+            android:layout_marginStart="-20dp"
+            android:layout_marginLeft="-20dp"
+            android:text="@string/player2"
+            android:textColor="@color/primaryTextColor" />
+
+        <TextView
+            android:id="@+id/globalBankScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scoreLabel"
+            android:layout_toRightOf="@id/bankLabel"
+            android:text="@string/initialScore"
+            android:textColor="@color/primaryTextColor" />
+
+        <TextView
+            android:id="@+id/playerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scoreLabel"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/globalBankScore"
+            android:text="@string/player1"
+            android:textColor="@color/primaryTextColor" />
+
+        <TextView
+            android:id="@+id/globalPlayerScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scoreLabel"
+            android:layout_toRightOf="@id/playerLabel"
+            android:text="@string/initialScore"
+            android:textColor="@color/primaryTextColor" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"
+        tools:layout_editor_absoluteX="8dp">
+
+        <TextView
+            android:id="@+id/bankLabel2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/player2"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/bankScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/bankLabel2"
+            android:text="@string/initialScore"
+            android:textColor="@color/primaryTextColor" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout4"
+        tools:layout_editor_absoluteX="8dp">
+
+
+        <ImageView
+            android:id="@+id/bankCard1"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_weight="0"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/bankCard2"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginLeft="-40dp"
+            android:layout_toRightOf="@id/bankCard1"
+            android:layout_weight="0"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/bankCard3"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginLeft="-40dp"
+            android:layout_toRightOf="@id/bankCard2"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/bankCard4"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginLeft="-40dp"
+            android:layout_toRightOf="@id/bankCard3"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/bankCard5"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginLeft="-40dp"
+            android:layout_toRightOf="@id/bankCard4"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/bankCard6"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginLeft="-40dp"
+            android:layout_toRightOf="@id/bankCard5"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/bankCard7"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginLeft="-40dp"
+            android:layout_toRightOf="@id/bankCard6"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/bankCard8"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginLeft="-40dp"
+            android:layout_toRightOf="@id/bankCard7"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/bankCard9"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginLeft="-40dp"
+            android:layout_toRightOf="@id/bankCard8"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/bankCard10"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-60dp"
+            android:layout_marginLeft="-60dp"
+            android:layout_toRightOf="@id/bankCard9"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/bankCard11"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-60dp"
+            android:layout_marginLeft="-60dp"
+            android:layout_toRightOf="@id/bankCard10"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/bankCard12"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-60dp"
+            android:layout_marginLeft="-60dp"
+            android:layout_toRightOf="@id/bankCard11"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/bankCard13"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-60dp"
+            android:layout_marginLeft="-60dp"
+            android:layout_toRightOf="@id/bankCard12"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/bankCard14"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-60dp"
+            android:layout_marginLeft="-60dp"
+            android:layout_toRightOf="@id/bankCard13"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/bankCard15"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-60dp"
+            android:layout_marginLeft="-60dp"
+            android:layout_toRightOf="@id/bankCard14"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/bankCard16"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-60dp"
+            android:layout_marginLeft="-60dp"
+            android:layout_toRightOf="@id/bankCard15"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <Button
+            android:id="@+id/oneMore2Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_above="@id/deck"
+            android:layout_toStartOf="@id/gameMessage"
+            android:layout_toLeftOf="@id/gameMessage"
+            android:text="@string/oneMore2"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            app:backgroundTint="@color/secondaryDarkColor" />
+
+
+        <Button
+            android:id="@+id/stop2Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_above="@id/deck"
+            android:layout_toEndOf="@id/gameMessage"
+            android:layout_toRightOf="@id/gameMessage"
+            android:text="@string/stop2"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            app:backgroundTint="@color/secondaryDarkColor" />
+
+        <ImageView
+            android:id="@+id/deck"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/pile" />
+
+        <ImageView
+            android:id="@+id/backCard"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <Button
+            android:id="@+id/playBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:text="@string/play"
+            android:textSize="12sp"
+            app:backgroundTint="@color/secondaryDarkColor" />
+
+        <Button
+            android:id="@+id/playAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:text="@string/play_again"
+            android:textSize="12sp"
+            app:backgroundTint="@color/secondaryDarkColor"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:layout_toEndOf="@id/deck"
+            android:layout_toRightOf="@id/deck"
+            android:text="@string/whoIsBank"
+            android:textColor="@color/primaryTextColor"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/oneMoreBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/deck"
+            android:layout_toStartOf="@id/gameMessage"
+            android:layout_toLeftOf="@id/gameMessage"
+            android:text="@string/oneMore1"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            app:backgroundTint="@color/secondaryDarkColor" />
+
+        <TextView
+            android:id="@+id/gameMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/deck"
+            android:layout_centerInParent="false"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="false"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="24sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/stopBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/deck"
+            android:layout_alignParentBottom="false"
+            android:layout_toEndOf="@+id/gameMessage"
+            android:layout_toRightOf="@+id/gameMessage"
+            android:text="@string/stop1"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            app:backgroundTint="@color/secondaryDarkColor" />
+
+        <ImageView
+            android:id="@+id/playerCard1"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="0"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/playerCard2"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginLeft="-40dp"
+            android:layout_toRightOf="@id/playerCard1"
+            android:layout_weight="0"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/playerCard3"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginLeft="-40dp"
+            android:layout_toRightOf="@id/playerCard2"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/playerCard4"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginLeft="-40dp"
+            android:layout_toRightOf="@id/playerCard3"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/playerCard5"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginLeft="-40dp"
+            android:layout_toRightOf="@id/playerCard4"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/playerCard6"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginLeft="-40dp"
+            android:layout_toRightOf="@id/playerCard5"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/playerCard7"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginLeft="-40dp"
+            android:layout_toRightOf="@id/playerCard6"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/playerCard8"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginLeft="-40dp"
+            android:layout_toRightOf="@id/playerCard7"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/playerCard9"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-40dp"
+            android:layout_marginLeft="-40dp"
+            android:layout_toRightOf="@id/playerCard8"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/playerCard10"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-60dp"
+            android:layout_marginLeft="-60dp"
+            android:layout_toRightOf="@id/playerCard9"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/playerCard11"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-60dp"
+            android:layout_marginLeft="-60dp"
+            android:layout_toRightOf="@id/playerCard10"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/playerCard12"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-60dp"
+            android:layout_marginLeft="-60dp"
+            android:layout_toRightOf="@id/playerCard11"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/playerCard13"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-60dp"
+            android:layout_marginLeft="-60dp"
+            android:layout_toRightOf="@id/playerCard12"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/playerCard14"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-60dp"
+            android:layout_marginLeft="-60dp"
+            android:layout_toRightOf="@id/playerCard13"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/playerCard15"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-60dp"
+            android:layout_marginLeft="-60dp"
+            android:layout_toRightOf="@id/playerCard14"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/playerCard16"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-60dp"
+            android:layout_marginLeft="-60dp"
+            android:layout_toRightOf="@id/playerCard15"
+            android:layout_weight="1"
+            android:alpha="0"
+            app:srcCompat="@drawable/back" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/scoresContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+        <TextView
+            android:id="@+id/playerLabel2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/player1"
+            android:textColor="@color/primaryTextColor" />
+
+        <TextView
+            android:id="@+id/playerScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/playerLabel2"
+            android:text="@string/initialScore"
+            android:textColor="@color/primaryTextColor" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

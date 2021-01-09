@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_card_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JuegoCartas">
-        <activity android:name=".SinglePlayerActivity"></activity>
+        <activity android:name=".MultiplayerActivity"></activity>
+        <activity android:name=".SinglePlayerActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

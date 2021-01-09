@@ -25,7 +25,7 @@ DECLARE c_comanda CURSOR FOR SELECT SUM(preu_total), dni_client FROM comanda WHE
 --Saber el precio total de compra de un cliente en una mes y año concretos:
 --select SUM(preu_total) from comanda WHERE YEAR(data) = 2020 AND MONTH(data) = 08 GROUP BY dni_client;
 
-DECLARE CONTINUE HANDLER FOR NOT FOUND SET acaba = TRUE; 
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET acaba = TRUE;
 
 OPEN c_comanda; 
 read_loop: LOOP
