@@ -9,6 +9,8 @@
     <string name="loseMsg">You have lost!</string>
     <string name="wonMsg">You have WON!</string>
     <string name="bankWonMsg">Bank has won!</string>
+    <string name="player1WonMsg">Player1 has won!</string>
+    <string name="player2WonMsg">Player2 has won!</string>
     <string name="you">You: </string>
     <string name="score">Score: </string>
     <string name="Bank">Bank: </string>

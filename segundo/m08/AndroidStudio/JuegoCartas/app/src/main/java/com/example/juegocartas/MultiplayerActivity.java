@@ -1,9 +1,9 @@
 package com.example.juegocartas;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.transition.AutoTransition;
+import androidx.transition.TransitionManager;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
@@ -13,12 +13,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
 
 public class MultiplayerActivity extends AppCompatActivity {
 
@@ -74,7 +74,7 @@ public class MultiplayerActivity extends AppCompatActivity {
     //int globalPlayer2ScoreInt = 0;
 
     TextView playerScore;
-    TextView bankScore;
+    TextView player2Score;
     TextView gameMessage;
     //double playerPoints = 0.0;
     //double bankPoints = 0.0;
@@ -86,7 +86,6 @@ public class MultiplayerActivity extends AppCompatActivity {
     ObjectAnimator cardAnimator3;
     ObjectAnimator cardAnimator4;
 
-    boolean terminarTurnoForced = false;
     ArrayList<String> baraja = new ArrayList<String>();
     ArrayList<ImageView> cartasJugador = new ArrayList<ImageView>();
     ArrayList<ImageView> cartasPlayer2 = new ArrayList<ImageView>();
@@ -110,7 +109,7 @@ public class MultiplayerActivity extends AppCompatActivity {
 
         playerScore = findViewById(R.id.playerScore);
         globalPlayerScore = findViewById(R.id.globalPlayerScore);
-        bankScore = findViewById(R.id.bankScore);
+        player2Score = findViewById(R.id.bankScore);
         globalBankScore = findViewById(R.id.globalBankScore);
         whoBank = findViewById(R.id.whoBank);
 
@@ -154,6 +153,7 @@ public class MultiplayerActivity extends AppCompatActivity {
         player2Card15 = findViewById(R.id.bankCard15);
         player2Card16 = findViewById(R.id.bankCard16);
 
+
         cartasJugador.add(playerCard1);
         cartasJugador.add(playerCard2);
         cartasJugador.add(playerCard3);
@@ -189,6 +189,11 @@ public class MultiplayerActivity extends AppCompatActivity {
         cartasPlayer2.add(player2Card16);
 
 
+        stop2Btn.setTranslationX(1000f);
+        oneMore2Btn.setTranslationX(-1000f);
+        stopBtn.setTranslationX(1000f);
+        oneMoreBtn.setTranslationX(-1000f);
+
         //Recogemos los puntos de la última partida guardada si la hay
         Intent intent = getIntent();
         boolean gameResumed = intent.getBooleanExtra(MainActivity.GAME_RESUMED, false);
@@ -216,8 +221,6 @@ public class MultiplayerActivity extends AppCompatActivity {
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 baraja = crearNuevaBaraja(baraja);
 
                 //Asignamos rol de banco
@@ -225,21 +228,22 @@ public class MultiplayerActivity extends AppCompatActivity {
                 player2.isBank = false;
 
                 if(Math.random() < 0.5) {
+
                     player1.isBank = true;//Juega player 2 primero
-                    cardForPlayer(cartasPlayer2, player2, playerScore, player1, oneMoreBtn, stopBtn);
-                    stop2Btn.setVisibility(View.VISIBLE);
-                    oneMore2Btn.setVisibility(View.VISIBLE);
-                    animStop_OneMoreButtons(false, oneMore2Btn, stop2Btn);
-                    moveBankLabel(playerScore);
+                    cardForPlayer(cartasPlayer2, player2, player2Score, player1, oneMore2Btn, stop2Btn);
                 } else {
+
                     player2.isBank = true; //Juega player 1 primero
-                    cardForPlayer(cartasJugador, player1, playerScore, player2, oneMore2Btn, stop2Btn);
-                    stopBtn.setVisibility(View.VISIBLE);
-                    oneMoreBtn.setVisibility(View.VISIBLE);
-                    animStop_OneMoreButtons(false, oneMoreBtn, stopBtn);
-                    moveBankLabel(bankScore);
+                    cardForPlayer(cartasJugador, player1, playerScore, player2, oneMoreBtn, stopBtn);
 
                 }
+
+                //ObjectAnimator animator1 = ObjectAnimator.ofFloat(whoBank, "translationY",0f, labelScore.getY());
+                /*ObjectAnimator animator1 = ObjectAnimator.ofFloat(whoBank, "translationY",0f,500f);
+                animator1.setDuration(1000);
+                animator1.start();*/
+
+
 
                 playBtn.setVisibility(View.INVISIBLE);
 
@@ -275,7 +279,7 @@ public class MultiplayerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 animStop_OneMoreButtons(true, oneMore2Btn, stop2Btn);
-                cardForPlayer(cartasPlayer2, player2, bankScore, player1, oneMore2Btn, stop2Btn);
+                cardForPlayer(cartasPlayer2, player2, player2Score, player1, oneMore2Btn, stop2Btn);
 
 
             }
@@ -286,11 +290,14 @@ public class MultiplayerActivity extends AppCompatActivity {
             public void onClick(View v) {
                 animStop_OneMoreButtons(true, oneMoreBtn, stopBtn);
 
+
                 if (player1.isBank){
                     whoWins();
                 } else {
-                    cardForPlayer(cartasPlayer2, player2, playerScore, player1, oneMore2Btn, stop2Btn);
+                    cardForPlayer(cartasPlayer2, player2, player2Score, player1, oneMore2Btn, stop2Btn);
+
                 }
+
 
 
             }
@@ -304,6 +311,7 @@ public class MultiplayerActivity extends AppCompatActivity {
 
                 //El banco es el último en jugar,
                 //por lo que se comprobará quien gana y se acabará la ronda
+
                 if (player2.isBank){
                     whoWins();
                 } else {
@@ -314,13 +322,6 @@ public class MultiplayerActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    private void moveBankLabel(TextView labelScore){
-        whoBank.setVisibility(View.VISIBLE);
-        ObjectAnimator animator1 = ObjectAnimator.ofFloat(whoBank, "translationY",0f, labelScore.getY());
-        animator1.setDuration(1000);
-        animator1.start();
     }
 
     private void whoWins() {
@@ -335,13 +336,13 @@ public class MultiplayerActivity extends AppCompatActivity {
         } else { //Empate, gana el que tiene el rol de banco
             if (player1.isBank){
                 winner = player1;
+                gameMessage.setText(R.string.player1WonMsg);
             } else {
                 winner = player2;
+                gameMessage.setText(R.string.player2WonMsg);
             }
         }
 
-
-        gameMessage.setText(R.string.loseMsg);
         gameMessage.setVisibility(View.VISIBLE);
 
         //oponentGlobalScore++;
@@ -373,8 +374,6 @@ public class MultiplayerActivity extends AppCompatActivity {
 
     private void cardForPlayer(ArrayList<ImageView> cartasUser, User player, TextView userScore, User oponent, Button oneMore, Button stop) {
 
-        terminarTurnoForced = false;
-
         ImageView carta = cartasUser.get(player.numCartas);
         player.numCartas++;
 
@@ -395,11 +394,6 @@ public class MultiplayerActivity extends AppCompatActivity {
         cardAnimator4.setDuration(100);
         cardAnimator4.setStartDelay(750);
 
-
-        AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.playTogether(cardAnimator1, cardAnimator2, cardAnimator3, cardAnimator4);
-        animatorSet.start();
-
         ObjectAnimator card1Animation = ObjectAnimator.ofFloat(carta, "alpha", 0f, 1f);
         ObjectAnimator card2Animation = ObjectAnimator.ofFloat(carta, "rotationY", -180f, 0f);
 
@@ -409,7 +403,7 @@ public class MultiplayerActivity extends AppCompatActivity {
         card2Animation.setStartDelay(500);
 
         AnimatorSet animatorSetCard = new AnimatorSet();
-        animatorSetCard.playTogether(card1Animation, card2Animation);
+        animatorSetCard.playTogether(cardAnimator1, cardAnimator2, cardAnimator3, cardAnimator4, card1Animation, card2Animation);
         animatorSetCard.start();
 
 
@@ -428,11 +422,16 @@ public class MultiplayerActivity extends AppCompatActivity {
 
         //Condicionales para acabar turno
         if (player.points > 7.5){
-            terminarTurnoForced = true;
-            gameMessage.setText(R.string.loseMsg);
-            gameMessage.setVisibility(View.VISIBLE);
+            if (oponent == player1){
+                gameMessage.setText(R.string.player1WonMsg);
+                gameMessage.setVisibility(View.VISIBLE);
 
-            //oponentGlobalScore++;
+            } else {
+                gameMessage.setText(R.string.player2WonMsg);
+                gameMessage.setVisibility(View.VISIBLE);
+            }
+
+
             oponent.globalScore++;
             endRound();
 
@@ -563,7 +562,7 @@ public class MultiplayerActivity extends AppCompatActivity {
 
 
         playerScore.setText(R.string.initialScore);
-        bankScore.setText(R.string.initialScore);
+        player2Score.setText(R.string.initialScore);
 
         return baraja;
 
