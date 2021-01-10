@@ -69,6 +69,7 @@ public class MultiplayerActivity extends AppCompatActivity {
 
     TextView globalPlayerScore;
     TextView globalBankScore;
+    TextView whoBank;
     //int globalPlayerScoreInt = 0;
     //int globalPlayer2ScoreInt = 0;
 
@@ -111,6 +112,7 @@ public class MultiplayerActivity extends AppCompatActivity {
         globalPlayerScore = findViewById(R.id.globalPlayerScore);
         bankScore = findViewById(R.id.bankScore);
         globalBankScore = findViewById(R.id.globalBankScore);
+        whoBank = findViewById(R.id.whoBank);
 
         oneMoreBtn = findViewById(R.id.oneMoreBtn);
         oneMore2Btn = findViewById(R.id.oneMore2Btn);
@@ -223,21 +225,21 @@ public class MultiplayerActivity extends AppCompatActivity {
                 player2.isBank = false;
 
                 if(Math.random() < 0.5) {
-                    player1.isBank = true;
-                    cardForPlayer(cartasJugador, player2, playerScore, player1, oneMoreBtn, stopBtn);
+                    player1.isBank = true;//Juega player 2 primero
+                    cardForPlayer(cartasPlayer2, player2, playerScore, player1, oneMoreBtn, stopBtn);
                     stop2Btn.setVisibility(View.VISIBLE);
                     oneMore2Btn.setVisibility(View.VISIBLE);
                     animStop_OneMoreButtons(false, oneMore2Btn, stop2Btn);
+                    moveBankLabel(playerScore);
                 } else {
-                    player2.isBank = true;
-                    cardForPlayer(cartasJugador, player1, playerScore, player2, oneMoreBtn, stopBtn);
+                    player2.isBank = true; //Juega player 1 primero
+                    cardForPlayer(cartasJugador, player1, playerScore, player2, oneMore2Btn, stop2Btn);
                     stopBtn.setVisibility(View.VISIBLE);
                     oneMoreBtn.setVisibility(View.VISIBLE);
+                    animStop_OneMoreButtons(false, oneMoreBtn, stopBtn);
+                    moveBankLabel(bankScore);
 
                 }
-
-
-                Toast.makeText(MultiplayerActivity.this, "PLAYER 1: " + player1.isBank + "\n PLAYER 2: " + player2.isBank, Toast.LENGTH_SHORT).show();
 
                 playBtn.setVisibility(View.INVISIBLE);
 
@@ -252,6 +254,7 @@ public class MultiplayerActivity extends AppCompatActivity {
 
                 playAgain.setVisibility(View.INVISIBLE);
                 gameMessage.setVisibility(View.INVISIBLE);
+                whoBank.setVisibility(View.INVISIBLE);
                 playBtn.setVisibility(View.VISIBLE);
 
 
@@ -286,7 +289,7 @@ public class MultiplayerActivity extends AppCompatActivity {
                 if (player1.isBank){
                     whoWins();
                 } else {
-                    animStop_OneMoreButtons(false, oneMore2Btn, stop2Btn);
+                    cardForPlayer(cartasPlayer2, player2, playerScore, player1, oneMore2Btn, stop2Btn);
                 }
 
 
@@ -304,13 +307,20 @@ public class MultiplayerActivity extends AppCompatActivity {
                 if (player2.isBank){
                     whoWins();
                 } else {
-                    animStop_OneMoreButtons(false, oneMoreBtn, stopBtn);
+                    cardForPlayer(cartasJugador, player1, playerScore, player2, oneMoreBtn, stopBtn);
                 }
 
 
             }
         });
 
+    }
+
+    private void moveBankLabel(TextView labelScore){
+        whoBank.setVisibility(View.VISIBLE);
+        ObjectAnimator animator1 = ObjectAnimator.ofFloat(whoBank, "translationY",0f, labelScore.getY());
+        animator1.setDuration(1000);
+        animator1.start();
     }
 
     private void whoWins() {

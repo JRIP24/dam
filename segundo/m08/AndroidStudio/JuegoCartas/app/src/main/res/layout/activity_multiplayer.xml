@@ -67,17 +67,20 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/relativeLayout4"
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+        android:layout_height="550dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"
         tools:layout_editor_absoluteX="8dp">
+
 
         <TextView
             android:id="@+id/bankLabel2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
             android:gravity="center"
             android:text="@string/player2"
             android:textColor="@color/primaryTextColor"
@@ -87,19 +90,10 @@
             android:id="@+id/bankScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_toRightOf="@id/bankLabel2"
             android:text="@string/initialScore"
             android:textColor="@color/primaryTextColor" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout4"
-        tools:layout_editor_absoluteX="8dp">
-
 
         <ImageView
             android:id="@+id/bankCard1"
@@ -340,6 +334,17 @@
             android:textSize="12sp"
             app:backgroundTint="@color/secondaryDarkColor" />
 
+        <TextView
+            android:id="@+id/whoBank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/playAgain"
+            android:text="@string/whoIsBank"
+            android:textColor="@color/primaryTextColor" />
+
         <Button
             android:id="@+id/playAgain"
             android:layout_width="wrap_content"
@@ -347,20 +352,9 @@
             android:layout_centerInParent="true"
             android:text="@string/play_again"
             android:textSize="12sp"
-            app:backgroundTint="@color/secondaryDarkColor"
-            android:visibility="invisible" />
+            android:visibility="invisible"
+            app:backgroundTint="@color/secondaryDarkColor" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="40dp"
-            android:layout_toEndOf="@id/deck"
-            android:layout_toRightOf="@id/deck"
-            android:text="@string/whoIsBank"
-            android:textColor="@color/primaryTextColor"
-            android:visibility="invisible" />
 
         <Button
             android:id="@+id/oneMoreBtn"
@@ -595,23 +589,12 @@
             android:alpha="0"
             app:srcCompat="@drawable/back" />
 
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/scoresContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_gravity="center_horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
-
         <TextView
             android:id="@+id/playerLabel2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
             android:layout_marginTop="20dp"
             android:text="@string/player1"
             android:textColor="@color/primaryTextColor" />
@@ -624,6 +607,7 @@
             android:layout_toRightOf="@id/playerLabel2"
             android:text="@string/initialScore"
             android:textColor="@color/primaryTextColor" />
+
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

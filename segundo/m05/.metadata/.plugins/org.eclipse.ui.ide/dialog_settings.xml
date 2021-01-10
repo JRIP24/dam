@@ -6,6 +6,9 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/home/ronald/dam/segundo/m05/junit-exercici2"/>
+			<item value="/home/ronald/Downloads/ProvarTravel"/>
+			<item value="/home/ronald/Downloads/M05-main/UF2/JUnit4/ProvarTravel"/>
 			<item value="/home/ronald/dam/segundo/m05/junit-calculator"/>
 			<item value="/home/ronald/dam/segundo/m05/Ex1"/>
 			<item value="/home/ronald/dam/segundo/m05/PruebaWB"/>
