@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ContextMenu</string>
+    <string name="listView">ListView</string>
+    <string name="gridView">GridView</string>
+    <string name="listViewImages">ListView Images</string>
+    <string name="listClass">ListView Class</string>
+
+
 </resources>
