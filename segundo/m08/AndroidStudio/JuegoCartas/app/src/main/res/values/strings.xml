@@ -24,5 +24,11 @@
     <string name="stop1">STOP 1</string>
     <string name="stop2">STOP 2</string>
     <string name="initialScore">0</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_rate">Rate</string>
+    <string name="menu_contact">Contact us</string>
+    <string name="menu_about">About</string>
+    <string name="menu_web">Web site</string>
+    <string name="title">A card game</string>
 
 </resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/share"
+            android:icon="@drawable/ic_share"
+            android:title="@string/menu_share" />
+        <item
+            android:id="@+id/rate"
+            android:icon="@drawable/ic_star"
+            android:title="@string/menu_rate" />
+        <item
+            android:id="@+id/contact"
+            android:icon="@drawable/ic_mail"
+            android:title="@string/menu_contact" />
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/ic_nfo"
+            android:title="@string/menu_about" />
+        <item
+            android:id="@+id/web"
+            android:icon="@drawable/ic_web"
+            android:title="@string/menu_web" />
+    </group>
+</menu>

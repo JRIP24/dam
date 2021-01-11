@@ -1,7 +1,9 @@
 package com.example.juegocartas;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.transition.AutoTransition;
+import androidx.transition.Transition;
 import androidx.transition.TransitionManager;
 
 import android.animation.AnimatorSet;
@@ -221,20 +223,24 @@ public class MultiplayerActivity extends AppCompatActivity {
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                RelativeLayout parent = findViewById(R.id.relativeLayout);
                 baraja = crearNuevaBaraja(baraja);
 
                 //Asignamos rol de banco
                 player1.isBank = false;
                 player2.isBank = false;
+                int direccion = RelativeLayout.ALIGN_PARENT_TOP;
 
                 if(Math.random() < 0.5) {
 
                     player1.isBank = true;//Juega player 2 primero
+                    direccion = RelativeLayout.ALIGN_PARENT_BOTTOM;
                     cardForPlayer(cartasPlayer2, player2, player2Score, player1, oneMore2Btn, stop2Btn);
                 } else {
 
                     player2.isBank = true; //Juega player 1 primero
                     cardForPlayer(cartasJugador, player1, playerScore, player2, oneMoreBtn, stopBtn);
+                    direccion = RelativeLayout.ALIGN_PARENT_TOP;
 
                 }
 
@@ -242,11 +248,48 @@ public class MultiplayerActivity extends AppCompatActivity {
                 /*ObjectAnimator animator1 = ObjectAnimator.ofFloat(whoBank, "translationY",0f,500f);
                 animator1.setDuration(1000);
                 animator1.start();*/
+                /*
+                RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) whoBank.getLayoutParams();
+                lp.addRule(direccion, RelativeLayout.TRUE);
+                //lp.removeRule(RelativeLayout.CENTER_VERTICAL);
 
+                AutoTransition transition = new AutoTransition();
+                transition.setDuration(500);
+                TransitionManager.beginDelayedTransition(parent, transition);
+                whoBank.setLayoutParams(lp);
 
+                transition.addListener(new Transition.TransitionListener() {
+                    @Override
+                    public void onTransitionStart(@NonNull Transition transition) {
+
+                    }
+
+                    @Override
+                    public void onTransitionEnd(@NonNull Transition transition) {
+                        if (player1.isBank){
+                            cardForPlayer(cartasPlayer2, player2, player2Score, player1, oneMore2Btn, stop2Btn);
+                        } else {
+                            cardForPlayer(cartasJugador, player1, playerScore, player2, oneMoreBtn, stopBtn);
+                        }
+                    }
+
+                    @Override
+                    public void onTransitionCancel(@NonNull Transition transition) {
+
+                    }
+
+                    @Override
+                    public void onTransitionPause(@NonNull Transition transition) {
+
+                    }
+
+                    @Override
+                    public void onTransitionResume(@NonNull Transition transition) {
+
+                    }
+                });*/
 
                 playBtn.setVisibility(View.INVISIBLE);
-
 
             }
         });
