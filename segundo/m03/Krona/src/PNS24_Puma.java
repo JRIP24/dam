@@ -97,7 +97,7 @@ public class PNS24_Puma {
                     bloquejarPantalla();
                     break;
                 case "7":
-                    
+                    Kristall.menuKristall();
                     bloquejarPantalla();
                     break;
                 case "10":
