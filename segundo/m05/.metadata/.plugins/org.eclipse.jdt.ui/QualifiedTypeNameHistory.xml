@@ -27,4 +27,8 @@
     <fullyQualifiedTypeName name="travelagency.Adult"/>
     <fullyQualifiedTypeName name="java.io.Console"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="travelagency.Walking"/>
+    <fullyQualifiedTypeName name="travelagency.HikingTest"/>
+    <fullyQualifiedTypeName name="travelagency.WalkingTest"/>
+    <fullyQualifiedTypeName name="travelagency.TravelAgencyTest"/>
 </qualifiedTypeNameHistroy>

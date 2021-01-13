@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 class WalkingTest {
 	
+	
 	private static Trip t1;
     private static Person a1;
     private static Group g1;
@@ -16,13 +17,15 @@ class WalkingTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		
-		t1 = new Hiking("Passejant pel Montseny", 5, "10/06/2012", "10/06/2012", 30);
+		t1 = new Walking("Passejant pel Montseny", 5, "10/06/2012", "10/06/2012", 30);
         a1 = new Adult("11", "Joan Grau");
         g1 = new Group();
 	}
 	
+	
 	@Test
 	void testMas75() {
+		/*
 		Person persona1 = new Adult("y2671855", "Jose");
 		Person persona2 = new Adult("y2671830", "Pepe");
 		Person persona3 = new Adult("y2671860", "Pepe");
@@ -46,7 +49,22 @@ class WalkingTest {
 		
 		t1.add(g1);
 		
-		assertEquals(27., t1.pricePerPerson());
+		assertEquals(27., t1.pricePerPerson());*/
+		
+		Person a2 = new Adult("22", "Joan Grau");
+		Person a3 = new Adult("33", "Joan Grau");
+		Person a4 = new Adult("44", "Joan Grau");
+		Person a5 = new Adult("55", "Joan Grau");
+		Person a6 = new Adult("66", "Joan Grau");
+
+		g1.add(a1);
+		g1.add(a2);
+		g1.add(a3);
+		g1.add(a4);
+		g1.add(a5);
+
+		t1.add(g1);
+		assertEquals(27., t1.pricePerPerson(), 0);
 		
 	}
 
