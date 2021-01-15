@@ -107,6 +107,8 @@ public class Kristall {
                     break;
                 case "2":
                 	
+                	MetodesKristall.menu2();
+                	
                     bloquejarPantalla();
                     break;
                 case "3":

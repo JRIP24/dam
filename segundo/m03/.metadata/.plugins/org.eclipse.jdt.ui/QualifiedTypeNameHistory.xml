@@ -20,7 +20,6 @@
     <fullyQualifiedTypeName name="java.util.ArrayDeque"/>
     <fullyQualifiedTypeName name="java.util.LinkedHashSet"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="javax.sound.midi.SysexMessage"/>
     <fullyQualifiedTypeName name="Ruta"/>
     <fullyQualifiedTypeName name="com.sun.tools.classfile.Opcode.Set"/>
     <fullyQualifiedTypeName name="Ruta_Dades"/>
@@ -29,7 +28,6 @@
     <fullyQualifiedTypeName name="jdk.javadoc.internal.doclets.formats.html.ModuleFrameWriter"/>
     <fullyQualifiedTypeName name="jdk.nashorn.internal.runtime.regexp.joni.ScanEnvironment"/>
     <fullyQualifiedTypeName name="org.w3c.dom.Text"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.concurrent.Delayed"/>
     <fullyQualifiedTypeName name="sun.tools.serialver.resources.serialver"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
@@ -50,13 +48,15 @@
     <fullyQualifiedTypeName name="Waypoint"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="Waypoint_Dades"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="MetodesKristall"/>
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="Kristall"/>
     <fullyQualifiedTypeName name="java.io.FileReader"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="MetodesKristall"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="javax.sound.midi.SysexMessage"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>
