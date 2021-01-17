@@ -112,7 +112,7 @@ public class Kristall {
                     bloquejarPantalla();
                     break;
                 case "3":
-                	
+                	//Parece el mismo de menu2
                     bloquejarPantalla();
                     break;
                 case "4":
