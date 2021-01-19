@@ -31,4 +31,6 @@
     <fullyQualifiedTypeName name="travelagency.HikingTest"/>
     <fullyQualifiedTypeName name="travelagency.WalkingTest"/>
     <fullyQualifiedTypeName name="travelagency.TravelAgencyTest"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="org.junit.Ignore"/>
 </qualifiedTypeNameHistroy>

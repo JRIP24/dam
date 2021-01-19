@@ -6,6 +6,10 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/home/ronald/Downloads/veterinary (1)"/>
+			<item value="/home/ronald/dam/segundo/m05/Examen"/>
+			<item value="/home/ronald/Downloads/veterinary"/>
+			<item value="/home/ronald/dam/segundo/m05/Examen JUnit/veterinary"/>
 			<item value="/home/ronald/Downloads/ProvarTravel_SOLUCIO"/>
 			<item value="/home/ronald/dam/segundo/m05/Ejercicio 4 JUnit/ProvarTravel"/>
 			<item value="/home/ronald/dam/segundo/m05/junit-exercici2"/>
@@ -43,5 +47,13 @@
 			<item key="DIALOG_Y_ORIGIN" value="190"/>
 			<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
 		</section>
+	</section>
+	<section name="ExternalProjectImportWizard">
+	</section>
+	<section name="CleanDialogSettings">
+		<item key="TOGGLE_SELECTED" value="false"/>
+		<item key="DIALOG_WIDTH" value="563"/>
+		<item key="DIALOG_HEIGHT" value="370"/>
+		<item key="DIALOG_FONT_NAME" value="1|Cantarell|11.0|0|GTK|1|"/>
 	</section>
 </section>
