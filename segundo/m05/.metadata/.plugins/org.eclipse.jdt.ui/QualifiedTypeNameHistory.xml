@@ -9,10 +9,8 @@
     <fullyQualifiedTypeName name="org.joda.time.LocalDate"/>
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="org.joda.time.DateTime"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="sun.tools.tree.ThisExpression"/>
     <fullyQualifiedTypeName name="org.eclipse.swt.widgets.Button"/>
-    <fullyQualifiedTypeName name="sun.jvm.hotspot.runtime.StaticBaseConstructor"/>
     <fullyQualifiedTypeName name="org.eclipse.jface.dialogs.IDialogLabelKeys"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="org.eclipse.swt.widgets.Label"/>
@@ -26,11 +24,19 @@
     <fullyQualifiedTypeName name="travelagency.Person"/>
     <fullyQualifiedTypeName name="travelagency.Adult"/>
     <fullyQualifiedTypeName name="java.io.Console"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="travelagency.Walking"/>
     <fullyQualifiedTypeName name="travelagency.HikingTest"/>
     <fullyQualifiedTypeName name="travelagency.WalkingTest"/>
     <fullyQualifiedTypeName name="travelagency.TravelAgencyTest"/>
-    <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="org.junit.Ignore"/>
+    <fullyQualifiedTypeName name="org.junit.Test"/>
+    <fullyQualifiedTypeName name="com.sun.tools.sjavac.comp.dependencies.PublicApiCollector"/>
+    <fullyQualifiedTypeName name="sun.jvm.hotspot.runtime.StaticBaseConstructor"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="veterinary.Visit"/>
+    <fullyQualifiedTypeName name="veterinary.Pet"/>
+    <fullyQualifiedTypeName name="veterinary.Animal"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="veterinary.FarmAnimal"/>
 </qualifiedTypeNameHistroy>
