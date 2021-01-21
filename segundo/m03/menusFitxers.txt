@@ -1,0 +1,29 @@
+menu1() -->Comparar archivos, lineas iguales
+menu2() -->Contar num lineas y caracteres en archivo
+menu3() -->""
+menu4() -->Escribir repeticiones de un caracter con su porcentaje
+menu5() -->Get URLS de una web
+
+menu10() --> Mostrar archivos y directorios de un directorio
+menu11() --> Crear backuo (crea dir, copiar archivos..)
+menu12() --> "" +-
+
+
+PLUGIN "Apache Commons IO
+QUE EL NOSTRE PROJECTE VEGI EL PLUGIN EN Eclipse 2019:
+Btn dret sobre el projecte --> properties --> Java Build Path --> Libraries --> Add External JARs
+--> a llavors trobar el fitxer "commons-io-2.5.jar"
+(Alerta que en Eclipse 2020 a més del Java Build Path està el Java Module Path).
+VEURE QUE PODEM FER AMB EL PLUGIN:
+Per a veure lo que aquest plugin pot fer escriurem FileUtils. i ens sortirà una llista dels atributs
+i mètodes que té.
+
+
+menu20() -->forcemkdir, crear directorios, escribir lineas en archivos con fileUtils
+menu21() -->moveFileToDirectory, CON ITERATOR, getFile, directoryContains, forceDelete, isFileOlder, writeStringToFile, lasModified,touch
+menu22() --> moveDirectoryToDirectory, sizeOfDirectoryAsBigInteger, iterateFilesAndDirs
+
+
+MIRAR LO DE FECHAS EN JAVA 8 vs JAVA 11
+menu30() --> RamdonAccesfile, writeInt, chars
+menu31() --> RamdonAccesfile getFlepOINTER, leNgth, readChar
