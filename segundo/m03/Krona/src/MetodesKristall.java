@@ -281,7 +281,7 @@ public class MetodesKristall {
 	private static void mostrarFitxersIDirectoris(File directori, List<String> llistaContingutDirectori) {
         String pathDirectoriActual;
         String[] contingutDirectoriActual;
-        
+
         
         pathDirectoriActual = directori.getPath();
         
