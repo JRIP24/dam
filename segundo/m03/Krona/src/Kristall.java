@@ -116,11 +116,11 @@ public class Kristall {
                     bloquejarPantalla();
                     break;
                 case "4":
-                	
+                	MetodesKristall.menu4();
                     bloquejarPantalla();
                     break;
                 case "5":
-                	
+                	MetodesKristall.menu5();
                     bloquejarPantalla();
                     break;
                 case "6":
@@ -140,7 +140,7 @@ public class Kristall {
                     break;
                     
                 case "10"://Se tiene que haber ejecutado la opción 1 antes
-                	                    
+                	MetodesKristall.menu10();
                     bloquejarPantalla();
                     break;
                     

@@ -2,10 +2,48 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.TreeMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.Map.Entry;
 
 public class MetodesKristall {
+	
+	
+	private static void escriureResultatsAlArxiu(TreeMap<Character, Integer> mapa, int total) throws IOException {
+		
+        FileWriter writer = null;
+        File archivo = new File("menu4_resultat.txt");
+        
+        try {
+    		
+        	writer = new FileWriter(archivo);
+            
+            for (Entry<Character, Integer> data : mapa.entrySet()) {
+            	writer.write("Caràcter: " + data.getKey() + 
+                		", repeticions: " + data.getValue() + 
+                		", percentatge: " + data.getValue() * 100 / total + "% \n");
+            }
+            
+        } catch (Exception e) {
+            
+        	e.printStackTrace();
+        	
+        } finally {
+        	
+        	writer.close();
+        }
+    }
+	
+	
 
 	static void menu1() throws IOException {
 
@@ -131,6 +169,149 @@ public class MetodesKristall {
 		
 		
 	}
+	
+	public static void menu4() {
+		
+		TreeMap<Character, Integer> mapa = new TreeMap<Character, Integer>();
+		String archivo = "a.txt";
+        FileReader fileReader = null;
+        int numLeido = -1;
+        int totalLeido = 0;
+        FileWriter fileWriter = null;
+        
+        
+        try {
+            fileReader = new FileReader(new File(archivo));
+            
+            while ((numLeido = fileReader.read()) > 0) {
+                if (mapa.containsKey((char) numLeido)) {
+                	mapa.put((char) numLeido, mapa.get((char) numLeido) + 1);
+                } else {
+                	mapa.put((char) numLeido, 1);
+                }
+                
+                totalLeido++;
+            }
+            
+            escriureResultatsAlArxiu(mapa, totalLeido);
+        
+        } catch (FileNotFoundException e) {
+        	
+			e.printStackTrace();
+			
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+			
+		} finally {
+			
+            try {
+				
+            	fileReader.close();
+				
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+			}
+        }
+	}
+	
+
+	
+	public static void menu5() {
+		
+		String link = "http://www.escoladeltreball.org/ca";
+		BufferedReader bufferReader = null;
+		boolean append = false;
+        FileWriter fileWriter = null;
+        PrintWriter printWriter = null;
+        
+        
+        try {
+            URL url = new URL(link);
+            URLConnection conn = url.openConnection();
+            
+            bufferReader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            
+            fileWriter = new FileWriter("menu5_links.txt", append);
+            printWriter = new PrintWriter(fileWriter, true);
+
+            Pattern p = Pattern.compile("(<a href=\")([^\"]+)(\")");	
+
+            String line = "";
+            while ((line = bufferReader.readLine()) != null) {
+                Matcher matcher = p.matcher(line);
+                while (matcher.find()) {
+                	
+                    fileWriter.write(matcher.group(2) + "\n");
+                    printWriter.println(matcher.group(2));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+        	try {
+        		bufferReader.close();
+				fileWriter.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+        	
+        	printWriter.close();
+        }
+	}
+	
+	
+	public static void menu10() {
+		String nomDirectori = "src";
+		File directori;
+		List<String> llistaContingutDirectori = new ArrayList<String>();
+
+        directori = new File(nomDirectori);
+        
+        mostrarFitxersIDirectoris(directori, llistaContingutDirectori);
+        
+        System.out.println("Contingut del directori:");
+        for (String dada : llistaContingutDirectori) {
+        	System.out.println(dada);	
+        }
+	}
+	
+	
+	private static void mostrarFitxersIDirectoris(File directori, List<String> llistaContingutDirectori) {
+        String pathDirectoriActual;
+        String[] contingutDirectoriActual;
+        
+        
+        pathDirectoriActual = directori.getPath();
+        
+        contingutDirectoriActual = directori.list();
+        
+        for (int i = 0; i < contingutDirectoriActual.length; i++) {
+            File f = new File(pathDirectoriActual + "/" + contingutDirectoriActual[i]);
+            
+            if (f.isDirectory()) {
+                mostrarFitxersIDirectoris(f, llistaContingutDirectori);
+            }
+            
+            llistaContingutDirectori.add(contingutDirectoriActual[i]);
+        }
+    }
+
+
+	
+	
+	
+	
+	
+
+
+	
+	
+	
+	
+	
+	
 	
 	
 	
