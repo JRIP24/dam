@@ -46,6 +46,6 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/lamevabbdd</property>
     <property name="hibernate.connection.username">lamevaapp</property>
     <property name="hibernate.connection.password">contrasenya</property>
-    <mapping class="Persona"/>
+    <mapping class="Politic"/>
   </session-factory>
 </hibernate-configuration>

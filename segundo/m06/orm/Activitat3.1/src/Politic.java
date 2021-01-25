@@ -1,3 +1,14 @@
+import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+import javax.persistence.Entity; // !!!
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,21 +17,16 @@
 
 /**
  *
- * @author ronald
+ * @author Jordi
  */
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
+@Entity
+@Table(name="politic")
 
-
-
-public class Politic {
-    
+public class Politic implements Serializable {
+    @Id
     String nif;
     String nom;
-    LocalDate dataNaixement;
+    Date dataNaixement;
     int sou;
     boolean esCorrupte;
     
@@ -29,12 +35,13 @@ public class Politic {
         String sortida = "NIF: "+ this.nif+"\n";
         sortida += "nom: "+ this.nom + "\n";
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");  
-        sortida += "data naixement: " + this.dataNaixement.format(DateTimeFormatter.ofPattern("d/MM/yyyy")) +"\n";
+        sortida += "data naixement: " + this.dataNaixement.toLocalDate().format(DateTimeFormatter.ofPattern("d/MM/yyyy")) +"\n";
         sortida += "sou: "+this.sou+"\n";
-        sortida += "és corrupte?: " + ((this.esCorrupte) ? "Sí" : "No") +"\n";
+        sortida += "és corrupte?: " + ((this.esCorrupte) ? true : false) +"\n";
         return sortida;
     }
     
+   
     
     public Politic (boolean demanaTeclat) {
         if (demanaTeclat)
@@ -46,30 +53,36 @@ public class Politic {
             
             System.out.println("Introdueix el nom:");
             this.nom = teclat.nextLine();
-            
+                        
             boolean dataCorrecta = false;
             while (!dataCorrecta) {
                 System.out.println("Introdueix la data de naixement (dia/mes/any):");
                 String data = teclat.nextLine();                
-                this.dataNaixement = LocalDate.parse(data, DateTimeFormatter.ofPattern("d/MM/yyyy"));
+                this.dataNaixement = java.sql.Date.valueOf(LocalDate.parse(data, DateTimeFormatter.ofPattern("d/MM/yyyy")));
                 dataCorrecta = true;
             }
             
             System.out.println("Introdueix el sou:");
-            this.sou = teclat.nextInt();
+            this.sou = Integer.parseInt(teclat.nextLine());
             
             boolean valorCorrecte = false;
             while (!valorCorrecte) { 
                 System.out.println("Introdueix si és corrupte (S/N):");
                 String valor = teclat.nextLine();
                 if (valor.equals("S") || valor.equals("N")) {
-                    this.esCorrupte = valor.equals("S");
+                    
+                    if (valor.equals("S")){
+                        this.esCorrupte = true;
+                    } else {
+                        this.esCorrupte = false;
+                    }
                     valorCorrecte = true;                    
                 }
             }
         }
-    }
+    }   
+    
+     public Politic () {
 
-    
-    
+     }
 }
