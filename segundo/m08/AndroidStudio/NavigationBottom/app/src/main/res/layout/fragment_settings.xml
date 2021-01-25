@@ -7,23 +7,36 @@
     tools:context=".SettingsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="@string/settings" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="WSETTINGS" />
+        <TextView
+            android:id="@+id/settingsText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/settings" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:src="?android:attr/textSelectHandle" />
+        <TextView
+            android:id="@+id/settingsText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WSETTINGS" />
+
+        <ImageView
+            android:id="@+id/imageSettings"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="?android:attr/textSelectHandle" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send" />
+    </LinearLayout>
 
 </FrameLayout>

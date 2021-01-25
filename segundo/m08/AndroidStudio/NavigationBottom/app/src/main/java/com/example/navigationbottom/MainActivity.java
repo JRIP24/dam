@@ -31,9 +31,12 @@ public class MainActivity extends AppCompatActivity {
 
         mMainNav.setItemBackgroundResource(R.color.design_default_color_primary_dark);
 
-        homeFragment = new HomeFragment();
-        profileFragment = new ProfileFragment();
-        settingsFragment = new SettingsFragment();
+        //homeFragment = new HomeFragment();
+        homeFragment = HomeFragment.newInstance("home1", "home2");
+        //profileFragment = new ProfileFragment();
+        profileFragment = ProfileFragment.newInstance("profile1", "profile2");
+        //settingsFragment = new SettingsFragment();
+        settingsFragment = SettingsFragment.newInstance("Setting1", "Setting2");
 
         displayFragment(homeFragment);
 
