@@ -1,0 +1,6 @@
+#coding:utf-8
+
+num1 = int(input("Introduzca una distancia en pies número: "))
+num2 = int(input("Introduzca otro número: "))
+
+print("La media de los números introducidos es:", (num1 + num2) / 2)
