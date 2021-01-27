@@ -103,7 +103,7 @@ public class Activitat32 {
                         case 4:
 
                                 System.out.println("Opcion 4");
-
+                                DatabaseCon.insertCliente();
                                 pausar();
                                 break;
 
