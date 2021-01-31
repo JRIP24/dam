@@ -8,7 +8,7 @@ package activitat3.pkg2;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
+/*
  *
  * @author ronald
  */
