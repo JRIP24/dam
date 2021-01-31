@@ -41,40 +41,17 @@ public class Program {
     public static Date setDate(String strDate){
         LocalDate date = LocalDate.parse(strDate);
         return Date.valueOf(date);
-    }
-
-    // Scanner
-    public static Scanner getScanner() {
-        Scanner sc = new Scanner(System.in);
-        return sc;
-    }
-
-    public static int menu() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("\n"
-                + "0. Sortir\n"
-                + "1. Eliminació d'un client\n"
-                + "2. Actualització de les dades d'un client\n"
-                + "3. Mostra per pantalla els clients que el seu nom comenci per un text introduït\n"
-                + "4. Alta d'un nou client\n"
-                + "5. Alta d'una nova comanda\n"
-                + "6. Mostrar per pantalla les comandes d'un client\n"
-                + "7. Generació de resum de facturació\n\n: ");
-        return sc.nextInt();
     }*/
-
     
     public static void main(String[] args) {
-
-        //Show only warning info
+        //Para no mostrar el log entero
         java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.WARNING);
 
-        //List Client
         List<Client> clientes= new ArrayList<>();
         boolean salir = false;
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().configure().build();
         SessionFactory sessionFactory = new MetadataSources(serviceRegistry).buildMetadata().buildSessionFactory();
-        Session session = sessionFactory.openSession();
+        //Session session = sessionFactory.openSession();
 
 
         while (!salir) {
@@ -114,9 +91,13 @@ public class Program {
 
                         System.out.println("Opcion 1");
                         Client client1 = new Client();
-                        clientes = client1.getAllClients(session);
+                        clientes = client1.getAllClients(sessionFactory);
                         client1 = client1.selectClient(clientes);
-                        System.out.println("Cliente seleccionado: " + client1.getNom());
+
+                        if(client1.getNom() != null){
+                            client1.deleteClient(sessionFactory);
+                        }
+
                         pausar();
                         break;
 
@@ -124,14 +105,21 @@ public class Program {
                     case 2:
 
                         System.out.println("Opcion 2");
+                        Client client2 = new Client();
+                        clientes = client2.getAllClients(sessionFactory);
+                        client2 = client2.selectClient(clientes);
 
+                        if(client2.getNom() != null){
+                            client2.updateData(sessionFactory);
+                        }
                         pausar();
                         break;
 
                     case 3:
 
                         System.out.println("Opcion 3");
-
+                        Client client3 = new Client();
+                        client3.searchClient(sessionFactory);
                         pausar();
                         break;
 
@@ -139,9 +127,8 @@ public class Program {
                     case 4:
 
                         System.out.println("Opcion 4");
-                        //DatabaseCon.insertCliente();
                         Client client = new Client(true);
-                        client.insertCliente(client, session);
+                        client.insertCliente(sessionFactory);
 
                         pausar();
                         break;
@@ -150,19 +137,37 @@ public class Program {
                     case 5:
 
                         System.out.println("Opcion 5");
+                        Client client5 = new Client();
+                        clientes = client5.getAllClients(sessionFactory);
+                        client5 = client5.selectClient(clientes);
 
+                        if(client5.getNom() != null){
+                            Comanda comanda = new Comanda( true, client5);
+                            comanda.insertComanda(sessionFactory);
+                        }
                         pausar();
                         break;
 
 
                     case 6:
                         System.out.println("Opcion 6");
+                        Client client6 = new Client();
+                        clientes = client6.getAllClients(sessionFactory);
+                        client6 = client6.selectClient(clientes);
 
+                        if(client6.getNom() != null){
+                            client6.listComandas();
+                        }
                         pausar();
                         break;
 
                     case 7:
                         System.out.println("Opcion 7");
+                        Client client7 = new Client();
+                        clientes = client7.getAllClients(sessionFactory);
+                        for (Client cliente : clientes ) {
+                            cliente.resumFacturacio(sessionFactory);
+                        }
 
                         pausar();
                         break;
@@ -198,9 +203,6 @@ public class Program {
 
 
 /*
-        //Show only warning info
-        java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.WARNING);
-
         //List Client
         List<Client> clients= new ArrayList<>();
 

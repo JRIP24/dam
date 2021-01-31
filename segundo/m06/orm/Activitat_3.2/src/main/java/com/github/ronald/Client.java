@@ -20,12 +20,8 @@ public class Client implements Serializable {
     private String nom;
     private Boolean premium;
 
-
-    //@OneToMany
-    //@JoinColumn(name = "dni_client")
     @OneToMany(mappedBy = "dni_client", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     Set<Comanda> comandes = new HashSet<>();
-
     public Client() {
     }
 
@@ -63,23 +59,36 @@ public class Client implements Serializable {
         }
     }
 
-    void insertCliente(Client client, Session session){
+    void insertCliente(SessionFactory factory){
 
+        Session session = factory.openSession();
         try {
             session.beginTransaction();
-            session.save(client);
+            session.save(this);
             session.getTransaction().commit();
         } catch(Exception e){
             System.out.println("Error:" + e);
 
+        }finally {
+            session.close();
         }
 
     }
 
 
-    static List<Client> getAllClients(Session session){
-        session.beginTransaction();
-        return session.createQuery("from Client").getResultList();
+    static List<Client> getAllClients(SessionFactory factory){
+        Session session = factory.openSession();
+        List<Client> clients = new ArrayList<Client>();
+        try {
+            session.beginTransaction();
+            clients = session.createQuery("from Client").getResultList();
+        } catch (Exception e){
+
+        } finally {
+            session.close();
+        }
+
+        return clients;
     }
 
     static Client selectClient(List<Client> clientes){
@@ -89,7 +98,7 @@ public class Client implements Serializable {
         Client selectedClient = new Client();
 
         for (Client client: clientes) {
-            System.out.println(clientes.indexOf(client) + " - " + client.getNom() + ", dni -> " + client.getDni());
+            System.out.println(clientes.indexOf(client) + ") " + client.getDni() + " - " + client.getNom());
         }
 
         System.out.print("Inserte el número del cliente que quiere seleccionar: ");
@@ -106,14 +115,122 @@ public class Client implements Serializable {
         return selectedClient;
     }
 
-    public void deleteClient(SessionFactory factory) {
-        try (Session session = factory.openSession()) {
+    void deleteClient(SessionFactory factory) {
+        Session session = factory.openSession();
+        try  {
             session.beginTransaction();
             session.createQuery("delete from Comanda where dni_client= :dni").setParameter("dni", getDni()).executeUpdate();
             session.delete(this);
             session.getTransaction().commit();
+        } catch (Exception e){
+            e.printStackTrace();
+
+        }finally {
+            session.close();
         }
     }
+
+    void updateData(SessionFactory factory) {
+        Scanner teclat = new Scanner(System.in);
+
+        System.out.println("Introdueix el nom:");
+        this.setNom(teclat.nextLine());
+
+        boolean valorCorrecte = false;
+        while (!valorCorrecte) {
+            System.out.println("Es premium? (S/N):");
+            String valor = teclat.nextLine();
+            if (valor.equals("S") || valor.equals("N")) {
+
+                if (valor.equals("S")){
+                    this.setPremium(true);
+                } else {
+                    this.setPremium(false);
+                }
+                valorCorrecte = true;
+            }
+        }
+        Session session = factory.openSession();
+        try {
+            session.beginTransaction();
+            session.update(this);
+            session.getTransaction().commit();
+        } catch (Exception e){
+
+            System.out.println("Error: " + e.getMessage());
+
+        }finally {
+            session.close();
+        }
+    }
+
+    static void searchClient(SessionFactory factory) {
+        String texto = "";
+        Scanner teclado = new Scanner(System.in);
+        System.out.print("Intoduzca el nombre del cliente: ");
+        texto = teclado.nextLine();
+
+        Session session = factory.openSession();
+        try {
+            session.beginTransaction();
+            List<Client> clientes = session.createQuery("from Client where nom LIKE Concat('" + texto + "','%')").getResultList();
+            if (clientes.size() == 0){
+                System.out.println("No se han encontrado clientes \n");
+            } else {
+
+                System.out.println("Resultados de búsqueda: \n");
+                for (Client cliente : clientes ){
+                    System.out.println(" - " + cliente.getNom() + ", dni: " + cliente.getDni() + ", premium?: " + cliente.getPremium());
+                }
+                System.out.println("\n");
+            }
+
+
+
+        } catch (Exception e){
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            session.close();
+        }
+    }
+
+
+    void listComandas() {
+        System.out.println("Comandes de: " + this.getNom());
+        for (Comanda comanda : this.comandes) {
+            System.out.println("-Num: " + comanda.getNum_comanda() + "\n" +
+                    "Data: " + comanda.getData() + "\n" +
+                    "Preu total: " + comanda.getPreu_total() + "€ \n");
+        }
+    }
+
+    void resumFacturacio(SessionFactory factory) {
+
+        Session session = factory.openSession();
+        try {
+            session.beginTransaction();
+            List<Double> precios = session.createQuery("select sum(preu_total) from Comanda where dni_client = :dni").setParameter("dni", this.getDni()).getResultList();
+
+            for (Double precio : precios ){
+                if (precio != null){
+                    System.out.println( this.getNom() + " " + precio + "€");
+                }
+            }
+
+
+
+
+        } catch (Exception e){
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            session.close();
+        }
+    }
+
+
+
+
+
 
 
 
@@ -152,97 +269,4 @@ public class Client implements Serializable {
     public void setComandes(Set<Comanda> comandes) {
         this.comandes = comandes;
     }
-
-    /*
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Client client = (Client) o;
-        return dni == client.dni;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(dni);
-    }
-
-    public static List<Client> readFromDataBase(SessionFactory factory){
-        try(Session session = factory.openSession()){
-            session.beginTransaction();
-            return session.createQuery("from Client").getResultList();
-        }
-    }
-
-
-    public void delete(SessionFactory factory) {
-        try (Session session = factory.openSession()) {
-            session.beginTransaction();
-            session.createQuery("delete from Comanda where dni_client= :dni").setParameter("dni", getDni()).executeUpdate();
-            session.delete(this);
-            session.getTransaction().commit();
-        }
-        System.out.println("Client Successfully Deleted.");
-    }
-
-    public void update(SessionFactory factory) {
-
-        System.out.print("Enter the new name: ");
-        String name = Program.getScanner().next();
-
-        System.out.print("Is it premium? (s/n): ");
-        Boolean premium = Program.getScanner().next().equalsIgnoreCase("S");
-
-        try (Session session = factory.openSession()) {
-            session.beginTransaction();
-            //Client c = session.createQuery("from Client c where c.dni=:id", Client.class).setParameter("id", getDni()).getSingleResult();
-            setNom(name);
-            setPremium(premium);
-            session.update(this);
-            session.getTransaction().commit();
-        }
-        System.out.println("Client Successfully Updated.");
-    }
-
-    public static void findClientByName(SessionFactory factory) {
-        System.out.print("Find client whose name begins with: ");
-        String letters = Program.getScanner().next();
-
-        try (Session session = factory.openSession()) {
-            session.beginTransaction();
-            List<Client> cli = session.createQuery("from Client where nom LIKE Concat('" + letters + "','%')").getResultList();
-            Iterator it = cli.iterator();
-            while (it.hasNext()) {
-                Client emp = (Client) it.next();
-                System.out.println(emp.getNom());
-            }
-        }
-    }
-
-
-    public static void add(SessionFactory factory, List<Client> clients){
-
-        System.out.print("Enter a dni: ");
-        int dni = Program.getScanner().nextInt();
-        System.out.print("Enter a name: ");
-        String name = Program.getScanner().next();
-        System.out.print("Is it premium? (s/n): ");
-        Boolean premium = Program.getScanner().next().equalsIgnoreCase("S");
-
-        Client clientTmp = new Client(dni, name, premium);
-
-        if (!clients.contains(clientTmp)){
-            try(Session session = factory.openSession()){
-                session.beginTransaction();
-                session.save(clientTmp);
-                session.getTransaction().commit();
-            }catch (Exception e){
-                e.getStackTrace();
-            }
-        } else {
-            System.err.println("The client already exists!");
-        }
-    }*/
-
 }
