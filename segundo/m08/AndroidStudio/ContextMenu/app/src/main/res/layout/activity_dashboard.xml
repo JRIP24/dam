@@ -8,13 +8,25 @@
     tools:context=".DashboardActivity">
 
     <Button
-        android:id="@+id/listViewBtn"
+        android:id="@+id/listViewBtnActionMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/listView"
+        android:text="@string/listViewAM"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/listViewBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/listView"
+        app:layout_constraintBottom_toTopOf="@+id/gridViewBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listViewBtnActionMode"  />
+
 
     <Button
         android:id="@+id/gridViewBtn"
@@ -46,4 +58,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listViewImagesBtn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

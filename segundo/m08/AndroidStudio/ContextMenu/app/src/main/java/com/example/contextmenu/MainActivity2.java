@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    ListView listView;
+    ListView listView; //ListView con con imagenes
 
     private Integer[] imageIDs = {
             R.drawable.plane,
@@ -41,9 +41,9 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreateContextMenu(menu, v, menuInfo);
 
         menu.setHeaderTitle("Choose an option: ");
-        menu.add(0, 1, 1, "Plane 1");
-        menu.add(0, 2, 2, "Plane 2");
-        menu.add(0, 3, 3, "Plane 3");
+        menu.add(0, 1, 1, "Delete");
+        menu.add(0, 2, 2, "Share");
+        menu.add(0, 3, 3, "Web");
 
 
     }
@@ -53,13 +53,13 @@ public class MainActivity2 extends AppCompatActivity {
 
         switch (item.getItemId()){
             case 1:
-                Toast.makeText(this, "Plane 1", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show();
                 return true;
             case 2:
-                Toast.makeText(this, "Plane 2", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
                 return true;
             case 3:
-                Toast.makeText(this, "Plane 3", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Web", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onContextItemSelected(item);
@@ -73,6 +73,8 @@ public class MainActivity2 extends AppCompatActivity {
 
         //hook
         listView = findViewById(R.id.listView);
+        listView.setAdapter(customAdapter);
+        registerForContextMenu(listView);
     }
 
     private class CustomAdapter  extends BaseAdapter {
@@ -85,7 +87,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         @Override
         public Object getItem(int position) {
-            return imageIDs[position];
+            return position;
         }
 
         @Override

@@ -8,15 +8,16 @@ import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity3 extends AppCompatActivity {
 
-    private ListView listView;//Con listView
+    private GridView gridView; //GridView
 
     List<String> cursos = new ArrayList<>();
     ArrayAdapter<String> dataAdapter;
@@ -54,10 +55,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main3);
 
         //hook
-        listView = findViewById(R.id.listView);
+        gridView = findViewById(R.id.gridView);
         cursos.add("curso1");
         cursos.add("curso2");
         cursos.add("curso3");
@@ -81,10 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
         dataAdapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, cursos);
 
-        listView.setAdapter(dataAdapter);
-        registerForContextMenu(listView);
-
-
-
+        gridView.setAdapter(dataAdapter);
+        registerForContextMenu(gridView);
     }
 }
