@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+    >
+
+    <ImageView
+        android:id="@+id/imageRow"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/spinning0" />
+
+    <TextView
+        android:id="@+id/textRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_toRightOf="@id/imageRow"
+        android:text="TextView"
+        android:textColor="#009688"
+        android:textSize="20sp" />
+<!--
+    <TextView
+        android:id="@+id/labelTrainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trainer: "
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/imageRow"
+        android:layout_below="@id/textRow"/>-->
+
+    <TextView
+        android:id="@+id/trainerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textRow"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/imageRow"
+        android:text="Trainer"
+        android:textColor="#000000" />
+
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="20dp"
+        android:text="TextView"
+        android:layout_marginRight="20dp" />
+
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+</RelativeLayout>
