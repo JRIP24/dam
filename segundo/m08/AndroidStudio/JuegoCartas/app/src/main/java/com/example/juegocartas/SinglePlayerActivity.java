@@ -21,7 +21,7 @@ import java.util.Collections;
 
 public class SinglePlayerActivity extends AppCompatActivity {
 
-    static final String FILE_SHARED_NAME = "Socores_singlePlayer";
+    static final String FILE_SHARED_NAME = "Scores_singlePlayer";
 
     ImageView deck;
     ImageView backCard;
@@ -209,6 +209,8 @@ public class SinglePlayerActivity extends AppCompatActivity {
 
 
                 baraja = crearNuevaBaraja(baraja);
+                gameMessage.setScaleX(2f);
+                gameMessage.setScaleY(2f);
 
                 cardForPlayer();
                 stopBtn.setVisibility(View.VISIBLE);
@@ -323,6 +325,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
                     terminarTurnoForced = true;
                     gameMessage.setText(R.string.wonMsg);//Jugador gana
                     gameMessage.setVisibility(View.VISIBLE);
+                    showMessage();
 
                     globalPlayerScoreInt++;
 
@@ -333,6 +336,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
                     terminarTurnoForced = true;
                     gameMessage.setText(R.string.bankWonMsg);
                     gameMessage.setVisibility(View.VISIBLE);
+                    showMessage();
 
                     globalBankScoreInt++;
                     endRound();
@@ -520,6 +524,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
             terminarTurnoForced = true;
             gameMessage.setText(R.string.loseMsg);
             gameMessage.setVisibility(View.VISIBLE);
+            showMessage();
 
             globalBankScoreInt++;
             endRound();
@@ -528,6 +533,22 @@ public class SinglePlayerActivity extends AppCompatActivity {
             animStop_OneMoreButtons(false);
         }
 
+
+    }
+
+    private void showMessage(){
+
+        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(gameMessage, "scaleY",  1f);
+        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(gameMessage, "scaleX", 1f);
+        objectAnimator.setDuration(500);
+        //objectAnimator.start();
+
+        objectAnimator2.setDuration(500);
+        //objectAnimator2.start();
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(objectAnimator, objectAnimator2);
+        animatorSet.start();
 
     }
 

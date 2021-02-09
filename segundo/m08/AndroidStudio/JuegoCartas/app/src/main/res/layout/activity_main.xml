@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/seven" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,6 +55,24 @@
 
         <Button
             android:id="@+id/newBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/resumeBtn"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:text="@string/newGame" />
+
+
+        <Button
+            android:id="@+id/resumeBtn2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:text="@string/resume" />
+
+        <Button
+            android:id="@+id/newBtn2"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/resumeBtn"

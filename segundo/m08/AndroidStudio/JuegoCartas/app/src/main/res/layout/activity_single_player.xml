@@ -42,6 +42,7 @@
             android:layout_below="@id/scoreLabel"
             android:layout_toRightOf="@id/bankLabel"
             android:text="@string/initialScore"
+            android:layout_marginLeft="5dp"
             android:textColor="@color/primaryTextColor" />
 
         <TextView
@@ -62,6 +63,7 @@
             android:layout_below="@id/scoreLabel"
             android:layout_toRightOf="@id/playerLabel"
             android:text="@string/initialScore"
+            android:layout_marginLeft="5dp"
             android:textColor="@color/primaryTextColor" />
 
     </RelativeLayout>
@@ -81,14 +83,16 @@
             android:gravity="center"
             android:text="@string/Bank"
             android:textColor="@color/primaryTextColor"
-            android:textSize="14sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/bankScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/bankLabel2"
+            android:layout_marginLeft="5dp"
             android:text="@string/initialScore"
+            android:textSize="18sp"
             android:textColor="@color/primaryTextColor" />
     </RelativeLayout>
 
@@ -304,12 +308,13 @@
             android:layout_height="100dp"
             android:layout_centerInParent="true"
             android:alpha="0"
+            android:elevation="6dp"
             app:srcCompat="@drawable/back" />
 
         <Button
             android:id="@+id/playBtn"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:layout_centerInParent="true"
             android:layout_centerVertical="true"
             android:text="@string/play"
@@ -329,9 +334,10 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_below="@id/deck"
-            android:layout_toStartOf="@id/gameMessage"
-            android:layout_toLeftOf="@id/gameMessage"
+            android:layout_toStartOf="@id/playBtn"
+            android:layout_toLeftOf="@id/playBtn"
             android:text="@string/oneMore"
+            android:layout_marginLeft="15dp"
             android:textSize="12sp"
             android:visibility="invisible" />
 
@@ -360,8 +366,9 @@
             android:layout_height="40dp"
             android:layout_below="@id/deck"
             android:layout_alignParentBottom="false"
-            android:layout_toEndOf="@+id/gameMessage"
-            android:layout_toRightOf="@+id/gameMessage"
+            android:layout_toEndOf="@+id/playBtn"
+            android:layout_toRightOf="@+id/playBtn"
+            android:layout_marginLeft="15dp"
             android:text="@string/stop"
             android:textSize="12sp"
             android:visibility="invisible" />
@@ -574,6 +581,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginTop="20dp"
             android:text="@string/you"
+            android:textSize="18sp"
             android:textColor="@color/primaryTextColor" />
 
         <TextView
@@ -583,6 +591,8 @@
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@id/playerLabel2"
             android:text="@string/initialScore"
+            android:layout_marginLeft="5dp"
+            android:textSize="18sp"
             android:textColor="@color/primaryTextColor" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

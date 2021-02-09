@@ -42,6 +42,7 @@
             android:layout_below="@id/scoreLabel"
             android:layout_toRightOf="@id/bankLabel"
             android:text="@string/initialScore"
+            android:layout_marginLeft="5dp"
             android:textColor="@color/primaryTextColor" />
 
         <TextView
@@ -62,6 +63,7 @@
             android:layout_below="@id/scoreLabel"
             android:layout_toRightOf="@id/playerLabel"
             android:text="@string/initialScore"
+            android:layout_marginLeft="5dp"
             android:textColor="@color/primaryTextColor" />
 
     </RelativeLayout>
@@ -89,7 +91,7 @@
             android:gravity="center"
             android:text="@string/player2"
             android:textColor="@color/primaryTextColor"
-            android:textSize="14sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/bankScore"
@@ -98,6 +100,8 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@id/bankLabel2"
             android:text="@string/initialScore"
+            android:textSize="18sp"
+            android:layout_marginLeft="5dp"
             android:textColor="@color/primaryTextColor" />
 
         <ImageView
@@ -294,9 +298,10 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_above="@id/deck"
-            android:layout_toStartOf="@id/gameMessage"
-            android:layout_toLeftOf="@id/gameMessage"
+            android:layout_toStartOf="@id/playBtn"
+            android:layout_toLeftOf="@id/playBtn"
             android:text="@string/oneMore2"
+            android:layout_marginRight="15dp"
             android:textSize="12sp"
             android:visibility="visible"
             app:backgroundTint="@color/secondaryDarkColor" />
@@ -307,10 +312,11 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_above="@id/deck"
-            android:layout_toEndOf="@id/gameMessage"
-            android:layout_toRightOf="@id/gameMessage"
+            android:layout_toEndOf="@id/playBtn"
+            android:layout_toRightOf="@id/playBtn"
             android:text="@string/stop2"
             android:textSize="12sp"
+            android:layout_marginLeft="15dp"
             android:visibility="visible"
             app:backgroundTint="@color/secondaryDarkColor" />
 
@@ -328,6 +334,7 @@
             android:layout_height="100dp"
             android:layout_centerInParent="true"
             android:alpha="0"
+            android:elevation="6dp"
             app:srcCompat="@drawable/back" />
 
         <Button
@@ -348,7 +355,10 @@
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@id/playAgain"
             android:text="@string/whoIsBank"
-            android:textColor="@color/primaryTextColor" />
+            android:textColor="@color/primaryTextColor"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/playAgain"
@@ -366,9 +376,10 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_below="@id/deck"
-            android:layout_toStartOf="@id/gameMessage"
-            android:layout_toLeftOf="@id/gameMessage"
+            android:layout_toStartOf="@id/playBtn"
+            android:layout_toLeftOf="@id/playBtn"
             android:text="@string/oneMore1"
+            android:layout_marginRight="15dp"
             android:textSize="12sp"
             android:visibility="visible"
             app:backgroundTint="@color/secondaryDarkColor" />
@@ -398,9 +409,10 @@
             android:layout_height="40dp"
             android:layout_below="@id/deck"
             android:layout_alignParentBottom="false"
-            android:layout_toEndOf="@+id/gameMessage"
-            android:layout_toRightOf="@+id/gameMessage"
+            android:layout_toEndOf="@+id/playBtn"
+            android:layout_toRightOf="@+id/playBtn"
             android:text="@string/stop1"
+            android:layout_marginLeft="15dp"
             android:textSize="12sp"
             android:visibility="visible"
             app:backgroundTint="@color/secondaryDarkColor" />
@@ -602,6 +614,7 @@
             android:layout_centerInParent="true"
             android:layout_marginTop="20dp"
             android:text="@string/player1"
+            android:textSize="18sp"
             android:textColor="@color/primaryTextColor" />
 
         <TextView
@@ -611,6 +624,8 @@
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@id/playerLabel2"
             android:text="@string/initialScore"
+            android:layout_marginLeft="5dp"
+            android:textSize="18sp"
             android:textColor="@color/primaryTextColor" />
 
     </RelativeLayout>

@@ -1,6 +1,6 @@
 #coding:utf-8
 
-seg = int(input("Introduzca segundos: "))
+seg = int(input("Segundos: "))
 
 minutos = int(seg/60)
 segs = seg%60

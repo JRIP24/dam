@@ -6,8 +6,11 @@ import androidx.transition.AutoTransition;
 import androidx.transition.Transition;
 import androidx.transition.TransitionManager;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -218,76 +221,70 @@ public class MultiplayerActivity extends AppCompatActivity {
 
         }
 
+        playBtn.setAlpha(0);
+        ObjectAnimator animatorPlayBtn = ObjectAnimator.ofFloat(playBtn, "alpha", 1f);
+
+        animatorPlayBtn.setDuration(500);
+        animatorPlayBtn.setStartDelay(500);
+
+        animatorPlayBtn.start();
 
 
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RelativeLayout parent = findViewById(R.id.relativeLayout);
                 baraja = crearNuevaBaraja(baraja);
+                whoBank.setVisibility(View.VISIBLE);
+                gameMessage.setScaleX(2f);
+                gameMessage.setScaleY(2f);
 
                 //Asignamos rol de banco
                 player1.isBank = false;
                 player2.isBank = false;
-                int direccion = RelativeLayout.ALIGN_PARENT_TOP;
+
+                float positionY;
 
                 if(Math.random() < 0.5) {
 
                     player1.isBank = true;//Juega player 2 primero
-                    direccion = RelativeLayout.ALIGN_PARENT_BOTTOM;
-                    cardForPlayer(cartasPlayer2, player2, player2Score, player1, oneMore2Btn, stop2Btn);
+                    positionY = playerScore.getY();
+
                 } else {
 
                     player2.isBank = true; //Juega player 1 primero
-                    cardForPlayer(cartasJugador, player1, playerScore, player2, oneMoreBtn, stopBtn);
-                    direccion = RelativeLayout.ALIGN_PARENT_TOP;
+                    positionY = player2Score.getY();
 
                 }
 
-                //ObjectAnimator animator1 = ObjectAnimator.ofFloat(whoBank, "translationY",0f, labelScore.getY());
-                /*ObjectAnimator animator1 = ObjectAnimator.ofFloat(whoBank, "translationY",0f,500f);
+                ObjectAnimator animator1 = ObjectAnimator.ofFloat(whoBank, "y",playBtn.getY(), positionY);
+                ObjectAnimator animator2 = ObjectAnimator.ofFloat(whoBank, "alpha",0f, 1f);
+
                 animator1.setDuration(1000);
-                animator1.start();*/
-                /*
-                RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) whoBank.getLayoutParams();
-                lp.addRule(direccion, RelativeLayout.TRUE);
-                //lp.removeRule(RelativeLayout.CENTER_VERTICAL);
+                animator1.setStartDelay(2000);
+                //animator1.start();
 
-                AutoTransition transition = new AutoTransition();
-                transition.setDuration(500);
-                TransitionManager.beginDelayedTransition(parent, transition);
-                whoBank.setLayoutParams(lp);
+                animator2.setDuration(500);
+                animator2.setRepeatCount(4);
+                animator2.setRepeatMode(ValueAnimator.REVERSE);
+                //animator2.start();
 
-                transition.addListener(new Transition.TransitionListener() {
+                AnimatorSet animatorSet = new AnimatorSet();
+                animatorSet.playTogether(animator1, animator2);
+                animatorSet.start();
+
+                animatorSet.addListener(new AnimatorListenerAdapter() {
                     @Override
-                    public void onTransitionStart(@NonNull Transition transition) {
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
 
-                    }
-
-                    @Override
-                    public void onTransitionEnd(@NonNull Transition transition) {
-                        if (player1.isBank){
+                        if(player1.isBank){
                             cardForPlayer(cartasPlayer2, player2, player2Score, player1, oneMore2Btn, stop2Btn);
                         } else {
                             cardForPlayer(cartasJugador, player1, playerScore, player2, oneMoreBtn, stopBtn);
                         }
-                    }
-
-                    @Override
-                    public void onTransitionCancel(@NonNull Transition transition) {
 
                     }
-
-                    @Override
-                    public void onTransitionPause(@NonNull Transition transition) {
-
-                    }
-
-                    @Override
-                    public void onTransitionResume(@NonNull Transition transition) {
-
-                    }
-                });*/
+                });
 
                 playBtn.setVisibility(View.INVISIBLE);
 
@@ -302,6 +299,7 @@ public class MultiplayerActivity extends AppCompatActivity {
                 playAgain.setVisibility(View.INVISIBLE);
                 gameMessage.setVisibility(View.INVISIBLE);
                 whoBank.setVisibility(View.INVISIBLE);
+                whoBank.setY(playBtn.getY());//Se asigna la posición inicial
                 playBtn.setVisibility(View.VISIBLE);
 
 
@@ -372,9 +370,14 @@ public class MultiplayerActivity extends AppCompatActivity {
         User winner = new User();
 
         if (player1.points > player2.points){
+
             winner = player1;
+            gameMessage.setText(R.string.player1WonMsg);
+
         } else if(player2.points > player1.points){
+
             winner = player2;
+            gameMessage.setText(R.string.player2WonMsg);
 
         } else { //Empate, gana el que tiene el rol de banco
             if (player1.isBank){
@@ -386,12 +389,25 @@ public class MultiplayerActivity extends AppCompatActivity {
             }
         }
 
-        gameMessage.setVisibility(View.VISIBLE);
-
-        //oponentGlobalScore++;
+        showMessage();
         winner.globalScore++;
         endRound();
 
+    }
+
+    private void showMessage(){
+        gameMessage.setVisibility(View.VISIBLE);
+        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(gameMessage, "scaleY",  1f);
+        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(gameMessage, "scaleX", 1f);
+        objectAnimator.setDuration(500);
+        //objectAnimator.start();
+
+        objectAnimator2.setDuration(500);
+        //objectAnimator2.start();
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(objectAnimator, objectAnimator2);
+        animatorSet.start();
     }
 
 
@@ -467,11 +483,13 @@ public class MultiplayerActivity extends AppCompatActivity {
         if (player.points > 7.5){
             if (oponent == player1){
                 gameMessage.setText(R.string.player1WonMsg);
-                gameMessage.setVisibility(View.VISIBLE);
+
+                showMessage();
 
             } else {
                 gameMessage.setText(R.string.player2WonMsg);
-                gameMessage.setVisibility(View.VISIBLE);
+
+                showMessage();
             }
 
 
