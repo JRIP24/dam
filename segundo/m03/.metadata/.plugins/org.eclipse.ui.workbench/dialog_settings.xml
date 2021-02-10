@@ -36,4 +36,6 @@
 			<item value="org.eclipse.wb/org.eclipse.wb.rcp/org.eclipse.wb.rcp.rcp"/>
 		</list>
 	</section>
+	<section name="FileSystemImportWizard">
+	</section>
 </section>

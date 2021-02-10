@@ -61,7 +61,7 @@ public class PNS24_Puma {
             menu.append("7. Sistema de grabació Kristall");
             menu.append(System.getProperty("line.separator"));
             menu.append(System.getProperty("line.separator"));
-            menu.append("10. Control de sondes Delta");
+            menu.append("10.  Sistema logístic PAU-487");
             menu.append(System.getProperty("line.separator"));
             menu.append(System.getProperty("line.separator"));
             menu.append("50. Tancar el sistema");
@@ -101,7 +101,7 @@ public class PNS24_Puma {
                     bloquejarPantalla();
                     break;
                 case "10":
-
+                	PAU487.menuPAU487();
                     bloquejarPantalla();
                     break;                    
                 case "50":
