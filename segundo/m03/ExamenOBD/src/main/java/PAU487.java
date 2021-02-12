@@ -1,7 +1,6 @@
-package org.github.ronald.obd;
+
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Deque;
 import java.util.Scanner;
 
 import com.db4o.Db4oEmbedded;
@@ -65,26 +64,32 @@ public class PAU487 {
             
             switch (opcio) {
                 case "1":
+                    Departament.menu1(db);
                     bloquejarPantalla();
                     break;
                 case "2":
+                    Departament.menu2(db);
                     bloquejarPantalla();
                     break;
                 case "3":
+                    Departament.menu3(db);
                     bloquejarPantalla();
                     break;
                 case "10":
+                    Tripulant.menu10(db);
                 	bloquejarPantalla();
                     break;
                 case "11":
+                    Tripulant.menu11(db);
                     bloquejarPantalla();
                     break;
                 case "12":
+                    Tripulant.menu12(db);
                     bloquejarPantalla();
                     break;
 
                 case "21":
-                	//Producte.menu21(db, IKSRotarranConstants.pathArxiusImportacioXML);
+                    db = Departament.menu21(db);
                     bloquejarPantalla();
                     break;
 
