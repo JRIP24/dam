@@ -70,7 +70,7 @@ public class Departament {
 	    	Predicate p2 = new Predicate<Encarrec_Dades>() { 
 		        @Override 
 		        public boolean match(Encarrec_Dades e) { 
-		            return (e.getIdDepartamentQueElDemana() == departamentTmp.getId()); 
+		            return (e.getIdDepartamentQueElDemana() == departamentTmp.getId());
 		        } 
 		    }; 
 		    
@@ -83,7 +83,7 @@ public class Departament {
 		    }
 		    
 	        db.store(departamentTmp);
-	    } 
+	    }
 	    
 		// Busquem tots els productes.
 	    // Rastrejem els productes --> tenim el idDepartamentQueElPotDemanar --> assignem el producte a tots els encàrrecs 

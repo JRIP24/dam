@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">RecycleView</string>
+    <string-array name="title">
+
+        <item>Construction</item>
+        <item>Transport</item>
+        <item>Vans</item>
+        <item>Planes</item>
+        <item>Trains</item>
+        <item>Houses</item>
+        <item>Restaurants</item>
+        <item>Boats</item>
+        <item>Containers</item>
+        <item>Flights</item>
+
+    </string-array>
+    <string-array name="description">
+        <item>This is a description for the item 1.</item>
+        <item>This is a description for the item 2.</item>
+        <item>This is a description for the item 3.</item>
+        <item>This is a description for the item 4.</item>
+        <item>This is a description for the item 5.</item>
+        <item>This is a description for the item 6.</item>
+        <item>This is a description for the item 7.</item>
+        <item>This is a description for the item 8.</item>
+        <item>This is a description for the item 9.</item>
+        <item>This is a description for the item 10.</item>
+    </string-array>
+
+</resources>

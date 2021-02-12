@@ -37,7 +37,7 @@ public class Producte {
 		
 		for(int i = 0; i < productes.length; i++) {
 			//S'emmagatzema productes[i].
-            db.store(productes[i]);   		
+            db.store(productes[i]);
         }
 	}
 	
