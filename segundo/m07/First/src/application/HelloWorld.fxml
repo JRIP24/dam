@@ -38,17 +38,30 @@
    <left>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Label">
+            <Label text="Data">
                <VBox.margin>
                   <Insets top="15.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
             </Label>
-            <Label text="Label">
+            <Label text="Sales">
                <VBox.margin>
                   <Insets left="20.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <Label text="Label">
+            <Label text="Sales">
+               <VBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Sales">
+               <VBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Sales">
                <VBox.margin>
                   <Insets left="20.0" top="10.0" />
                </VBox.margin>
@@ -111,9 +124,26 @@
             </Text>
             <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.rowSpan="2" GridPane.valignment="TOP">
                <image>
-                  <Image url="@../../../../../../Downloads/house.png" />
+                  <Image url="@../../house.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../../pie_chart.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Goods" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="80%" />
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Services" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="20%" />
+               </children>
+            </VBox>
          </children>
       </GridPane>
    </center>
