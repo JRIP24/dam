@@ -1,0 +1,77 @@
+
+@font-face {
+    src: url('Montserrat-Regular.ttf');
+}
+
+*{
+    /*-fx-font-family:"Montserrat";*/
+    -fx-font-family: 'Montserrat Regular';
+}
+.button {
+	-fx-box-shadow: 1px 9px 16px -1px #276873;
+	-fx-background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	-fx-background-color:#599bb3;
+	-fx-border-radius:6px;
+	-fx-display:inline-block;
+	-fx-cursor:pointer;
+	-fx-text-fill:white;
+	-fx-font-size: 14pt;
+	-fx-text-shadow:0px 1px 0px #3d768a;
+	-fx-font-family: 'Montserrat Regular';
+}
+
+.button:hover {
+	-fx-background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	-fx-background-color:#408c99;
+}
+.button:active {
+	-fx-position:relative;
+	-fx-top:1px;
+}
+
+
+.grid-main-form, .grid-sidebar{
+    -fx-font-size: 16pt;
+}
+
+#btnDelete{
+-fx-background:linear-gradient(to bottom, red 5%, red 100%) !important;
+    -fx-background-color:#f44336 !important;
+}
+
+.text-field {
+    -fx-background-color: -fx-text-box-border, -fx-background ;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 0 ;
+}
+.text-field:focused {
+    -fx-background-color: -fx-focus-color, -fx-background ;
+}
+
+#loginBtn{
+    -fx-font-size: 30pt;
+    -fx-border-radius: 50px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    -fx-background-radius: 15px;
+    -fx-background-color: red;
+    -fx-border-color: transparent;
+}
+
+#gridPaneServeis{
+    -fx-border-radius: 50px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    -fx-background-radius: 15px;
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-margin:20 20 20 20;
+}
+
+#serveisTitle{
+
+    -fx-font-size: 30pt;
+
+}
+
+#formContainer{
+    -fx-font-size: 18pt;
+}

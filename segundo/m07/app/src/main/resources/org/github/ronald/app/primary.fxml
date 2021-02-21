@@ -125,7 +125,7 @@
                      <HBox.margin>
                         <Insets right="25.0" />
                      </HBox.margin></Button>
-                  <Button mnemonicParsing="false" prefWidth="100.0" text="Esborrar">
+                  <Button mnemonicParsing="false" prefWidth="100.0" styleClass="buton" text="Esborrar">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin></Button>

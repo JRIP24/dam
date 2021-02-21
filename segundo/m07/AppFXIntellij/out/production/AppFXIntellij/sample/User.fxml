@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="800.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+
+    <children>
+        <GridPane prefHeight="1000.0" prefWidth="1500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="127.0" minHeight="10.0" prefHeight="127.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="108.0" minHeight="0.0" prefHeight="7.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="196.0" minHeight="0.0" prefHeight="2.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="303.0" minHeight="0.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="724.0" minHeight="10.0" prefHeight="261.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="458.0" minHeight="0.0" prefHeight="68.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="303.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="289.0" minHeight="10.0" prefHeight="127.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Text fx:id="serveisTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="User Profile">
+                    <GridPane.margin>
+                        <Insets left="15.0" />
+                    </GridPane.margin>
+                </Text>
+                <Separator prefWidth="200.0" GridPane.rowIndex="1">
+                    <padding>
+                        <Insets left="15.0" right="15.0" />
+                    </padding>
+                </Separator>
+                <Separator prefWidth="200.0" GridPane.rowIndex="3">
+                    <padding>
+                        <Insets left="15.0" right="15.0" />
+                    </padding>
+                </Separator>
+                <Separator prefWidth="200.0" GridPane.rowIndex="5">
+                    <padding>
+                        <Insets left="15.0" right="15.0" />
+                    </padding>
+                </Separator>
+                <GridPane fx:id="formContainer" GridPane.rowIndex="4">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="669.0" minWidth="10.0" prefWidth="426.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="871.0" minWidth="10.0" prefWidth="449.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <padding>
+                        <Insets left="30.0" right="30.0" />
+                    </padding>
+                    <children>
+                        <Label prefHeight="34.0" prefWidth="927.0" text="Nom fiscal" />
+                        <Label prefHeight="34.0" prefWidth="670.0" text="Nom" GridPane.rowIndex="1" />
+                        <Label prefHeight="34.0" prefWidth="668.0" text="Adreça" GridPane.rowIndex="2" />
+                        <Label prefHeight="34.0" prefWidth="828.0" text="Ciutat" GridPane.rowIndex="3" />
+                        <Label prefHeight="34.0" prefWidth="732.0" text="Província" GridPane.rowIndex="4" />
+                        <TextField fx:id="textNom" prefHeight="25.0" prefWidth="768.0" promptText="Escola del treball" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <TextField promptText="Escola del treball" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField promptText="Urgell 22" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField promptText="Barcelona" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField promptText="Barcelona" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    </children>
+                </GridPane>
+                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
+                    <children>
+
+                        <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="140.0" styleClass=".button" text="Editar">
+                            <HBox.margin>
+                                <Insets right="25.0" />
+                            </HBox.margin></Button>
+                        <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="140.0" styleClass=".button" text="Consultar">
+                            <HBox.margin>
+                                <Insets right="25.0" />
+                            </HBox.margin></Button>
+                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#clickDeleteBtn" prefHeight="36.0" prefWidth="140.0" text="Esborrar">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <styleClass>
+                                <String fx:value=".button" />
+                                <String fx:value=".deleteBtn" />
+                            </styleClass></Button>
+                    </children>
+                    <GridPane.margin>
+                        <Insets left="15.0" right="15.0" />
+                    </GridPane.margin>
+                </HBox>
+            </children>
+        </GridPane>
+
+    </children>
+
+</AnchorPane>
