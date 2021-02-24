@@ -164,7 +164,7 @@ Seleccioni una opció u premi Intro
         self.llibreta.get_llista_clients()
 
     def list_all_by_name(self):
-        self.search_name(self)#?
+        self.search_name()#?
 
 
     def quit(self):

@@ -26,7 +26,7 @@ public class AssignaturaMongo {
         {
             MongoDatabase database= mongoClient.getDatabase("bd_prova");
             MongoCollection<Document> collection= database.getCollection("assignatures");
-            DeleteResult deleteResult = collection.deleteMany(gt("numero_soci",1));
+            DeleteResult deleteResult = collection.deleteMany(gt("hores_setmana",1));
             System.out.println("Documents esborrats: "+deleteResult.getDeletedCount());
         }
 

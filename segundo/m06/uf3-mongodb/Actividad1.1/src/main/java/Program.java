@@ -23,6 +23,7 @@ public class Program {
     public static void main(String[] args) {
         //exercici1();
         //exercici2();
+        exercici3();
     }
 
 
