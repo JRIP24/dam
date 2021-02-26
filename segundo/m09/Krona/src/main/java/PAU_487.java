@@ -49,7 +49,11 @@ public class PAU_487 {
             menu.append(System.getProperty("line.separator"));
             menu.append("4. Threads amb wait()i notify()");
             menu.append(System.getProperty("line.separator"));
-            menu.append("5. ");
+            menu.append("5. Threads amb semàfors (I)");
+            menu.append(System.getProperty("line.separator"));
+            menu.append("6. Threads amb semàfors (II)");
+            menu.append(System.getProperty("line.separator"));
+            menu.append("10. Llençar tots els torpedes");
             menu.append(System.getProperty("line.separator"));
             menu.append(System.getProperty("line.separator"));
             
@@ -81,11 +85,19 @@ public class PAU_487 {
                     bloquejarPantalla();
                     break;
                 case "4":
-
+                    Exercici_2_v3.inicialitzarPrograma();
                     bloquejarPantalla();
                     break;
                 case "5":
-
+                    Exercici_2_v4.inicialitzarPrograma();
+                    bloquejarPantalla();
+                    break;
+                case "6":
+                    Exercici_2_v5.inicialitzarPrograma();
+                    bloquejarPantalla();
+                    break;
+                case "10":
+                    Exercici_2_v6.inicialitzarPrograma();
                     bloquejarPantalla();
                     break;
                 case "50":
