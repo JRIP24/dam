@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ViewPager</string>
+    <string name="left">&lt;&lt;</string>
+    <string name="right">&gt;&gt;</string>
+</resources>
