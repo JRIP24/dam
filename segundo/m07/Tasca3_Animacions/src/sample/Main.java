@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.animation.RotateTransition;
+import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -25,38 +26,59 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        /*
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setScene(new Scene(root, 300, 275));*/
-        primaryStage.setTitle("Hello World");
 
-        Image img1 = new Image("https://www.javatpoint.com/linux/images/linux-first.png");
+        primaryStage.setTitle("Bombilla");
 
-        ImageView imgview1 = new ImageView(img1);
-        imgview1.setX(70);
-        imgview1.setY(90);
+        ImageView imageView = new ImageView(
+                new Image(Main.class.getResourceAsStream("bombilla.png")));
+        imageView.setFitHeight(100);
+        imageView.setFitWidth(100);
+
+        //Efecto
         Glow glow = new Glow();
-        glow.setLevel(10);
-        imgview1.setEffect(glow);
+        imageView.setEffect(glow);
 
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        /*btn.setOnAction(new EventHandler<ActionEvent>() {
+        double position = imageView.getTranslateY();
+        imageView.setTranslateY(-1000);//Para que desaparezca de la pantalla
+        imageView.setStyle("-fx-margin-bottom: 50px;");
+
+
+        //Transición
+        TranslateTransition translate = new TranslateTransition();
+        translate.setToY(position);
+        translate.setDuration(Duration.millis(1000));
+        translate.setNode(imageView);
+
+        Button boton = new Button();
+        boton.setText("Encender");
+        final boolean[] encendida = {false};
+        boton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                if (encendida[0]){
+                    boton.setText("Encender");
+                    glow.setLevel(0);
+                    encendida[0] = false;
+                } else {
+                    boton.setText("Apagar");
+                    glow.setLevel(10);
+                    encendida[0] = true;
+                }
             }
-        });*/
-        /*
-        btn.setOnAction(
-                event -> rotate.play()
-        );*/
+        });
+
+        Button showLightBulb = new Button();
+        showLightBulb.setText("Mostrar Bombilla");
+        showLightBulb.setOnAction(
+                event -> translate.play()
+        );
 
         VBox root = new VBox();
         root.setAlignment(Pos.CENTER);
 
 
-        root.getChildren().addAll(btn,imgview1);
+        root.getChildren().addAll(imageView, boton, showLightBulb);
+        root.setSpacing(5);
 
         primaryStage.setScene(new Scene(root, 500, 500));
         primaryStage.show();

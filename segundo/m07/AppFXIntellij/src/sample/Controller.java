@@ -21,6 +21,9 @@ public class Controller {
     @FXML
     private TextField textNom;
 
+    textNom.textProperty()
+            .bindBidirectional(text2.textProperty());
+
     @FXML
     public void clickDeleteBtn(ActionEvent actionEvent) {
         textNom.setText("");
