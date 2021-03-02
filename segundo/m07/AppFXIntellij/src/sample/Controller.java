@@ -20,13 +20,15 @@ public class Controller {
 
     @FXML
     private TextField textNom;
+    @FXML
+    private TextField textNomFiscal;
 
-    textNom.textProperty()
-            .bindBidirectional(text2.textProperty());
 
     @FXML
     public void clickDeleteBtn(ActionEvent actionEvent) {
         textNom.setText("");
+        textNom.textProperty()
+                .bindBidirectional(textNomFiscal.textProperty());
     }
 
     public void clickBtnServeis(ActionEvent actionEvent) throws IOException {
