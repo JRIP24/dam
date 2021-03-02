@@ -189,6 +189,15 @@ try (MongoClient mongoClient = MongoClients.create();){
 
 ## Soluciones consultas
 
+Importar JSON
+
+`mongoimport --db [database name] --collection [collection name] --file [file]`
+
+Ejemplo
+```
+mongoimport --db bd_prova --collection restaurants --file Downloads/restaurants.json
+```
+
 1.- Nombre de restaurants que han tingut una puntuació amb grade B i score 14
 
 `db.restaurants.find({grades:{$elemMatch:{"score":{$eq:14},"grade":{$eq:"B"}}}}).count()`
