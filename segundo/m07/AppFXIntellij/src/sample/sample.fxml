@@ -106,9 +106,9 @@
                     <Label prefHeight="16.0" prefWidth="180.0" text="Província" GridPane.rowIndex="4" />
                     <TextField fx:id="textNomFiscal" prefHeight="25.0" prefWidth="768.0" promptText="Escola del treball" GridPane.columnIndex="1" GridPane.rowIndex="0" />
                     <TextField fx:id="textNom" promptText="Escola del treball" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                    <TextField promptText="Urgell 22" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                    <TextField promptText="Barcelona" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                    <TextField promptText="Barcelona" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    <TextField fx:id="direccion" promptText="Urgell 22" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <TextField fx:id="ciudad" promptText="Barcelona" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <TextField fx:id="provincia" promptText="Barcelona" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                 </children>
             </GridPane>
 
@@ -118,7 +118,7 @@
                         <HBox.margin>
                             <Insets right="25.0" />
                         </HBox.margin></Button>
-                    <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="140.0" styleClass=".button" text="Consultar">
+                    <Button mnemonicParsing="false" fx:id="btnConsulta" onAction="#clickConsultaBtn" prefHeight="36.0" prefWidth="140.0" styleClass=".button" text="Consultar">
                         <HBox.margin>
                             <Insets right="25.0" />
                         </HBox.margin></Button>
@@ -271,15 +271,15 @@
                     <RowConstraints maxHeight="55.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
                 </rowConstraints>
                 <children>
-                    <CheckBox mnemonicParsing="false" selected="true" text="Nòmines" />
-                    <CheckBox mnemonicParsing="false" selected="true" text="Iva" GridPane.rowIndex="1" />
-                    <CheckBox mnemonicParsing="false" selected="true" text="Llogueres" GridPane.rowIndex="2" />
-                    <CheckBox mnemonicParsing="false" selected="true" text="Seg. Socials" GridPane.rowIndex="3" />
-                    <CheckBox mnemonicParsing="false" selected="true" text="Riscos Laborals" GridPane.rowIndex="4" />
-                    <CheckBox mnemonicParsing="false" selected="true" text="Mòduls" GridPane.rowIndex="5" />
-                    <CheckBox mnemonicParsing="false" text="Renda" GridPane.rowIndex="6" />
-                    <CheckBox mnemonicParsing="false" text="Mútues" GridPane.rowIndex="7" />
-                    <CheckBox mnemonicParsing="false" text="Convenis" GridPane.rowIndex="8" />
+                    <CheckBox fx:id="checkbox1" mnemonicParsing="false" selected="true" text="Nòmines" />
+                    <CheckBox fx:id="checkbox2" mnemonicParsing="false" selected="true" text="Iva" GridPane.rowIndex="1" />
+                    <CheckBox fx:id="checkbox3" mnemonicParsing="false" selected="true" text="Llogueres" GridPane.rowIndex="2" />
+                    <CheckBox fx:id="checkbox4" mnemonicParsing="false" selected="true" text="Seg. Socials" GridPane.rowIndex="3" />
+                    <CheckBox fx:id="checkbox5" mnemonicParsing="false" selected="true" text="Riscos Laborals" GridPane.rowIndex="4" />
+                    <CheckBox fx:id="checkbox6" mnemonicParsing="false" selected="true" text="Mòduls" GridPane.rowIndex="5" />
+                    <CheckBox fx:id="checkbox7" mnemonicParsing="false" text="Renda" GridPane.rowIndex="6" />
+                    <CheckBox fx:id="checkbox8" mnemonicParsing="false" text="Mútues" GridPane.rowIndex="7" />
+                    <CheckBox fx:id="checkbox9" mnemonicParsing="false" text="Convenis" GridPane.rowIndex="8" />
                     <Button fx:id="btnServeis" mnemonicParsing="false" onAction="#clickBtnServeis" prefHeight="36.0" prefWidth="140.0" text="Serveis" GridPane.rowIndex="9" />
                 </children>
             </GridPane>

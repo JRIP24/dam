@@ -82,7 +82,7 @@
                         <Label prefHeight="34.0" prefWidth="668.0" text="Adreça" GridPane.rowIndex="2" />
                         <Label prefHeight="34.0" prefWidth="828.0" text="Ciutat" GridPane.rowIndex="3" />
                         <Label prefHeight="34.0" prefWidth="732.0" text="Província" GridPane.rowIndex="4" />
-                        <TextField fx:id="textNom" prefHeight="25.0" prefWidth="768.0" promptText="Escola del treball" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <TextField fx:id="textNomServeis" prefHeight="25.0" prefWidth="768.0" promptText="Escola del treball" GridPane.columnIndex="1" GridPane.rowIndex="0" />
                         <TextField promptText="Escola del treball" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField promptText="Urgell 22" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <TextField promptText="Barcelona" GridPane.columnIndex="1" GridPane.rowIndex="3" />
