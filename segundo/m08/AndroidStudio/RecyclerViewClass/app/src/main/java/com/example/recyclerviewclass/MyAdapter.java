@@ -40,7 +40,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        Picasso.get().load(mPictures.get(position).getUrlImage())
+        Picasso.get().load(mPictures.get(position).getUrlImages().get(0))
                 .fit()
                 .centerCrop()
                 .into(holder.imageView);
@@ -53,7 +53,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 Intent intent = new Intent(mContext, DetailActivity.class);
                 intent.putExtra("title", mPictures.get(position).getText());
                 intent.putExtra("desc", mPictures.get(position).getDesc());
-                intent.putExtra("urlImage", mPictures.get(position).getUrlImage());
+                intent.putExtra("urlImage", mPictures.get(position).getUrlImages().get(0));
+                intent.putExtra("urlImages", mPictures.get(position).getUrlImages());
 
                 mContext.startActivity(intent);
 

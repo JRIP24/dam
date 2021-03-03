@@ -1,24 +1,25 @@
 package com.example.recyclerviewclass;
 
+import java.util.ArrayList;
+
 public class Picture {
 
-    private String urlImage;
+    private ArrayList<String> urlImages;
     private String desc;
     private String text;
 
-    public Picture(String urlImage, String desc, String text) {
-        this.urlImage = urlImage;
+    public Picture(ArrayList<String> urlImages, String desc, String text) {
+        this.urlImages = urlImages;
         this.desc = desc;
         this.text = text;
     }
 
-
-    public String getUrlImage() {
-        return urlImage;
+    public ArrayList<String> getUrlImages() {
+        return urlImages;
     }
 
-    public void setUrlImage(String urlImage) {
-        this.urlImage = urlImage;
+    public void setUrlImages(ArrayList<String> urlImages) {
+        this.urlImages = urlImages;
     }
 
     public String getDesc() {

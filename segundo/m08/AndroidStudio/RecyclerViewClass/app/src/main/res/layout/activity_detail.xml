@@ -34,11 +34,20 @@
             android:layout_marginTop="30dp"
             android:text="TextView" />
 
+
+        <!--
         <ImageView
             android:id="@+id/imageDetail"
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:layout_marginTop="30dp"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />-->
+
+
+        <com.example.recyclerviewclass.CustomViewPager
+            android:id="@+id/imageDetailSlider"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginTop="30dp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

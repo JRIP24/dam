@@ -38,24 +38,39 @@ public class MainActivity extends AppCompatActivity {
 
     private void initData(){
 
+        int numImagenesSlider = 4;
+
         for (int i=1; i <= 38; i++){
 
             Picture picture;
-            if ( i < 10){
+            ArrayList<String> urls = new ArrayList<>();
 
-                picture = new Picture(
-                        "https://joanseculi.com/images/img0"+ i + ".jpg",
-                        "Description " + i,
-                        "Pic0" + i
-                );
+            if (i >= 34){//Recogeremos las imagenes anteriores, para que al llegar a 38 no busque 39, 40, etc
+
+                int numImage = i;
+                for (int x = 0; x < numImagenesSlider ;x++ ){
+                    if (x > 0){
+                        numImage--;
+                    }
+                    urls.add("https://joanseculi.com/images/img"+ numImage + ".jpg");
+
+                }
 
             } else {
-                picture = new Picture(
-                        "https://joanseculi.com/images/img"+ i + ".jpg",
-                        "Description " + i,
-                        "Pic" + i
-                );
+                for (int x = 0; x < numImagenesSlider;x++ ){
+                    int numImage = x + i;
+                    if (numImage < 10){
+                        urls.add("https://joanseculi.com/images/img0"+ numImage + ".jpg");
+                    } else {
+                        urls.add("https://joanseculi.com/images/img"+ numImage + ".jpg");
+                    }
+
+                }
             }
+
+
+            picture = new Picture(urls, "Desc " + i, "Pic " + i);
+
 
             pictures.add(picture);
 
