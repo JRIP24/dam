@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Action</string>
+    <string name="web_view">WEB VIEW</string>
+    <string name="web">WEB</string>
+    <string name="maps">MAP</string>
+    <string name="instagram">INSTAGRAM</string>
+    <string name="facebook">FACEBOOK</string>
+    <string name="mail">MAIL</string>
+    <string name="call">CALL</string>
+</resources>
